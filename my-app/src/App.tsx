@@ -1,17 +1,17 @@
 import "./App.css";
 
 const USERS: User[] = [
-  { id: "1", name: "thanh", position: "$1", start_date: "12 Nov 2024" },
-  { id: "2", name: "kim", position: "$1", start_date: "12 Nov 2024" },
-  { id: "3", name: "nguyen", position: "$1", start_date: "12 Nov 2024" },
-  { id: "4", name: "anh", position: "$1", start_date: "12 Nov 2024" },
+  { id: "1", name: "thanh", position: "$1", startDate: "12 Nov 2024" },
+  { id: "2", name: "kim", position: "$1", startDate: "12 Nov 2024" },
+  { id: "3", name: "nguyen", position: "$1", startDate: "12 Nov 2024" },
+  { id: "4", name: "anh", position: "$1", startDate: "12 Nov 2024" },
 ];
 
 interface User {
   id: string;
   name: string;
   position: string;
-  start_date: string;
+  startDate: string;
 }
 
 interface UserRowProps {
@@ -23,9 +23,7 @@ interface UserListProps {
 }
 
 const UserRow = ({ user }: UserRowProps) => {
-  const name = user.name;
-  const position = user.position;
-  const startDate = user.start_date;
+  const { name, position, startDate } = user;
 
   return (
     <tr>
@@ -49,11 +47,7 @@ const UserList = ({ users }: UserListProps) => {
 };
 
 const App = () => {
-  return (
-    <>
-      <UserList users={USERS} />
-    </>
-  );
+  return <UserList users={USERS} />;
 };
 
 export default App;
