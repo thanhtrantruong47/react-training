@@ -5,12 +5,4 @@ interface User {
   startDate: string;
 }
 
-interface UserListProps {
-  users: User[];
-}
-
-interface UserRowProps {
-  user: User;
-}
-
-export type { User, UserListProps, UserRowProps };
+export default User;

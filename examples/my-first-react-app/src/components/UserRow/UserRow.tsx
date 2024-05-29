@@ -1,4 +1,8 @@
-import { UserRowProps } from "../../types/User";
+import User from "../../types/User";
+
+interface UserRowProps {
+  user: User;
+}
 
 const UserRow = ({ user }: UserRowProps) => {
   const { name, position, startDate } = user;

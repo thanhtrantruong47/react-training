@@ -1,5 +1,9 @@
-import { UserListProps, User } from "../../types/User";
+import User from "../../types/User";
 import UserRow from "../UserRow/UserRow";
+
+interface UserListProps {
+  users: User[];
+}
 
 const UserList = ({ users }: UserListProps) => {
   return (

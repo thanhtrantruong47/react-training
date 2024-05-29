@@ -1,6 +1,6 @@
 import "./App.css";
 import UserList from "./components/UserList/UserList";
-import { User } from "./types/User";
+import User from "./types/User";
 
 const USERS: User[] = [
   { id: "1", name: "thanh", position: "Manager", startDate: "12 Nov 2024" },
