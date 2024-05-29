@@ -1,13 +1,9 @@
-import globals from "globals";
-import pluginJs from "@eslint/js";
-import tseslint from "typescript-eslint";
-import pluginReactConfig from "eslint-plugin-react/configs/recommended.js";
-import { fixupConfigRules } from "@eslint/compat";
+// @ts-check
 
+import eslint from '@eslint/js';
+import tseslint from 'typescript-eslint';
 
-export default [
-  {languageOptions: { globals: globals.browser }},
-  pluginJs.configs.recommended,
+export default tseslint.config(
+  eslint.configs.recommended,
   ...tseslint.configs.recommended,
-  ...fixupConfigRules(pluginReactConfig),
-];
+);
