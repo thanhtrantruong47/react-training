@@ -1,3 +1,4 @@
+import React from "react";
 import ProductCategoryRow from "../ProductCategoryRow/ProductCategoryRow";
 import ProductRow from "../ProductRow/ProductRow";
 
@@ -20,7 +21,14 @@ const ProductTable = ({ products, filterText, inStockOnly }) => {
         />
       );
     }
-    rows.push(<ProductRow product={product} key={product.name} />);
+    rows.push(
+      <ProductRow
+        name={product.name}
+        price={product.price}
+        stocked={product.stocked}
+        key={product.name}
+      />
+    );
     lastCategory = product.category;
   });
 

@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 import SearchBar from "../SearchBar/SearchBar";
 import ProductTable from "../ProductTable/ProductTable";

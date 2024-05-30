@@ -1,14 +1,16 @@
-const ProductRow = ({ product }) => {
-  const name = product.stocked ? (
-    product.name
+import React from "react";
+
+const ProductRow = ({ name, price, stocked }) => {
+  const productName = stocked ? (
+    name
   ) : (
-    <span style={{ color: "red" }}>{product.name}</span>
+    <span style={{ color: "red" }}>{name}</span>
   );
 
   return (
     <tr>
-      <td>{name}</td>
-      <td>{product.price}</td>
+      <td>{productName}</td>
+      <td>{price}</td>
     </tr>
   );
 };

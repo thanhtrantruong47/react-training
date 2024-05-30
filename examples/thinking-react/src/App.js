@@ -10,5 +10,6 @@ const PRODUCTS = [
 ];
 
 export default function App() {
+  // eslint-disable-next-line react/react-in-jsx-scope
   return <FilterableProductTable products={PRODUCTS} />;
 }
