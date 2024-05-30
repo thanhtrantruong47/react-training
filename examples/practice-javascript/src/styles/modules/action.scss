@@ -1,0 +1,14 @@
+.action-edit,
+.action-delete {
+  text-decoration: none;
+  color: $color-table;
+
+  &:hover {
+    text-decoration: underline;
+    color: $color-primary;
+  }
+}
+
+.action-delete {
+  padding-left: toRem(40px);
+}

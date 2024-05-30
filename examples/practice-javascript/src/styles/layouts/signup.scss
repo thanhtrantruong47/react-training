@@ -1,0 +1,17 @@
+.sign-up {
+  @extend .login;
+  min-width: toRem(700px);
+
+  &__btn {
+    @extend .login__btn;
+  }
+
+  & > input {
+    padding: toRem(20px);
+    margin-bottom: toRem(10px);
+    border-radius: toRem(4px);
+    border: 0px;
+    outline: none;
+    background: #fff;
+  }
+}

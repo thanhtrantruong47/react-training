@@ -1,0 +1,44 @@
+.manager {
+  width: 100%;
+  height: 100vh;
+}
+
+.content-form {
+  display: flex;
+  gap: toRem(40px);
+  margin-left: auto;
+}
+
+.btn-prev-next {
+  display: flex;
+  justify-content: center;
+  gap: toRem(21px);
+  margin-top: auto;
+  padding: toRem(24px) 0;
+  align-items: center;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  margin: toRem(21px) toRem(14px);
+  background-color: $color-text-secondary;
+  border-radius: toRem(5px);
+  // min-width: toRem(1153px);
+  max-height: 88%;
+
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+}
+
+.add-new {
+  background-color: $bg-login-priamry;
+}
+
+.hidden {
+  display: none;
+}

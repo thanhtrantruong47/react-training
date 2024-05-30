@@ -1,0 +1,75 @@
+.login {
+  display: flex;
+  flex-direction: column;
+  padding: toRem(67.5px) toRem(62.9px) toRem(82.84px) toRem(59.83px);
+  font-family: $font-login;
+  text-align: center;
+  background-color: $color-bg-login;
+  border-radius: toRem(50px);
+  left: 50%;
+  top: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+
+  &__desc {
+    font-size: toRem(23.01px);
+    max-width: toRem(472px);
+    margin: 0 auto;
+    color: $color-login;
+    margin-bottom: toRem(49px);
+  }
+
+  &__input {
+    height: 84px;
+    border-radius: toRem(15.34px);
+    padding: toRem(33px) toRem(32px);
+    outline: none;
+    border: toRem(1.34px);
+    font-size: toRem(23px);
+    width: 100%;
+    min-width: toRem(575px);
+    margin: 0 auto toRem(23px);
+  }
+
+  &__btn {
+    margin: toRem(10px) auto 0;
+    font-family: $font-login;
+    font-size: toRem(34px);
+    font-weight: 700;
+    line-height: toRem(44px);
+    letter-spacing: 0em;
+    text-align: center;
+    padding: toRem(23px) 0;
+    width: 100%;
+    border-radius: toRem(23px);
+    background-color: $color-btn-in;
+    color: $color-text-secondary;
+    border: toRem(1.34px);
+    max-width: toRem(391px);
+
+    &:hover {
+      background-color: $color-btn;
+      color: $color-primary;
+    }
+  }
+
+  &__sign-in {
+    font-size: toRem(21px);
+    font-weight: 400;
+    color: $color-login;
+  }
+
+  &__link {
+    color: $color-login;
+    font-size: toRem(21px);
+  }
+
+  &__action {
+    margin-top: toRem(16px);
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: toRem(3px);
+    justify-content: center;
+  }
+}
