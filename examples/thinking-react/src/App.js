@@ -1,3 +1,4 @@
+import React from "react";
 import FilterableProductTable from "./components/FilterableProductTable/FilterableProductTable";
 
 const PRODUCTS = [
@@ -10,6 +11,5 @@ const PRODUCTS = [
 ];
 
 export default function App() {
-  // eslint-disable-next-line react/react-in-jsx-scope
   return <FilterableProductTable products={PRODUCTS} />;
 }
