@@ -11,7 +11,15 @@ const ScientistList = ({ scientists }: ScientistsProps) => {
   return (
     <>
       {scientists.map((scientist) => (
-        <Scientist key={scientist.id} scientist={scientist} />
+        <Scientist
+          key={scientist.id}
+          imageId={scientist.imageId}
+          name={scientist.name}
+          profession={scientist.profession}
+          awards={scientist.awards}
+          discoveries={scientist.discoveries}
+          imageSize={70}
+        />
       ))}
     </>
   );

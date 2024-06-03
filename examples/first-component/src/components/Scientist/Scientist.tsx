@@ -1,14 +1,22 @@
 // https://react.dev/learn/passing-props-to-a-component#challenges
 
-import Person from "../../types/Person";
-
 interface ScientistProps {
-  scientist: Person;
+  imageId: string;
+  name: string;
+  profession: string;
+  awards: string;
+  discoveries: string;
+  imageSize: number;
 }
 
-const Scientist = ({ scientist }: ScientistProps) => {
-  const { imageId, name, profession, awards, discoveries, imageSize } =
-    scientist;
+const Scientist = ({
+  imageId,
+  name,
+  profession,
+  awards,
+  discoveries,
+  imageSize,
+}: ScientistProps) => {
   return (
     <section className="profile">
       <h2>{name}</h2>

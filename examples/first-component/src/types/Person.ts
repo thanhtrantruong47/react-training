@@ -1,4 +1,4 @@
-interface  Person {
+export default interface Person {
   id: string;
   imageId: string;
   name: string;
@@ -7,5 +7,3 @@ interface  Person {
   discoveries: string;
   imageSize: number;
 }
-
-export default  Person;

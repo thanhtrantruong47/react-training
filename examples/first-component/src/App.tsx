@@ -30,7 +30,7 @@ const PERSON: Person[] = [
   },
 ];
 
-function App() {
+const App = () => {
   return (
     <>
       <section>
@@ -46,6 +46,6 @@ function App() {
       </div>
     </>
   );
-}
+};
 
 export default App;
