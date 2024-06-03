@@ -1,7 +1,7 @@
 import "./App.css";
 import Profile from "./components/Profile/Profile";
-import Person from "./types/Person";
-import ScientistList from "./components/ScientistList/ScientistList";
+import { Person } from "./types/Person";
+import ScientistList from "./components/ScientistList";
 
 // data for https://react.dev/learn/passing-props-to-a-component#challenges
 const PERSON: Person[] = [

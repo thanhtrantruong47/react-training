@@ -1,7 +1,7 @@
 // https://react.dev/learn/passing-props-to-a-component#challenges
 
-import Person from "../../types/Person";
-import Scientist from "../Scientist/Scientist";
+import { Person } from "../../types/Person";
+import Scientist from "../Scientist";
 
 interface ScientistsProps {
   scientists: Person[];

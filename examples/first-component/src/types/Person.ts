@@ -1,4 +1,4 @@
-export default interface Person {
+export interface Person {
   id: string;
   imageId: string;
   name: string;
