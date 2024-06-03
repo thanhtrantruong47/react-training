@@ -26,15 +26,6 @@ const scientist = [
     discoveries: "Theory of Relativity, Photoelectric Effect",
     imageSize: 800,
   },
-  {
-    imageId:
-      "https://khunganhonline.com/images/frame/frame_icon/khung-anh-hoa-hinh5aec7498e4003.jpg",
-    name: "Ada Lovelace",
-    profession: "Mathematician & Writer",
-    awards: "N/A",
-    discoveries: "First Computer Programmer",
-    imageSize: 720,
-  },
 ];
 
 export const ScientistsList: Story = {
