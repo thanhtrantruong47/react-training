@@ -13,7 +13,7 @@
     "chromatic": "npx chromatic --project-token=chpt_b1ff1859b6256dd"
   },
   "dependencies": {
-    "react": "^18.3.1",
+    "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {

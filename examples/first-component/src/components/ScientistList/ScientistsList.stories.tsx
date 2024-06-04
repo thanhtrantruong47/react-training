@@ -7,8 +7,9 @@ const meta: Meta<typeof ScientistList> = {
 
 export default meta;
 type Story = StoryObj<typeof ScientistList>;
-const scientist = [
+const scientists = [
   {
+    id: "1",
     imageId:
       "https://khunganhonline.com/images/frame/frame_icon/khung-anh-hoa-hinh5aec7498e4003.jpg",
     name: "Marie Curie",
@@ -21,6 +22,6 @@ const scientist = [
 
 export const ScientistsList: Story = {
   args: {
-    scientists: scientist,
+    scientists: scientists,
   },
 };

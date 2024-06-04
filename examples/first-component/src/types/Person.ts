@@ -1,5 +1,5 @@
 export interface Person {
-  id?: string;
+  id: string;
   imageId: string;
   name: string;
   profession: string;
