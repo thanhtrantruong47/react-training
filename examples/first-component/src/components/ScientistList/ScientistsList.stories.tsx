@@ -17,15 +17,6 @@ const scientist = [
     discoveries: "Radioactivity, Polonium, Radium",
     imageSize: 1400,
   },
-  {
-    imageId:
-      "https://khunganhonline.com/images/frame/frame_icon/khung-anh-hoa-hinh5aec7498e4003.jpg",
-    name: "Albert Einstein",
-    profession: "Theoretical Physicist",
-    awards: "Nobel Prize in Physics",
-    discoveries: "Theory of Relativity, Photoelectric Effect",
-    imageSize: 800,
-  },
 ];
 
 export const ScientistsList: Story = {
