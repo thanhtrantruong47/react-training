@@ -1,0 +1,67 @@
+.navbar-manager {
+  display: flex;
+  padding: toRem(18px) toRem(28px) toRem(18px) toRem(18px);
+  align-items: center;
+  justify-content: space-between;
+  font-family: $font-manager;
+  font-weight: 400;
+  font-size: toRem(12px);
+  color: $color-primary-manager;
+  background-color: $color-text-secondary;
+  flex-wrap: wrap;
+
+  &__form {
+    display: flex;
+    align-items: center;
+    gap: toRem(40px);
+  }
+
+  &__search {
+    padding: toRem(11px) toRem(10px) toRem(10px) toRem(40px);
+    outline: none;
+    border-radius: toRem(4px);
+    border: toRem(1px) solid $color-form;
+    background-image: url("../assets/images/managers/icon-search.png");
+    background-repeat: no-repeat;
+    background-size: toRem(17px) toRem(17px);
+    background-position: center left toRem(15px);
+    font-family: $font-manager;
+    font-size: toRem(16px);
+    color: $color-title-manager;
+    max-width: toRem(228px);
+  }
+
+  &__text {
+    font-size: toRem(16px);
+    color: $color-title-manager;
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+  }
+
+  &__inbox {
+    display: flex;
+    align-items: center;
+    margin-left: toRem(38px);
+    margin-right: toRem(49px);
+  }
+
+  &__btn {
+    padding: toRem(8px) toRem(7px) toRem(8px) toRem(8px);
+    background-color: $color-btn-in;
+    color: $color-text-secondary;
+    border: none;
+    border-radius: toRem(4px);
+
+    &:hover {
+      background-color: $color-btn-in;
+      color: $color-primary;
+    }
+  }
+
+  &__avatar {
+    margin-left: toRem(21px);
+  }
+}

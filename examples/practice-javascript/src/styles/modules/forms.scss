@@ -1,0 +1,19 @@
+.form-manager {
+  @extend .wrapper-login;
+  background-image: none;
+  height: auto;
+}
+
+.form-manager__update {
+  @extend .login__input;
+  height: 20px;
+}
+
+.update-user {
+  @extend .login;
+  background-color: $color-title-manager;
+}
+
+.update-btn {
+  @extend .login__btn;
+}
