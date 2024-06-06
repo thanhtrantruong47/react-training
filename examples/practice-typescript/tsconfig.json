@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "jsx": "react",
     "lib": ["es2020", "DOM", "WebWorker", "DOM.Iterable"],
     "target": "es6",
     "module": "commonjs",
