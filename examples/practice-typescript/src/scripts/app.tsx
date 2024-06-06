@@ -1,4 +1,5 @@
 import Logo from 'components/Logo/Logo';
+import SideBar from 'components/SideBar/SideBar';
 import SideBarMenu from 'components/SideBarMenu/SideBarMenu';
 import SideBarMenuItem, {
   SideBarMenuItemProps,
@@ -30,6 +31,7 @@ const App = () => {
         isActive={true}
       />
       <SideBarMenu sideBarMenuItemProps={MENU} />
+      <SideBar/>
     </>
   );
 };
