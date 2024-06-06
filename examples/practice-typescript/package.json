@@ -5,15 +5,19 @@
     "eslint": "^8.57.0",
     "json-server": "^0.17.4",
     "parcel": "^2.12.0",
+    "process": "^0.11.10",
     "typescript": "^5.4.5",
     "typescript-eslint": "^7.10.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "parcel --no-cache src/index.html",
-    "build": "parcel build src/index.html"
+    "start": "parcel --no-cache src/*.html",
+    "build": "parcel build src/*.html"
   },
   "dependencies": {
-    "@parcel/transformer-sass": "^2.12.0"
+    "@parcel/transformer-sass": "^2.12.0",
+    "@types/react-dom": "^18.3.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   }
 }
