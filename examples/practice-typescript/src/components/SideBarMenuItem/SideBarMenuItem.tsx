@@ -1,18 +1,24 @@
 import './sideBarMenuItem.scss';
 
-interface SideBarMenuItemProps {
+export interface SideBarMenuItemProps {
+  id: string;
   text: string;
   router: string;
-  status?: 'aside__active' | '';
+  isActive: boolean;
 }
 
-const SideBarMenuItem = ({ text, router, status }: SideBarMenuItemProps) => {
+const SideBarMenuItem = ({
+  id,
+  text,
+  router,
+  isActive,
+}: SideBarMenuItemProps) => {
+  const activeClass = isActive ? 'aside__active' : '';
+  console.log(isActive);
   return (
-    <li>
-      <a className={`aside__item  ${status}`} href={router}>
-        {text}
-      </a>
-    </li>
+    <a id={id} className={`aside__item  ${activeClass}`} href={router}>
+      {text}
+    </a>
   );
 };
 
