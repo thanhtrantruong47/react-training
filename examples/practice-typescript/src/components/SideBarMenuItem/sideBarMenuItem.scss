@@ -1,0 +1,16 @@
+.aside__item {
+  flex-direction: column;
+  justify-content: center;
+  height: 3rem;
+  text-decoration: none;
+  display: flex;
+  font-family: Roboto;
+  font-weight: 400;
+  color: white;
+}
+
+.aside__active {
+  border-right: 0.3rem solid #e03386;
+  margin-right: -0.15rem;
+  font-weight: 700;
+}
