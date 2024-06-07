@@ -12,7 +12,9 @@
 }
 
 .aside__active {
-  border-right: 6px solid $color-active-secondary;
-  margin-right: -3px;
+  box-sizing: border-box;
+  width: 100%;
+  border-right: 3px solid $color-active-secondary;
+  box-shadow: 3px 0px 0px 0px $color-active-secondary;
   font-weight: 700;
 }
