@@ -2,9 +2,8 @@ import Logo from 'components/Logo/Logo';
 import SideBarMenu from 'components/SideBarMenu/index';
 
 import './index.scss';
-import { SideBarMenuItemProps } from 'components/SideBarMenuItem/index';
 
-const MENU: SideBarMenuItemProps[] = [
+const MenuItems = [
   {
     id: '1',
     text: 'User management',
@@ -23,7 +22,7 @@ const SideBar = () => {
   return (
     <aside className="aside">
       <Logo />
-      <SideBarMenu sideBarMenuItemLitsProps={MENU} />
+      <SideBarMenu menuItems={MenuItems} />
     </aside>
   );
 };

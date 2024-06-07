@@ -30,7 +30,7 @@ const App = () => {
         <Logo />
       </div>
       <div>
-        <SideBarMenu sideBarMenuItemLitsProps={MenuItems} />
+        <SideBarMenu menuItems={MenuItems} />
       </div>
       <div>
         <SideBar />
