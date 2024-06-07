@@ -1,4 +1,3 @@
-import Logo from 'components/Logo/Logo';
 import SideBarMenu from 'components/SideBarMenu';
 
 const MenuItems = [
@@ -14,12 +13,17 @@ const MenuItems = [
     router: '/component.html',
     isActive: false,
   },
+  {
+    id: '2',
+    text: '',
+    router: '/component.html',
+    isActive: false,
+  },
 ];
 
 const App = () => {
   return (
     <>
-      <Logo />
       <SideBarMenu sideBarMenuItemLitsProps={MenuItems} />
     </>
   );
