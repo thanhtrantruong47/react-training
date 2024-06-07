@@ -1,10 +1,7 @@
 import Logo from 'components/Logo/Logo';
 import SideBarMenu from 'components/SideBarMenu';
-import SideBarMenuItem, {
-  SideBarMenuItemProps,
-} from 'components/SideBarMenuItem';
 
-const MenuItems: SideBarMenuItemProps[] = [
+const MenuItems = [
   {
     id: '1',
     text: 'User management',

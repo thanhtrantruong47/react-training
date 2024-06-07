@@ -28,7 +28,7 @@
     color: $color-primary;
 
     &:hover {
-      color: $border-right-color;
+      color: $color-active-secondary;
       text-decoration: underline;
     }
   }
@@ -56,7 +56,7 @@
       background-color: $product-color;
 
       &:hover {
-        background-color: $border-right-color;
+        background-color: $color-active-secondary;
       }
     }
 

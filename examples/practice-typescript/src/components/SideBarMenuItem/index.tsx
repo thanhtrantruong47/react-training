@@ -15,9 +15,11 @@ const SideBarMenuItem = ({
 }: SideBarMenuItemProps) => {
   const activeClass = isActive ? 'aside__active' : '';
   return (
-    <a id={id} className={`aside__item  ${activeClass}`} href={router}>
-      {text}
-    </a>
+    <li>
+      <a id={id} className={`aside__item  ${activeClass}`} href={router}>
+        {text}
+      </a>
+    </li>
   );
 };
 
