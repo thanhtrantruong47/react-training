@@ -8,16 +8,12 @@
   text-decoration: none;
   font-weight: 400;
   color: $color-text-secondary;
-}
-
-.aside__item {
   width: 100%;
-  border-right: 3px solid $color-bg-manager;
   font-weight: 400;
 }
 
 .aside__active {
-  border-right-color: 3px solid $color-active-secondary;
+  border-right: 3px solid $color-active-secondary;
   font-weight: 700;
   box-shadow: 3px 0px 0px 0px $color-active-secondary;
 }

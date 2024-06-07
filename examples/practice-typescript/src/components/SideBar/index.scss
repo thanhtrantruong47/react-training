@@ -1,12 +1,15 @@
+@import '../../styles/bases/variable.scss';
+
 .aside {
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  background-color: #220646;
+  background-color: $color-bg-manager;
   flex-direction: column;
   max-width: 250px;
   height: 100vh;
   padding: 35px 0 0 35px;
   gap: 57px;
-  color: white;
+  color: $color-text-secondary;
+  font-family: Roboto;
 }

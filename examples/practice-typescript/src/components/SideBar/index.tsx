@@ -1,8 +1,8 @@
 import Logo from 'components/Logo/Logo';
-import SideBarMenu from 'components/SideBarMenu/SideBarMenu';
+import SideBarMenu from 'components/SideBarMenu/index';
 
-import './sideBar.scss';
-import { SideBarMenuItemProps } from 'components/SideBarMenuItem/SideBarMenuItem';
+import './index.scss';
+import { SideBarMenuItemProps } from 'components/SideBarMenuItem/index';
 
 const MENU: SideBarMenuItemProps[] = [
   {
@@ -23,7 +23,7 @@ const SideBar = () => {
   return (
     <aside className="aside">
       <Logo />
-      <SideBarMenu sideBarMenuItemProps={MENU} />
+      <SideBarMenu sideBarMenuItemLitsProps={MENU} />
     </aside>
   );
 };

@@ -1,4 +1,5 @@
 import Logo from 'components/Logo/Logo';
+import SideBar from 'components/SideBar';
 import SideBarMenu from 'components/SideBarMenu';
 
 const MenuItems = [
@@ -25,8 +26,15 @@ const MenuItems = [
 const App = () => {
   return (
     <>
-      <Logo />
-      <SideBarMenu sideBarMenuItemLitsProps={MenuItems} />
+      <div>
+        <Logo />
+      </div>
+      <div>
+        <SideBarMenu sideBarMenuItemLitsProps={MenuItems} />
+      </div>
+      <div>
+        <SideBar />
+      </div>
     </>
   );
 };
