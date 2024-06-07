@@ -1,9 +1,9 @@
 import SideBarMenuItem from 'components/SideBarMenuItem';
 import './index.scss';
-import { Menu } from 'scripts/types/menu';
+import { MenuItem } from 'scripts/types/menu';
 
 interface SideBarMenuProps {
-  menuItems: Menu[];
+  menuItems: MenuItem[];
 }
 
 const SideBarMenu = ({ menuItems = [] }: SideBarMenuProps) => {

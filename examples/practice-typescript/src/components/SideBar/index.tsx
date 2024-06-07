@@ -2,21 +2,7 @@ import Logo from 'components/Logo/Logo';
 import SideBarMenu from 'components/SideBarMenu/index';
 
 import './index.scss';
-
-const MenuItems = [
-  {
-    id: '1',
-    text: 'User management',
-    router: '/component.html',
-    isActive: true,
-  },
-  {
-    id: '2',
-    text: 'Product management',
-    router: '/component.html',
-    isActive: false,
-  },
-];
+import { MenuItems } from 'mocks/menu';
 
 const SideBar = () => {
   return (

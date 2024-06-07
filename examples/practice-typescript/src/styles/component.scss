@@ -1,7 +1,10 @@
+@import '../styles/bases/typography.scss';
+
 html {
   margin: 0 auto;
 }
 
 * {
   box-sizing: border-box;
+  font-family: Roboto;
 }
