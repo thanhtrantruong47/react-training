@@ -23,7 +23,6 @@ const App = () => {
   return (
     <>
       <Logo />
-      <SideBarMenuItem id="3" text="test" router="home" isActive={true} />
       <SideBarMenu sideBarMenuItemLitsProps={MenuItems} />
     </>
   );
