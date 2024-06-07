@@ -1,10 +1,10 @@
 import Logo from 'components/Logo/Logo';
-import SideBarMenu from 'components/SideBarMenu/SideBarMenu';
+import SideBarMenu from 'components/SideBarMenu';
 import SideBarMenuItem, {
   SideBarMenuItemProps,
-} from 'components/SideBarMenuItem/SideBarMenuItem';
+} from 'components/SideBarMenuItem';
 
-const MENU: SideBarMenuItemProps[] = [
+const MenuItems: SideBarMenuItemProps[] = [
   {
     id: '1',
     text: 'User management',
@@ -23,13 +23,8 @@ const App = () => {
   return (
     <>
       <Logo />
-      <SideBarMenuItem
-        id={'3'}
-        text={'tesst'}
-        router={'home'}
-        isActive={true}
-      />
-      <SideBarMenu sideBarMenuItemProps={MENU} />
+      <SideBarMenuItem id="3" text="test" router="home" isActive={true} />
+      <SideBarMenu sideBarMenuItemLitsProps={MenuItems} />
     </>
   );
 };

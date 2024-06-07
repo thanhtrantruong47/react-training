@@ -1,4 +1,4 @@
-import './sideBarMenuItem.scss';
+import './index.scss';
 
 export interface SideBarMenuItemProps {
   id: string;
@@ -14,7 +14,6 @@ const SideBarMenuItem = ({
   isActive,
 }: SideBarMenuItemProps) => {
   const activeClass = isActive ? 'aside__active' : '';
-  console.log(isActive);
   return (
     <a id={id} className={`aside__item  ${activeClass}`} href={router}>
       {text}
