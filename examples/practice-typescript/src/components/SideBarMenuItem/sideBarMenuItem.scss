@@ -1,3 +1,5 @@
+@import '../../styles/bases/variable.scss';
+
 .aside__item {
   flex-direction: column;
   justify-content: center;
@@ -6,11 +8,17 @@
   display: flex;
   font-family: Roboto;
   font-weight: 400;
-  color: white;
+  color: $color-text-secondary;
+}
+
+.aside__item {
+  width: 100%;
+  border-right: 3px solid $color-bg-manager;
+  font-weight: 400;
 }
 
 .aside__active {
-  border-right: 0.3rem solid #e03386;
-  margin-right: -0.15rem;
+  border-right: 3px solid $color-active-secondary;
   font-weight: 700;
+  box-shadow: 3px 0px 0px 0px $color-active-secondary;
 }
