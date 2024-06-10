@@ -1,3 +1,4 @@
+import Input from 'components/Input';
 import Logo from 'components/Logo/Logo';
 import SideBarMenu from 'components/SideBarMenu';
 
@@ -27,6 +28,7 @@ const App = () => {
     <>
       <Logo />
       <SideBarMenu sideBarMenuItemLitsProps={MenuItems} />
+      <Input type="search" style="search" placeholder="Search all" />
     </>
   );
 };

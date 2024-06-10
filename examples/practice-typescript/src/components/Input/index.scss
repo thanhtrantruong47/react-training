@@ -1,0 +1,16 @@
+@import '../../styles/bases/variable.scss';
+
+.search {
+  background-image: url(../../assets/images/managers/icon-search.png);
+  background-position: 0.75rem;
+  background-repeat: no-repeat;
+  background-size: 0.85rem 0.85rem;
+  border: 1px solid $border-search-color;
+  border-radius: 0.2rem;
+  outline: none;
+  max-width: 11.4rem;
+  max-height: 2rem;
+  margin-right: 4.25rem;
+  padding: 0.55rem 0.5rem 0.5rem 2rem;
+  font-size: 0.8rem;
+}
