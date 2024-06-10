@@ -1,5 +1,6 @@
 import Logo from 'components/Logo/Logo';
 import SideBarMenu from 'components/SideBarMenu';
+import TableHeader from 'components/TableHeader ';
 
 const MenuItems = [
   {
@@ -27,6 +28,7 @@ const App = () => {
     <>
       <Logo />
       <SideBarMenu sideBarMenuItemLitsProps={MenuItems} />
+      <TableHeader />
     </>
   );
 };

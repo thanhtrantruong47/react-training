@@ -1,0 +1,10 @@
+@import '../../styles/bases/variable.scss';
+.table-head {
+  color: $color-head-table;
+  z-index: 4;
+  background: $color-bg-wrapper;
+  min-height: 2rem;
+  padding: 0.55rem 0 0.5rem 1.85rem;
+  position: sticky;
+  top: 4.2rem;
+}
