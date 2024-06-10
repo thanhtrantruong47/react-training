@@ -1,3 +1,4 @@
+import Button from 'components/Button';
 import Logo from 'components/Logo/Logo';
 import SideBarMenu from 'components/SideBarMenu';
 
@@ -27,6 +28,9 @@ const App = () => {
     <>
       <Logo />
       <SideBarMenu sideBarMenuItemLitsProps={MenuItems} />
+      <Button text="Add new" style="btn__add" />
+      <Button text="Edit" style="btn__action" />
+      <Button text="Delete" style="btn__action" />
     </>
   );
 };
