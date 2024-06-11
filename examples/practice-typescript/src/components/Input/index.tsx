@@ -1,14 +1,18 @@
-import './index.scss';
+import '../../styles/component.scss';
 
 interface InputProps {
-  type: string;
-  style: 'search';
+  typeInput: string;
+  styleClass: 'search';
   placeholder: string;
 }
 
-const Input = ({ type, style, placeholder }: InputProps) => {
+const Input = ({ typeInput, styleClass, placeholder }: InputProps) => {
   return (
-    <input type={type} className={style} placeholder={placeholder}></input>
+    <input
+      type={typeInput}
+      className={styleClass}
+      placeholder={placeholder}
+    ></input>
   );
 };
 

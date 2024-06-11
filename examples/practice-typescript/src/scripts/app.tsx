@@ -28,7 +28,7 @@ const App = () => {
     <>
       <Logo />
       <SideBarMenu sideBarMenuItemLitsProps={MenuItems} />
-      <Input type="search" style="search" placeholder="Search all" />
+      <Input typeInput="search" styleClass="search" placeholder="Search all" />
     </>
   );
 };
