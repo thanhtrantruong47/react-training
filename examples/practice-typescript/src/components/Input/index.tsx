@@ -2,7 +2,7 @@ import '../../styles/component.scss';
 
 interface InputProps {
   typeInput: string;
-  styleClass: 'search';
+  styleClass: string;
   placeholder: string;
   typeClass: string
 }
