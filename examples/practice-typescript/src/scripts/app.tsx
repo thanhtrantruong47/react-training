@@ -3,6 +3,7 @@ import Logo from 'components/Logo/Logo';
 import SideBar from 'components/SideBar';
 import SideBarMenu from 'components/SideBarMenu';
 import InputField from 'components/Input';
+import TableController from 'components/TableController';
 
 const MenuItems = [
   {
@@ -28,6 +29,9 @@ const MenuItems = [
 const App = () => {
   return (
     <>
+    <div>
+        <TableController />
+      </div>
       <InputField
         icon={require('../assets/images/managers/icon-search.png')}
         typeInput="search"
@@ -50,6 +54,7 @@ const App = () => {
         <Button text="Edit" styleClass="btn-action" />
         <Button text="Delete" styleClass="btn-action" />
       </div>
+      
     </>
   );
 };
