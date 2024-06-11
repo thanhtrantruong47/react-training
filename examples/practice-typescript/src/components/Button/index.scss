@@ -1,13 +1,13 @@
 .btn {
   letter-spacing: 0;
-  color: var(--color-text-secondary);
+  color: $color-text-secondary;
   border: 0.067rem solid;
   border-radius: 1.15rem;
 }
 
 .btn-add {
-  color: var(--color-text-secondary);
-  background-color: var(--color-btn-in);
+  color: $color-text-secondary;
+  background-color: $color-btn-in;
   border-radius: 0.2rem;
   width: 4.5rem;
   height: 2rem;
@@ -15,17 +15,18 @@
 }
 
 .btn-add:hover {
-  background-color: var(--color-btn);
-  color: var(--color-primary);
+  background-color: $color-btn;
+  color: $color-primary;
 }
 
 .btn-action {
-  background-color: var(--color-text-secondary);
-  color: var(--color-table);
+  background-color: $color-text-secondary;
+  color: $color-table;
   text-decoration: none;
+  border: none;
 }
 
 .btn-action:hover {
   text-decoration: underline;
-  color: var(--color-primary);
+  color: $color-primary;
 }
