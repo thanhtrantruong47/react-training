@@ -3,6 +3,9 @@ import Logo from 'components/Logo/Logo';
 import SideBar from 'components/SideBar';
 import SideBarMenu from 'components/SideBarMenu';
 import InputField from 'components/Input';
+import TableRow from 'components/TableRow';
+import TableBody from 'components/TableBody';
+import { User } from 'mocks/user';
 
 const MenuItems = [
   {
@@ -32,7 +35,7 @@ const App = () => {
         icon={require('../assets/images/managers/icon-search.png')}
         typeInput="search"
         description="Search All"
-        size='17'
+        size="17"
       />
       <Logo />
       <SideBarMenu menuItems={MenuItems} />
@@ -49,6 +52,18 @@ const App = () => {
         <Button text="Add new" styleClass="btn-add" />
         <Button text="Edit" styleClass="btn-action" />
         <Button text="Delete" styleClass="btn-action" />
+      </div>
+      <div>
+        <TableRow
+          email="kim@gmail.com"
+          firstName="tran "
+          lastName="kim"
+          phoneNumber="0132456789"
+          id="1"
+        />
+      </div>
+      <div>
+        <TableBody usersItem={User} />
       </div>
     </>
   );

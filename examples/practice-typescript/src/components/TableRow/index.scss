@@ -1,0 +1,12 @@
+@import '../../styles/bases/index.scss';
+
+.table-item {
+  text-overflow: ellipsis;
+  border-bottom: 1px solid $color-bg-wrapper;
+  max-width: 10rem;
+  min-height: 3.55rem;
+  padding: 1.2rem 0 1.25rem 1.85rem;
+  overflow: hidden;
+  color: $color-table;
+  font-size: 16px;
+}
