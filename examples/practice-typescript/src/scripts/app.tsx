@@ -1,5 +1,8 @@
+import Button from 'components/Button';
 import Logo from 'components/Logo/Logo';
+import SideBar from 'components/SideBar';
 import SideBarMenu from 'components/SideBarMenu';
+import InputField from 'components/Input';
 import TableRow from 'components/TableRow';
 
 const MenuItems = [
@@ -26,20 +29,36 @@ const MenuItems = [
 const App = () => {
   return (
     <>
+      <InputField
+        icon={require('../assets/images/managers/icon-search.png')}
+        typeInput="search"
+        description="Search All"
+        size="17"
+      />
       <Logo />
-      <SideBarMenu sideBarMenuItemLitsProps={MenuItems} />
-      <TableRow
-        email="kim@gmail.com"
-        firstName="tran "
-        lastName="kim"
-        phoneNumber="0132456789"
-      />
-      <TableRow
-        email="123kim@gmail.com"
-        firstName="tran "
-        lastName="kim"
-        phoneNumber="0132456789"
-      />
+      <SideBarMenu menuItems={MenuItems} />
+      <div>
+        <Logo />
+      </div>
+      <div>
+        <SideBarMenu menuItems={MenuItems} />
+      </div>
+      <div>
+        <SideBar />
+      </div>
+      <div>
+        <Button text="Add new" styleClass="btn-add" />
+        <Button text="Edit" styleClass="btn-action" />
+        <Button text="Delete" styleClass="btn-action" />
+      </div>
+      <div>
+        <TableRow
+          email="kim@gmail.com"
+          firstName="tran "
+          lastName="kim"
+          phoneNumber="0132456789"
+        />
+      </div>
     </>
   );
 };

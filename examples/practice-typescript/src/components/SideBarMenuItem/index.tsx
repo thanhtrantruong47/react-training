@@ -1,18 +1,7 @@
+import { MenuItem } from 'scripts/types/menu';
 import './index.scss';
 
-export interface SideBarMenuItemProps {
-  id: string;
-  text: string;
-  router: string;
-  isActive: boolean;
-}
-
-const SideBarMenuItem = ({
-  id,
-  text,
-  router,
-  isActive,
-}: SideBarMenuItemProps) => {
+const SideBarMenuItem = ({ id, text, router, isActive }: MenuItem) => {
   const activeClass = isActive ? 'aside__active' : '';
   return (
     <li>

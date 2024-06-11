@@ -1,3 +1,4 @@
+import Button from 'components/Button';
 import './index.scss';
 
 interface TableRowProps {
@@ -18,11 +19,15 @@ const TableRow = ({
   rowIndex++;
   return (
     <tr>
-      <td className="table-row">{rowIndex/2}</td>
-      <td className="table-row">{email}</td>
-      <td className="table-row">{firstName}</td>
-      <td className="table-row">{lastName}</td>
-      <td className="table-row">{phoneNumber}</td>
+      <td className="table-item">{rowIndex / 2}</td>
+      <td className="table-item">{email}</td>
+      <td className="table-item">{firstName}</td>
+      <td className="table-item">{lastName}</td>
+      <td className="table-item">{phoneNumber}</td>
+      <td className="table-item">
+        <Button text="Edit" styleClass="btn-action" />
+        <Button text="Delete" styleClass="btn-action" />
+      </td>
     </tr>
   );
 };

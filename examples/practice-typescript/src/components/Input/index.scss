@@ -1,0 +1,15 @@
+.input-group input {
+  border: none;
+  outline: none;
+}
+
+.input-group {
+  display: flex;
+  border: 1px solid $border-search-color;
+  width: 228px;
+  height: 40px;
+  align-items: center;
+  border-radius: 4px;
+  padding-left: 15px;
+  gap: 8px;
+}
