@@ -1,5 +1,6 @@
 import Input from 'components/Input';
 import Logo from 'components/Logo/Logo';
+import SideBar from 'components/SideBar';
 import SideBarMenu from 'components/SideBarMenu';
 
 const MenuItems = [
@@ -26,9 +27,16 @@ const MenuItems = [
 const App = () => {
   return (
     <>
-      <Logo />
-      <SideBarMenu sideBarMenuItemLitsProps={MenuItems} />
-      <Input typeInput="search" styleClass="search" placeholder="Search all" />
+      <Input typeInput="search" styleClass="search" typeClass='search-icon' placeholder="Search all" />
+      <div>
+        <Logo />
+      </div>
+      <div>
+        <SideBarMenu menuItems={MenuItems} />
+      </div>
+      <div>
+        <SideBar />
+      </div>
     </>
   );
 };

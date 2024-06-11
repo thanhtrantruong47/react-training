@@ -1,16 +1,15 @@
-import SideBarMenuItem, {
-  SideBarMenuItemProps,
-} from 'components/SideBarMenuItem';
+import SideBarMenuItem from 'components/SideBarMenuItem';
 import './index.scss';
+import { MenuItem } from 'scripts/types/menu';
 
 interface SideBarMenuProps {
-  sideBarMenuItemLitsProps: SideBarMenuItemProps[];
+  menuItems: MenuItem[];
 }
 
-const SideBarMenu = ({ sideBarMenuItemLitsProps = [] }: SideBarMenuProps) => {
+const SideBarMenu = ({ menuItems = [] }: SideBarMenuProps) => {
   return (
     <ul className="aside__list">
-      {sideBarMenuItemLitsProps.map(({ id, text, router, isActive }) => (
+      {menuItems.map(({ id, text, router, isActive }) => (
         <SideBarMenuItem
           key={id}
           id={id}

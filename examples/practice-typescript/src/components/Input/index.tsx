@@ -4,13 +4,14 @@ interface InputProps {
   typeInput: string;
   styleClass: 'search';
   placeholder: string;
+  typeClass: string
 }
 
-const Input = ({ typeInput, styleClass, placeholder }: InputProps) => {
+const Input = ({ typeInput, styleClass, placeholder ,typeClass}: InputProps) => {
   return (
     <input
       type={typeInput}
-      className={styleClass}
+      className={`${styleClass} ${typeClass}`}
       placeholder={placeholder}
     ></input>
   );
