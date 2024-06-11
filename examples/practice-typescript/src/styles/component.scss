@@ -1,2 +1,8 @@
 @import 'bases/index.scss';
 @import '../components/Button/index.scss';
+@import '../components/SideBar/index.scss';
+
+html {
+  margin: 0 auto;
+  font-family: Roboto;
+}

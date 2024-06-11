@@ -1,5 +1,6 @@
 import Button from 'components/Button';
 import Logo from 'components/Logo/Logo';
+import SideBar from 'components/SideBar';
 import SideBarMenu from 'components/SideBarMenu';
 
 const MenuItems = [
@@ -27,10 +28,22 @@ const App = () => {
   return (
     <>
       <Logo />
-      <SideBarMenu sideBarMenuItemLitsProps={MenuItems} />
-      <Button text="Add new" styleClass="btn-add" />
-      <Button text="Edit" styleClass="btn-action" />
-      <Button text="Delete" styleClass="btn-action" />
+      <SideBarMenu menuItems={MenuItems} />
+
+      <div>
+        <Logo />
+      </div>
+      <div>
+        <SideBarMenu menuItems={MenuItems} />
+      </div>
+      <div>
+        <SideBar />
+      </div>
+      <div>
+        <Button text="Add new" styleClass="btn-add" />
+        <Button text="Edit" styleClass="btn-action" />
+        <Button text="Delete" styleClass="btn-action" />
+      </div>
     </>
   );
 };
