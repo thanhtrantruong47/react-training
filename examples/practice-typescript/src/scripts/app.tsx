@@ -1,8 +1,8 @@
-import Input from 'components/Input';
 import Button from 'components/Button';
 import Logo from 'components/Logo/Logo';
 import SideBar from 'components/SideBar';
 import SideBarMenu from 'components/SideBarMenu';
+import InputField from 'components/Input';
 
 const MenuItems = [
   {
@@ -28,15 +28,14 @@ const MenuItems = [
 const App = () => {
   return (
     <>
-      <Input
+      <InputField
+        icon={require('../assets/images/managers/icon-search.png')}
         typeInput="search"
-        styleClass="search"
-        typeClass="search-icon"
-        placeholder="Search all"
+        description="Search All"
+        size='17'
       />
       <Logo />
       <SideBarMenu menuItems={MenuItems} />
-
       <div>
         <Logo />
       </div>

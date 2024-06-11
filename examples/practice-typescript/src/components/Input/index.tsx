@@ -1,20 +1,21 @@
 import '../../styles/component.scss';
 
 interface InputProps {
+  icon: string;
   typeInput: string;
-  styleClass: string;
-  placeholder: string;
-  typeClass: string
+  description: string;
+  size: string;
 }
 
-const Input = ({ typeInput, styleClass, placeholder ,typeClass}: InputProps) => {
+const InputField = ({ icon, typeInput, description, size }: InputProps) => {
   return (
-    <input
-      type={typeInput}
-      className={`${styleClass} ${typeClass}`}
-      placeholder={placeholder}
-    ></input>
+    <div className="input-container">
+      <svg height={size} width={size}>
+        <image href={icon} />
+      </svg>
+      <input type={typeInput} placeholder={description} />
+    </div>
   );
 };
 
-export default Input;
+export default InputField;

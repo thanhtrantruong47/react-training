@@ -1,17 +1,15 @@
-.search {
-  border: 1px solid $border-search-color;
-  border-radius: 4px;
+.input-container input {
+  border: none;
   outline: none;
-  max-width: 228px;
-  max-height: 40px;
-  margin-right: 85px;
-  padding: 11px 10px 10px 40px;
-  font-size: 16px;
 }
 
-.search-icon {
-  background-image: url(../assets/images/managers/icon-search.png);
-  background-position: 15px;
-  background-repeat: no-repeat;
-  background-size: 17px 17px;
+.input-container {
+  display: flex;
+  border: 1px solid $border-search-color;
+  width: 228px;
+  height: 40px;
+  align-items: center;
+  border-radius: 4px;
+  padding-left: 15px;
+  gap: 8px;
 }
