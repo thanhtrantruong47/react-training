@@ -9,7 +9,7 @@ interface InputProps {
 
 const InputField = ({ icon, typeInput, description, size }: InputProps) => {
   return (
-    <div className="input-container">
+    <div className="input-group">
       <svg height={size} width={size}>
         <image href={icon} />
       </svg>
