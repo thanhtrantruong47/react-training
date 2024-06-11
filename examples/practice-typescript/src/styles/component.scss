@@ -1,10 +1,7 @@
-@import '../styles/bases/typography.scss';
+@import 'bases/index.scss';
+@import '../components/SideBar/index.scss';
 
 html {
   margin: 0 auto;
-}
-
-* {
-  box-sizing: border-box;
   font-family: Roboto;
 }

@@ -1,7 +1,7 @@
 import Logo from 'components/Logo/Logo';
 import SideBarMenu from 'components/SideBarMenu/index';
 
-import './index.scss';
+import '../../styles/component.scss';
 import { MenuItems } from 'mocks/menu';
 
 const SideBar = () => {
