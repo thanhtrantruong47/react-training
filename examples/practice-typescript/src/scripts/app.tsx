@@ -28,9 +28,9 @@ const App = () => {
     <>
       <Logo />
       <SideBarMenu sideBarMenuItemLitsProps={MenuItems} />
-      <Button text="Add new" style="btn__add" />
-      <Button text="Edit" style="btn__action" />
-      <Button text="Delete" style="btn__action" />
+      <Button text="Add new" styleClass="btn-add" />
+      <Button text="Edit" styleClass="btn-action" />
+      <Button text="Delete" styleClass="btn-action" />
     </>
   );
 };

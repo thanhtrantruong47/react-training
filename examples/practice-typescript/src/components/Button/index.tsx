@@ -1,12 +1,12 @@
-import './index.scss';
+import '../../styles/component.scss';
 
 interface ButtonProps {
   text: string;
-  style: 'btn__action' | 'btn__add';
+  styleClass: 'btn-action' | 'btn-add';
 }
 
-const Button = ({ text, style }: ButtonProps) => {
-  return <button className={`btn  ${style}`}>{text}</button>;
+const Button = ({ text, styleClass }: ButtonProps) => {
+  return <button className={`btn  ${styleClass}`}>{text}</button>;
 };
 
 export default Button;
