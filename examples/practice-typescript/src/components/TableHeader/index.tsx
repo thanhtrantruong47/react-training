@@ -6,7 +6,9 @@ interface HeaderItemsProps<T> {
 }
 
 const TableHeader = <T,>({ headers }: HeaderItemsProps<T>) => {
-  const headerKeys: string[] = Object.keys(headers[0]);
+  const headerKeys: string[] = Object.keys(headers[0]).filter(
+    (key) => key !== 'id'
+  );
 
   return (
     <tr>
