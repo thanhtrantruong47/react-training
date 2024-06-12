@@ -3,7 +3,7 @@ import InputField from 'components/Input';
 import Logo from 'components/Logo/Logo';
 import SideBar from 'components/SideBar';
 import SideBarMenu from 'components/SideBarMenu';
-import TableHeader from 'components/TableHeader';
+import TableHead from 'components/TableHead';
 import { MenuItems } from 'mocks/menu';
 import { Product } from 'mocks/product';
 import { User } from 'mocks/user';
@@ -15,7 +15,7 @@ const App = () => {
         icon={require('../assets/images/managers/icon-search.png')}
         typeInput="search"
         description="Search All"
-        size='17'
+        size="17"
       />
       <Logo />
       <div>
@@ -30,10 +30,10 @@ const App = () => {
         <Button text="Delete" styleClass="btn-action" />
       </div>
       <div>
-        <TableHeader headers={User} />
+        <TableHead headItems={User} />
       </div>
       <div>
-        <TableHeader headers={Product} />
+        <TableHead headItems={Product} />
       </div>
     </>
   );
