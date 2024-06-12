@@ -1,9 +1,9 @@
 interface Product {
   id: string;
-  email: string;
   name: string;
   type: string;
   size: string;
+  price: string;
 }
 
 export default Product;
