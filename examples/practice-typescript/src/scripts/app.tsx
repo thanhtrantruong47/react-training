@@ -4,6 +4,7 @@ import SideBar from 'components/SideBar';
 import SideBarMenu from 'components/SideBarMenu';
 import InputField from 'components/Input';
 import TableController from 'components/TableController';
+import searchIcon from 'assets/images/managers/icon-search.png';
 
 const MenuItems = [
   {
@@ -29,14 +30,14 @@ const MenuItems = [
 const App = () => {
   return (
     <>
-    <div>
+      <div>
         <TableController />
       </div>
       <InputField
-        icon={require('../assets/images/managers/icon-search.png')}
+        icon={searchIcon}
         typeInput="search"
         description="Search All"
-        size='17'
+        size="17"
       />
       <Logo />
       <SideBarMenu menuItems={MenuItems} />
@@ -54,7 +55,6 @@ const App = () => {
         <Button text="Edit" styleClass="btn-action" />
         <Button text="Delete" styleClass="btn-action" />
       </div>
-      
     </>
   );
 };
