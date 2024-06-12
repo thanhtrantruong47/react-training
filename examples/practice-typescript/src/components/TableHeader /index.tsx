@@ -1,5 +1,6 @@
 import User from 'scripts/types/user';
 import './index.scss';
+import Product from 'scripts/types/product';
 
 interface HeaderItemProps {
   label: string;
@@ -17,7 +18,7 @@ const HeaderItem = ({ label }: HeaderItemProps) => {
 };
 
 interface TableHeaderProps {
-  headers: User[];
+  headers: User[] | Product[];
 }
 
 const TableHeader = ({ headers = [] }: TableHeaderProps) => {

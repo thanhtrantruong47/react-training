@@ -4,6 +4,7 @@ import SideBar from 'components/SideBar';
 import SideBarMenu from 'components/SideBarMenu';
 import TableHeader from 'components/TableHeader ';
 import { MenuItems } from 'mocks/menu';
+import { Product } from 'mocks/product';
 import { User } from 'mocks/user';
 
 const App = () => {
@@ -23,6 +24,9 @@ const App = () => {
       </div>
       <div>
         <TableHeader headers={User} />
+      </div>
+      <div>
+        <TableHeader headers={Product} />
       </div>
     </>
   );
