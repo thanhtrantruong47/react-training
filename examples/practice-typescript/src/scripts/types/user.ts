@@ -2,11 +2,11 @@
  * Defines the structure of a user object.
  */
 interface User {
+  id: string;
   email: string;
-  first_name: string;
-  last_name: string;
-  phone_number: string;
-  id?: number;
+  firstName: string;
+  lastName: string;
+  phoneNumber: string;
 }
 
 export default User;

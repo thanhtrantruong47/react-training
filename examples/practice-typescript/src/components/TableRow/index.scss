@@ -10,3 +10,8 @@
   color: $color-table;
   font-size: 16px;
 }
+
+.table-item-action {
+  display: 'flex';
+  gap: '40px';
+}

@@ -26,6 +26,13 @@ const MenuItems = [
   },
 ];
 
+const editUser = () => {
+  console.log('edit');
+};
+const deleteUser = () => {
+  console.log('delete');
+};
+
 const App = () => {
   return (
     <>
@@ -58,13 +65,8 @@ const App = () => {
           firstName="tran "
           lastName="kim"
           phoneNumber="0132456789"
-        />
-         <TableRow
-          id="2"
-          email="kim@gmail.com"
-          firstName="tran "
-          lastName="kim"
-          phoneNumber="0132456789"
+          onEdit={editUser}
+          onDelete={deleteUser}
         />
       </table>
     </>
