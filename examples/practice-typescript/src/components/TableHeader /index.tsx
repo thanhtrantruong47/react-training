@@ -1,23 +1,34 @@
-import { UserItem } from 'mocks/user';
-import '../../styles/component.scss';
+import User from 'scripts/types/user';
+import './index.scss';
 
 interface HeaderItemProps {
   label: string;
 }
 
 const HeaderItem = ({ label }: HeaderItemProps) => {
-  return <th className="table-head">{label}</th>;
+  const formatLabel = (str: string) => {
+    return str
+      .replace(/\b\w/g, (char) => char.toUpperCase())
+      .replace(/([A-Z])/g, ' $1')
+      .trim();
+  };
+
+  return <th className="table-head">{formatLabel(label)}</th>;
 };
 
-const TableHeader = () => {
-  const headers = (
-    Object.keys(UserItem[0]) as Array<keyof (typeof UserItem)[0]>
-  ).filter((header) => header !== 'id');
+interface TableHeaderProps {
+  headers: User[];
+}
+
+const TableHeader = ({ headers = [] }: TableHeaderProps) => {
+  const headerKeys = Object.keys(headers[0]).filter(
+    (header) => header !== 'id'
+  );
 
   return (
     <tr>
       <HeaderItem label="#" />
-      {headers.map((header, index) => (
+      {headerKeys.map((header, index) => (
         <HeaderItem key={index} label={header} />
       ))}
       <HeaderItem label="Action" />

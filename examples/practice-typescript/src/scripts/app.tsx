@@ -4,7 +4,7 @@ import SideBar from 'components/SideBar';
 import SideBarMenu from 'components/SideBarMenu';
 import TableHeader from 'components/TableHeader ';
 import { MenuItems } from 'mocks/menu';
-
+import { User } from 'mocks/user';
 
 const App = () => {
   return (
@@ -22,7 +22,7 @@ const App = () => {
         <Button text="Delete" styleClass="btn-action" />
       </div>
       <div>
-        <TableHeader />
+        <TableHeader headers={User} />
       </div>
     </>
   );

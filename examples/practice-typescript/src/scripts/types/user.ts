@@ -3,10 +3,10 @@
  */
 interface User {
   email: string;
-  first_name: string;
-  last_name: string;
-  phone_number: string;
-  id?: number;
+  firstName: string;
+  lastName: string;
+  phoneNumber: string;
+  id: string;
 }
 
 export default User;

@@ -1,16 +1,30 @@
-export const UserItem = [
+export const User = [
   {
-    email: 'kim@gmail.com',
-    first_name: 'tran ',
-    last_name: 'kim',
-    phone_number: '0132456789',
-    id: '55',
+    id: '1',
+    email: 'thanh1@gmail.com',
+    firstName: 'thanh',
+    lastName: 'tran',
+    phoneNumber: '012346678',
   },
   {
-    email: 'kim@gmail.com',
-    first_name: 'tran ',
-    last_name: 'kim',
-    phone_number: '0132456789',
-    id: 'E8fRRTV',
+    id: '2',
+    email: 'thanh2@gmail.com',
+    firstName: 'thanh',
+    lastName: 'tran',
+    phoneNumber: '012346678',
+  },
+  {
+    id: '3',
+    email: 'thanh3@gmail.com',
+    firstName: 'thanh',
+    lastName: 'tran',
+    phoneNumber: '012346678',
+  },
+  {
+    id: '4',
+    email: 'thanh4@gmail.com',
+    firstName: 'thanh',
+    lastName: 'tran',
+    phoneNumber: '012346678',
   },
 ];
