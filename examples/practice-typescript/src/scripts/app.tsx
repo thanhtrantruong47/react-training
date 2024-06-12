@@ -3,7 +3,7 @@ import InputField from 'components/Input';
 import Logo from 'components/Logo/Logo';
 import SideBar from 'components/SideBar';
 import SideBarMenu from 'components/SideBarMenu';
-import TableHeader from 'components/TableHeader ';
+import TableHeader from 'components/TableHeader';
 import { MenuItems } from 'mocks/menu';
 import { Product } from 'mocks/product';
 import { User } from 'mocks/user';
