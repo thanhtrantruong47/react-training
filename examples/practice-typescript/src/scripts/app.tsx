@@ -51,14 +51,22 @@ const App = () => {
         <Button text="Edit" styleClass="btn-action" />
         <Button text="Delete" styleClass="btn-action" />
       </div>
-      <div>
+      <table>
         <TableRow
+          id="1"
           email="kim@gmail.com"
           firstName="tran "
           lastName="kim"
           phoneNumber="0132456789"
         />
-      </div>
+         <TableRow
+          id="2"
+          email="kim@gmail.com"
+          firstName="tran "
+          lastName="kim"
+          phoneNumber="0132456789"
+        />
+      </table>
     </>
   );
 };
