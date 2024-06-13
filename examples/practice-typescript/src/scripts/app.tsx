@@ -1,30 +1,12 @@
 import Button from 'components/Button';
+import InputField from 'components/Input';
 import Logo from 'components/Logo/Logo';
 import SideBar from 'components/SideBar';
 import SideBarMenu from 'components/SideBarMenu';
-import InputField from 'components/Input';
+import TableHead from 'components/TableHead';
+import { MenuItems } from 'mocks/menu';
+import { USER_TABLE_HEADERS, PRODUCT_TABLE_HEADERS } from './constants/user';
 import TableRow from 'components/TableRow';
-
-const MenuItems = [
-  {
-    id: '1',
-    text: 'User management',
-    router: '/component.html',
-    isActive: true,
-  },
-  {
-    id: '2',
-    text: 'Product management',
-    router: '/component.html',
-    isActive: false,
-  },
-  {
-    id: '2',
-    text: '',
-    router: '/component.html',
-    isActive: false,
-  },
-];
 
 const editUser = () => {
   console.log('edit');
@@ -39,14 +21,10 @@ const App = () => {
       <InputField
         icon={require('../assets/images/managers/icon-search.png')}
         typeInput="search"
-        description="Search All"
-        size="17"
+        placeholder="Search All"
+        iconSize={17}
       />
       <Logo />
-      <SideBarMenu menuItems={MenuItems} />
-      <div>
-        <Logo />
-      </div>
       <div>
         <SideBarMenu menuItems={MenuItems} />
       </div>
@@ -69,6 +47,12 @@ const App = () => {
           onDelete={deleteUser}
         />
       </table>
+      <div>
+        <TableHead headItems={USER_TABLE_HEADERS} />
+      </div>
+      <div>
+        <TableHead headItems={PRODUCT_TABLE_HEADERS} />
+      </div>
     </>
   );
 };
