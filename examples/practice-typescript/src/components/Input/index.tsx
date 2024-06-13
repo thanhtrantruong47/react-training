@@ -7,7 +7,7 @@ interface InputProps {
   iconSize: number;
 }
 
-const InputField = ({ icon, typeInput, placeholder, iconSize }: InputProps) => {
+const Input = ({ icon, typeInput, placeholder, iconSize }: InputProps) => {
   return (
     <div className="input-group">
       <img src={icon} alt="Icon" height={iconSize} width={iconSize} />
@@ -16,4 +16,4 @@ const InputField = ({ icon, typeInput, placeholder, iconSize }: InputProps) => {
   );
 };
 
-export default InputField;
+export default Input;

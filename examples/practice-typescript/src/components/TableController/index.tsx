@@ -1,11 +1,11 @@
 import Button from 'components/Button';
-import InputField from 'components/Input';
+import Input from 'components/Input';
 import searchIcon from '../../assets/images/managers/icon-search.png';
 import './index.scss';
 
 const TableController = () => (
   <div className="table-control">
-    <InputField
+    <Input
       icon={searchIcon}
       typeInput="search"
       placeholder="Search All"
