@@ -3,15 +3,15 @@
 .table-item {
   text-overflow: ellipsis;
   border-bottom: 1px solid $color-bg-wrapper;
-  max-width: 10rem;
-  min-height: 3.55rem;
-  padding: 1.2rem 0 1.25rem 1.85rem;
+  max-width: 200px;
+  height: 68px;
+  padding: 24px 0 25px 37px;
   overflow: hidden;
   color: $color-table;
   font-size: 16px;
 }
 
 .table-item-action {
-  display: 'flex';
-  gap: '40px';
+  display: flex;
+  gap: 40px;
 }
