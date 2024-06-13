@@ -2,30 +2,10 @@ import Button from 'components/Button';
 import Logo from 'components/Logo/Logo';
 import SideBar from 'components/SideBar';
 import SideBarMenu from 'components/SideBarMenu';
-import InputField from 'components/Input';
+import TableHead from 'components/TableHead';
+import { MenuItems } from 'mocks/menu';
+import { USER_TABLE_HEADERS, PRODUCT_TABLE_HEADERS } from './constants/user';
 import TableController from 'components/TableController';
-import searchIcon from 'assets/images/managers/icon-search.png';
-
-const MenuItems = [
-  {
-    id: '1',
-    text: 'User management',
-    router: '/component.html',
-    isActive: true,
-  },
-  {
-    id: '2',
-    text: 'Product management',
-    router: '/component.html',
-    isActive: false,
-  },
-  {
-    id: '2',
-    text: '',
-    router: '/component.html',
-    isActive: false,
-  },
-];
 
 const App = () => {
   return (
@@ -33,17 +13,7 @@ const App = () => {
       <div>
         <TableController />
       </div>
-      <InputField
-        icon={searchIcon}
-        typeInput="search"
-        description="Search All"
-        size="17"
-      />
       <Logo />
-      <SideBarMenu menuItems={MenuItems} />
-      <div>
-        <Logo />
-      </div>
       <div>
         <SideBarMenu menuItems={MenuItems} />
       </div>
@@ -54,6 +24,12 @@ const App = () => {
         <Button text="Add new" styleClass="btn-add" />
         <Button text="Edit" styleClass="btn-action" />
         <Button text="Delete" styleClass="btn-action" />
+      </div>
+      <div>
+        <TableHead headItems={USER_TABLE_HEADERS} />
+      </div>
+      <div>
+        <TableHead headItems={PRODUCT_TABLE_HEADERS} />
       </div>
     </>
   );

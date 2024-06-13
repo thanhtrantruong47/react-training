@@ -8,8 +8,8 @@ const TableController = () => (
     <InputField
       icon={searchIcon}
       typeInput="search"
-      description="Search All"
-      size="17"
+      placeholder="Search All"
+      iconSize={17}
     />
     <Button text="Add new" styleClass="btn-add" />
   </div>
