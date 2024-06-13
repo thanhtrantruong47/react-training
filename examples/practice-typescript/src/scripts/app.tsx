@@ -1,21 +1,18 @@
 import Button from 'components/Button';
-import InputField from 'components/Input';
 import Logo from 'components/Logo/Logo';
 import SideBar from 'components/SideBar';
 import SideBarMenu from 'components/SideBarMenu';
 import TableHead from 'components/TableHead';
 import { MenuItems } from 'mocks/menu';
 import { USER_TABLE_HEADERS, PRODUCT_TABLE_HEADERS } from './constants/user';
+import TableController from 'components/TableController';
 
 const App = () => {
   return (
     <>
-      <InputField
-        icon={require('../assets/images/managers/icon-search.png')}
-        typeInput="search"
-        placeholder="Search All"
-        iconSize={17}
-      />
+      <div>
+        <TableController />
+      </div>
       <Logo />
       <div>
         <SideBarMenu menuItems={MenuItems} />
