@@ -10,7 +10,7 @@ interface InputProps {
 const Input = ({ icon, typeInput, placeholder, iconSize }: InputProps) => {
   return (
     <div className="input-group">
-      <img src={icon} alt="Icon" height={iconSize} width={iconSize} />
+      <img src={icon} alt="Icon Search" height={iconSize} width={iconSize} />
       <input type={typeInput} placeholder={placeholder} />
     </div>
   );
