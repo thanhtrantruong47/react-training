@@ -3,15 +3,15 @@ import '../../styles/component.scss';
 interface InputProps {
   icon: string;
   typeInput: string;
-  description: string;
-  size: string;
+  placeholder: string;
+  iconSize: number;
 }
 
-const InputField = ({ icon, typeInput, description, size }: InputProps) => {
+const InputField = ({ icon, typeInput, placeholder, iconSize }: InputProps) => {
   return (
     <div className="input-group">
-      <img src={icon} alt="Icon" height={size} width={size} />
-      <input type={typeInput} placeholder={description} />
+      <img src={icon} alt="Icon" height={iconSize} width={iconSize} />
+      <input type={typeInput} placeholder={placeholder} />
     </div>
   );
 };
