@@ -21,12 +21,12 @@ const TableRow = ({
   onDelete,
 }: TableRowProps) => (
   <tr key={id}>
-    <td className="table-item">{id}</td>
-    <td className="table-item">{email}</td>
-    <td className="table-item">{firstName}</td>
-    <td className="table-item">{lastName}</td>
-    <td className="table-item">{phoneNumber}</td>
-    <td className="table-item table-item-action">
+    <td className="table-cell">{id}</td>
+    <td className="table-cell">{email}</td>
+    <td className="table-cell">{firstName}</td>
+    <td className="table-cell">{lastName}</td>
+    <td className="table-cell">{phoneNumber}</td>
+    <td className="table-cell table-cell-action">
       <Button text="Edit" styleClass="btn-action" onClick={onEdit} />
       <Button text="Delete" styleClass="btn-action" onClick={onDelete} />
     </td>

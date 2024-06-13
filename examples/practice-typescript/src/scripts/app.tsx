@@ -7,12 +7,10 @@ import { MenuItems } from 'mocks/menu';
 import { USER_TABLE_HEADERS, PRODUCT_TABLE_HEADERS } from './constants/user';
 import TableRow from 'components/TableRow';
 
-const editUser = () => {
-  console.log('edit');
-};
-const deleteUser = () => {
-  console.log('delete');
-};
+const editUser = () => console.log('edit');
+
+const deleteUser = () => console.log('delete');
+
 import TableController from 'components/TableController';
 
 const App = () => {
