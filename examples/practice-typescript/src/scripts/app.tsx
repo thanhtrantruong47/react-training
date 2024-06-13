@@ -5,8 +5,7 @@ import SideBar from 'components/SideBar';
 import SideBarMenu from 'components/SideBarMenu';
 import TableHead from 'components/TableHead';
 import { MenuItems } from 'mocks/menu';
-import { Product } from 'mocks/product';
-import { User } from 'mocks/user';
+import { USER_TABLE_HEADERS, PRODUCT_TABLE_HEADERS } from './constants/user';
 
 const App = () => {
   return (
@@ -14,8 +13,8 @@ const App = () => {
       <InputField
         icon={require('../assets/images/managers/icon-search.png')}
         typeInput="search"
-        description="Search All"
-        size="17"
+        placeholder="Search All"
+        iconSize="17"
       />
       <Logo />
       <div>
@@ -30,10 +29,10 @@ const App = () => {
         <Button text="Delete" styleClass="btn-action" />
       </div>
       <div>
-        <TableHead headItems={User} />
+        <TableHead headItems={USER_TABLE_HEADERS} />
       </div>
       <div>
-        <TableHead headItems={Product} />
+        <TableHead headItems={PRODUCT_TABLE_HEADERS} />
       </div>
     </>
   );

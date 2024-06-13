@@ -1,34 +1,16 @@
 import './index.scss';
 
-interface TableHeadProps<T> {
-  headItems: T[];
+interface TableHeadProps {
+  headItems: string[];
 }
 
-/**
- * Formats a string by capitalizing the first letter of each word
- * and inserting a space before each capital letter (except the first letter).
- * @param {string} str - The string to format.
- * @returns {string} The formatted string.
- */
-const formatHeadItem = (str: string) => {
-  return str
-    .replace(/\b\w/g, (char) => char.toUpperCase())
-    .replace(/([A-Z])/g, ' $1')
-    .trim();
-};
-
-const TableHead = <T,>({ headItems }: TableHeadProps<T>) => {
-  // get the keys in the array in the first position such as email, first name, last name without taking the id and save it in an array.
-  const headKeys: string[] = Object.keys(headItems[0]).filter(
-    (key) => key !== 'id'
-  );
-
+const TableHead = ({ headItems = [] }: TableHeadProps) => {
   return (
     <tr>
       <th className="table-head">#</th>
-      {headKeys.map((headKey, index) => (
-        <th className="table-head" key={index}>
-          {formatHeadItem(headKey)}
+      {headItems.map((item, index) => (
+        <th key={index} className="table-head">
+          {item}
         </th>
       ))}
       <th className="table-head">Action</th>
