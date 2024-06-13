@@ -2,7 +2,7 @@ interface Product {
   id: number;
   name: string;
   size: string;
-  price: string;
+  price: number;
 }
 
 export default Product;

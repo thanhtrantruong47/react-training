@@ -4,7 +4,7 @@ interface InputProps {
   icon: string;
   typeInput: string;
   placeholder: string;
-  iconSize: string;
+  iconSize: number;
 }
 
 const InputField = ({ icon, typeInput, placeholder, iconSize }: InputProps) => {

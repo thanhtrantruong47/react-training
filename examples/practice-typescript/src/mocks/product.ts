@@ -5,24 +5,24 @@ export const Product: Product[] = [
     id: 1,
     name: 'Iphone',
     size: 'small',
-    price: '113000',
+    price: 11300,
   },
   {
     id: 2,
     name: 'IphoneX',
     size: 'small',
-    price: '23000',
+    price: 23000,
   },
   {
     id: 3,
     name: 'Iphone15',
     size: 'small',
-    price: '32000',
+    price: 14500,
   },
   {
     id: 4,
     name: 'Iphone20',
     size: 'small',
-    price: '30000',
+    price: 7500,
   },
 ];

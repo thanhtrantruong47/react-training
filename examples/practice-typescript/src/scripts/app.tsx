@@ -14,7 +14,7 @@ const App = () => {
         icon={require('../assets/images/managers/icon-search.png')}
         typeInput="search"
         placeholder="Search All"
-        iconSize="17"
+        iconSize={17}
       />
       <Logo />
       <div>
