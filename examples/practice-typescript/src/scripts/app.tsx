@@ -10,6 +10,7 @@ import TableBody from 'components/TableBody';
 import { UserMockList, UserMock } from 'mocks/user';
 import { ProductMockList } from 'mocks/product';
 import TableRow from 'components/TableRow';
+import TableContainer from 'components/TableContainer';
 
 const bindEdit = () => console.log('edit');
 
@@ -50,6 +51,7 @@ const App = () => {
         <TableHead headItems={PRODUCT_TABLE_HEADERS} />
         <TableBody items={ProductMockList} />
       </table>
+      <TableContainer />
     </>
   );
 };
