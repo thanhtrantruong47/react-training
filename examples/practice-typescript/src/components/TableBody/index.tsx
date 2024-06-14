@@ -2,17 +2,17 @@ import TableRow from 'components/TableRow';
 import User from 'scripts/types/user';
 
 interface TableListProps {
-  usersItem: User[];
+  children: User[];
 }
 
 const editUser = () => console.log('edit');
 
 const deleteUser = () => console.log('delete');
 
-const TableBody = ({ usersItem = [] }: TableListProps) => {
+const TableBody = ({ children = [] }: TableListProps) => {
   return (
-    <>
-      {usersItem.map(({ id, email, firstName, lastName, phoneNumber }) => (
+    <tbody>
+      {children.map(({ id, email, firstName, lastName, phoneNumber }) => (
         <TableRow
           id={id}
           email={email}
@@ -23,7 +23,7 @@ const TableBody = ({ usersItem = [] }: TableListProps) => {
           onDelete={deleteUser}
         />
       ))}
-    </>
+    </tbody>
   );
 };
 

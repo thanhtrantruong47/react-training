@@ -14,6 +14,7 @@ const deleteUser = () => console.log('delete');
 import TableController from 'components/TableController';
 import TableBody from 'components/TableBody';
 import { User } from 'mocks/user';
+import { Product } from 'mocks/product';
 
 const App = () => {
   return (
@@ -51,9 +52,8 @@ const App = () => {
         <TableHead headItems={PRODUCT_TABLE_HEADERS} />
       </div>
       <table>
-        <tbody>
-          <TableBody usersItem={User} />
-        </tbody>
+        <TableHead headItems={USER_TABLE_HEADERS} />
+        <TableBody children={User} />
       </table>
     </>
   );
