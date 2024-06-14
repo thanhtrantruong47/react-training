@@ -5,16 +5,22 @@ interface TableListProps {
   usersItem: User[];
 }
 
+const editUser = () => console.log('edit');
+
+const deleteUser = () => console.log('delete');
+
 const TableBody = ({ usersItem = [] }: TableListProps) => {
   return (
     <>
       {usersItem.map(({ id, email, firstName, lastName, phoneNumber }) => (
         <TableRow
+          id={id}
           email={email}
           firstName={firstName}
           lastName={lastName}
           phoneNumber={phoneNumber}
-          id={id}
+          onEdit={editUser}
+          onDelete={deleteUser}
         />
       ))}
     </>

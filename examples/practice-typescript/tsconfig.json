@@ -23,8 +23,8 @@
     "noUnusedParameters": true,
     "useUnknownInCatchVariables": true,
     "moduleResolution": "node",
-    "strictNullChecks":false,
-    "baseUrl": "./src",
+    "strictNullChecks": false,
+    "baseUrl": "./src"
   },
   "include": ["./src"],
   "exclude": ["node_modules"]

@@ -100,6 +100,15 @@ const DISPLAY_USER = (user: User, index: number): string => {
           </tr>`;
 };
 
+const USER_TABLE_HEADERS: string[] = [
+  'Email',
+  'First Name',
+  'Last Name',
+  'Phone Number',
+];
+
+const PRODUCT_TABLE_HEADERS: string[] = ['Name', 'Size', 'Price'];
+
 // Exporting all constants and enums so they can be used in other modules
 export {
   MAX_LENGTH_FIELD,
@@ -116,4 +125,6 @@ export {
   DISPLAY_USER,
   DISPLAY_HEAD_TABLE,
   DISPLAY_TABLE_EMPTY,
+  USER_TABLE_HEADERS,
+  PRODUCT_TABLE_HEADERS,
 };
