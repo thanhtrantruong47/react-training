@@ -1,26 +1,25 @@
 import TableRow from 'components/TableRow';
-import User from 'scripts/types/user';
 
-interface TableListProps {
-  children: User[];
+interface TableListProps<T> {
+  items: T[];
 }
 
-const editUser = () => console.log('edit');
+const bindEdit = () => console.log('edit');
 
-const deleteUser = () => console.log('delete');
+const bindDelete = () => console.log('delete');
 
-const TableBody = ({ children = [] }: TableListProps) => {
+// T must be a numeric id attribute type.
+const TableBody = <T extends { id: number }>({
+  items = [],
+}: TableListProps<T>) => {
   return (
     <tbody>
-      {children.map(({ id, email, firstName, lastName, phoneNumber }) => (
+      {items.map((item) => (
         <TableRow
-          id={id}
-          email={email}
-          firstName={firstName}
-          lastName={lastName}
-          phoneNumber={phoneNumber}
-          onEdit={editUser}
-          onDelete={deleteUser}
+          key={item.id}
+          item={item}
+          onEdit={bindEdit}
+          onDelete={bindDelete}
         />
       ))}
     </tbody>

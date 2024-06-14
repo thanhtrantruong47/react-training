@@ -1,6 +1,6 @@
 import Product from 'scripts/types/product';
 
-export const Product: Product[] = [
+export const ProductListItems: Product[] = [
   {
     id: 1,
     name: 'Iphone',
