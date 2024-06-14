@@ -8,7 +8,7 @@ const TableContainer = () => {
   return (
     <div className="table-container">
       <TableController />
-      <Table headItems={USER_TABLE_HEADERS} listItemMock={UserMockList} />
+      <Table headItems={USER_TABLE_HEADERS} listItems={UserMockList} />
     </div>
   );
 };

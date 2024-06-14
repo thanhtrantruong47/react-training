@@ -4,17 +4,17 @@ import './index.scss';
 
 interface TableProps<T> {
   headItems: string[];
-  listItemMock: T[];
+  listItems: T[];
 }
 
 const Table = <T extends { id: number }>({
   headItems,
-  listItemMock = [],
+  listItems = [],
 }: TableProps<T>) => {
   return (
     <table className="table">
       <TableHead headItems={headItems} />
-      <TableBody items={listItemMock} />
+      <TableBody items={listItems} />
     </table>
   );
 };
