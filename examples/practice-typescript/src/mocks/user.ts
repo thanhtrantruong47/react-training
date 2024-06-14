@@ -1,6 +1,6 @@
 import User from 'scripts/types/user';
 
-export const UserListItems: User[] = [
+export const UserMockList: User[] = [
   {
     id: 1,
     email: 'thanh1@gmail.com',
@@ -31,7 +31,7 @@ export const UserListItems: User[] = [
   },
 ];
 
-export const UserItem: User = {
+export const UserMock: User = {
   id: 1,
   email: 'thanh1@gmail.com',
   firstName: 'thanh',

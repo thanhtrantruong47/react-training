@@ -7,8 +7,8 @@ import { MenuItems } from 'mocks/menu';
 import { USER_TABLE_HEADERS, PRODUCT_TABLE_HEADERS } from './constants/user';
 import TableController from 'components/TableController';
 import TableBody from 'components/TableBody';
-import { UserListItems, UserItem } from 'mocks/user';
-import { ProductListItems } from 'mocks/product';
+import { UserMockList, UserMock } from 'mocks/user';
+import { ProductMockList } from 'mocks/product';
 import TableRow from 'components/TableRow';
 
 const bindEdit = () => console.log('edit');
@@ -34,7 +34,7 @@ const App = () => {
         <Button text="Delete" styleClass="btn-action" />
       </div>
       <table>
-        <TableRow item={UserItem} onEdit={bindEdit} onDelete={bindDelete} />
+        <TableRow item={UserMock} onEdit={bindEdit} onDelete={bindDelete} />
       </table>
       <div>
         <TableHead headItems={USER_TABLE_HEADERS} />
@@ -44,11 +44,11 @@ const App = () => {
       </div>
       <table>
         <TableHead headItems={USER_TABLE_HEADERS} />
-        <TableBody items={UserListItems} />
+        <TableBody items={UserMockList} />
       </table>
       <table>
         <TableHead headItems={PRODUCT_TABLE_HEADERS} />
-        <TableBody items={ProductListItems} />
+        <TableBody items={ProductMockList} />
       </table>
     </>
   );
