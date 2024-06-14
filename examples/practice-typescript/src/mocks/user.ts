@@ -1,6 +1,6 @@
 import User from 'scripts/types/user';
 
-export const User: User[] = [
+export const UserMockList: User[] = [
   {
     id: 1,
     email: 'thanh1@gmail.com',
@@ -30,3 +30,11 @@ export const User: User[] = [
     phoneNumber: '012346678',
   },
 ];
+
+export const UserMock: User = {
+  id: 1,
+  email: 'thanh1@gmail.com',
+  firstName: 'thanh',
+  lastName: 'tran',
+  phoneNumber: '012346678',
+};

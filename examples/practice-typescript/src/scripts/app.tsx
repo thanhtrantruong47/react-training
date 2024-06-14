@@ -5,13 +5,15 @@ import SideBarMenu from 'components/SideBarMenu';
 import TableHead from 'components/TableHead';
 import { MenuItems } from 'mocks/menu';
 import { USER_TABLE_HEADERS, PRODUCT_TABLE_HEADERS } from './constants/user';
+import TableController from 'components/TableController';
+import TableBody from 'components/TableBody';
+import { UserMockList, UserMock } from 'mocks/user';
+import { ProductMockList } from 'mocks/product';
 import TableRow from 'components/TableRow';
 
-const editUser = () => console.log('edit');
+const bindEdit = () => console.log('edit');
 
-const deleteUser = () => console.log('delete');
-
-import TableController from 'components/TableController';
+const bindDelete = () => console.log('delete');
 
 const App = () => {
   return (
@@ -32,15 +34,7 @@ const App = () => {
         <Button text="Delete" styleClass="btn-action" />
       </div>
       <table>
-        <TableRow
-          id="1"
-          email="kim@gmail.com"
-          firstName="tran "
-          lastName="kim"
-          phoneNumber="0132456789"
-          onEdit={editUser}
-          onDelete={deleteUser}
-        />
+        <TableRow item={UserMock} onEdit={bindEdit} onDelete={bindDelete} />
       </table>
       <div>
         <TableHead headItems={USER_TABLE_HEADERS} />
@@ -48,6 +42,14 @@ const App = () => {
       <div>
         <TableHead headItems={PRODUCT_TABLE_HEADERS} />
       </div>
+      <table>
+        <TableHead headItems={USER_TABLE_HEADERS} />
+        <TableBody items={UserMockList} />
+      </table>
+      <table>
+        <TableHead headItems={PRODUCT_TABLE_HEADERS} />
+        <TableBody items={ProductMockList} />
+      </table>
     </>
   );
 };
