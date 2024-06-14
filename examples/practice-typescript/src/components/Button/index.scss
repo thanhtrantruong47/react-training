@@ -1,8 +1,11 @@
+@import '../../styles/bases/variable.scss';
+
 .btn {
   letter-spacing: 0;
   color: $color-text-secondary;
   border: 0.067rem solid;
   border-radius: 1.15rem;
+  cursor: pointer;
 }
 
 .btn-add {
@@ -25,6 +28,7 @@
   text-decoration: none;
   border: none;
   padding: 0;
+  font-weight: 400;
 }
 
 .btn-action:hover {
