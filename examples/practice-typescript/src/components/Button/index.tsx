@@ -1,4 +1,4 @@
-import '../../styles/component.scss';
+import './index.scss';
 
 interface ButtonProps {
   text: string;
