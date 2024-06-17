@@ -2,6 +2,7 @@ import "./App.css";
 import Profile from "./components/Profile/Profile";
 import { Person } from "./types/Person";
 import ScientistList from "./components/ScientistList";
+import Gallery from "./components/Gallery";
 
 // data for https://react.dev/learn/passing-props-to-a-component#challenges
 const PERSON: Person[] = [
@@ -43,6 +44,11 @@ const App = () => {
       <div>
         <h1>Notable Scientists</h1>
         {<ScientistList scientists={PERSON} />}
+      </div>
+      <h2>Example state memory</h2>
+      {/* https://react.dev/learn/state-a-components-memory */}
+      <div>
+        <Gallery />
       </div>
     </>
   );
