@@ -45,7 +45,6 @@ const App = () => {
         <h1>Notable Scientists</h1>
         {<ScientistList scientists={PERSON} />}
       </div>
-      <h2>Example state memory</h2>
       {/* https://react.dev/learn/state-a-components-memory */}
       <div>
         <Gallery />
