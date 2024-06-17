@@ -3,6 +3,7 @@ import Profile from "./components/Profile/Profile";
 import { Person } from "./types/Person";
 import ScientistList from "./components/ScientistList";
 import Gallery from "./components/Gallery";
+import SyncedInputs from "./components/SyncedInput";
 
 // data for https://react.dev/learn/passing-props-to-a-component#challenges
 const PERSON: Person[] = [
@@ -49,6 +50,7 @@ const App = () => {
       <div>
         <Gallery />
       </div>
+      <SyncedInputs />
     </>
   );
 };
