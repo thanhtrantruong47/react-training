@@ -1,22 +1,22 @@
-import React, { useState } from "react";
+import { ChangeEvent, useState } from "react";
 
 interface InputProps {
   label: string;
   value: string;
-  onChange: (value: string) => void;
+  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
 }
 
-const SyncedInputs: React.FC = () => {
+const SyncedInputs = () => {
   const [text, setText] = useState("");
 
-  const handleChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
-    setText(e.target.value);
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setText(event.target.value);
   };
 
   return (
     <>
-      <Input label="First input" value={text} onChange={() => handleChange} />
-      <Input label="Second input" value={text} onChange={() => handleChange} />
+      <Input label="First input" value={text} onChange={handleChange} />
+      <Input label="Second input" value={text} onChange={handleChange} />
     </>
   );
 };
@@ -25,7 +25,7 @@ const Input = ({ label, value, onChange }: InputProps) => {
   return (
     <label>
       {label}
-      <input type="text" value={value} onChange={() => onChange} />
+      <input type="text" value={value} onChange={onChange} />
     </label>
   );
 };
