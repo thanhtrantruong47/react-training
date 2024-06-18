@@ -4,7 +4,6 @@ const Counter = () => {
   const [count, setCount] = useState(0);
 
   const onTick = () => {
-    console.log(count);
     setCount((c) => c + 1);
   };
 
