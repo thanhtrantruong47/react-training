@@ -8,8 +8,8 @@ import SyncedInputs from "./components/SyncedInput";
 import DrinkList from "./components/DrinkList";
 import PackingList from "./components/Item";
 import PackingListChallenge from "./components/ItemChallenge";
-import CounterState from "./components/useState/add-state";
-import ResetState from "./components/Reset-state";
+import CounterState from "./components/CounterState";
+import ResetState from "./components/ResetState";
 import Form from "./components/Form";
 
 // data for https://react.dev/learn/passing-props-to-a-component#challenges

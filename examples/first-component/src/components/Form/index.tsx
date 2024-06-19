@@ -48,32 +48,35 @@ const Form = () => {
     });
   };
 
+  const { name, artwork } = person;
+  const { title, city, image } = artwork;
+
   return (
     <>
       <label>
         Name:
-        <input value={person.name} onChange={handleNameChange} />
+        <input value={name} onChange={handleNameChange} />
       </label>
       <label>
         Title:
-        <input value={person.artwork.title} onChange={handleTitleChange} />
+        <input value={title} onChange={handleTitleChange} />
       </label>
       <label>
         City:
-        <input value={person.artwork.city} onChange={handleCityChange} />
+        <input value={city} onChange={handleCityChange} />
       </label>
       <label>
         Image:
-        <input value={person.artwork.image} onChange={handleImageChange} />
+        <input value={image} onChange={handleImageChange} />
       </label>
       <p>
-        <i>{person.artwork.title}</i>
+        <i>{title}</i>
         {" by "}
-        {person.name}
+        {name}
         <br />
-        (located in {person.artwork.city})
+        (located in {city})
       </p>
-      <img src={person.artwork.image} alt={person.artwork.title} />
+      <img src={image} alt={title} />
     </>
   );
 };
