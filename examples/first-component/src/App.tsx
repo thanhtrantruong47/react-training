@@ -5,9 +5,11 @@ import ScientistList from "./components/ScientistList";
 import Gallery from "./components/Gallery";
 import Counter from "./components/Counter/Counter";
 import SyncedInputs from "./components/SyncedInput";
+import LightSwitch from "./components/LightSwitch";
 import DrinkList from "./components/DrinkList";
 import PackingList from "./components/Item";
 import PackingListChallenge from "./components/ItemChallenge";
+import Color from "./components/Color/Color";
 
 // data for https://react.dev/learn/passing-props-to-a-component#challenges
 const PERSON: Person[] = [
@@ -59,6 +61,7 @@ const App = () => {
       </div>
       <SyncedInputs />
       <div>
+        <LightSwitch />
         <DrinkList />
       </div>
       <div>
@@ -66,6 +69,9 @@ const App = () => {
       </div>
       <div>
         <PackingListChallenge />
+      </div>
+      <div>
+        <Color />
       </div>
     </>
   );
