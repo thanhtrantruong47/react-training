@@ -8,6 +8,7 @@ import SyncedInputs from "./components/SyncedInput";
 import DrinkList from "./components/DrinkList";
 import PackingList from "./components/Item";
 import PackingListChallenge from "./components/ItemChallenge";
+import CounterState from "./components/useState/add-state";
 
 // data for https://react.dev/learn/passing-props-to-a-component#challenges
 const PERSON: Person[] = [
@@ -67,6 +68,7 @@ const App = () => {
       <div>
         <PackingListChallenge />
       </div>
+      <CounterState />
     </>
   );
 };
