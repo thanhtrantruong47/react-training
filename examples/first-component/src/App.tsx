@@ -10,6 +10,7 @@ import PackingList from "./components/Item";
 import PackingListChallenge from "./components/ItemChallenge";
 import CounterState from "./components/useState/add-state";
 import ResetState from "./components/Reset-state";
+import Form from "./components/Form";
 
 // data for https://react.dev/learn/passing-props-to-a-component#challenges
 const PERSON: Person[] = [
@@ -72,6 +73,9 @@ const App = () => {
       <CounterState />
       <div>
         <ResetState />
+      </div>
+      <div>
+        <Form />
       </div>
     </>
   );
