@@ -6,11 +6,13 @@ export interface Todo {
   completed: boolean;
 }
 
-export const createTodo = (text: string, completed: boolean = false): Todo => ({
-  id: nextId++,
-  text,
-  completed,
-});
+export const createTodo = (text: string, completed: boolean = false): Todo => {
+  return {
+    id: nextId++,
+    text,
+    completed,
+  };
+};
 
 export const initialTodos: Todo[] = [
   createTodo("Get apples", true),
