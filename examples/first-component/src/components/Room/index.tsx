@@ -7,24 +7,40 @@ interface RoomProps {
   roomId: string;
 }
 
-const Room = ({ roomId }: RoomProps) => {
+const Room = ({ roomId = "" }: RoomProps) => {
   const [message, setMessage] = useState("");
 
   useEffect(() => {
-    const options = {
-      serverUrl: serverUrl,
-      roomId: roomId,
-    };
-    const connection = createConnection(options);
-    connection.connect();
+    if (roomId !== "") {
+      const options = {
+        serverUrl: serverUrl,
+        roomId: roomId,
+      };
+      const connection = createConnection(options);
+      connection.connect();
 
-    return () => connection.disconnect();
+      return () => connection.disconnect();
+    }
+    return () => {};
   }, [roomId]);
 
   return (
     <>
-      <h1>Welcome to the {roomId} room!</h1>
-      <input value={message} onChange={(e) => setMessage(e.target.value)} />
+      {roomId !== "" ? (
+        <>
+          <h1>Welcome to the {roomId} room!</h1>
+          <input
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            placeholder="Type your message..."
+          />
+        </>
+      ) : (
+        <>
+          <h1>No room selected</h1>
+          <p>Please select a room</p>
+        </>
+      )}
     </>
   );
 };

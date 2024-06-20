@@ -4,8 +4,8 @@ import { useState } from "react";
 import Room from "../Room";
 
 const ChatRoom = () => {
-  const [roomId, setRoomId] = useState("general");
-  
+  const [roomId, setRoomId] = useState("");
+
   return (
     <>
       <label>
@@ -14,6 +14,7 @@ const ChatRoom = () => {
           <option value="general">general</option>
           <option value="travel">travel</option>
           <option value="music">music</option>
+          <option value=""></option>
         </select>
       </label>
       <hr />

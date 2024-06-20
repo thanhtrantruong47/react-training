@@ -27,10 +27,8 @@ const TodoList = () => {
       </label>
       <NewTodo onAdd={handleTodoAdd} />
       <ul>
-        {visibleTodos.map((todo) => (
-          <li key={todo.id}>
-            {todo.completed ? <s>{todo.text}</s> : todo.text}
-          </li>
+        {visibleTodos.map(({ id, description, completed }) => (
+          <li key={id}>{completed ? <s>{description}</s> : description}</li>
         ))}
       </ul>
       <footer>{activeTodos.length} todos left</footer>

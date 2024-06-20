@@ -3,20 +3,23 @@ import { Todo } from "../../types/Todo";
 let nextId = 0;
 
 interface createTodoProps {
-  text: string;
+  description: string;
   completed: boolean;
 }
 
-export const createTodo = ({ text, completed = false }: createTodoProps) => {
+export const createTodo = ({
+  description,
+  completed = false,
+}: createTodoProps) => {
   return {
     id: nextId++,
-    text,
+    description,
     completed,
   };
 };
 
 export const initialTodos: Todo[] = [
-  createTodo({ text: "Get apples", completed: true }),
-  createTodo({ text: "Get oranges", completed: true }),
-  createTodo({ text: "Get carrots", completed: false }),
+  createTodo({ description: "Get apples", completed: true }),
+  createTodo({ description: "Get oranges", completed: true }),
+  createTodo({ description: "Get carrots", completed: false }),
 ];

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { createTodo } from "../TodoList/todos";
 import { Todo } from "../../types/Todo";
 
@@ -6,16 +6,15 @@ interface NewTodoProps {
   onAdd: (newTodo: Todo) => void;
 }
 
-const NewTodo: React.FC<NewTodoProps> = ({ onAdd }) => {
+const NewTodo = ({ onAdd }: NewTodoProps) => {
   const [text, setText] = useState("");
 
   const handleAddClick = () => {
-    onAdd(
-      createTodo({
-        text: text,
-        completed: false,
-      })
-    );
+    const newTodo = createTodo({
+      description: text,
+      completed: false,
+    });
+    onAdd(newTodo);
     setText("");
   };
 
