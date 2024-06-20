@@ -7,7 +7,7 @@ interface RoomProps {
   roomId: string;
 }
 
-const Room = ({ roomId = "" }: RoomProps) => {
+const Room = ({ roomId }: RoomProps) => {
   const [message, setMessage] = useState("");
 
   useEffect(() => {
