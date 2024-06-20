@@ -1,11 +1,9 @@
 // https://react.dev/learn/you-might-not-need-an-effect#challenges
 
 import { useState } from "react";
-import { createTodo, initialTodos, Todo } from "./todos";
-
-interface NewTodoProps {
-  onAdd: (newTodo: Todo) => void;
-}
+import { initialTodos } from "./todos";
+import NewTodo from "../NewTodo";
+import { Todo } from "../../types/Todo";
 
 const TodoList = () => {
   const [todos, setTodos] = useState(initialTodos);
@@ -36,22 +34,6 @@ const TodoList = () => {
         ))}
       </ul>
       <footer>{activeTodos.length} todos left</footer>
-    </>
-  );
-};
-
-const NewTodo = ({ onAdd }: NewTodoProps) => {
-  const [text, setText] = useState("");
-
-  const handleAddClick = () => {
-    setText("");
-    onAdd(createTodo(text));
-  };
-
-  return (
-    <>
-      <input value={text} onChange={(e) => setText(e.target.value)} />
-      <button onClick={handleAddClick}>Add</button>
     </>
   );
 };

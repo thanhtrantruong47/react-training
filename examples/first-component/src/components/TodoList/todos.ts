@@ -1,12 +1,13 @@
+import { Todo } from "../../types/Todo";
+
 let nextId = 0;
 
-export interface Todo {
-  id: number;
+interface createTodoProps {
   text: string;
   completed: boolean;
 }
 
-export const createTodo = (text: string, completed: boolean = false): Todo => {
+export const createTodo = ({ text, completed = false }: createTodoProps) => {
   return {
     id: nextId++,
     text,
@@ -15,7 +16,7 @@ export const createTodo = (text: string, completed: boolean = false): Todo => {
 };
 
 export const initialTodos: Todo[] = [
-  createTodo("Get apples", true),
-  createTodo("Get oranges", true),
-  createTodo("Get carrots"),
+  createTodo({ text: "Get apples", completed: true }),
+  createTodo({ text: "Get oranges", completed: true }),
+  createTodo({ text: "Get carrots", completed: false }),
 ];
