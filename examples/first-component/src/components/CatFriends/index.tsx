@@ -27,14 +27,14 @@ const CatFriends = () => {
         <ul className="list" ref={listRef}>
           <li>
             <img
-              className="item"
+              className="item-image"
               src="https://www.vietnamworks.com/hrinsider/wp-content/uploads/2023/12/hinh-thien-nhien-3d-002.jpg"
               alt="Tom"
             />
           </li>
           <li>
             <img
-              className="item-image-image"
+              className="item-image"
               src="https://www.vietnamworks.com/hrinsider/wp-content/uploads/2023/12/hinh-thien-nhien-3d-003.jpg"
               alt="Maru"
             />
