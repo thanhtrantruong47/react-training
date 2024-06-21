@@ -2,7 +2,7 @@ import { useRef } from "react";
 import "./index.css";
 
 const CatFriends = () => {
-  const listRef = useRef(document.createElement("ul"));
+  const listRef = useRef(null);
 
   const scrollToIndex = (index: number) => {
     const listNode = listRef.current;
