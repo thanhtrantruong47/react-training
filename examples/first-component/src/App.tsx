@@ -10,6 +10,7 @@ import DrinkList from "./components/DrinkList";
 import PackingList from "./components/Item";
 import PackingListChallenge from "./components/ItemChallenge";
 import Color from "./components/Color/Color";
+import CatFriends from "./components/CatFriends";
 
 // data for https://react.dev/learn/passing-props-to-a-component#challenges
 const PERSON: Person[] = [
@@ -72,6 +73,9 @@ const App = () => {
       </div>
       <div>
         <Color />
+      </div>
+      <div>
+        <CatFriends />
       </div>
     </>
   );
