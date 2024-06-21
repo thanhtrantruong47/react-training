@@ -1,0 +1,10 @@
+.list {
+  display: flex;
+  max-width: 300px;
+  overflow: auto;
+}
+
+.item-image {
+  width: 300px;
+  max-height: 300px;
+}
