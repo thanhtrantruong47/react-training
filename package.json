@@ -11,8 +11,14 @@
     "prepare": "husky install",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "chromatic": "chromatic",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "chromatic": "npx chromatic --project-token=chpt_6760c0e037ae0dd",
+    "test": "jest --passWithNoTests",
+    "precommit": "npm run lint && npm test"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run precommit"
+    }
   },
   "dependencies": {
     "react": "^18.3.1",
@@ -45,6 +51,7 @@
     "eslint-plugin-storybook": "^0.8.0",
     "globals": "^15.6.0",
     "husky": "^8.0.0",
+    "jest": "^29.7.0",
     "prettier": "3.3.2",
     "storybook": "^8.1.10",
     "typescript": "^5.2.2",
