@@ -1,0 +1,35 @@
+.icon-manager {
+  background-image: url("../assets/images/managers/logo-manager.svg");
+  @include min-size(toRem(45px), toRem(45px));
+  background-repeat: no-repeat;
+}
+
+.icon-mail {
+  background-image: url("../assets/images/managers/mail.png");
+  @include width-height(toRem(20px), toRem(20px));
+  background-repeat: no-repeat;
+}
+
+.icon-search {
+  background-image: url("../assets/images/managers/icon-search.png");
+  @include width-height(toRem(17px), toRem(17px));
+  background-repeat: no-repeat;
+}
+
+.icon-filter {
+  background-image: url("../assets/images/managers/filter.svg");
+  @include width-height(toRem(24px), toRem(24px));
+  background-repeat: no-repeat;
+}
+
+.icon-prev {
+  background-image: url("../assets/images/managers/prev.svg");
+  @include width-height(toRem(20px), toRem(20px));
+  background-repeat: no-repeat;
+}
+
+.icon-next {
+  background-image: url("../assets/images/managers/next.svg");
+  @include width-height(toRem(20px), toRem(20px));
+  background-repeat: no-repeat;
+}

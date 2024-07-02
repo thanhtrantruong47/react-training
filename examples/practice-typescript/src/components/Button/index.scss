@@ -1,0 +1,36 @@
+@import '../../styles/bases/variable.scss';
+
+.btn {
+  letter-spacing: 0;
+  color: $color-text-secondary;
+  border: 0.067rem solid;
+  border-radius: 1.15rem;
+  cursor: pointer;
+}
+
+.btn-add {
+  color: $color-text-secondary;
+  background-color: $color-btn-in;
+  border-radius: 0.2rem;
+  width: 5.625rem;
+  height: 2.5rem;
+  margin-right: 1.3rem;
+}
+
+.btn-add:hover {
+  background-color: $color-btn;
+  color: $color-primary;
+}
+
+.btn-action {
+  background-color: $color-text-secondary;
+  color: $color-table;
+  text-decoration: none;
+  border: none;
+  padding: 0;
+}
+
+.btn-action:hover {
+  text-decoration: underline;
+  color: $color-primary;
+}

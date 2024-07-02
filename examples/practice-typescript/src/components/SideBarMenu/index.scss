@@ -1,0 +1,7 @@
+@import '../../styles/bases/variable.scss';
+
+.aside__list {
+  list-style: none;
+  padding-inline-start: 0;
+  background-color: $color-bg-manager;
+}

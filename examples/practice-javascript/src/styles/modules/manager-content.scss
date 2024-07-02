@@ -1,0 +1,62 @@
+.manager-content {
+  display: flex;
+  align-items: center;
+  margin-bottom: toRem(21px);
+  padding: toRem(23px) toRem(36px) 0 toRem(37px);
+  flex-wrap: wrap;
+
+  &__title {
+    font-family: $font-manager;
+    font-size: toRem(20px);
+    font-weight: 400;
+    line-height: toRem(23.44px);
+    text-align: left;
+  }
+
+  &__info {
+    width: toRem(67px);
+    height: toRem(20px);
+    border-radius: toRem(4px);
+    font-family: $font-manager;
+    font-size: toRem(12px);
+    font-weight: 400;
+    line-height: toRem(14.06px);
+    background: $color-info;
+    border: none;
+    color: $color-text-secondary;
+    margin-left: toRem(8px);
+  }
+
+  &__option {
+    margin: 0 toRem(30px);
+  }
+
+  &__sort {
+    padding: toRem(11px) toRem(10px) toRem(10px) toRem(15px);
+    outline: none;
+    border-radius: toRem(4px);
+    border: 1px solid $color-form;
+    background-image: url("../assets/images/managers/up-down.svg");
+    background-repeat: no-repeat;
+    background-size: toRem(24px) toRem(24px);
+    background-position: center right toRem(15px);
+    font-family: $font-manager;
+    font-size: toRem(16px);
+    color: $color-title-manager;
+    max-height: toRem(40px);
+    max-width: toRem(178px);
+  }
+
+  &__btn-add {
+    padding: toRem(11px) toRem(14px) toRem(10px) toRem(15px);
+    background-color:$color-btn-in;
+    color: $color-text-secondary;
+    border: none;
+    border-radius: toRem(4px);
+
+    &:hover {
+      background-color: $color-btn ;
+      color: $color-primary;
+    }
+  }
+}
