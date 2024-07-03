@@ -21,17 +21,14 @@ This project provides a practice environment for working with React, focusing on
 
 ## Technical Stack
 
-- **Frontend:**
-  - React 18.3.1
-  - React Router v6.x
-  - Vite 5.3.1
-  - TypeScript 5.2.2
-  - CSS Modules
-  - Husky, ESLint, Prettier, Commitlint (pre-commit hooks with Commitlint, ESLint, Prettier)
-  - Storybook
-  - Deployment with Vercel
-- **Backend:**
-  - Mock API: mockapi.io
+- [React 18.3.1 ](https://react.dev/)
+- [React Router v6.x](https://reactrouter.com/en/main)
+- [Vite 5.3.1](https://vitejs.dev/)
+- [TypeScript 5.2.2]()
+- [CSS Modules](https://github.com/css-modules/css-modules)
+- Husky, ESLint, Prettier, Commitlint (pre-commit hooks with Commitlint, ESLint, Prettier) [link](https://dev.to/mahmudulhsn/install-husky-in-your-project-for-proper-commit-lint-with-pre-commit-hooks-25b2)
+- [Storybook](https://storybook.js.org/)
+- [Deployment with Vercel](https://vercel.com/thanhtrantruong47s-projects)
 
 ## Design
 
@@ -75,8 +72,8 @@ This project provides a practice environment for working with React, focusing on
 
 ### Prerequisites
 
-- Node.js
-- pnpm
+- Node.js (v18.20.3)
+- pnpm (9.1.4)
 
 ### Installation
 
@@ -98,3 +95,5 @@ This project provides a practice environment for working with React, focusing on
    ```bash
    pnpm run dev
    ```
+
+4. Open your browser at [http://localhost:5173/](http://localhost:5173/)
