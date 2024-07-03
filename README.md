@@ -1,30 +1,100 @@
-# React + TypeScript + Vite
+# React Practice
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+This project provides a practice environment for working with React, focusing on understanding and correctly applying React hooks.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Timeline
 
-## Expanding the ESLint configuration
+- **Start Date:** 2024/06/27
+- **End Date:** 2024/07/25
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Team Size
 
-- Configure the top-level `parserOptions` property like this:
+- 1 Developer
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-};
-```
+## Target Goals
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- Understand and correctly apply React hooks.
+- Gain an in-depth understanding of `useRef`, `useState`, and `useEffect`.
+- Manage state effectively and ensure proper re-rendering when props or state change.
+
+## Technical Stack
+
+- **Frontend:**
+  - React 18.3.1
+  - React Router v6.x
+  - Vite 5.3.1
+  - TypeScript 5.2.2
+  - CSS Modules
+  - Husky, ESLint, Prettier, Commitlint (pre-commit hooks with Commitlint, ESLint, Prettier)
+  - Storybook
+  - Deployment with Vercel
+- **Backend:**
+  - Mock API: mockapi.io
+
+## Design
+
+- **Design:** [Figma](https://www.figma.com/design/7T5SzmuMxYe7HhwhL3ixAn/T-Shirt-Website?node-id=0-1&t=iupeJ3TAWmFjFld4-1)
+
+## Questions
+
+- **Documentation Link:** [dosc](https://docs.google.com/document/d/14Lo0ctHaRxHxAEsgxX2ZWo_QBmTuUThQgSs34IbBTIM/edit?tab=t.0#heading=h.e2h410li9mwt)
+
+## Requirements
+
+### Features
+
+- View shop
+- View product details
+- Add products to cart
+- View cart and edit cart items
+
+### Working Phases
+
+#### Phase 1: UI Only (2024/06/27 - 2024/07/18)
+
+- Implement UI for viewing shop, product details, and cart using mock data.
+- Ensure the UI is responsive and does not break on different screen sizes.
+
+#### Phase 2: Feature Logic
+
+- Implement the logic for adding products to the cart and managing the cart items.
+
+## Analysis and Design
+
+### App Business
+
+- **Documentation:** [docs](https://docs.google.com/document/d/1M0jPKMA4CVgFXEtTKElH1NM3ySks7IFOJQd3Rdcq-JQ/edit?tab=t.0#heading=h.smiejlqv6xxf)
+
+### UI Analysis
+
+- **Documentation:** [docs](https://docs.google.com/document/d/1X8t1EMzqnoxgFbV3dnooMd5fjeA-AnhaMauhFNY9Nto/edit)
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/thanhtrantruong47/react-training.git
+   cd react-training
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   pnpm install
+   ```
+
+3. Start the development server:
+
+   ```bash
+   pnpm run dev
+   ```
