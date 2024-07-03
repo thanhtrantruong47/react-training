@@ -76,7 +76,7 @@ This project provides a practice environment for working with React, focusing on
 ### Prerequisites
 
 - Node.js
-- npm or yarn
+- pnpm
 
 ### Installation
 
