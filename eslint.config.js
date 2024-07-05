@@ -12,7 +12,7 @@ export default [
   {
     ignores: ['dist/'], // Use ignorePatterns instead of ignores
     rules: {
-      'react/react-in-jsx-scope': 'off',
+      // 'react/react-in-jsx-scope': 'off',
       'no-unused-vars': 'off',
       'no-undef': 'off',
     },
