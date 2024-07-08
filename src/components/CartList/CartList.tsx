@@ -1,5 +1,7 @@
+import { Cart } from '../../types/cart';
+
 interface CartListProps {
-  cartItems: string[];
+  cartItems: Cart[];
 }
 
 const CartList = ({ cartItems }: CartListProps) => {

@@ -1,4 +1,4 @@
-import { NavItem } from '../../types/navbar';
+import { NavItem } from '../../types/navBar';
 
 interface NavBarProps {
   items: NavItem[];

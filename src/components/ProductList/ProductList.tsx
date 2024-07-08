@@ -1,8 +1,11 @@
+import { Product } from '../../types/product';
+
 interface ProductListProps {
-  products: string[];
+  products: Product[];
+  onClick: () => void;
 }
 
-const ProductList = ({ products }: ProductListProps) => {
+const ProductList = ({ products, onClick }: ProductListProps) => {
   return <></>;
 };
 
