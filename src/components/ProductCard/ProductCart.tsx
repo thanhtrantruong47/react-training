@@ -6,6 +6,7 @@ interface ProductCardProps {
   rating: number;
   isActive: boolean;
 }
+
 const ProductCard = ({
   image,
   title,

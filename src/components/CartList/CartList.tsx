@@ -1,7 +1,8 @@
 interface CartListProps {
-  CartItems: string[];
+  cartItems: string[];
 }
-const CartList = ({ CartItems }: CartListProps) => {
+
+const CartList = ({ cartItems }: CartListProps) => {
   return <></>;
 };
 

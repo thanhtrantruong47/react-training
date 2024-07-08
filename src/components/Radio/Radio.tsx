@@ -1,10 +1,15 @@
-interface RadioProps {
-  color: string;
+interface RadioOption {
+  variable: string;
   value: number;
+}
+
+interface RadioProps {
+  options: RadioOption;
   onChange: () => void;
 }
 
-const Radio = ({ color, value, onChange }: RadioProps) => {
+const Radio = ({ options, onChange }: RadioProps) => {
   return <></>;
 };
+
 export default Radio;

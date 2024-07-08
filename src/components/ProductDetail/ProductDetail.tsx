@@ -8,6 +8,7 @@ interface ProductDetailProps {
   quantity: number;
   stock: number;
 }
+
 const ProductDetail = ({
   imageList,
   title,

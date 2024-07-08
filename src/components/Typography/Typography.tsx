@@ -1,8 +1,9 @@
 interface TypographyProps {
-  description: string;
+  children: React.ReactNode;
   styles: string;
 }
-const Typography = ({ description, styles }: TypographyProps) => {
+
+const Typography = ({ children, styles }: TypographyProps) => {
   return <></>;
 };
 

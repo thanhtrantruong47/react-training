@@ -5,6 +5,7 @@ interface CartItemProps {
   quantity: number;
   stock: number;
 }
+
 const CartItem = ({ image, title, price, quantity, stock }: CartItemProps) => {
   return <></>;
 };

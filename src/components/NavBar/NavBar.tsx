@@ -1,7 +1,10 @@
+import { NavItem } from '../../types/navbar';
+
 interface NavBarProps {
-  listNavItems: string[];
+  items: NavItem[];
 }
-const NavBar = ({ listNavItems }: NavBarProps) => {
+
+const NavBar = ({ items }: NavBarProps) => {
   return <></>;
 };
 

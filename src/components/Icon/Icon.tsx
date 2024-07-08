@@ -7,4 +7,5 @@ interface IconProps {
 const Icon = ({ svg, iconSize, onClick }: IconProps) => {
   return <></>;
 };
+
 export default Icon;

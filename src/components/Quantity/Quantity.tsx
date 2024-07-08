@@ -1,8 +1,10 @@
 interface QuantityProps {
-  amount: number;
+  value: number;
+  onChange: () => void;
 }
 
-const Quantity = ({ amount }: QuantityProps) => {
+const Quantity = ({ value, onChange }: QuantityProps) => {
   return <></>;
 };
+
 export default Quantity;
