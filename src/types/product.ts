@@ -1,9 +1,9 @@
 export interface Product {
   title: string;
   price: number;
-  image: string[];
-  color: string[];
-  size: string[];
+  images: string[];
+  colors: string[];
+  sizes: string[];
   description: string;
   stock: number;
   rate: number;
