@@ -2,7 +2,7 @@ interface SelectedProps {
   icon: string;
 }
 
-const SelectedProduct = ({ icon }: SelectedProps) => {
+const SelectedProduct = (_: SelectedProps) => {
   return <></>;
 };
 

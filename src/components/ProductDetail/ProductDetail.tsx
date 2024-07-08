@@ -9,16 +9,7 @@ interface ProductDetailProps {
   stock: number;
 }
 
-const ProductDetail = ({
-  imageList,
-  title,
-  description,
-  price,
-  color,
-  size,
-  quantity,
-  stock,
-}: ProductDetailProps) => {
+const ProductDetail = (_: ProductDetailProps) => {
   return <></>;
 };
 

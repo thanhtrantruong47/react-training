@@ -7,14 +7,7 @@ interface ProductCardProps {
   isActive: boolean;
 }
 
-const ProductCard = ({
-  image,
-  title,
-  price,
-  description,
-  rating,
-  isActive,
-}: ProductCardProps) => {
+const ProductCard = (_: ProductCardProps) => {
   return <></>;
 };
 

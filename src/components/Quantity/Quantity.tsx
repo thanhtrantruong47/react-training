@@ -3,7 +3,7 @@ interface QuantityProps {
   onChange: () => void;
 }
 
-const Quantity = ({ value, onChange }: QuantityProps) => {
+const Quantity = (_: QuantityProps) => {
   return <></>;
 };
 

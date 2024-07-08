@@ -2,7 +2,7 @@ interface RatingProps {
   rate: number;
 }
 
-const Rating = ({ rate }: RatingProps) => {
+const Rating = (_: RatingProps) => {
   return <></>;
 };
 

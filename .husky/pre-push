@@ -1,2 +1,1 @@
-# the structure creation code, unused variables will result in errors
-# pnpm run build
+pnpm run build

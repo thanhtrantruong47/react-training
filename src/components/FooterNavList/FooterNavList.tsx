@@ -2,7 +2,7 @@ interface FooterNavListProps {
   items: string[];
 }
 
-const FooterNavList = ({ items }: FooterNavListProps) => {
+const FooterNavList = (_: FooterNavListProps) => {
   return <></>;
 };
 

@@ -4,7 +4,7 @@ interface TabProps {
   onChange: () => void;
 }
 
-const Tab = ({ label, isActive = false, onChange }: TabProps) => {
+const Tab = (_: TabProps) => {
   return <></>;
 };
 

@@ -4,7 +4,7 @@ interface NavBarProps {
   items: NavItem[];
 }
 
-const NavBar = ({ items }: NavBarProps) => {
+const NavBar = (_: NavBarProps) => {
   return <></>;
 };
 

@@ -3,7 +3,7 @@ interface TypographyProps {
   styles: string;
 }
 
-const Typography = ({ children, styles }: TypographyProps) => {
+const Typography = (_: TypographyProps) => {
   return <></>;
 };
 

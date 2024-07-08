@@ -8,7 +8,7 @@ interface RadioProps {
   onChange: () => void;
 }
 
-const Radio = ({ options, onChange }: RadioProps) => {
+const Radio = (_: RadioProps) => {
   return <></>;
 };
 

@@ -2,7 +2,7 @@ interface TabListProps {
   listNavItems: string[];
 }
 
-const TabList = ({ listNavItems }: TabListProps) => {
+const TabList = (_: TabListProps) => {
   return <></>;
 };
 

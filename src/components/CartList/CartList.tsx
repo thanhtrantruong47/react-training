@@ -4,7 +4,7 @@ interface CartListProps {
   cartItems: Cart[];
 }
 
-const CartList = ({ cartItems }: CartListProps) => {
+const CartList = (_: CartListProps) => {
   return <></>;
 };
 

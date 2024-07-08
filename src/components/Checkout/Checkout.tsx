@@ -2,7 +2,7 @@ interface CheckoutProps {
   onClick: () => void;
 }
 
-const Checkout = ({ onClick }: CheckoutProps) => {
+const Checkout = (_: CheckoutProps) => {
   return <></>;
 };
 

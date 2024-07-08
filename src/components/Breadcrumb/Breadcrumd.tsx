@@ -2,7 +2,7 @@ interface BreadcrumbProps {
   listItems: string[];
 }
 
-const Breadcrumb = ({ listItems }: BreadcrumbProps) => {
+const Breadcrumb = (_: BreadcrumbProps) => {
   return <></>;
 };
 

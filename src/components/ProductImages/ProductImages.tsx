@@ -2,7 +2,7 @@ interface ProductImagesProps {
   imageList: string[];
 }
 
-const ProductImages = ({ imageList }: ProductImagesProps) => {
+const ProductImages = (_: ProductImagesProps) => {
   return <></>;
 };
 

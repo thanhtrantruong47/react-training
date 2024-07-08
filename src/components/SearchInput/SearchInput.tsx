@@ -4,11 +4,7 @@ interface SearchInputProps {
   onChange: () => void;
 }
 
-const SearchInput = ({
-  placeholder,
-  inputType,
-  onChange,
-}: SearchInputProps) => {
+const SearchInput = (_: SearchInputProps) => {
   return <></>;
 };
 

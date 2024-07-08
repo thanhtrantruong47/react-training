@@ -6,7 +6,7 @@ interface CartItemProps {
   stock: number;
 }
 
-const CartItem = ({ image, title, price, quantity, stock }: CartItemProps) => {
+const CartItem = (_: CartItemProps) => {
   return <></>;
 };
 

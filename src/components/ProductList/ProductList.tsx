@@ -5,7 +5,7 @@ interface ProductListProps {
   onClick: () => void;
 }
 
-const ProductList = ({ products, onClick }: ProductListProps) => {
+const ProductList = (_: ProductListProps) => {
   return <></>;
 };
 

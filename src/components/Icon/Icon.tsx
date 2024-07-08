@@ -4,7 +4,7 @@ interface IconProps {
   onClick: () => void;
 }
 
-const Icon = ({ svg, iconSize, onClick }: IconProps) => {
+const Icon = (_: IconProps) => {
   return <></>;
 };
 

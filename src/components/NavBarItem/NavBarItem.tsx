@@ -4,7 +4,7 @@ interface NavBarItemProps {
   isActive: boolean;
 }
 
-const NavBarItem = ({ label, destination, isActive }: NavBarItemProps) => {
+const NavBarItem = (_: NavBarItemProps) => {
   return <></>;
 };
 
