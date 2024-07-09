@@ -1,10 +1,10 @@
 :root {
   /* Font Sizes */
-  --font-size-sm: 0.875rem;
-  --font-size-md: 1.125rem;
-  --font-size-lg: 2.25rem;
-  --size-xl: 2.5rem;
-  --font-size-2xl: 3rem;
+  --font-size-sm: 0.875rem; /* 14px */
+  --font-size-md: 1.125rem; /* 18px */
+  --font-size-lg: 2.25rem; /* 36px */
+  --size-xl: 2.5rem; /* 40px */
+  --font-size-2xl: 3rem; /* 48px */
 
   /* Font Weights */
   --font-weight-regular: 400;
@@ -28,21 +28,21 @@
   --shadow-lg: rgba(0, 0, 0, 0.15);
 
   /* Border */
-  --border-sm: 0.0625rem;
-  --border-lg: 0.09375rem;
-  --border-xl: 0.125rem;
+  --border-sm: 0.0625rem; /* 1px */
+  --border-lg: 0.09375rem; /* 1.5px */
+  --border-xl: 0.125rem; /* 2px */
 
   /* Border radius */
-  --border-radius: 0.625rem;
+  --border-radius: 0.625rem; /* 10px */
 
-  /* Light height */
-  --line-height-sm: 1.2rem;
-  --line-height-md: 1.5rem;
-  --line-height-lg: 1.875rem;
-  --line-height-xl: 4.6875rem;
+  /* Line height */
+  --line-height-sm: 1.2rem; /* 19.2px */
+  --line-height-md: 1.5rem; /* 24px */
+  --line-height-lg: 1.875rem; /* 30px */
+  --line-height-xl: 4.6875rem; /* 75px */
 
   /* Icon size */
-  --icon-sm: 1.125rem;
-  --icon-md: 1.5rem;
-  --icon-lg: 2rem;
+  --icon-sm: 1.125rem; /* 18px */
+  --icon-md: 1.5rem; /* 24px */
+  --icon-lg: 2rem; /* 32px */
 }
