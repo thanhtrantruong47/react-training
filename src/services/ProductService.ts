@@ -28,7 +28,7 @@ class ProductService extends Service<Product> {
   async getByCategory(category: string): Promise<Product[]> {
     try {
       const products = await this.getByParams('category', category);
-      return products as Product[]; // Type assertion to Product[] if getByParams returns T[]
+      return products as Product[];
     } catch (error) {
       console.error(`Error fetching products by category: ${category}`, error);
       throw new Error(`Failed to fetch products by category ${category}`);
