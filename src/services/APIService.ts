@@ -67,7 +67,7 @@ class ApiService<T> {
       console.error('Error fetching data', error);
 
       return {
-        error: new Error(`Error occurred during item search: ${errorMessage}`),
+        error: new Error(`Failed to fetching data: ${errorMessage}`),
       };
     }
   }
