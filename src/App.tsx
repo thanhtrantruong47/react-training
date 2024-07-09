@@ -9,7 +9,7 @@ const App = () => {
 
   useEffect(() => {
     const fetchProducts = async () => {
-      const response = await productAPIService.getById('1');
+      const response = await productAPIService.getList('1');
 
       if (response.error) {
         console.log('no data');
