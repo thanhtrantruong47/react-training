@@ -1,0 +1,29 @@
+/* navBarItem.module.css */
+
+.listItem {
+  list-style-type: none;
+}
+
+.link {
+  text-decoration: none;
+  color: black;
+}
+
+.linkActive {
+  font-weight: bold;
+  position: relative;
+  padding-bottom: 8px;
+  color: blue;
+}
+
+.linkActive::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  background-color: blue;
+  border-radius: 50%;
+}
