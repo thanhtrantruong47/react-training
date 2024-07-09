@@ -29,14 +29,16 @@ class ApiService<T> {
   }
 
   /**
-   * Fetches items by category from the server.
-   * @param {string} category - The category of the items to fetch.
+   * Fetches items from the server based on the provided query parameters.
+   * @param {Record<string, string>} params - The query parameters.
    * @returns {Promise<ApiResponse<T[]>>} A promise that resolves to a Response object containing an array of items.
    */
-  async getList(value?: string): Promise<ApiResponse<T[]>> {
+  async getList(params?: Record<string, string>): Promise<ApiResponse<T[]>> {
     const url = new URL(this.resourceUrl);
-    if (value) {
-      url.searchParams.append('category', value);
+    if (params) {
+      Object.keys(params).forEach(key => {
+        url.searchParams.append(key, params[key]);
+      });
     }
     try {
       const response = await fetch(url.toString());
@@ -50,7 +52,7 @@ class ApiService<T> {
     } catch (error) {
       return this.handleError(
         error,
-        `Failed to fetch data for category: ${value}`
+        `Failed to fetch data with parameters: ${JSON.stringify(params)}`
       );
     }
   }
