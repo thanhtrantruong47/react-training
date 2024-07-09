@@ -5,7 +5,6 @@ class ApiService<T> {
   resourceUrl: string;
 
   constructor(resourceName: string) {
-    // Initialize the resource URL based on the base URL and resource name
     this.resourceUrl = `${BASE_URL}/${resourceName}`;
   }
 
@@ -16,24 +15,16 @@ class ApiService<T> {
    */
   async getById(id: string): Promise<ApiResponse<T>> {
     try {
-      const response = await fetch(`${this.resourceUrl}/${id}`, {
-        method: 'GET',
-      });
+      const response = await fetch(`${this.resourceUrl}/${id}`);
+      const data = await response.json();
 
       if (!response.ok) {
         throw new Error('Failed to fetch data');
       }
 
-      const data = await response.json();
-
       return { data };
-    } catch (error: unknown) {
-      const errorMessage =
-        error instanceof Error ? error.message : 'Unknown error';
-
-      return {
-        error: new Error(`Failed to fetch data: ${errorMessage}`),
-      };
+    } catch (error) {
+      return this.handleError(error, `Failed to fetch data for id: ${id}`);
     }
   }
 
@@ -42,33 +33,25 @@ class ApiService<T> {
    * @param {string} category - The category of the items to fetch.
    * @returns {Promise<ApiResponse<T[]>>} A promise that resolves to a Response object containing an array of items.
    */
-  async getList(properties?: string): Promise<ApiResponse<T[]>> {
+  async getList(value?: string): Promise<ApiResponse<T[]>> {
     const url = new URL(this.resourceUrl);
-
-    if (properties) {
-      url.searchParams.append('category', properties);
+    if (value) {
+      url.searchParams.append('category', value);
     }
-
     try {
-      const response = await fetch(url.toString(), {
-        method: 'GET',
-      });
+      const response = await fetch(url.toString());
+      const data = await response.json();
 
       if (!response.ok) {
         throw new Error('Failed to fetch data');
       }
 
-      const data = await response.json();
-
       return { data };
-    } catch (error: unknown) {
-      const errorMessage =
-        error instanceof Error ? error.message : 'Unknown error';
-      console.error('Error fetching data', error);
-
-      return {
-        error: new Error(`Failed to fetching data: ${errorMessage}`),
-      };
+    } catch (error) {
+      return this.handleError(
+        error,
+        `Failed to fetch data for category: ${value}`
+      );
     }
   }
 
@@ -84,35 +67,27 @@ class ApiService<T> {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
       });
+      const createdItem = await response.json();
 
       if (!response.ok) {
         throw new Error('Failed to create item');
       }
 
-      const createdItem = await response.json();
-
       return { data: createdItem };
-    } catch (error: unknown) {
-      const errorMessage =
-        error instanceof Error ? error.message : 'Unknown error';
-      console.error('Error creating item', error);
-
-      return {
-        error: new Error(`Failed to create item: ${errorMessage}`),
-      };
+    } catch (error) {
+      return this.handleError(error, 'Failed to create item');
     }
   }
 
   /**
    * Deletes an item by its ID from the server.
    * @param {string} id - The ID of the item to delete.
-   * @returns {Promise<ApiResponse<T>>} A promise that resolves to a Response object indicating success or failure.
+   * @returns {Promise<ApiResponse<void>>} A promise that resolves to a Response object indicating success or failure.
    */
-  async delete(id: string): Promise<ApiResponse<T>> {
+  async delete(id: string): Promise<ApiResponse<void>> {
     try {
       const response = await fetch(`${this.resourceUrl}/${id}`, {
         method: 'DELETE',
-        headers: { 'Content-Type': 'application/json' },
       });
 
       if (!response.ok) {
@@ -120,14 +95,8 @@ class ApiService<T> {
       }
 
       return { data: undefined };
-    } catch (error: unknown) {
-      const errorMessage =
-        error instanceof Error ? error.message : 'Unknown error';
-      console.error(`Error deleting item by id: ${id}`, error);
-
-      return {
-        error: new Error(`Failed to delete item: ${errorMessage}`),
-      };
+    } catch (error) {
+      return this.handleError(error, `Failed to delete item with id: ${id}`);
     }
   }
 
@@ -144,23 +113,32 @@ class ApiService<T> {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
       });
+      const updatedItem = await response.json();
 
       if (!response.ok) {
         throw new Error('Failed to update item');
       }
 
-      const updatedItem = await response.json();
-
       return { data: updatedItem };
-    } catch (error: unknown) {
-      const errorMessage =
-        error instanceof Error ? error.message : 'Unknown error';
-      console.error(`Error updating item by id: ${id}`, error);
-
-      return {
-        error: new Error(`Failed to update item: ${errorMessage}`),
-      };
+    } catch (error) {
+      return this.handleError(error, `Failed to update item with id: ${id}`);
     }
+  }
+
+  /**
+   * Helper function to handle errors consistently.
+   * @param {unknown} error - The error object.
+   * @param {string} message - The error message.
+   * @returns {ApiResponse} An object containing the error details.
+   */
+  handleError(error: unknown, message: string) {
+    const errorMessage =
+      error instanceof Error ? error.message : 'Unknown error';
+    console.error(message, error);
+
+    return {
+      error: new Error(errorMessage),
+    };
   }
 }
 

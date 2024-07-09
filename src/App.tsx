@@ -9,10 +9,10 @@ const App = () => {
 
   useEffect(() => {
     const fetchProducts = async () => {
-      const response = await productAPIService.getList('1');
+      const response = await productAPIService.getList('100');
 
       if (response.error) {
-        console.log('no data');
+        console.log(response.error);
       } else {
         console.log('Products:', response.data);
       }
