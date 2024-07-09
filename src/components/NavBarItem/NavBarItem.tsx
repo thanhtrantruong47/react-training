@@ -1,22 +1,24 @@
-import React from 'react';
-import styles from './navBarItem.module.css'; // Import CSS module
+import styles from './navBarItem.module.css';
 
 interface NavBarItemProps {
   label: string;
   destination: string;
   isActive: boolean;
+  onItemClick: () => void;
 }
 
-const NavBarItem: React.FC<NavBarItemProps> = ({
+const NavBarItem = ({
   label,
   destination,
   isActive,
-}) => {
+  onItemClick,
+}: NavBarItemProps) => {
   return (
     <li className={styles.listItem}>
       <a
         className={`${styles.link} ${isActive ? styles.linkActive : ''}`}
         href={destination}
+        onClick={onItemClick}
       >
         {label}
       </a>
