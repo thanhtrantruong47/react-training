@@ -4,13 +4,15 @@ import { useEffect } from 'react';
 import ProductAPIService from './services/ProductAPIService';
 
 const App = () => {
+  // example start
   const productAPIService = new ProductAPIService();
 
   useEffect(() => {
     const fetchProducts = async () => {
-      const response = await productAPIService.getById('100');
-      if (!response.data) {
-        console.log('No data');
+      const response = await productAPIService.getById('1');
+
+      if (response.error) {
+        console.log('no data');
       } else {
         console.log('Products:', response.data);
       }
@@ -18,6 +20,7 @@ const App = () => {
 
     fetchProducts();
   }, []);
+  // example end
 
   return (
     <>

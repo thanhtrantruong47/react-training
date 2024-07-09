@@ -20,14 +20,18 @@ class APIService<T> {
         method: 'GET',
         headers: { 'Content-Type': 'application/json' },
       });
+
       if (!response.ok) {
         throw new Error('Failed to fetch data');
       }
+
       const data = await response.json();
+
       return { data };
     } catch (error: unknown) {
       const errorMessage =
         error instanceof Error ? error.message : 'Unknown error';
+
       return {
         error: new Error(`Failed to fetch data: ${errorMessage}`),
       };
@@ -51,15 +55,19 @@ class APIService<T> {
         method: 'GET',
         headers: { 'Content-Type': 'application/json' },
       });
+
       if (!response.ok) {
         throw new Error('Failed to fetch data');
       }
+
       const data = await response.json();
+
       return { data };
     } catch (error: unknown) {
       const errorMessage =
         error instanceof Error ? error.message : 'Unknown error';
       console.error('Error fetching list', error);
+
       return {
         error: new Error(`Error occurred during item search: ${errorMessage}`),
       };
@@ -78,15 +86,19 @@ class APIService<T> {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
       });
+
       if (!response.ok) {
         throw new Error('Failed to create item');
       }
+
       const createdItem = await response.json();
+
       return { data: createdItem };
     } catch (error: unknown) {
       const errorMessage =
         error instanceof Error ? error.message : 'Unknown error';
       console.error('Error creating item', error);
+
       return {
         error: new Error(`Failed to create item: ${errorMessage}`),
       };
@@ -104,14 +116,17 @@ class APIService<T> {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json' },
       });
+
       if (!response.ok) {
         throw new Error('Failed to delete item');
       }
+
       return {};
     } catch (error: unknown) {
       const errorMessage =
         error instanceof Error ? error.message : 'Unknown error';
       console.error(`Error deleting item by id: ${id}`, error);
+
       return {
         error: new Error(`Failed to delete item: ${errorMessage}`),
       };
@@ -131,15 +146,19 @@ class APIService<T> {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
       });
+
       if (!response.ok) {
         throw new Error('Failed to update item');
       }
+
       const updatedItem = await response.json();
+
       return { data: updatedItem };
     } catch (error: unknown) {
       const errorMessage =
         error instanceof Error ? error.message : 'Unknown error';
       console.error(`Error updating item by id: ${id}`, error);
+
       return {
         error: new Error(`Failed to update item: ${errorMessage}`),
       };
