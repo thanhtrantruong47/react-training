@@ -140,7 +140,7 @@ class HttpService<T> {
       if (!response.ok) {
         throw new Error('Failed to update item');
       }
-      return await response.json();
+      return response.json();
     } catch (error: unknown) {
       const errorMessage =
         error instanceof Error ? error.message : 'Unknown error';
