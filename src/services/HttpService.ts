@@ -88,7 +88,7 @@ class HttpService<T> {
    * @param {string} id - The ID of the item to delete.
    * @returns {Promise<void>} A promise that resolves when the item is successfully deleted.
    */
-  async deleteById(id: string): Promise<void> {
+  async delete(id: string): Promise<void> {
     try {
       const response = await fetch(`${this.resourceUrl}/${id}`, {
         method: 'DELETE',
@@ -111,7 +111,7 @@ class HttpService<T> {
    * @param {T} data - The item data to update.
    * @returns {Promise<T>} A promise that resolves to the updated item of type T.
    */
-  async updateById(id: string, data: T): Promise<T> {
+  async update(id: string, data: T): Promise<T> {
     try {
       const response = await fetch(`${this.resourceUrl}/${id}`, {
         method: 'PUT',
