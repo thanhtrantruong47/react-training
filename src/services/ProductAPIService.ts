@@ -1,7 +1,7 @@
 import { Product } from '../types/product';
-import HttpService from './HttpService';
+import APIService from './APIService';
 
-class ProductAPIService extends HttpService<Product> {
+class ProductAPIService extends APIService<Product> {
   constructor() {
     super('products');
   }
