@@ -8,13 +8,16 @@ class HttpService<T> {
   }
 
   /**
-   * Fetches an item by its ID from the server.
+   * Fetches an item by its ID from the server using a GET request.
    * @param {string} id - The ID of the item to fetch.
    * @returns {Promise<T>} A promise that resolves to an item of type T.
    */
   async getById(id: string): Promise<T> {
     try {
-      const response = await fetch(`${this.resourceUrl}/${id}`);
+      const response = await fetch(`${this.resourceUrl}/${id}`, {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' },
+      });
       if (!response.ok) {
         throw new Error('Failed to fetch data');
       }
@@ -32,7 +35,7 @@ class HttpService<T> {
    * @param {string} key - The key of the items to fetch.
    * @returns {Promise<T[]>} A promise that resolves to an array of items of type T.
    */
-  async getByParams(key: string, value: string): Promise<T[]> {
+  async getList(key: string, value: string): Promise<T[]> {
     const url = new URL(this.resourceUrl);
     url.searchParams.append(`${key}`, value);
 
@@ -53,28 +56,6 @@ class HttpService<T> {
         error
       );
       throw new Error(`Error occurred during item search: ${errorMessage}`);
-    }
-  }
-
-  /**
-   * Fetches all items from the server.
-   * @returns {Promise<T[]>} A promise that resolves to an array of all items of type T.
-   */
-  async getAll(): Promise<T[]> {
-    try {
-      const response = await fetch(this.resourceUrl, {
-        method: 'GET',
-        headers: { 'Content-Type': 'application/json' },
-      });
-      if (!response.ok) {
-        throw new Error('Failed to fetch data');
-      }
-      return response.json();
-    } catch (error: unknown) {
-      const errorMessage =
-        error instanceof Error ? error.message : 'Unknown error';
-      console.error('Error fetching all items', error);
-      throw new Error(`Failed to fetch data: ${errorMessage}`);
     }
   }
 
