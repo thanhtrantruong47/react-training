@@ -1,9 +1,30 @@
 import { RouterProvider } from 'react-router-dom';
 import router from './routers';
-import { NavItem } from './types/navBar';
+import { useEffect } from 'react';
+import ProductAPIService from './services/ProductAPIService';
 import NavBar from './components/NavBar/NavBar';
+import { NavItem } from './types/navBar';
 
 const App = () => {
+  // example start
+  const productAPIService = new ProductAPIService();
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      const params = { category: '3', title: 'title 30' };
+      const response = await productAPIService.getList(params);
+
+      if (!response.isSuccess) {
+        console.log(response.errors);
+      } else {
+        console.log('Products:', response.data);
+      }
+    };
+
+    fetchProducts();
+  }, []);
+  // example end
+
   return (
     <>
       <NavBar items={navItems} />
