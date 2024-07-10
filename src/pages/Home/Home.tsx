@@ -1,11 +1,5 @@
-import Logo from '../../components/Logo/Logo';
-
 const Home = () => {
-  return (
-    <>
-      <Logo />
-    </>
-  );
+  return <></>;
 };
 
 export default Home;
