@@ -1,0 +1,12 @@
+import type { Meta, StoryObj } from '@storybook/react';
+import Home from './Home';
+
+export default {
+  component: Home,
+} as Meta;
+
+type Story = StoryObj<typeof Home>;
+
+export const primaryHome: Story = {
+  args: {},
+};
