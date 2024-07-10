@@ -2,7 +2,6 @@ import { RouterProvider } from 'react-router-dom';
 import router from './routers';
 import { useEffect } from 'react';
 import ProductAPIService from './services/ProductAPIService';
-import Logo from './components/Logo/Logo';
 
 const App = () => {
   // example start
@@ -26,7 +25,6 @@ const App = () => {
 
   return (
     <>
-      <Logo logoStyle="logo" />
       <RouterProvider router={router} />
     </>
   );
