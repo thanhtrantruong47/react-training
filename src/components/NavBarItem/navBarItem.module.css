@@ -1,19 +1,18 @@
-/* navBarItem.module.css */
-
 .listItem {
   list-style-type: none;
+  font-family: Mada;
 }
 
 .link {
   text-decoration: none;
-  color: black;
+  color: var(--color-text-primary);
 }
 
 .linkActive {
-  font-weight: bold;
+  font-weight: var(--font-weight-bold);
   position: relative;
-  padding-bottom: 8px;
-  color: blue;
+  padding-bottom: 0.5rem; /* 8px / 16px = 0.5rem */
+  color: var(--color-text-active);
 }
 
 .linkActive::before {
@@ -22,8 +21,8 @@
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 4px;
-  height: 4px;
-  background-color: blue;
+  width: 0.25rem; /* 4px / 16px = 0.25rem */
+  height: 0.25rem; /* 4px / 16px = 0.25rem */
+  background-color: var(--color-text-active);
   border-radius: 50%;
 }
