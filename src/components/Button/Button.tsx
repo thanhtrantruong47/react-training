@@ -1,5 +1,3 @@
-import './button.css';
-
 interface ButtonProps {
   children: string;
   style: string;
