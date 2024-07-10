@@ -3,10 +3,11 @@ import NavBar from './NavBar';
 
 export default {
   component: NavBar,
+  title: 'Components/NavBar',
 } as Meta;
 
 type Story = StoryObj<typeof NavBar>;
 
-export const navBar: Story = {
+export const Default: Story = {
   args: {},
 };

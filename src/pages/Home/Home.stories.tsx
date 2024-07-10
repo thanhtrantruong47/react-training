@@ -3,10 +3,11 @@ import Home from './Home';
 
 export default {
   component: Home,
+  title: 'Components/Home',
 } as Meta;
 
 type Story = StoryObj<typeof Home>;
 
-export const home: Story = {
+export const Default: Story = {
   args: {},
 };

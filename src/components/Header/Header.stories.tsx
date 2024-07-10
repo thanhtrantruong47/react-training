@@ -3,10 +3,11 @@ import Header from './Header';
 
 export default {
   component: Header,
+  title: 'Components/Header',
 } as Meta;
 
 type Story = StoryObj<typeof Header>;
 
-export const header: Story = {
+export const Default: Story = {
   args: {},
 };

@@ -3,10 +3,11 @@ import SearchInput from './SearchInput';
 
 export default {
   component: SearchInput,
+  title: 'Components/SearchInput',
 } as Meta;
 
 type Story = StoryObj<typeof SearchInput>;
 
-export const searchInput: Story = {
+export const Default: Story = {
   args: {},
 };

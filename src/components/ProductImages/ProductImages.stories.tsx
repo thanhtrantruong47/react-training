@@ -3,10 +3,11 @@ import ProductImages from './ProductImages';
 
 export default {
   component: ProductImages,
+  title: 'Components/ProductImages',
 } as Meta;
 
 type Story = StoryObj<typeof ProductImages>;
 
-export const productImages: Story = {
+export const Default: Story = {
   args: {},
 };

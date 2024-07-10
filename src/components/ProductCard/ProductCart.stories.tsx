@@ -3,10 +3,11 @@ import ProductCart from './ProductCart';
 
 export default {
   component: ProductCart,
+  title: 'Components/ProductCart',
 } as Meta;
 
 type Story = StoryObj<typeof ProductCart>;
 
-export const productCart: Story = {
+export const Default: Story = {
   args: {},
 };

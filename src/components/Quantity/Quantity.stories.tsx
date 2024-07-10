@@ -3,10 +3,11 @@ import Quantity from './Quantity';
 
 export default {
   component: Quantity,
+  title: 'Components/Quantity',
 } as Meta;
 
 type Story = StoryObj<typeof Quantity>;
 
-export const quantity: Story = {
+export const Default: Story = {
   args: {},
 };

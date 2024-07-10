@@ -3,10 +3,11 @@ import Tab from './Tab';
 
 export default {
   component: Tab,
+  title: 'Components/Tab',
 } as Meta;
 
 type Story = StoryObj<typeof Tab>;
 
-export const tab: Story = {
+export const Default: Story = {
   args: {},
 };

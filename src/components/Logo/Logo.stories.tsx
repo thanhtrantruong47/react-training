@@ -1,16 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import Logo from './Logo';
 
-const meta: Meta<typeof Logo> = {
+export default {
   component: Logo,
-};
-
-export default meta;
+  title: 'Components/Logo',
+} as Meta;
 
 type Story = StoryObj<typeof Logo>;
 
-export const logo: Story = {
-  args: {
-    logoStyle: 'logo',
-  },
+export const Default: Story = {
+  args: {},
 };

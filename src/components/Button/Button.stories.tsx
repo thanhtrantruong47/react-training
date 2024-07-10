@@ -3,10 +3,11 @@ import Button from './Button';
 
 export default {
   component: Button,
+  title: 'Components/Button',
 } as Meta;
 
 type Story = StoryObj<typeof Button>;
 
-export const button: Story = {
+export const Default: Story = {
   args: {},
 };

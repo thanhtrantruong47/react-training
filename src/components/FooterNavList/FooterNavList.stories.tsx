@@ -3,10 +3,11 @@ import FooterNavList from './FooterNavList';
 
 export default {
   component: FooterNavList,
+  title: 'Components/FooterNavList',
 } as Meta;
 
 type Story = StoryObj<typeof FooterNavList>;
 
-export const footerNavList: Story = {
+export const Default: Story = {
   args: {},
 };

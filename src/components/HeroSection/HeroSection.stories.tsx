@@ -3,10 +3,11 @@ import HeroSection from './HeroSection';
 
 export default {
   component: HeroSection,
+  title: 'Components/HeroSection',
 } as Meta;
 
 type Story = StoryObj<typeof HeroSection>;
 
-export const heroSection: Story = {
+export const Default: Story = {
   args: {},
 };

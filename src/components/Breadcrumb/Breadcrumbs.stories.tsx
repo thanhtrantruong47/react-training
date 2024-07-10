@@ -3,10 +3,11 @@ import Breadcrumbs from './Breadcrumbs';
 
 export default {
   component: Breadcrumbs,
+  title: 'Components/Breadcrumbs',
 } as Meta;
 
 type Story = StoryObj<typeof Breadcrumbs>;
 
-export const breadcrumbs: Story = {
+export const Default: Story = {
   args: {},
 };

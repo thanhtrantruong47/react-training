@@ -3,10 +3,11 @@ import Rating from './Rating';
 
 export default {
   component: Rating,
+  title: 'Components/Rating',
 } as Meta;
 
 type Story = StoryObj<typeof Rating>;
 
-export const rating: Story = {
+export const Default: Story = {
   args: {},
 };

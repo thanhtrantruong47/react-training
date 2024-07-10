@@ -3,10 +3,11 @@ import ProductList from './ProductList';
 
 export default {
   component: ProductList,
+  title: 'Components/ProductList',
 } as Meta;
 
 type Story = StoryObj<typeof ProductList>;
 
-export const productList: Story = {
+export const Default: Story = {
   args: {},
 };

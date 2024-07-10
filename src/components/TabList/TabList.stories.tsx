@@ -3,10 +3,11 @@ import TabList from './TabList';
 
 export default {
   component: TabList,
+  title: 'Components/TabList',
 } as Meta;
 
 type Story = StoryObj<typeof TabList>;
 
-export const tabList: Story = {
+export const Default: Story = {
   args: {},
 };

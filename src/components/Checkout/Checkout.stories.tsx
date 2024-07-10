@@ -3,10 +3,11 @@ import Checkout from './Checkout';
 
 export default {
   component: Checkout,
+  title: 'Components/Checkout',
 } as Meta;
 
 type Story = StoryObj<typeof Checkout>;
 
-export const checkout: Story = {
+export const Default: Story = {
   args: {},
 };
