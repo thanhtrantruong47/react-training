@@ -7,6 +7,6 @@ export default {
 
 type Story = StoryObj<typeof Radio>;
 
-export const primaryRadio: Story = {
+export const radio: Story = {
   args: {},
 };

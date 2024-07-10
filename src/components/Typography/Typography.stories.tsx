@@ -7,6 +7,6 @@ export default {
 
 type Story = StoryObj<typeof Typography>;
 
-export const primaryTypography: Story = {
+export const typography: Story = {
   args: {},
 };

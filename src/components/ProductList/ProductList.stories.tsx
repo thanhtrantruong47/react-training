@@ -7,6 +7,6 @@ export default {
 
 type Story = StoryObj<typeof ProductList>;
 
-export const primaryProductList: Story = {
+export const productList: Story = {
   args: {},
 };

@@ -7,6 +7,6 @@ export default {
 
 type Story = StoryObj<typeof Tab>;
 
-export const primaryTab: Story = {
+export const tab: Story = {
   args: {},
 };

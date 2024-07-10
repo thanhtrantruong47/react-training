@@ -7,6 +7,6 @@ export default {
 
 type Story = StoryObj<typeof Icon>;
 
-export const primaryIcon: Story = {
+export const icon: Story = {
   args: {},
 };

@@ -7,6 +7,6 @@ export default {
 
 type Story = StoryObj<typeof NavBarItem>;
 
-export const primaryNavBarItem: Story = {
+export const navBarItem: Story = {
   args: {},
 };

@@ -7,6 +7,6 @@ export default {
 
 type Story = StoryObj<typeof Rating>;
 
-export const primaryRating: Story = {
+export const rating: Story = {
   args: {},
 };

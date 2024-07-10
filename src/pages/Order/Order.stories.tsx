@@ -7,6 +7,6 @@ export default {
 
 type Story = StoryObj<typeof Order>;
 
-export const primaryOrder: Story = {
+export const order: Story = {
   args: {},
 };

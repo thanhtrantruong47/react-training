@@ -9,7 +9,7 @@ export default meta;
 
 type Story = StoryObj<typeof Logo>;
 
-export const PrimaryLogo: Story = {
+export const logo: Story = {
   args: {
     logoStyle: 'logo',
   },

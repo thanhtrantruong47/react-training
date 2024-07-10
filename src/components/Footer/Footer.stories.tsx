@@ -7,6 +7,6 @@ export default {
 
 type Story = StoryObj<typeof Footer>;
 
-export const primaryFooter: Story = {
+export const footer: Story = {
   args: {},
 };

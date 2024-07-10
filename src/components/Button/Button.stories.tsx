@@ -7,6 +7,6 @@ export default {
 
 type Story = StoryObj<typeof Button>;
 
-export const primaryButton: Story = {
+export const button: Story = {
   args: {},
 };

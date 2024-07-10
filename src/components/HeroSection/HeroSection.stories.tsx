@@ -7,6 +7,6 @@ export default {
 
 type Story = StoryObj<typeof HeroSection>;
 
-export const primaryHeroSection: Story = {
+export const heroSection: Story = {
   args: {},
 };

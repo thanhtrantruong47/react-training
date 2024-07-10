@@ -7,6 +7,6 @@ export default {
 
 type Story = StoryObj<typeof SearchInput>;
 
-export const primarySearchInput: Story = {
+export const searchInput: Story = {
   args: {},
 };

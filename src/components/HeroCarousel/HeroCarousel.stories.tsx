@@ -7,6 +7,6 @@ export default {
 
 type Story = StoryObj<typeof HeroCarousel>;
 
-export const primaryHeroCarousel: Story = {
+export const heroCarousel: Story = {
   args: {},
 };

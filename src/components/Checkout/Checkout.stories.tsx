@@ -7,6 +7,6 @@ export default {
 
 type Story = StoryObj<typeof Checkout>;
 
-export const primaryCheckout: Story = {
+export const checkout: Story = {
   args: {},
 };

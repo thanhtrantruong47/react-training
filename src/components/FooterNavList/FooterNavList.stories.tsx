@@ -7,6 +7,6 @@ export default {
 
 type Story = StoryObj<typeof FooterNavList>;
 
-export const primaryFooterNavList: Story = {
+export const footerNavList: Story = {
   args: {},
 };
