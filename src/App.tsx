@@ -1,32 +1,21 @@
-import { RouterProvider } from 'react-router-dom';
-import router from './routers';
-import { useEffect } from 'react';
-import ProductAPIService from './services/ProductAPIService';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Home from './pages/Home/Home';
+import Cart from './pages/Cart/Cart';
+import Details from './pages/Details/Details';
+import Order from './pages/Order/Order';
 
 const App = () => {
-  // example start
-  const productAPIService = new ProductAPIService();
-
-  useEffect(() => {
-    const fetchProducts = async () => {
-      const params = { category: '3', title: 'title 30' };
-      const response = await productAPIService.getList(params);
-
-      if (!response.isSuccess) {
-        console.log(response.errors);
-      } else {
-        console.log('Products:', response.data);
-      }
-    };
-
-    fetchProducts();
-  }, []);
-  // example end
-
   return (
-    <>
-      <RouterProvider router={router} />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route>
+          <Route path="/" element={<Home />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/product/:productId" element={<Details />} />
+          <Route path="/order" element={<Order />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 };
 
