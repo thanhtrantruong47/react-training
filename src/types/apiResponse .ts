@@ -1,4 +1,5 @@
 export interface ApiResponse<T> {
   data?: T;
-  error?: Error;
+  errors?: Error[];
+  isSuccess: boolean;
 }

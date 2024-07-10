@@ -19,12 +19,16 @@ class ApiService<T> {
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error('Failed to fetch data');
+        const errorMessage = `Failed to fetch data for id: ${id}`;
+        console.error(errorMessage, response.statusText);
+        return { isSuccess: false, errors: [new Error(errorMessage)] };
       }
 
-      return { data };
+      return { data, isSuccess: true };
     } catch (error) {
-      return this.handleError(error, `Failed to fetch data for id: ${id}`);
+      const errorMessage = `Failed to fetch data for id: ${id}`;
+      console.error(errorMessage, error);
+      return { isSuccess: false, errors: [new Error(errorMessage)] };
     }
   }
 
@@ -35,25 +39,29 @@ class ApiService<T> {
    */
   async getList(params?: Record<string, string>): Promise<ApiResponse<T[]>> {
     const url = new URL(this.resourceUrl);
+
+    // Handle query param with key:value
     if (params) {
       Object.keys(params).forEach(key => {
         url.searchParams.append(key, params[key]);
       });
     }
+
     try {
       const response = await fetch(url.toString());
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error('Failed to fetch data');
+        const errorMessage = `Failed to fetch data with parameters: ${JSON.stringify(params)}`;
+        console.error(errorMessage, response.statusText);
+        return { isSuccess: false, errors: [new Error(errorMessage)] };
       }
 
-      return { data };
+      return { data, isSuccess: true };
     } catch (error) {
-      return this.handleError(
-        error,
-        `Failed to fetch data with parameters: ${JSON.stringify(params)}`
-      );
+      const errorMessage = `Failed to fetch data with parameters: ${JSON.stringify(params)}`;
+      console.error(errorMessage, error);
+      return { isSuccess: false, errors: [new Error(errorMessage)] };
     }
   }
 
@@ -72,12 +80,16 @@ class ApiService<T> {
       const createdItem = await response.json();
 
       if (!response.ok) {
-        throw new Error('Failed to create item');
+        const errorMessage = 'Failed to create item';
+        console.error(errorMessage, response.statusText);
+        return { isSuccess: false, errors: [new Error(errorMessage)] };
       }
 
-      return { data: createdItem };
+      return { data: createdItem, isSuccess: true };
     } catch (error) {
-      return this.handleError(error, 'Failed to create item');
+      const errorMessage = 'Failed to create item';
+      console.error(errorMessage, error);
+      return { isSuccess: false, errors: [new Error(errorMessage)] };
     }
   }
 
@@ -93,12 +105,16 @@ class ApiService<T> {
       });
 
       if (!response.ok) {
-        throw new Error('Failed to delete item');
+        const errorMessage = `Failed to delete item with id: ${id}`;
+        console.error(errorMessage, response.statusText);
+        return { isSuccess: false, errors: [new Error(errorMessage)] };
       }
 
-      return { data: undefined };
+      return { isSuccess: true };
     } catch (error) {
-      return this.handleError(error, `Failed to delete item with id: ${id}`);
+      const errorMessage = `Failed to delete item with id: ${id}`;
+      console.error(errorMessage, error);
+      return { isSuccess: false, errors: [new Error(errorMessage)] };
     }
   }
 
@@ -118,29 +134,17 @@ class ApiService<T> {
       const updatedItem = await response.json();
 
       if (!response.ok) {
-        throw new Error('Failed to update item');
+        const errorMessage = `Failed to update item with id: ${id}`;
+        console.error(errorMessage, response.statusText);
+        return { isSuccess: false, errors: [new Error(errorMessage)] };
       }
 
-      return { data: updatedItem };
+      return { data: updatedItem, isSuccess: true };
     } catch (error) {
-      return this.handleError(error, `Failed to update item with id: ${id}`);
+      const errorMessage = `Failed to update item with id: ${id}`;
+      console.error(errorMessage, error);
+      return { isSuccess: false, errors: [new Error(errorMessage)] };
     }
-  }
-
-  /**
-   * Helper function to handle errors consistently.
-   * @param {unknown} error - The error object.
-   * @param {string} message - The error message.
-   * @returns {ApiResponse} An object containing the error details.
-   */
-  handleError(error: unknown, message: string) {
-    const errorMessage =
-      error instanceof Error ? error.message : 'Unknown error';
-    console.error(message, error);
-
-    return {
-      error: new Error(errorMessage),
-    };
   }
 }
 

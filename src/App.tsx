@@ -9,11 +9,11 @@ const App = () => {
 
   useEffect(() => {
     const fetchProducts = async () => {
-      const params = { category: '3', title: 'title 3' };
+      const params = { category: '3', title: 'title 30' };
       const response = await productAPIService.getList(params);
 
-      if (response.error) {
-        console.log(response.error);
+      if (!response.isSuccess) {
+        console.log(response.errors);
       } else {
         console.log('Products:', response.data);
       }
