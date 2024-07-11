@@ -9,5 +9,9 @@ export default {
 type Story = StoryObj<typeof NavBarItem>;
 
 export const Default: Story = {
-  args: {},
+  args: {
+    label: 'Home',
+    destination: '/',
+    isActive: false,
+  },
 };
