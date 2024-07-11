@@ -8,7 +8,7 @@ export default {
 } as Meta;
 
 const navItems: NavItem[] = [
-  { label: 'Home', destination: 'javascript:void(0)', isActive: true },
+  { label: 'Home', destination: '/', isActive: true },
   { label: 'Shop', destination: 'javascript:void(0)', isActive: false },
   { label: 'About Us', destination: 'javascript:void(0)', isActive: false },
   { label: 'Contact', destination: 'javascript:void(0)', isActive: false },

@@ -7,7 +7,7 @@ interface NavBarProps {
 }
 
 const NavBar = ({ items }: NavBarProps) => (
-  <ul className={styles.navBar}>
+  <nav className={styles.navBar}>
     {items.map(({ destination, label, isActive }) => (
       <NavBarItem
         key={label}
@@ -16,7 +16,7 @@ const NavBar = ({ items }: NavBarProps) => (
         isActive={isActive}
       />
     ))}
-  </ul>
+  </nav>
 );
 
 export default NavBar;
