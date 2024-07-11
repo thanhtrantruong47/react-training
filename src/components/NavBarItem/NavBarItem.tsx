@@ -6,7 +6,6 @@ interface NavBarItemProps {
   label: string;
   destination: string;
   isActive: boolean;
-  onItemClick: () => void;
 }
 
 const NavBarItem = ({ label, destination, isActive }: NavBarItemProps) => (
