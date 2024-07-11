@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styles from './navBarItem.module.css';
 
 interface NavBarItemProps {
@@ -14,13 +15,13 @@ const NavBarItem = ({
   onItemClick,
 }: NavBarItemProps) => (
   <li className={styles.listItem}>
-    <a
+    <Link
       className={`${styles.link} ${isActive ? styles.linkActive : ''}`}
-      href={destination}
+      to={destination}
       onClick={onItemClick}
     >
       {label}
-    </a>
+    </Link>
   </li>
 );
 
