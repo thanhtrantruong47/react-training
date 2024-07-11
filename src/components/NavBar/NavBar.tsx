@@ -8,7 +8,7 @@ interface NavBarProps {
 
 const NavBar = ({ items }: NavBarProps) => (
   <nav>
-    <ul className={styles.navBar}>
+    <ul className={styles.navbar}>
       {items.map(({ destination, label, isActive }) => (
         <NavBarItem
           key={label}
