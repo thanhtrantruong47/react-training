@@ -1,0 +1,23 @@
+.navbar-item {
+  list-style-type: none;
+  font-family: Mada;
+  position: relative;
+  width: max-content;
+}
+
+.navbar-item-active {
+  font-weight: var(--font-weight-bold);
+  padding-bottom: 0.5rem;
+}
+
+.navbar-item-active::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0.25rem; /* 4px / 16px = 0.25rem */
+  height: 0.25rem; /* 4px / 16px = 0.25rem */
+  background-color: var(--color-text-active);
+  border-radius: 50%;
+}

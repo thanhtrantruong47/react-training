@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { NavItem } from '../../types/navBar';
-import NavBarItem from '../Button/NavBarItem/NavBarItem';
+import NavBarItem from '../NavBarItem/NavBarItem';
 import styles from './navBar.module.css';
 
 interface NavBarProps {
