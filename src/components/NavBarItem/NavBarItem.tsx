@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import utilStyles from '../../styles/utilStyles.module.css';
+import utilStyles from '../../styles/utils.module.css';
 import styles from './navBarItem.module.css';
 
 interface NavBarItemProps {
