@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import common from '../../styles/genericStyles.module.css';
 import styles from './navBarItem.module.css';
 
 interface NavBarItemProps {
@@ -14,9 +15,9 @@ const NavBarItem = ({
   isActive,
   onItemClick,
 }: NavBarItemProps) => (
-  <li className={styles.listItem}>
+  <li className={`${styles['navbar-item']}`}>
     <Link
-      className={`${styles.link} ${isActive ? styles.linkActive : ''}`}
+      className={`${common.link} ${isActive ? styles['link-active'] : ''}`}
       to={destination}
       onClick={onItemClick}
     >
