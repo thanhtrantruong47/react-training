@@ -12,18 +12,16 @@ const NavBarItem = ({
   destination,
   isActive,
   onItemClick,
-}: NavBarItemProps) => {
-  return (
-    <li className={styles.listItem}>
-      <a
-        className={`${styles.link} ${isActive ? styles.linkActive : ''}`}
-        href={destination}
-        onClick={onItemClick}
-      >
-        {label}
-      </a>
-    </li>
-  );
-};
+}: NavBarItemProps) => (
+  <li className={styles.listItem}>
+    <a
+      className={`${styles.link} ${isActive ? styles.linkActive : ''}`}
+      href={destination}
+      onClick={onItemClick}
+    >
+      {label}
+    </a>
+  </li>
+);
 
 export default NavBarItem;
