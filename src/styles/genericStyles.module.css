@@ -1,8 +1,0 @@
-.link {
-  text-decoration: none;
-  color: var(--color-text-primary);
-}
-
-.link-active {
-  color: var(--color-text-active);
-}
