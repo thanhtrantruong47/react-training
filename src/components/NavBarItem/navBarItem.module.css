@@ -1,16 +1,22 @@
-.navbar-item {
+@import-normalize;
+
+.navBarItem {
   list-style-type: none;
   font-family: Mada;
   position: relative;
   width: max-content;
 }
 
-.navbar-item-active {
+.active {
   font-weight: var(--font-weight-bold);
   padding-bottom: 0.5rem;
 }
 
-.navbar-item-active::before {
+.activeLink {
+  color: var(--color-text-active);
+}
+
+.active::before {
   content: '';
   position: absolute;
   bottom: 0;

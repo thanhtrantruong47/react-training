@@ -1,4 +1,4 @@
-/* Import base */
+/* Correct order of imports */
 @import url('reset.css');
 @import url('base.css');
 @import url('typography.css');

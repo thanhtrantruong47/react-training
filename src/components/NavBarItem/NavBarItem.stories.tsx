@@ -13,6 +13,5 @@ export const Default: Story = {
     label: 'Home',
     destination: '/',
     isActive: false,
-    onItemClick: () => {},
   },
 };
