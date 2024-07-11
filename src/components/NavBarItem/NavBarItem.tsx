@@ -15,11 +15,13 @@ const NavBarItem = ({
   isActive,
   onItemClick,
 }: NavBarItemProps) => (
-  <li className={`${styles['navbar-item']}`}>
+  <li
+    className={`${styles['navbar-item']} ${isActive ? styles['navbar-item-active'] : ''}`}
+    onClick={onItemClick}
+  >
     <Link
-      className={`${common.link} ${isActive ? styles['link-active'] : ''}`}
+      className={`${common.link} ${isActive ? common['link-active'] : ''}`}
       to={destination}
-      onClick={onItemClick}
     >
       {label}
     </Link>

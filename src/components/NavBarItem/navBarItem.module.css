@@ -1,16 +1,16 @@
 .navbar-item {
   list-style-type: none;
   font-family: Mada;
-}
-
-.link-active {
-  font-weight: var(--font-weight-bold);
   position: relative;
-  padding-bottom: 0.5rem; /* 8px / 16px = 0.5rem */
-  color: var(--color-text-active);
+  width: max-content;
 }
 
-.link-active::before {
+.navbar-item-active {
+  font-weight: var(--font-weight-bold);
+  padding-bottom: 0.5rem;
+}
+
+.navbar-item-active::before {
   content: '';
   position: absolute;
   bottom: 0;
