@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import Home from './Home';
+import Home from '.';
 
 export default {
   component: Home,

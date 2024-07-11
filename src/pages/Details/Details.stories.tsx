@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import Details from './Details';
+import Details from '.';
 
 export default {
   component: Details,
