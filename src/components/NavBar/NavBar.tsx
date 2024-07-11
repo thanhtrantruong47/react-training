@@ -6,19 +6,17 @@ interface NavBarProps {
   items: NavItem[];
 }
 
-const NavBar = ({ items }: NavBarProps) => {
-  return (
-    <ul className={styles.navbar}>
-      {items.map(({ destination, label, isActive }) => (
-        <NavBarItem
-          key={label}
-          label={label}
-          destination={destination}
-          isActive={isActive}
-        />
-      ))}
-    </ul>
-  );
-};
+const NavBar = ({ items }: NavBarProps) => (
+  <ul className={styles.navBar}>
+    {items.map(({ destination, label, isActive }) => (
+      <NavBarItem
+        key={label}
+        label={label}
+        destination={destination}
+        isActive={isActive}
+      />
+    ))}
+  </ul>
+);
 
 export default NavBar;
