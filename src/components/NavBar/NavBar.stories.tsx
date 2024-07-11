@@ -9,9 +9,9 @@ export default {
 
 const navItems: NavItem[] = [
   { label: 'Home', destination: '/', isActive: true },
-  { label: 'Shop', destination: 'javascript:void(0)', isActive: false },
-  { label: 'About Us', destination: 'javascript:void(0)', isActive: false },
-  { label: 'Contact', destination: 'javascript:void(0)', isActive: false },
+  { label: 'Shop', destination: '/shop', isActive: false },
+  { label: 'About Us', destination: '/about', isActive: false },
+  { label: 'Contact', destination: '/contact', isActive: false },
 ];
 
 type Story = StoryObj<typeof NavBar>;
