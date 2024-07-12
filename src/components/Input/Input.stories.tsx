@@ -15,6 +15,6 @@ export const Default: Story = {
     placeholder: 'Search',
     inputType: 'input',
     onChange: fn(),
-    children: <SearchIcon />,
+    endIcon: <SearchIcon />,
   },
 };
