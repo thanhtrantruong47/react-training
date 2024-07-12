@@ -7,8 +7,8 @@ interface InputProps {
   placeholder: string;
   inputType: string;
   onChange: () => void;
-  children: ReactNode;
-  positionIcon: string;
+  children?: ReactNode;
+  optional: 'end' | 'start';
 }
 
 const Input = ({
@@ -16,7 +16,7 @@ const Input = ({
   inputType,
   onChange,
   children,
-  positionIcon,
+  optional,
 }: InputProps) => (
   <div className={utils.relative}>
     <input
@@ -26,7 +26,7 @@ const Input = ({
       className={styles.searchInput}
       maxLength={20}
     />
-    <Icon position={positionIcon}>{children}</Icon>
+    <Icon optional={optional}>{children}</Icon>
   </div>
 );
 

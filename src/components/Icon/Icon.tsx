@@ -1,13 +1,16 @@
 import { ReactNode } from 'react';
 import utils from '../../styles/modules/utils.module.css';
+import styles from './icon.module.css';
 
 interface IconProps {
   children: ReactNode;
-  position: string;
+  optional?: 'start' | 'end';
 }
 
-const Icon = ({ children, position }: IconProps) => {
-  return <div className={`${position} ${utils.pointer}`}>{children}</div>;
+const Icon = ({ children, optional }: IconProps) => {
+  const iconClass = optional === 'end' ? styles.endIcon : styles.startIcon;
+
+  return <div className={`${utils.pointer} ${iconClass}`}>{children}</div>;
 };
 
 export default Icon;

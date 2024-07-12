@@ -10,11 +10,3 @@
   color: var(--color-disable);
   font-size: var(--font-size-md);
 }
-
-.searchIcon {
-  color: var(--color-text-product);
-  position: absolute;
-  top: 50%;
-  right: 1rem;
-  transform: translateY(-50%);
-}

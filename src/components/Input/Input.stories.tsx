@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import Input from './Input';
 import { SearchIcon } from '../Icon/SearchIcon';
-import styles from './input.module.css';
 import { fn } from '@storybook/test';
 
 export default {
@@ -17,6 +16,6 @@ export const Default: Story = {
     inputType: 'input',
     onChange: fn(),
     children: <SearchIcon />,
-    positionIcon: styles.searchIcon,
+    optional: 'start',
   },
 };
