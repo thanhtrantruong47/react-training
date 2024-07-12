@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 import styles from './input.module.css';
 import utils from '../../styles/modules/utils.module.css';
-import EndIcon from '../Icon/Icon';
+import EndIcon from '../Icon/EndIcon';
 
 interface InputProps {
   placeholder: string;
