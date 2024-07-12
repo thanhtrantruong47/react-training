@@ -9,7 +9,7 @@
   position: absolute;
   top: 0;
   left: 0.75rem;
-  background-color: #ef8484;
+  background-color: var(--color-badge);
   color: var(--color-text-secondary);
   border-radius: 50%;
   padding: 0.25rem;
