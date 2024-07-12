@@ -16,5 +16,6 @@ export const Default: Story = {
     type: 'input',
     onChange: fn(),
     endIcon: <SearchIcon />,
+    maxLength: 20,
   },
 };
