@@ -1,19 +1,26 @@
 import { NAV_BAR } from '../../constants';
-import { CartIcon, LikeIcon, LoginIcon } from '../Icon/Icon';
+import { CartIcon } from '../Icon/CartIcon';
+import { LikeIcon } from '../Icon/LikeIcon';
+import { LoginIcon } from '../Icon/LoginIcon';
 import Logo from '../Logo/Logo';
 import NavBar from '../NavBar/NavBar';
 import SearchInput from '../SearchInput/SearchInput';
+import styles from './header.module.css';
 
 const Header = () => (
-  <header>
+  <header className={styles.container}>
     <Logo />
-    <div>
+    <div className={styles.group}>
       <NavBar items={NAV_BAR} />
-      <CartIcon itemCount={3} />
-      <LikeIcon />
-      <LoginIcon />
+      <div className={styles.groupIcon}>
+        <CartIcon />
+        <LikeIcon />
+        <LoginIcon />
+      </div>
     </div>
-    <SearchInput inputType="text" onChange={() => {}} placeholder="Search" />
+    <div className={styles.groupSearch}>
+      <SearchInput inputType="text" onChange={() => {}} placeholder="Search" />
+    </div>
   </header>
 );
 

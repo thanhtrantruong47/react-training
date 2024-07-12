@@ -1,5 +1,5 @@
+import { SearchIcon } from '../Icon/SearchIcon';
 import styles from './searchInput.module.css';
-import { SearchIcon } from '../Icon/Icon';
 
 interface SearchInputProps {
   placeholder: string;
@@ -13,7 +13,7 @@ const SearchInput = ({
   onChange,
 }: SearchInputProps) => {
   return (
-    <div className={styles.container}>
+    <form className={styles.container}>
       <input
         type={inputType}
         placeholder={placeholder}
@@ -23,7 +23,7 @@ const SearchInput = ({
       <div className={styles.searchIcon}>
         <SearchIcon />
       </div>
-    </div>
+    </form>
   );
 };
 

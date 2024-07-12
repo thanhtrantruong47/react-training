@@ -1,0 +1,39 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.8125rem; /* 13px / 16px = 0.8125rem */
+  margin: 0 7.4375rem; /* 119px / 16px = 7.4375rem */
+}
+
+.group {
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+  margin-left: auto;
+}
+
+.groupIcon {
+  display: flex;
+  gap: 1.5rem;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    margin: 0 3.75rem;
+  }
+
+  .groupSearch {
+    max-width: 5rem;
+  }
+}
+
+@media (max-width: 876px) {
+  .container {
+    margin: 0 1.25rem;
+  }
+
+  .groupSearch {
+    display: none;
+  }
+}
