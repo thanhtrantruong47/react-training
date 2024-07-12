@@ -11,20 +11,18 @@ const SearchInput = ({
   placeholder,
   inputType,
   onChange,
-}: SearchInputProps) => {
-  return (
-    <div className={styles.container}>
-      <input
-        type={inputType}
-        placeholder={placeholder}
-        onChange={onChange}
-        className={styles.searchInput}
-      />
-      <div className={styles.searchIcon}>
-        <SearchIcon />
-      </div>
+}: SearchInputProps) => (
+  <div className={styles.container}>
+    <input
+      type={inputType}
+      placeholder={placeholder}
+      onChange={onChange}
+      className={styles.searchInput}
+    />
+    <div className={styles.searchIcon}>
+      <SearchIcon />
     </div>
-  );
-};
+  </div>
+);
 
 export default SearchInput;
