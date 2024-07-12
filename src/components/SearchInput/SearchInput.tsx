@@ -1,17 +1,22 @@
-import { SearchIcon } from '../Icon/SearchIcon';
+import { ReactNode } from 'react';
+import Icon from '../Icon/Icon';
 import styles from './searchInput.module.css';
 
-interface SearchInputProps {
+interface InputProps {
   placeholder: string;
   inputType: string;
   onChange: () => void;
+  children: ReactNode;
+  positionIcon: string;
 }
 
-const SearchInput = ({
+const Input = ({
   placeholder,
   inputType,
   onChange,
-}: SearchInputProps) => (
+  children,
+  positionIcon,
+}: InputProps) => (
   <form className={styles.container}>
     <input
       type={inputType}
@@ -19,10 +24,8 @@ const SearchInput = ({
       onChange={onChange}
       className={styles.searchInput}
     />
-    <div className={styles.searchIcon}>
-      <SearchIcon />
-    </div>
+    <Icon position={positionIcon}>{children}</Icon>
   </form>
 );
 
-export default SearchInput;
+export default Input;
