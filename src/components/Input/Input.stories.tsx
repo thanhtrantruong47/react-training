@@ -13,7 +13,7 @@ type Story = StoryObj<typeof Input>;
 export const Default: Story = {
   args: {
     placeholder: 'Search',
-    inputType: 'input',
+    type: 'input',
     onChange: fn(),
     endIcon: <SearchIcon />,
   },
