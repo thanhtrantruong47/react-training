@@ -16,6 +16,5 @@ export const Default: Story = {
     inputType: 'input',
     onChange: fn(),
     children: <SearchIcon />,
-    optional: 'start',
   },
 };
