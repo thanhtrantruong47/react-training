@@ -1,14 +1,9 @@
-.container {
-  position: relative;
-  display: inline-block;
-}
-
 .searchInput {
   padding: 0.75rem 1rem;
   font-size: 1rem;
   border: var(--border-lg) solid var(--color-text-product);
   border-radius: var(--border-radius);
-  width: 100%;
+  max-width: 250px;
 }
 
 .searchInput::placeholder {
@@ -22,5 +17,4 @@
   top: 50%;
   right: 1rem;
   transform: translateY(-50%);
-  cursor: pointer;
 }

@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import utils from '../../styles/modules/utils.module.css';
 
 interface IconProps {
   children: ReactNode;
@@ -6,7 +7,7 @@ interface IconProps {
 }
 
 const Icon = ({ children, position }: IconProps) => {
-  return <div className={position}>{children}</div>;
+  return <div className={`${position} ${utils.pointer}`}>{children}</div>;
 };
 
 export default Icon;

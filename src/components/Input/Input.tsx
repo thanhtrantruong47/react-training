@@ -1,6 +1,7 @@
 import { ReactNode } from 'react';
 import Icon from '../Icon/Icon';
-import styles from './searchInput.module.css';
+import styles from './input.module.css';
+import utils from '../../styles/modules/utils.module.css';
 
 interface InputProps {
   placeholder: string;
@@ -17,15 +18,16 @@ const Input = ({
   children,
   positionIcon,
 }: InputProps) => (
-  <form className={styles.container}>
+  <div className={utils.relative}>
     <input
       type={inputType}
       placeholder={placeholder}
       onChange={onChange}
       className={styles.searchInput}
+      maxLength={20}
     />
     <Icon position={positionIcon}>{children}</Icon>
-  </form>
+  </div>
 );
 
 export default Input;

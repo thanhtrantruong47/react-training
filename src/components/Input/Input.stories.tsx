@@ -1,0 +1,22 @@
+import type { Meta, StoryObj } from '@storybook/react';
+import Input from './Input';
+import { SearchIcon } from '../Icon/SearchIcon';
+import styles from './input.module.css';
+import { fn } from '@storybook/test';
+
+export default {
+  component: Input,
+  title: 'Components/Input',
+} as Meta;
+
+type Story = StoryObj<typeof Input>;
+
+export const Default: Story = {
+  args: {
+    placeholder: 'Search',
+    inputType: 'input',
+    onChange: fn(),
+    children: <SearchIcon />,
+    positionIcon: styles.searchIcon,
+  },
+};

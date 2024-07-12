@@ -2,3 +2,12 @@
   text-decoration: none;
   color: var(--color-text-primary);
 }
+
+.pointer {
+  cursor: pointer;
+}
+
+.relative {
+  position: relative;
+  display: inline-block;
+}
