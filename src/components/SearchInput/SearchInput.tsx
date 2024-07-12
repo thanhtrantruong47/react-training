@@ -1,5 +1,5 @@
+import { SearchIcon } from '../Icon/SearchIcon';
 import styles from './searchInput.module.css';
-import { SearchIcon } from '../Icon/Icon';
 
 interface SearchInputProps {
   placeholder: string;
