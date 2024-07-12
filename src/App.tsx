@@ -2,6 +2,7 @@ import { RouterProvider } from 'react-router-dom';
 import router from './routers';
 import { useEffect } from 'react';
 import ProductAPIService from './services/ProductAPIService';
+import Header from './components/Header/Header';
 
 const App = () => {
   // example start
@@ -25,6 +26,7 @@ const App = () => {
 
   return (
     <>
+      <Header />
       <RouterProvider router={router} />
     </>
   );
