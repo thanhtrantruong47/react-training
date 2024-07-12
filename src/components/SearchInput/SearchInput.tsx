@@ -12,7 +12,7 @@ const SearchInput = ({
   inputType,
   onChange,
 }: SearchInputProps) => (
-  <div className={styles.container}>
+  <form className={styles.container}>
     <input
       type={inputType}
       placeholder={placeholder}
@@ -22,7 +22,7 @@ const SearchInput = ({
     <div className={styles.searchIcon}>
       <SearchIcon />
     </div>
-  </div>
+  </form>
 );
 
 export default SearchInput;
