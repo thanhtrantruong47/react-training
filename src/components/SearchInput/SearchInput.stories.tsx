@@ -9,5 +9,9 @@ export default {
 type Story = StoryObj<typeof SearchInput>;
 
 export const Default: Story = {
-  args: { placeholder: 'Search', inputType: 'input', onChange: () => {} },
+  args: {
+    placeholder: 'Search',
+    inputType: 'input',
+    onChange: () => {},
+  },
 };
