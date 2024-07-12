@@ -1,13 +1,24 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import Icon from './Icon';
+import { CartIcon } from './CartIcon';
+import { LikeIcon } from './LikeIcon';
+import { SearchIcon } from './SearchIcon';
+import { LoginIcon } from './LoginIcon';
 
 export default {
-  component: Icon,
-  title: 'Components/Icon',
+  title: 'Icons',
 } as Meta;
 
-type Story = StoryObj<typeof Icon>;
+// CartIcon story
+export const Cart: StoryObj = () => <CartIcon />;
+Cart.storyName = 'Cart Icon';
 
-export const Default: Story = {
-  args: {},
-};
+// LikeIcon story
+export const Like: StoryObj = () => <LikeIcon />;
+Like.storyName = 'Like Icon';
+
+export const Search: StoryObj = () => <SearchIcon />;
+Search.storyName = 'Search Icon';
+
+// LikeIcon story
+export const Login: StoryObj = () => <LoginIcon />;
+Login.storyName = 'Login Icon';
