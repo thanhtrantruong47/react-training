@@ -19,30 +19,28 @@ const ProductCard = ({
   description,
   rating,
   ratingNumbers,
-}: ProductCardProps) => {
-  return (
-    <div className={styles.product}>
-      <div className={`${styles.imageGroup} ${utils.relative}`}>
-        <img className={styles.productImage} src={image} alt={title} />
-        <SelectedProduct />
+}: ProductCardProps) => (
+  <div className={styles.product}>
+    <div className={`${styles.imageGroup} ${utils.relative}`}>
+      <img className={styles.productImage} src={image} alt={title} />
+      <SelectedProduct />
+    </div>
+    <div className={styles.group}>
+      <div className={`${styles.nameGroup} ${utils.flexCenter}`}>
+        <p>{title}</p>
+        <span>{price}$</span>
       </div>
-      <div className={styles.group}>
-        <div className={`${styles.nameGroup} ${utils.flexCenter}`}>
-          <p>{title}</p>
-          <span>{price}$</span>
+      <p className={styles.desc}>{description}</p>
+      <div className={`${styles.ratingGroup} ${utils.flexCenter}`}>
+        <div className={`${styles.numberRating} ${utils.flexCenter}`}>
+          {Array.from({ length: ratingNumbers }).map((_, index) => (
+            <StarIcon key={index} />
+          ))}
         </div>
-        <p className={styles.desc}>{description}</p>
-        <div className={`${styles.ratingGroup} ${utils.flexCenter}`}>
-          <div className={`${styles.numberRating} ${utils.flexCenter}`}>
-            {Array.from({ length: ratingNumbers }).map((_, index) => (
-              <StarIcon key={index} />
-            ))}
-          </div>
-          <p>{`(${rating}k)`}</p>
-        </div>
+        <p>{`(${rating}k)`}</p>
       </div>
     </div>
-  );
-};
+  </div>
+);
 
 export default ProductCard;

@@ -1,11 +1,11 @@
-import BookMaskIcon from '../Icon/BookMaskIcon';
+import BookMarkIcon from '../Icon/BookMarkIcon';
 import LikedIcon from '../Icon/LikedIcon';
 import styles from './selectedProduct.module.css';
 
 const SelectedProduct = () => {
   return (
     <div className={styles.container}>
-      <BookMaskIcon />
+      <BookMarkIcon />
       <LikedIcon />
     </div>
   );
