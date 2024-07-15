@@ -46,4 +46,7 @@
   --icon-sm: 1.125rem; /* 18px */
   --icon-md: 1.5rem; /* 24px */
   --icon-lg: 2rem; /* 32px */
+
+  /* screen  */
+  --table-screen: 768px;
 }

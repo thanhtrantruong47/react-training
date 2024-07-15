@@ -7,25 +7,26 @@ import Input from '../Input/Input';
 import Logo from '../Logo/Logo';
 import NavBar from '../NavBar/NavBar';
 import styles from './header.module.css';
+import utils from '../../styles/modules/utils.module.css';
 
 const Header = () => (
-  <header className={styles.container}>
+  <header className={`${styles.container}  ${utils.flexCenter}`}>
     <Logo />
-    <div className={styles.group}>
+    <div className={`${styles.group}  ${utils.flexCenter}`}>
       <NavBar items={NAV_BAR} />
       <div className={styles.groupIcon}>
         <CartIcon />
         <LikeIcon />
         <LoginIcon />
       </div>
-    </div>
-    <div className={styles.groupSearch}>
-      <Input
-        type="text"
-        onChange={() => {}}
-        placeholder="Search"
-        endIcon={<SearchIcon />}
-      />
+      <div className={styles.groupInput}>
+        <Input
+          type="text"
+          onChange={() => {}}
+          placeholder="Search"
+          endIcon={<SearchIcon />}
+        />
+      </div>
     </div>
   </header>
 );

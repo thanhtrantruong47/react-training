@@ -11,3 +11,8 @@
   position: relative;
   display: inline-block;
 }
+
+.flexCenter {
+  display: flex;
+  align-items: center;
+}

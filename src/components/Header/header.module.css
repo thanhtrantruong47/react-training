@@ -1,14 +1,10 @@
 .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   gap: 0.8125rem;
+  justify-content: space-around;
 }
 
 .group {
-  display: flex;
   gap: 2.5rem;
-  align-items: center;
   margin-left: auto;
   float: right;
 }
@@ -18,8 +14,8 @@
   gap: 1.5rem;
 }
 
-@media (max-width: 876px) {
-  .groupSearch {
+@media (max-width: 768px) {
+  .groupInput {
     display: none;
   }
 }
