@@ -1,0 +1,23 @@
+.container {
+  max-width: 142px;
+}
+
+.container input {
+  width: 142px;
+  position: relative;
+  text-align: center;
+}
+
+.iconDecrease {
+    position: absolute;
+    left: 0.5rem; /* Adjust positioning of the decrease icon */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Center vertically */
+    cursor: pointer; /* Ensure cursor changes on hover */
+  }
+
+.container input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
