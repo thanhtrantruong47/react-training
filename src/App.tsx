@@ -3,12 +3,10 @@ import Home from './pages/Home';
 import Cart from './pages/Cart';
 import Details from './pages/Details';
 import Order from './pages/Order';
-import Header from './components/Header/Header';
 
 const App = () => {
   return (
     <BrowserRouter>
-      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/cart" element={<Cart />} />
