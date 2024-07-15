@@ -1,7 +1,7 @@
-import styles from './productCart.module.css';
 import utils from '../../styles/modules/utils.module.css';
 import SelectedProduct from '../SelectedProduct/SelectedProduct';
 import StarIcon from '../Icon/StarIcon';
+import styles from './productCart.module.css';
 
 interface ProductCardProps {
   image: string;
@@ -11,6 +11,18 @@ interface ProductCardProps {
   rating: number;
   ratingNumbers: number;
 }
+
+const formatRating = (rating: number): string => {
+  if (rating >= 1000000) {
+    return `${(rating / 1000000).toFixed(1)}m`;
+  } else if (rating >= 1000) {
+    // Adjust the logic to round to one decimal place and handle cases like 9999
+    const roundedRating = Math.floor(rating / 100) / 10; // Divide by 1000 and round to one decimal place
+    return `${roundedRating.toFixed(1)}k`;
+  } else {
+    return `${rating}`;
+  }
+};
 
 const ProductCard = ({
   image,
@@ -37,7 +49,7 @@ const ProductCard = ({
             <StarIcon key={index} />
           ))}
         </div>
-        <p>{`(${rating}k)`}</p>
+        <p>{`(${formatRating(rating)})`}</p>
       </div>
     </div>
   </div>
