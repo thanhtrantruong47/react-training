@@ -35,7 +35,7 @@ const ProductCard = ({
       <div className={`${styles.ratingGroup} ${utils.flexCenter}`}>
         <div className={`${styles.numberRating} ${utils.flexCenter}`}>
           {Array.from({ length: ratingNumbers }).map((_, index) => (
-            <StarIcon key={index} />
+            <StarIcon key={`${title}_${index}`} />
           ))}
         </div>
         <p
