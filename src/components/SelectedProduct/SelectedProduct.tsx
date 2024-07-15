@@ -1,9 +1,14 @@
-interface SelectedProps {
-  icon: string;
-}
+import BookMaskIcon from '../Icon/BookMaskIcon';
+import LikedIcon from '../Icon/LikedIcon';
+import styles from './selectedProduct.module.css';
 
-const SelectedProduct = (_: SelectedProps) => {
-  return <></>;
+const SelectedProduct = () => {
+  return (
+    <div className={styles.container}>
+      <BookMaskIcon />
+      <LikedIcon />
+    </div>
+  );
 };
 
 export default SelectedProduct;

@@ -1,0 +1,53 @@
+.product {
+  font-size: var(--font-size-sm);
+  font-family: Poppins;
+  max-width: 16.5625rem;
+  box-shadow:
+    0 0.25rem 0.5rem 0 var(--shadow-sm),
+    0 0.375rem 1.25rem 0 var(--shadow-sm);
+}
+
+.product:hover {
+  box-shadow:
+    0 0.25rem 0.5rem 0 var(--shadow-lg),
+    0 0.375rem 1.25rem 0 var(--shadow-lg);
+}
+
+.imageGroup:hover > div {
+  display: flex;
+}
+
+.productImage {
+  width: 100%;
+  min-height: 15.5rem;
+}
+
+.group {
+  padding: 1rem 1rem 1.5rem 1rem;
+}
+
+.nameGroup {
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-bold);
+  justify-content: space-between;
+  margin-bottom: 0.3125rem;
+}
+
+.nameGroup > span {
+  font-family: Signika;
+}
+
+.desc {
+  color: var(--color-text-product);
+  margin-bottom: 0.8125rem;
+}
+
+.ratingGroup {
+  gap: 0.5625rem;
+  color: var(--color-text-product);
+  font-family: Signika;
+}
+
+.numberRating {
+  gap: 0.25rem;
+}
