@@ -1,0 +1,21 @@
+.container {
+  gap: 0.8125rem;
+  justify-content: space-around;
+}
+
+.group {
+  gap: 2.5rem;
+  margin-left: auto;
+  float: right;
+}
+
+.groupIcon {
+  display: flex;
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .groupInput {
+    display: none;
+  }
+}

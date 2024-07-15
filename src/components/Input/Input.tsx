@@ -4,7 +4,6 @@ import utils from '../../styles/modules/utils.module.css';
 import EndIcon from '../Icon/EndIcon';
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
-  onChange: () => void;
   endIcon?: ReactNode;
 }
 

@@ -3,7 +3,8 @@
   font-size: 1rem;
   border: var(--border-lg) solid var(--color-text-product);
   border-radius: var(--border-radius);
-  max-width: 250px;
+  width: 100%;
+  min-width: 12.5rem;
 }
 
 .searchInput::placeholder {
