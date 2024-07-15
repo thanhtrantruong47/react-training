@@ -2,8 +2,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 0.8125rem; /* 13px / 16px = 0.8125rem */
-  margin: 0 7.4375rem; /* 119px / 16px = 7.4375rem */
+  padding: 0 7.4375rem;
+  gap: 0.8125rem;
 }
 
 .group {
@@ -18,19 +18,26 @@
   gap: 1.5rem;
 }
 
+.groupSearch {
+  display: flex;
+  justify-content: flex-end;
+  flex-grow: 1;
+  max-width: 20rem;
+}
+
 @media (max-width: 1024px) {
   .container {
-    margin: 0 3.75rem;
+    padding: 0 3.75rem;
   }
 
   .groupSearch {
-    max-width: 5rem;
+    max-width: 15rem;
   }
 }
 
 @media (max-width: 876px) {
   .container {
-    margin: 0 1.25rem;
+    padding: 0 1.25rem;
   }
 
   .groupSearch {
