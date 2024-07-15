@@ -49,7 +49,7 @@ const ProductCard = ({
             <StarIcon key={index} />
           ))}
         </div>
-        <p>{`(${formatRating(rating)})`}</p>
+        <p className={styles.ratingGroup}>{`(${formatRating(rating)})`}</p>
       </div>
     </div>
   </div>
