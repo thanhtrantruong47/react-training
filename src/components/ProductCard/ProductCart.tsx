@@ -38,9 +38,7 @@ const ProductCard = ({
             <StarIcon key={`${title}_${index}`} />
           ))}
         </div>
-        <p
-          className={styles.ratingGroup}
-        >{`(${formatNumberCompact(rating)})`}</p>
+        <p className={styles.ratingGroup}>{formatNumberCompact(rating)}</p>
       </div>
     </div>
   </div>
