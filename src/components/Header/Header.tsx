@@ -1,4 +1,4 @@
-import { NAV_BAR } from '../../constants';
+import { NAV_BAR_ITEMS } from '../../constants';
 import { CartIcon } from '../Icon/CartIcon';
 import { LikeIcon } from '../Icon/LikeIcon';
 import { LoginIcon } from '../Icon/LoginIcon';
@@ -13,7 +13,7 @@ const Header = () => (
   <header className={`${styles.container}  ${utils.flexCenter}`}>
     <Logo />
     <div className={`${styles.group}  ${utils.flexCenter}`}>
-      <NavBar items={NAV_BAR} />
+      <NavBar items={NAV_BAR_ITEMS} />
       <div className={styles.groupIcon}>
         <CartIcon />
         <LikeIcon />
