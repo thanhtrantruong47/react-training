@@ -11,9 +11,11 @@ export const formatNumberCompact = (number: number): string => {
   if (number >= 1000000) {
     return `${(number / 1000000).toFixed(1)}m`;
   }
+
   if (number >= 1000) {
     const roundedNumber = Math.floor(number / 100) / 10;
     return `${roundedNumber.toFixed(1)}k`;
   }
+
   return `${number}`;
 };
