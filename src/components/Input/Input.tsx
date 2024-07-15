@@ -8,7 +8,7 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 }
 
 const Input = ({ onChange, endIcon, ...rest }: InputProps) => (
-  <div className={`${utils.relative} ${styles.input}`}>
+  <div className={utils.relative}>
     <input className={styles.searchInput} {...rest} onChange={onChange} />
     <EndIcon>{endIcon}</EndIcon>
   </div>
