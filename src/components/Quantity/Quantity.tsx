@@ -32,7 +32,6 @@ const Quantity = ({ amount }: QuantityProp) => {
 
   return (
     <div>
-      <p>Set the quantity</p>
       <div className={styles.quantity}>
         <button
           className={styles.quantityButton}
