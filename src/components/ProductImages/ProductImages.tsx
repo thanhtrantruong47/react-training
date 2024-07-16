@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import styles from './productImages.module.css';
+import utils from '../../styles/modules/utils.module.css';
 
 interface ProductImagesProps {
   images: string[];
@@ -16,17 +17,19 @@ const ProductImages = ({ images }: ProductImagesProps) => {
     <div>
       <img
         className={styles.detailImage}
-        src={images ? images[activeIndex] : ''}
+        src={images[activeIndex]}
         alt={images[activeIndex]}
       />
       <ul className={styles.imageGroup}>
-        {images.map((image, index) => (
-          <li key={index}>
+        {images.slice(0, 3).map((image, index) => (
+          <li
+            key={`Image ${index + 1}`}
+            className={`${utils.pointer} ${index === activeIndex ? styles.imageActive : ''}`}
+            onClick={() => handleImageClick(index)}>
             <img
-              className={`${styles.image} ${index === activeIndex ? styles.imageActive : ''}`}
+              className={styles.image}
               src={image}
-              alt={`Product ${index + 1}`}
-              onClick={() => handleImageClick(index)}
+              alt={`Image ${index + 1}`}
             />
           </li>
         ))}
