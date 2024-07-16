@@ -28,12 +28,12 @@ const ProductCard = ({
     <div className={`${styles.imageGroup} ${utils.relative}`}>
       <img className={styles.productImage} src={image} alt={title} />
       <div className={styles.bookMark}>
-        <div onChange={onChange}>
+        <button aria-label="toggle bookmark" onChange={onChange}>
           <BookMarkIcon />
-        </div>
-        <div onChange={onChange}>
+        </button>
+        <button aria-label="toggle liked" onChange={onChange}>
           <LikedIcon />
-        </div>
+        </button>
       </div>
     </div>
     <div className={styles.group}>
