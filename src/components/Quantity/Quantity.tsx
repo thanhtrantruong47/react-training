@@ -27,24 +27,22 @@ const Quantity = ({ defaultValue }: QuantityProp) => {
   };
 
   return (
-    <div>
-      <div className={styles.container}>
-        <button
-          className={styles.button}
-          onClick={decrement}
-          disabled={quantity <= 1 ? true : false}>
-          <MinusIcon />
-        </button>
-        <input
-          className={styles.quantity}
-          type="number"
-          value={quantity}
-          onChange={quantityChange}
-        />
-        <button className={styles.button} onClick={increment}>
-          <PlusIcon />
-        </button>
-      </div>
+    <div className={styles.container}>
+      <button
+        className={styles.button}
+        onClick={decrement}
+        disabled={quantity <= 1 ? true : false}>
+        <MinusIcon />
+      </button>
+      <input
+        className={styles.quantity}
+        type="number"
+        value={quantity}
+        onChange={quantityChange}
+      />
+      <button className={styles.button} onClick={increment}>
+        <PlusIcon />
+      </button>
     </div>
   );
 };
