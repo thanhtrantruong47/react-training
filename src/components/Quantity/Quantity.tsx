@@ -1,48 +1,56 @@
-import React, { useState } from 'react';
+import { ChangeEvent, useEffect, useState } from 'react';
 import styles from './quantity.module.css';
-import { SearchIcon } from '../Icon/SearchIcon';
-import EndIcon from '../Icon/EndIcon';
+import PlusIcon from '../Icon/PlusIcon';
+import MinusIcon from '../Icon/MinusIcon';
 
-interface QuantityProps {
-  value: number;
-  onChange: (newValue: number) => void;
+interface QuantityProp {
+  amount: number;
 }
 
-const Quantity = ({ value, onChange }: QuantityProps) => {
-  const [amount, setAmount] = useState(value.toString());
+const Quantity = ({ amount }: QuantityProp) => {
+  const [value, setValue] = useState(amount);
+  const [disableDecrement, setDisableDecrement] = useState(value === 0);
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const newValue = event.target.value;
-    setAmount(newValue);
-    onChange(parseInt(newValue, 10));
+  useEffect(() => {
+    setDisableDecrement(value === 1);
+  }, [value]);
+
+  const increment = () => {
+    setValue(prevValue => (prevValue < 20 ? prevValue + 1 : 20));
   };
 
-  const handleDecrease = () => {
-    // Ensure value doesn't go below 1
-    const newValue = parseInt(amount, 10) > 1 ? parseInt(amount, 10) - 1 : 1;
-    setAmount(newValue.toString());
-    onChange(newValue);
+  const decrement = () => {
+    setValue(prevValue => (prevValue > 0 ? prevValue - 1 : 1));
   };
 
-  const handleIncrease = () => {
-    const newValue = parseInt(amount, 10) + 1; // Convert current amount to integer
-    setAmount(newValue.toString());
-    onChange(newValue);
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const newValue = parseInt(event.target.value, 10);
+    if (!isNaN(newValue) && newValue >= 1 && newValue <= 20) {
+      setValue(newValue);
+    }
   };
 
   return (
-    <div className={styles.container}>
-      <button
-        className={styles.iconDecrease}
-        type="button"
-        onClick={handleDecrease}
-      >
-        <SearchIcon />
-      </button>
-      <input type="number" value={amount} onChange={handleChange} />
-      <EndIcon onChange={handleIncrease}>
-        <SearchIcon />
-      </EndIcon>
+    <div>
+      <p>Set the quantity</p>
+      <div className={styles.quantity}>
+        <button
+          className={styles.quantityButton}
+          onClick={decrement}
+          disabled={disableDecrement}
+        >
+          <MinusIcon />
+        </button>
+        <input
+          className={styles.amount}
+          type="number"
+          value={value}
+          onChange={handleChange}
+        />
+        <button className={styles.quantityButton} onClick={increment}>
+          <PlusIcon />
+        </button>
+      </div>
     </div>
   );
 };

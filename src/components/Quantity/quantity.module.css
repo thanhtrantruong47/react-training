@@ -1,22 +1,41 @@
-.container {
-  max-width: 142px;
+.quantity {
+  display: flex;
+  border: var(--border-sm) solid var(--color-text-product);
+  max-width: 8.875rem; /*  142px */
+  height: 3rem;
+  padding: 0.75rem;
+  justify-content: space-between;
 }
 
-.container input {
-  width: 142px;
-  position: relative;
+.quantityButton,
+.amount {
+  user-select: none;
+  outline: none;
+}
+
+.quantityButton {
+  border: none;
+  cursor: pointer;
+  background-color: var(--color-text-secondary);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  padding: 0;
+}
+
+.quantityButton:disabled {
+  color: var(--color-disable);
+}
+
+.amount {
+  width: 2rem;
+  border: 0;
   text-align: center;
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
 }
 
-.iconDecrease {
-    position: absolute;
-    left: 0.5rem; /* Adjust positioning of the decrease icon */
-    top: 50%; /* Center vertically */
-    transform: translateY(-50%); /* Center vertically */
-    cursor: pointer; /* Ensure cursor changes on hover */
-  }
-
-.container input::-webkit-outer-spin-button,
+.quantity input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
