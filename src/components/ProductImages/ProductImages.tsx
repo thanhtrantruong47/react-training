@@ -19,14 +19,13 @@ const ProductImages = ({ images }: ProductImagesProps) => {
         src={images ? images[activeIndex] : ''}
         alt={images[activeIndex]}
       />
-      <ul className={styles.imageGruop}>
+      <ul className={styles.imageGroup}>
         {images.map((image, index) => (
           <li key={index}>
             <img
               className={`${styles.image} ${index === activeIndex ? styles.imageActive : ''}`}
               src={image}
               alt={`Product ${index + 1}`}
-              style={{ maxWidth: '100px', maxHeight: '100px' }}
               onClick={() => handleImageClick(index)}
             />
           </li>
