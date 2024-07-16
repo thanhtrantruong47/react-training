@@ -31,25 +31,23 @@ const Quantity = ({ amount }: QuantityProp) => {
   };
 
   return (
-    <div>
-      <div className={styles.quantity}>
-        <button
-          className={styles.quantityButton}
-          onClick={decrement}
-          disabled={disableDecrement}
-        >
-          <MinusIcon />
-        </button>
-        <input
-          className={styles.amount}
-          type="number"
-          value={value}
-          onChange={handleChange}
-        />
-        <button className={styles.quantityButton} onClick={increment}>
-          <PlusIcon />
-        </button>
-      </div>
+    <div className={styles.quantity}>
+      <button
+        className={styles.quantityButton}
+        onClick={decrement}
+        disabled={disableDecrement}
+      >
+        <MinusIcon />
+      </button>
+      <input
+        className={styles.amount}
+        type="number"
+        value={value}
+        onChange={handleChange}
+      />
+      <button className={styles.quantityButton} onClick={increment}>
+        <PlusIcon />
+      </button>
     </div>
   );
 };

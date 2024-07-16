@@ -1,0 +1,14 @@
+.container {
+  display: grid;
+  background-color: var(--color-bg);
+  padding: 2.5rem;
+  gap: 46px;
+}
+
+.group {
+  justify-content: space-between;
+}
+
+.quantity {
+  justify-content: flex-end;
+}
