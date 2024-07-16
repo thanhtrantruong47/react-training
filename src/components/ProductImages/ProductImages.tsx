@@ -4,9 +4,10 @@ import utils from '../../styles/modules/utils.module.css';
 
 interface ProductImagesProps {
   images: string[];
+  title: string;
 }
 
-const ProductImages = ({ images }: ProductImagesProps) => {
+const ProductImages = ({ images, title }: ProductImagesProps) => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const handleImageClick = (index: number) => {
@@ -18,7 +19,7 @@ const ProductImages = ({ images }: ProductImagesProps) => {
       <img
         className={styles.detailImage}
         src={images[activeIndex]}
-        alt={images[activeIndex]}
+        alt={`${title} image ${images[activeIndex]}`}
       />
       <ul className={styles.imageGroup}>
         {images.slice(0, 3).map((image, index) => (
@@ -29,7 +30,7 @@ const ProductImages = ({ images }: ProductImagesProps) => {
             <img
               className={styles.image}
               src={image}
-              alt={`Image ${index + 1}`}
+              alt={`${title} image ${index + 1}`}
             />
           </li>
         ))}
