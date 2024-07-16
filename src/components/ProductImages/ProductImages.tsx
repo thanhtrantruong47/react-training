@@ -23,7 +23,7 @@ const ProductImages = ({ images }: ProductImagesProps) => {
       <ul className={styles.imageGroup}>
         {images.slice(0, 3).map((image, index) => (
           <li
-            key={`Image ${index}`}
+            key={`${image}${index}`}
             className={`${utils.pointer} ${index === activeIndex ? styles.imageActive : ''}`}
             onClick={() => handleImageClick(index)}>
             <img
