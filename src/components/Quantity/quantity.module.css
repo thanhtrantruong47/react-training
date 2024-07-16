@@ -1,4 +1,4 @@
-.quantity {
+.container {
   display: flex;
   border: var(--border-sm) solid var(--color-text-product);
   max-width: 8.875rem; /*  142px */
@@ -7,8 +7,8 @@
   justify-content: space-between;
 }
 
-.quantityButton,
-.amount {
+.button,
+.quantity {
   user-select: none;
   outline: none;
 }
@@ -27,7 +27,7 @@
   color: var(--color-disable);
 }
 
-.amount {
+.quantity {
   width: 2rem;
   border: 0;
   text-align: center;
@@ -35,7 +35,7 @@
   font-weight: var(--font-weight-bold);
 }
 
-.quantity input::-webkit-outer-spin-button,
+.container input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;

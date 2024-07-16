@@ -28,7 +28,7 @@ const Quantity = ({ defaultValue }: QuantityProp) => {
 
   return (
     <div>
-      <div className={styles.quantity}>
+      <div className={styles.container}>
         <button
           className={styles.button}
           onClick={decrement}
@@ -36,7 +36,7 @@ const Quantity = ({ defaultValue }: QuantityProp) => {
           <MinusIcon />
         </button>
         <input
-          className={styles.amount}
+          className={styles.quantity}
           type="number"
           value={quantity}
           onChange={quantityChange}
