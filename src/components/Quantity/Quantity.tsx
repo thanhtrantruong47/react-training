@@ -8,7 +8,7 @@ interface QuantityProps {
   onChange: (newValue: number) => void;
 }
 
-const Quantity: React.FC<QuantityProps> = ({ value, onChange }) => {
+const Quantity = ({ value, onChange }: QuantityProps) => {
   const [amount, setAmount] = useState(value.toString());
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
