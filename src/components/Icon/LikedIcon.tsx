@@ -1,15 +1,5 @@
-interface LikedIconProps {
-  onChange?: () => void;
-}
-
-const LikedIcon = ({ onChange }: LikedIconProps) => (
-  <svg
-    onChange={onChange}
-    width="32"
-    height="32"
-    viewBox="0 0 32 32"
-    fill="none"
-  >
+const LikedIcon = () => (
+  <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
     <rect
       x="0.25"
       y="0.25"

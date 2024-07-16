@@ -12,6 +12,7 @@ interface ProductCardProps {
   description: string;
   rating: number;
   ratingNumbers: number;
+  onChange?: () => void;
 }
 
 const ProductCard = ({
@@ -21,13 +22,18 @@ const ProductCard = ({
   description,
   rating,
   ratingNumbers,
+  onChange,
 }: ProductCardProps) => (
   <div className={styles.product}>
     <div className={`${styles.imageGroup} ${utils.relative}`}>
       <img className={styles.productImage} src={image} alt={title} />
       <div className={styles.bookMark}>
-        <BookMarkIcon />
-        <LikedIcon />
+        <div onChange={onChange}>
+          <BookMarkIcon />
+        </div>
+        <div onChange={onChange}>
+          <LikedIcon />
+        </div>
       </div>
     </div>
     <div className={styles.group}>
