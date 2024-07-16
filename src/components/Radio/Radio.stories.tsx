@@ -21,7 +21,7 @@ export const InputRadioColor: Story = {
 
 export const InputRadioSize: Story = {
   args: {
-    variant: 'sizes',
+    variant: 'size',
     options: sizeOptions,
   },
 };
