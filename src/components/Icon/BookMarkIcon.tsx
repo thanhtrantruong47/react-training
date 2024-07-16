@@ -1,5 +1,15 @@
-const BookMarkIcon = () => (
-  <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+interface BookMarkIconProps {
+  onChange?: () => void;
+}
+
+const BookMarkIcon = ({ onChange }: BookMarkIconProps) => (
+  <svg
+    onChange={onChange}
+    width="32"
+    height="32"
+    viewBox="0 0 32 32"
+    fill="none"
+  >
     <rect
       x="0.25"
       y="0.25"

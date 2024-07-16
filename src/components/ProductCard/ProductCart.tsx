@@ -1,8 +1,9 @@
 import utils from '../../styles/modules/utils.module.css';
-import SelectedProduct from '../SelectedProduct/SelectedProduct';
 import StarIcon from '../Icon/StarIcon';
 import styles from './productCart.module.css';
 import { formatNumberCompact } from '../../utils/formatNumberCompact';
+import BookMarkIcon from '../Icon/BookMarkIcon';
+import LikedIcon from '../Icon/LikedIcon';
 
 interface ProductCardProps {
   image: string;
@@ -24,7 +25,10 @@ const ProductCard = ({
   <div className={styles.product}>
     <div className={`${styles.imageGroup} ${utils.relative}`}>
       <img className={styles.productImage} src={image} alt={title} />
-      <SelectedProduct />
+      <div className={styles.bookMark}>
+        <BookMarkIcon />
+        <LikedIcon />
+      </div>
     </div>
     <div className={styles.group}>
       <div className={`${styles.nameGroup} ${utils.flexCenter}`}>
