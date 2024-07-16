@@ -3,6 +3,12 @@
   display: none;
 }
 
+.title {
+  font-family: Poppins;
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+}
+
 .listColor {
   display: flex;
   gap: 0.625rem;

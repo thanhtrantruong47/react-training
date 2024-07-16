@@ -52,7 +52,7 @@ const SizeOption = ({
 
 const ListColor = ({ colors }: { colors: string[] }) => (
   <div>
-    <p>Colors</p>
+    <p className={styles.title}>Color</p>
     <div className={styles.listColor}>
       {colors.map((option, index) => (
         <ColorOption color={option} key={option} isFirstOption={index === 0} />
@@ -63,7 +63,7 @@ const ListColor = ({ colors }: { colors: string[] }) => (
 
 const ListSize = ({ sizes }: { sizes: string[] }) => (
   <div>
-    <p>Size</p>
+    <p className={styles.title}>Size</p>
     <div className={styles.listSize}>
       {sizes.map((option, index) => (
         <SizeOption size={option} key={option} isFirstOption={index === 0} />
