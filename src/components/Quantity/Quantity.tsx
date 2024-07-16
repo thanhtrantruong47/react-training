@@ -1,32 +1,28 @@
-import { ChangeEvent, useEffect, useState } from 'react';
+import { ChangeEvent, useState } from 'react';
 import styles from './quantity.module.css';
 import PlusIcon from '../Icon/PlusIcon';
 import MinusIcon from '../Icon/MinusIcon';
 
 interface QuantityProp {
-  amount: number;
+  defaultValue: number;
 }
 
-const Quantity = ({ amount }: QuantityProp) => {
-  const [value, setValue] = useState(amount);
-  const [disableDecrement, setDisableDecrement] = useState(value === 0);
-
-  useEffect(() => {
-    setDisableDecrement(value === 1);
-  }, [value]);
+const Quantity = ({ defaultValue }: QuantityProp) => {
+  const [quantity, setQuantity] = useState(defaultValue);
 
   const increment = () => {
-    setValue(prevValue => (prevValue < 20 ? prevValue + 1 : 20));
+    setQuantity(prevValue => prevValue + 1);
   };
 
   const decrement = () => {
-    setValue(prevValue => (prevValue > 0 ? prevValue - 1 : 1));
+    setQuantity(prevValue => (prevValue > 0 ? prevValue - 1 : 1));
   };
 
-  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+  const quantityChange = (event: ChangeEvent<HTMLInputElement>) => {
     const newValue = parseInt(event.target.value, 10);
-    if (!isNaN(newValue) && newValue >= 1 && newValue <= 20) {
-      setValue(newValue);
+
+    if (!isNaN(newValue) && newValue >= 1) {
+      setQuantity(newValue);
     }
   };
 
@@ -34,19 +30,18 @@ const Quantity = ({ amount }: QuantityProp) => {
     <div>
       <div className={styles.quantity}>
         <button
-          className={styles.quantityButton}
+          className={styles.button}
           onClick={decrement}
-          disabled={disableDecrement}
-        >
+          disabled={quantity <= 1 ? true : false}>
           <MinusIcon />
         </button>
         <input
           className={styles.amount}
           type="number"
-          value={value}
-          onChange={handleChange}
+          value={quantity}
+          onChange={quantityChange}
         />
-        <button className={styles.quantityButton} onClick={increment}>
+        <button className={styles.button} onClick={increment}>
           <PlusIcon />
         </button>
       </div>

@@ -9,5 +9,5 @@ export default {
 type Story = StoryObj<typeof Quantity>;
 
 export const Default: Story = {
-  args: { amount: 1 },
+  args: { defaultValue: 1 },
 };
