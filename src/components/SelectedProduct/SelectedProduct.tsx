@@ -1,12 +1,9 @@
-import BookMarkIcon from '../Icon/BookMarkIcon';
-import LikedIcon from '../Icon/LikedIcon';
-import styles from './selectedProduct.module.css';
+interface SelectedProps {
+  icon: string;
+}
 
-const SelectedProduct = () => (
-  <div className={styles.container}>
-    <BookMarkIcon />
-    <LikedIcon />
-  </div>
-);
+const SelectedProduct = (_: SelectedProps) => {
+  return <></>;
+};
 
 export default SelectedProduct;
