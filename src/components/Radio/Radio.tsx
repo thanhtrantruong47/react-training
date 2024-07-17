@@ -1,58 +1,58 @@
-import React from 'react';
+import { useEffect, useState } from 'react';
 import styles from './radio.module.css';
-import utils from '../../styles/modules/utils.module.css';
 
-interface RadioOptionProps {
-  value: string;
-  isFirstOption: boolean;
-  type: string;
+interface RadioColorProps {
+  color: string;
+  isChecked: boolean;
+  onChange: () => void;
 }
 
-const RadioOption = ({ value, isFirstOption, type }: RadioOptionProps) => (
-  <>
-    <input
-      type="radio"
-      name={type}
-      id={value}
-      className={type === 'color' ? styles.colorRadio : styles.sizeRadio}
-      defaultChecked={isFirstOption}
-    />
-    <label
-      htmlFor={value}
-      className={type === 'color' ? styles.colorOption : `${styles.sizeOption} ${utils.flexCenter}`}
-      aria-label={`Select ${type} ${value}`}>
-      {type === 'color' ? (
-        <div className={styles.colorCircle} style={{ backgroundColor: value } as React.CSSProperties} />
-      ) : (
-        value
-      )}
-    </label>
-  </>
-);
+const RadioColor = ({ color, isChecked, onChange }: RadioColorProps) => {
+  return (
+    <>
+      <input
+        type="radio"
+        name="color"
+        value={color}
+        id={color}
+        className={styles.colorRadio}
+        checked={isChecked}
+        onChange={onChange}
+      />
+      <label htmlFor={color} className={styles.colorOption} aria-label={`Select ${color}`}>
+        <div className={`${styles.colorCircle}`} style={{ backgroundColor: isChecked ? 'white' : color }} />
+      </label>
+    </>
+  );
+};
 
 interface ListOptionsProps {
   options: string[];
-  type: string;
 }
 
-const ListOptions = ({ options, type }: ListOptionsProps) => (
-  <div>
-    <p className={styles.title}>{type.charAt(0).toUpperCase() + type.slice(1)}</p>
-    <div className={type === 'color' ? styles.listColor : styles.listSize}>
+const RadioGroup = ({ options }: ListOptionsProps) => {
+  const [selectedColor, setSelectedColor] = useState<string>(options[0]);
+
+  useEffect(() => {
+    document.documentElement.style.setProperty('--bg-checked-color', selectedColor);
+  }, [selectedColor]);
+
+  const handleRadioChange = (index: number) => {
+    setSelectedColor(options[index]);
+  };
+
+  return (
+    <div className={styles.listColor}>
       {options.map((option, index) => (
-        <RadioOption key={option} value={option} isFirstOption={index === 0} type={type} />
+        <RadioColor
+          key={index}
+          color={option}
+          isChecked={option === selectedColor}
+          onChange={() => handleRadioChange(index)}
+        />
       ))}
     </div>
-  </div>
-);
-
-interface RadioProps {
-  variant: string;
-  options: string[];
-}
-
-const Radio = ({ variant, options }: RadioProps) => {
-  return <ListOptions options={options} type={variant} />;
+  );
 };
 
-export default Radio;
+export default RadioGroup;

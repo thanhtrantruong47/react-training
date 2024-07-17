@@ -16,16 +16,26 @@
 }
 
 .colorCircle {
-  width: 1rem;
-  height: 1rem;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
-  border: var(--border-sm) solid var(--color-text-product);
+  border: 2px solid #ccc;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
 }
 
-.colorRadio:checked + .colorOption > .colorCircle {
-  background-image: url('../../assets/images/checked.svg');
-  background-repeat: no-repeat;
-  background-position: center;
+.colorRadio:checked + .colorOption > .colorCircle::before {
+  content: '';
+  display: block;
+  width: 8px;
+  height: 8px;
+  background-color: var(--bg-checked-color);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .listSize {

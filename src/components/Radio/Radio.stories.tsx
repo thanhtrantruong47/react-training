@@ -1,27 +1,18 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import Radio from './Radio';
+import RadioGruop from './Radio';
 
-const meta: Meta<typeof Radio> = {
-  component: Radio,
+const meta: Meta<typeof RadioGruop> = {
+  component: RadioGruop,
 };
 
 const colorOptions = ['red', 'green', 'blue'];
-const sizeOptions = ['S', 'M', 'L'];
 
 export default meta;
-type Story = StoryObj<typeof Radio>;
+type Story = StoryObj<typeof RadioGruop>;
 
 export const InputRadioColor: Story = {
   args: {
-    variant: 'color',
     options: colorOptions,
-  },
-};
-
-export const InputRadioSize: Story = {
-  args: {
-    variant: 'size',
-    options: sizeOptions,
   },
 };
