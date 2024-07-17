@@ -3,6 +3,7 @@ import styles from './numberInput.module.css';
 import PlusIcon from '../Icon/PlusIcon';
 import MinusIcon from '../Icon/MinusIcon';
 import Input from '../Input/Input';
+import Button from '../Button/Button';
 
 interface NumberInputProps {
   defaultValue: number;
@@ -29,21 +30,19 @@ const NumberInput = ({ defaultValue }: NumberInputProps) => {
 
   return (
     <div className={styles.container}>
-      <button
+      <Button
         className={styles.button}
         onClick={decrement}
-        disabled={quantity <= 1 ? true : false}>
-        <MinusIcon />
-      </button>
+        disabled={quantity <= 1 ? true : false}
+        icon={MinusIcon}
+      />
       <Input
         className={styles.quantity}
         type="number"
         value={quantity}
         onChange={quantityChange}
       />
-      <button className={styles.button} onClick={increment}>
-        <PlusIcon />
-      </button>
+      <Button className={styles.button} onClick={increment} icon={PlusIcon} />
     </div>
   );
 };

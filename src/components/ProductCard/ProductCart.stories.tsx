@@ -11,11 +11,12 @@ type Story = StoryObj<typeof ProductCart>;
 
 export const Default: Story = {
   args: {
+    id: 5,
     title: 'Smart T-Shirt',
     description: ' Best quality',
     image: productImage,
     price: 40,
-    rating: 999999,
-    ratingNumbers: 5,
+    rate: 999999,
+    numberRating: 5,
   },
 };
