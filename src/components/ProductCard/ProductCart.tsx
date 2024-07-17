@@ -10,8 +10,8 @@ interface ProductCardProps {
   title: string;
   price: number;
   description: string;
-  rating: number;
-  ratingNumbers: number;
+  rate: number;
+  numberRating: number;
   onChange?: () => void;
 }
 
@@ -20,8 +20,8 @@ const ProductCard = ({
   title,
   price,
   description,
-  rating,
-  ratingNumbers,
+  numberRating,
+  rate,
   onChange,
 }: ProductCardProps) => (
   <div className={styles.product}>
@@ -44,11 +44,11 @@ const ProductCard = ({
       <p className={styles.desc}>{description}</p>
       <div className={`${styles.ratingGroup} ${utils.flexCenter}`}>
         <div className={`${styles.numberRating} ${utils.flexCenter}`}>
-          {Array.from({ length: ratingNumbers }).map((_, index) => (
+          {Array.from({ length: numberRating }).map((_, index) => (
             <StarIcon key={`${title}_${index}`} />
           ))}
         </div>
-        <p className={styles.ratingGroup}>{formatNumberCompact(rating)}</p>
+        <p className={styles.ratingGroup}>({formatNumberCompact(rate)})</p>
       </div>
     </div>
   </div>

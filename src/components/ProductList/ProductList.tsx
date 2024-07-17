@@ -16,9 +16,9 @@ const ProductList = ({ products }: ProductListProps) => (
         <Link className={utils.link} to={`/detail/${id}`} key={id}>
           <ProductCard
             title={title}
-            description={description ? description : ''}
-            image={images ? images[0] : ''}
-            numberRating={numberRating ? numberRating : 0}
+            description={description}
+            image={images[0]}
+            numberRating={numberRating}
             price={price}
             rate={rate ? rate : 0}
           />
