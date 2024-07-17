@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import Quantity from './Quantity';
+import NumberInput from './NumberInput';
 
 export default {
-  component: Quantity,
-  title: 'Components/Quantity',
+  component: NumberInput,
+  title: 'Components/NumberInput',
 } as Meta;
 
-type Story = StoryObj<typeof Quantity>;
+type Story = StoryObj<typeof NumberInput>;
 
 export const Default: Story = {
   args: { defaultValue: 1 },

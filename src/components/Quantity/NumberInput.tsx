@@ -1,13 +1,14 @@
 import { ChangeEvent, useState } from 'react';
-import styles from './quantity.module.css';
+import styles from './numberInput.module.css';
 import PlusIcon from '../Icon/PlusIcon';
 import MinusIcon from '../Icon/MinusIcon';
+import Input from '../Input/Input';
 
-interface QuantityProp {
+interface NumberInputProps {
   defaultValue: number;
 }
 
-const Quantity = ({ defaultValue }: QuantityProp) => {
+const NumberInput = ({ defaultValue }: NumberInputProps) => {
   const [quantity, setQuantity] = useState(defaultValue);
 
   const increment = () => {
@@ -34,7 +35,7 @@ const Quantity = ({ defaultValue }: QuantityProp) => {
         disabled={quantity <= 1 ? true : false}>
         <MinusIcon />
       </button>
-      <input
+      <Input
         className={styles.quantity}
         type="number"
         value={quantity}
@@ -47,4 +48,4 @@ const Quantity = ({ defaultValue }: QuantityProp) => {
   );
 };
 
-export default Quantity;
+export default NumberInput;
