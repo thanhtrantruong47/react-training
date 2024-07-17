@@ -1,0 +1,10 @@
+/* code example  */
+
+.like {
+  background-color: var(--shadow-sm);
+  color: var(--color-text-secondary);
+  border: none;
+  outline: none;
+  padding: 0;
+  height: 2rem;
+}
