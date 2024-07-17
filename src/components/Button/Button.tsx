@@ -1,6 +1,6 @@
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  content: string;
-  classStyle: string;
+  content?: string;
+  classStyle?: string;
   icon?: React.FC<React.SVGProps<SVGSVGElement>>;
 }
 
