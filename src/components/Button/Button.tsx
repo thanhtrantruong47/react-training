@@ -1,12 +1,20 @@
-interface ButtonProps {
-  children: string;
-  style: string;
-  icon: string;
-  onClick?: () => void;
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  content: string;
+  classStyle: string;
+  icon?: React.FC<React.SVGProps<SVGSVGElement>>;
 }
 
-const Button = (_: ButtonProps) => {
-  return <></>;
-};
+const Button = ({
+  content,
+  classStyle,
+  icon: IconComponent,
+  onClick,
+  ...res
+}: ButtonProps) => (
+  <button className={classStyle} onClick={onClick} {...res}>
+    {IconComponent && <IconComponent />}
+    {content}
+  </button>
+);
 
 export default Button;
