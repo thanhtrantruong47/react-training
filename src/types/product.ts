@@ -9,5 +9,4 @@ export interface Product {
   stock: number;
   rate?: number;
   numberRating?: number;
-  category: string;
 }
