@@ -15,7 +15,7 @@ export const Default: Story = {
     description: ' Best quality',
     image: productImage,
     price: 40,
-    rate: 999999,
-    numberRating: 5,
+    rating: 999999,
+    ratingNumbers: 5,
   },
 };

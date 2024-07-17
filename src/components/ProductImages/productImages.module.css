@@ -1,0 +1,25 @@
+.detailImage {
+  width: 100%;
+  height: 25rem; /* 400px */
+  max-width: 36.75rem; /* 588px */
+  min-height: 25rem;
+}
+
+.imageGroup {
+  display: grid;
+  width: 36.75rem;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 11.25rem; /* 180px */
+  gap: 1.5rem; /* 24px */
+  margin-top: 1.5rem; /* 24px */
+  max-width: 36.75rem; /* 588px */
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+}
+
+.imageActive {
+  border: var(--border-sm) solid var(--color-text-primary);
+}
