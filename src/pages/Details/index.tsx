@@ -5,11 +5,11 @@ import image2 from '../../assets/images/small-t-shirt.jpg';
 const productDetailData = {
   id: 1,
   images: [image1, image2, image1],
-  title: 'Sample Product',
+  title: 'Smart T-Shirt',
   description:
-    'This is a sample product descriptscreen sizes, you can utilize media queries in your CSS module (productDetail.module.css). Here',
-  price: 99.99,
-  colors: ['Red', 'Blue', 'Green'],
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget gravida leo, nec iaculis diam. Nam bibendum mi sed sem finibus ullamcorper.',
+  price: 40,
+  colors: ['Black', 'Blue', 'Green'],
   sizes: ['S', 'M', 'L'],
   stock: 50,
   rate: 4,
