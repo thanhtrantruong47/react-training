@@ -3,7 +3,6 @@
   background-color: var(--color-bg);
   padding: 2.5rem;
   gap: 2.875rem; /* 46px */
-  max-width: 48.875rem; /* 782px */
   font-family: Mada;
 }
 
