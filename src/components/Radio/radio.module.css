@@ -12,7 +12,6 @@
   width: 1rem;
   height: 1rem;
   border-radius: 50%;
-  border: var(--border-sm) solid var(--color-selected);
   position: relative;
   cursor: pointer;
 }
@@ -22,8 +21,8 @@
   display: block;
   width: 0.5rem;
   height: 0.5rem;
-  background-color: var(--bg-checked-color);
   border-radius: 50%;
+  background-color: var(--color);
   position: absolute;
   top: 50%;
   left: 50%;
