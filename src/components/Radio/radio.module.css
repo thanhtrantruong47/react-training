@@ -1,26 +1,18 @@
-.colorRadio,
-.sizeRadio {
+.colorRadio {
   display: none;
-}
-
-.title {
-  font-family: Poppins;
-  font-size: var(--font-size-md);
-  font-weight: var(--font-weight-bold);
 }
 
 .listColor {
   display: flex;
   gap: 0.625rem;
-  margin-top: 1rem;
 }
 
 .colorCircle {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  border: 2px solid #ccc;
   display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  border: var(--border-sm) solid var(--color-selected);
   position: relative;
   cursor: pointer;
 }
@@ -28,33 +20,12 @@
 .colorRadio:checked + .colorOption > .colorCircle::before {
   content: '';
   display: block;
-  width: 8px;
-  height: 8px;
+  width: 0.5rem;
+  height: 0.5rem;
   background-color: var(--bg-checked-color);
   border-radius: 50%;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
-
-.listSize {
-  display: flex;
-  gap: 0.75rem;
-  text-align: center;
-  margin-top: 1rem;
-}
-
-.sizeOption {
-  width: 1.5rem;
-  height: 1.5rem;
-  border-radius: 50%;
-  background-color: var(--color-bg);
-  cursor: pointer;
-  justify-content: center;
-}
-
-.sizeRadio:checked + .sizeOption {
-  background-color: var(--color-text-active);
-  color: var(--color-text-secondary);
 }
