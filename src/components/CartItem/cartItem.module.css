@@ -2,8 +2,8 @@
   display: grid;
   background-color: var(--color-bg);
   padding: 2.5rem;
-  gap: 46px;
-  max-width: 782px;
+  gap: 2.875rem; /* 46px */
+  max-width: 48.875rem; /* 782px */
 }
 
 .title {
@@ -19,8 +19,8 @@
 }
 
 .image {
-  width: 80px;
-  height: 80px;
+  width: 5rem; /* 80px */
+  height: 5rem; /* 80px */
 }
 
 .group {
@@ -29,9 +29,21 @@
 
 .option {
   display: grid;
-  height: 62px;
+  height: 3.875rem; /* 62px */
 }
 
 .quantity {
   justify-content: flex-end;
+}
+
+.button {
+  color: var(--color-text-primary);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  outline: none;
+}
+
+.button:hover {
+  color: var(--color-badge);
 }
