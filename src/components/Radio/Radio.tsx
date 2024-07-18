@@ -17,7 +17,7 @@ const RadioGroup = ({ options }: ListOptionsProps) => {
     <div className={styles.listColor}>
       {options.map((option, index) => (
         <RadioColor
-          key={`${option}`}
+          key={option}
           color={option}
           isChecked={option === selectedColor}
           onChange={() => handleRadioChange(index)}
