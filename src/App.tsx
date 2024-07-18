@@ -6,11 +6,15 @@ import Order from './pages/Order';
 import Button from './components/Button/Button';
 import LikedIcon from './components/Icon/LikedIcon';
 import styles from './app.module.css';
+import RadioGruop from './components/Radio/Radio';
+
+const colorOptions = ['red', 'green', 'blue'];
 
 const App = () => {
   return (
     <BrowserRouter>
       {/* code exmaple start */}
+      <RadioGruop options={colorOptions} />
       <Button classStyle={styles.like} icon={LikedIcon} />
       {/* code exmaple end */}
       <Routes>
