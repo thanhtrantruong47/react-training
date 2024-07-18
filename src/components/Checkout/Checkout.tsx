@@ -21,7 +21,7 @@ const Checkout = ({
     </div>
     <div className={styles.group}>
       <Button
-        className={`${styles.button} ${utils.pointer}`}
+        classStyle={styles.button}
         onClick={onClickCheckoutButton}
         content="Checkout"
       />

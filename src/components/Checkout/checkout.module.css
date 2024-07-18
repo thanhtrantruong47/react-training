@@ -34,8 +34,6 @@
   color: var(--color-text-secondary);
   font-weight: var(--font-weight-bold);
   padding: 0.65625rem 2.8125rem; /* 10.5px, 45px */
-  outline: none;
-  border: none;
 }
 
 .button:hover {
