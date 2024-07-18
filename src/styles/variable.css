@@ -2,6 +2,7 @@
   /* Font Sizes */
   --font-size-sm: 0.875rem; /* 14px */
   --font-size-md: 1.125rem; /* 18px */
+  --font-size-nm: 1.5rem; /* 24px */
   --font-size-lg: 2.25rem; /* 36px */
   --font-size-xl: 2.5rem; /* 40px */
   --font-size-2xl: 3rem; /* 48px */
@@ -22,6 +23,7 @@
   --color-bg: #f4f4f4;
   --color-disable: #dddddd;
   --color-badge: #ef8484;
+  --color-selected: rgba(0, 0, 0, 0.5);
 
   /* Box shadow */
   --shadow-sm: rgba(0, 0, 0, 0.05);

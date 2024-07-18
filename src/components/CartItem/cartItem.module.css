@@ -3,10 +3,33 @@
   background-color: var(--color-bg);
   padding: 2.5rem;
   gap: 46px;
+  max-width: 782px;
+}
+
+.title {
+  font-family: Mada;
+  font-size: var(--font-size-nm);
+  font-weight: var(--font-weight-bold);
+}
+
+.desc {
+  font-family: Mada;
+  font-size: var(--font-size-md);
+  color: var(--color-text-product);
+}
+
+.image {
+  width: 80px;
+  height: 80px;
 }
 
 .group {
   justify-content: space-between;
+}
+
+.option {
+  display: grid;
+  height: 62px;
 }
 
 .quantity {
