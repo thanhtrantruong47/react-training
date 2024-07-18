@@ -11,7 +11,7 @@ type Story = StoryObj<typeof Checkout>;
 export const Default: Story = {
   args: {
     numberProduct: 5,
-    onClick: () => {},
+    onClickCheckoutButton: () => {},
     totalPrice: 500,
   },
 };
