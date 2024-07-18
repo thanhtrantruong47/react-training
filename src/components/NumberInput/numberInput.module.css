@@ -1,7 +1,7 @@
 .container {
   display: flex;
   border: var(--border-sm) solid var(--color-text-product);
-  max-width: 8.875rem; /*  142px */
+  width: 8.875rem; /*  142px */
   height: 3rem;
   padding: 0.75rem;
   justify-content: space-between;
