@@ -1,15 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import RadioGruop from './Radio';
+import RadioGroup from './Radio';
 
-const meta: Meta<typeof RadioGruop> = {
-  component: RadioGruop,
+const meta: Meta<typeof RadioGroup> = {
+  component: RadioGroup,
 };
 
-const colorOptions = ['red', 'green', 'blue'];
+const colorOptions = ['black', 'blue', 'green'];
 
 export default meta;
-type Story = StoryObj<typeof RadioGruop>;
+type Story = StoryObj<typeof RadioGroup>;
 
 export const InputRadioColor: Story = {
   args: {
