@@ -6,8 +6,10 @@ export default {
   title: 'Components/TabList',
 } as Meta;
 
+const navItems = ['T-Shirt', 'Jacket  ', 'Shirt', 'Jens'];
+
 type Story = StoryObj<typeof TabList>;
 
 export const Default: Story = {
-  args: {},
+  args: { listNavItems: navItems },
 };
