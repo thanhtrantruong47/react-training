@@ -1,15 +1,30 @@
-interface RadioOption {
-  variable: string;
-  value: number;
+import { useState } from 'react';
+import styles from './radio.module.css';
+import RadioColor from './RadioColor';
+
+interface ListOptionsProps {
+  options: string[];
 }
 
-interface RadioProps {
-  options: RadioOption;
-  onChange: () => void;
-}
+const RadioGroup = ({ options }: ListOptionsProps) => {
+  const [selectedColor, setSelectedColor] = useState<string>(options[0]);
 
-const Radio = (_: RadioProps) => {
-  return <></>;
+  const handleRadioChange = (index: number) => {
+    setSelectedColor(options[index]);
+  };
+
+  return (
+    <div className={styles.listColor}>
+      {options.map((option, index) => (
+        <RadioColor
+          key={option}
+          color={option}
+          isChecked={option === selectedColor}
+          onChange={() => handleRadioChange(index)}
+        />
+      ))}
+    </div>
+  );
 };
 
-export default Radio;
+export default RadioGroup;
