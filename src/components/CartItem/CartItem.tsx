@@ -38,7 +38,7 @@ const CartItem = ({
         <p className={styles.title}>{stock}</p>
         <p className={styles.desc}>In Stock</p>
       </div>
-      <Button className={styles.button} icon={DeleteIcon} />
+      <Button onClick={() => {}} className={styles.button} icon={DeleteIcon} />
     </div>
     <div className={`${utils.flexCenter} ${styles.quantity}`}>
       <NumberInput defaultValue={quantity} />
