@@ -7,6 +7,12 @@ interface RadioColorProps {
 }
 
 const RadioColor = ({ color, isChecked, onChange }: RadioColorProps) => {
+  const circleStyle = {
+    '--circle-background': color,
+    backgroundColor: !isChecked ? color : 'white',
+    border: isChecked ? 'var(--border-sm) solid var(--color-text-product)' : 'none',
+  } as React.CSSProperties;
+
   return (
     <>
       <input
@@ -19,14 +25,7 @@ const RadioColor = ({ color, isChecked, onChange }: RadioColorProps) => {
         onChange={onChange}
       />
       <label htmlFor={color} className={styles.colorOption} aria-label={`Select ${color}`}>
-        <div
-          className={`${styles.colorCircle}`}
-          style={{
-            '--color': color,
-            backgroundColor: isChecked ? 'white' : color,
-            border: isChecked ? 'var(--border-sm) solid var(--color-text-product)' : 'none',
-          }}
-        />
+        <div className={`${styles.colorCircle}`} style={circleStyle} />
       </label>
     </>
   );

@@ -22,7 +22,7 @@
   width: 0.5rem;
   height: 0.5rem;
   border-radius: 50%;
-  background-color: var(--color);
+  background-color: var(--circle-background);
   position: absolute;
   top: 50%;
   left: 50%;
