@@ -12,29 +12,24 @@ export const NAV_BAR_ITEMS: NavItem[] = [
 ];
 
 export const FOOTER_LIST_HOME = [
-  { label: 'Home' },
-  { label: 'Product', path: '/' },
-  { label: 'Categories', path: '/' },
-  { label: 'Shop', path: '/' },
-  { label: 'Log in', path: '/' },
+  { label: 'Product', destination: '/', isActive: false },
+  { label: 'Categories', destination: '/', isActive: false },
+  { label: 'Shop', destination: '/', isActive: false },
+  { label: 'Log in', destination: '/', isActive: false },
 ];
 
 export const FOOTER_LIST_SHOP = [
-  { label: 'Shop' },
-  { label: 'T-Shirt' },
-  { label: 'Jacket', path: '/' },
-  { label: 'Shirt', path: '/' },
-  { label: 'Jens', path: '/' },
+  { label: 'Jacket', destination: '/', isActive: false },
+  { label: 'Shirt', destination: '/', isActive: false },
+  { label: 'Jens', destination: '/', isActive: false },
 ];
 
 export const FOOTER_LIST_CATEGORY = [
-  { label: 'Category' },
-  { label: 'Men', path: '/' },
-  { label: 'Children', path: '/' },
-  { label: 'Woman', path: '/' },
+  { label: 'Men', destination: '/', isActive: false },
+  { label: 'Children', destination: '/', isActive: false },
+  { label: 'Woman', destination: '/', isActive: false },
 ];
 
 export const FOOTER_LIST_CONTACT = [
-  { label: 'Contact' },
-  { label: 'mangcoding@gmail.com' },
+  { label: 'mangcoding@gmail.com', destination: '/', isActive: false },
 ];
