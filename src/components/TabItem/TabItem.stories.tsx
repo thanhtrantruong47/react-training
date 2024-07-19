@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import Tab from './Tab';
+import TabItem from './TabItem';
 
 export default {
-  component: Tab,
-  title: 'Components/Tab',
+  component: TabItem,
+  title: 'Components/TabItem',
 } as Meta;
 
-type Story = StoryObj<typeof Tab>;
+type Story = StoryObj<typeof TabItem>;
 
 export const Default: Story = {
   args: {},
