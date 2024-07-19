@@ -81,7 +81,7 @@
 }
 
 .btn {
-  background: linear-gradient(#7d89ff, #ab40ff);
+  background: var(--color-gradient);
   font-size: 1.25rem; /* 20px */
   color: var(--color-text-secondary);
   font-weight: var(--font-weight-bold);
@@ -131,7 +131,6 @@
 }
 
 @media (max-width: 64rem) {
-  /* 1024px */
   .container {
     flex-direction: column;
     align-items: center;
