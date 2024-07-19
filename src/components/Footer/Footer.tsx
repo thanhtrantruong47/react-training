@@ -37,15 +37,9 @@ const Footer = () => {
         </p>
       </div>
       <div className={styles.group}>
-        <div>
-          <FooterNavList items={FOOTER_LIST_HOME} />
-        </div>
-        <div>
-          <FooterNavList items={FOOTER_LIST_SHOP} />
-        </div>
-        <div>
-          <FooterNavList items={FOOTER_LIST_CATEGORY} />
-        </div>
+        <FooterNavList items={FOOTER_LIST_HOME} />
+        <FooterNavList items={FOOTER_LIST_SHOP} />
+        <FooterNavList items={FOOTER_LIST_CATEGORY} />
         <div>
           <FooterNavList items={FOOTER_LIST_CONTACT} />
           <div className={styles.groupIcon}>
