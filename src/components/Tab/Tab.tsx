@@ -8,11 +8,7 @@ interface TabProps {
 
 const Tab = ({ label, isActive, onChange }: TabProps) => {
   return (
-    <div
-      className={`${styles.tab} ${isActive ? styles.active : ''}`}
-      onClick={onChange}
-      role="tab"
-      aria-selected={isActive}>
+    <div className={`${styles.tab} ${isActive ? styles.active : ''}`} onClick={onChange} aria-selected={isActive}>
       {label}
     </div>
   );
