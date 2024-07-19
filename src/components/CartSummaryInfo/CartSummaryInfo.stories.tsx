@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import Checkout from './Checkout';
+import CartSummaryInfo from './CartSummaryInfo';
 
 export default {
-  component: Checkout,
-  title: 'Components/Checkout',
+  component: CartSummaryInfo,
+  title: 'Components/CartSummaryInfo',
 } as Meta;
 
-type Story = StoryObj<typeof Checkout>;
+type Story = StoryObj<typeof CartSummaryInfo>;
 
 export const Default: Story = {
   args: {
