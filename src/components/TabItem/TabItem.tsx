@@ -1,12 +1,12 @@
-import styles from './tab.module.css';
+import styles from './tabItem.module.css';
 
-interface TabProps {
+interface TabItemProps {
   label: string;
   isActive: boolean;
   onChange: () => void;
 }
 
-const Tab = ({ label, isActive, onChange }: TabProps) => {
+const TabItem = ({ label, isActive, onChange }: TabItemProps) => {
   return (
     <div className={`${styles.tab} ${isActive ? styles.active : ''}`} onClick={onChange} aria-selected={isActive}>
       {label}
@@ -14,4 +14,4 @@ const Tab = ({ label, isActive, onChange }: TabProps) => {
   );
 };
 
-export default Tab;
+export default TabItem;
