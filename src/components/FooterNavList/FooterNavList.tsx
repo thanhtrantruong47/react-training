@@ -3,7 +3,7 @@ import styles from './footerNavList.module.css';
 
 interface NavItem {
   label: string;
-  path: string;
+  path?: string;
 }
 
 interface FooterNavListProps {
@@ -19,9 +19,13 @@ const FooterNavList = ({ items }: FooterNavListProps) => {
       <ul className={styles.item}>
         {restItems.map(({ label, path }) => (
           <li key={label}>
-            <Link className={styles.link} to={path}>
-              {label}
-            </Link>
+            {path ? (
+              <Link className={styles.link} to={path}>
+                {label}
+              </Link>
+            ) : (
+              label
+            )}
           </li>
         ))}
       </ul>

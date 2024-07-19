@@ -10,3 +10,31 @@ export const NAV_BAR_ITEMS: NavItem[] = [
   { label: 'About Us', destination: '/about', isActive: false },
   { label: 'Contact', destination: '/contact', isActive: false },
 ];
+
+export const FOOTER_LIST_HOME = [
+  { label: 'Home' },
+  { label: 'Product', path: '/' },
+  { label: 'Categories', path: '/' },
+  { label: 'Shop', path: '/' },
+  { label: 'Log in', path: '/' },
+];
+
+export const FOOTER_LIST_SHOP = [
+  { label: 'Shop' },
+  { label: 'T-Shirt' },
+  { label: 'Jacket', path: '/' },
+  { label: 'Shirt', path: '/' },
+  { label: 'Jens', path: '/' },
+];
+
+export const FOOTER_LIST_CATEGORY = [
+  { label: 'Category' },
+  { label: 'Men', path: '/' },
+  { label: 'Children', path: '/' },
+  { label: 'Woman', path: '/' },
+];
+
+export const FOOTER_LIST_CONTACT = [
+  { label: 'Contact' },
+  { label: 'mangcoding@gmail.com' },
+];

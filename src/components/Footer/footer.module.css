@@ -1,0 +1,55 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.25rem;
+  color: var(--color-text-secondary);
+  background-color: #393e46;
+  padding: 5rem 7.5rem;
+}
+
+.groupLogo {
+  display: flex;
+  max-width: 26.6875rem;
+  flex-direction: column;
+  gap: 1.5rem; /* 24px in rem */
+}
+
+.logo {
+  font-family: Roboto;
+  font-size: var(--font-size-sm);
+  fill: var(--color-text-secondary);
+}
+
+.desc {
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-md);
+}
+
+.group {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr) 181px;
+  gap: 5rem; /* 80px in rem */
+}
+
+.groupIcon {
+  display: flex;
+  gap: 1rem;
+}
+
+@media (max-width: 64rem) {
+  .container {
+    flex-direction: column;
+    gap: 1.25rem; /* 20px in rem */
+    padding: 3rem 2.5rem;
+  }
+
+  .groupLogo {
+    width: 100%;
+  }
+
+  .group {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem; /* 20px in rem */
+    row-gap: 4rem;
+  }
+}
