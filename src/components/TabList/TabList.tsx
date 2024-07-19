@@ -1,23 +1,31 @@
-import { useState } from 'react';
-import Tab from '../Tab/Tab';
+import { useState, useEffect } from 'react';
 import utils from '../../styles/modules/utils.module.css';
 import styles from './tabList.module.css';
+import TabItem from '../TabItem/TabItem';
 
 interface TabListProps {
   listNavItems: string[];
+  onChangeTab: (index: number) => void;
 }
 
-const TabList = ({ listNavItems }: TabListProps) => {
+const TabList = ({ listNavItems, onChangeTab }: TabListProps) => {
   const [activeTab, setActiveTab] = useState<number>(0);
+  const [category, setCategory] = useState<string>('T-Shirt');
 
-  const handleTabChange = (index: number) => {
+  useEffect(() => {
+    console.log('change', category);
+  }, [category]);
+
+  const handleTabChange = (index: number, item: string) => {
     setActiveTab(index);
+    setCategory(item);
+    onChangeTab(index);
   };
 
   return (
     <div className={`${utils.flexCenter} ${styles.tabList}`}>
       {listNavItems.map((item, index) => (
-        <Tab key={item} label={item} isActive={index === activeTab} onChange={() => handleTabChange(index)} />
+        <TabItem key={item} label={item} isActive={index === activeTab} onChange={() => handleTabChange(index, item)} />
       ))}
     </div>
   );
