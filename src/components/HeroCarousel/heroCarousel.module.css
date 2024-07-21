@@ -1,12 +1,11 @@
 .heroCarousel {
   position: relative;
   width: 25rem;
-  height: 32.625rem;
 }
 
 .mainImage {
   max-width: 25rem; /* 400px converted to rem */
-  height: 100%;
+  height: 32.625rem; /* 522px converted to rem */
   border-radius: 5rem 5rem 5rem 0; /* 80px converted to rem */
   border: 0.625rem solid var(--color-text-secondary); /* 10px converted to rem */
 }
@@ -41,7 +40,7 @@
   padding: 0;
 }
 
-button {
+.thumbnailList button {
   background: var(--color-text-active);
   cursor: pointer;
   width: 1.5rem; /* 24px converted to rem */
