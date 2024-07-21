@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import HeroCarousel from './HeroCarousel';
+import { LIST_IMAGES_CAROUSEL } from '../../constants';
 
 export default {
   component: HeroCarousel,
@@ -9,5 +10,5 @@ export default {
 type Story = StoryObj<typeof HeroCarousel>;
 
 export const Default: Story = {
-  args: {},
+  args: { images: LIST_IMAGES_CAROUSEL },
 };
