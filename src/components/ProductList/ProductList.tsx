@@ -1,4 +1,5 @@
 import { Product } from '../../types/product';
+import Button from '../Button/Button';
 import ProductCard from '../ProductCard/ProductCart';
 import styles from './productList.module.css';
 
@@ -7,10 +8,10 @@ interface ProductListProps {
   onClick: () => void;
 }
 
-const ProductList = ({ products }: ProductListProps) => (
+const ProductList = ({ products, onClick }: ProductListProps) => (
   <div className={styles.container}>
-    {products.map(
-      ({ id, title, price, description, rate, numberRating, images }) => (
+    <div className={styles.list}>
+      {products.map(({ id, title, price, description, rate, numberRating, images }) => (
         <ProductCard
           key={id}
           id={id}
@@ -21,8 +22,9 @@ const ProductList = ({ products }: ProductListProps) => (
           price={price}
           rate={rate || 0}
         />
-      )
-    )}
+      ))}
+    </div>
+    <Button classStyle={styles.btn} content="See More" onClick={onClick} />
   </div>
 );
 
