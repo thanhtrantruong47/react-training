@@ -7,8 +7,6 @@
 .list {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  max-width: 73.8125rem;
-  margin: 0 auto;
   gap: 2.561rem;
   place-items: center;
 }
@@ -30,8 +28,8 @@
     /* 2.5px */ 0 0.234375rem 0.78125rem 0 var(--shadow-lg); /* 3.75px */
 }
 
-@media (max-width: 64rem) {
-  .container {
+@media (max-width: 75rem) {
+  .list {
     grid-template-columns: repeat(3, 1fr);
     gap: 1.875rem;
   }

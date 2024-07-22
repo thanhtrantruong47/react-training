@@ -1,13 +1,12 @@
-import Header from '../../components/Header/Header';
 import ProductDetail from '../../components/ProductDetail/ProductDetail';
 import { Product } from '../../types/product';
 import image1 from '../../assets/images/detail-small.jpg';
 import image2 from '../../assets/images/small-t-shirt.jpg';
 import images from '../../assets/images/jacket.jpg';
 import ProductList from '../../components/ProductList/ProductList';
-import Footer from '../../components/Footer/Footer';
 import styles from './detail.module.css';
 import Breadcrumb from '../../components/Breadcrumb/Breadcrumbs';
+import Layout from '../Layout';
 
 // example data
 const productDetailData = {
@@ -141,20 +140,20 @@ const breadcrumbItems = [
 
 const Details = () => {
   return (
-    <div>
-      <Header />
-      <div className={styles.container}>
-        <Breadcrumb listItems={breadcrumbItems} />
-        <div className={styles.product}>
-          <ProductDetail {...productDetailData} />
-        </div>
-        <div className={styles.list}>
-          <p className={styles.title}>Same Product</p>
-          <ProductList products={Products} onClick={() => {}} />
+    <Layout>
+      <div>
+        <div>
+          <Breadcrumb listItems={breadcrumbItems} />
+          <div className={styles.product}>
+            <ProductDetail {...productDetailData} />
+          </div>
+          <div className={styles.list}>
+            <p className={styles.title}>Same Product</p>
+            <ProductList products={Products} onClick={() => {}} />
+          </div>
         </div>
       </div>
-      <Footer />
-    </div>
+    </Layout>
   );
 };
 

@@ -1,10 +1,9 @@
 .container {
   gap: 0.8125rem;
   justify-content: space-around;
-  padding: 0 7.4375rem; /* 119px / 16 */
   height: 5rem; /* 80px / 16 */
   margin-bottom: 2.5rem; /* 40px / 16 */
-  padding: 1.0625rem 8.3%; /* 17px / 16 */
+  padding: 1.0625rem 7.5rem; /* 17px / 16 */
   box-shadow:
     0 0.15625rem 0.3125rem 0 var(--shadow-lg),
     0 0.234375rem 0.78125rem 0 var(--shadow-lg);
@@ -21,7 +20,11 @@
   gap: 1.5rem;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+  .container {
+    padding: 1.0625rem 1rem;
+  }
+
   .groupInput {
     display: none;
   }
