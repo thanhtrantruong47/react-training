@@ -12,8 +12,8 @@
 }
 
 .thumbnailList {
-  position: absolute;
   display: flex;
+  position: absolute;
   bottom: 1.5rem; /* 24px converted to rem */
   left: 50%;
   transform: translateX(-50%);
@@ -48,7 +48,7 @@ button {
   height: 1.5rem; /* 24px converted to rem */
   position: absolute;
   z-index: 1;
-  padding: 3px;
+  padding: 0.1875rem;
   border: none;
 }
 
