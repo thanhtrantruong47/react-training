@@ -1,6 +1,4 @@
 import { NavItem } from '../types/navBar';
-import banner from '../assets/images/banner.jpg';
-import bannerMore from '../assets/images/banner-more.jpg';
 
 // constants.ts
 export const BASE_URL = import.meta.env.VITE_API_BASE_URL;
@@ -13,17 +11,23 @@ export const NAV_BAR_ITEMS: NavItem[] = [
   { label: 'Contact', destination: '/contact', isActive: false },
 ];
 
-export const LIST_IMAGES_CAROUSEL = [
-  {
-    id: 1,
-    src: banner,
-  },
-  {
-    id: 2,
-    src: bannerMore,
-  },
-  {
-    id: 3,
-    src: bannerMore,
-  },
+export const FOOTER_LIST_HOME = [
+  { label: 'Product', destination: '/', isActive: false },
+  { label: 'Categories', destination: '/', isActive: false },
+  { label: 'Shop', destination: '/', isActive: false },
+  { label: 'Log in', destination: '/', isActive: false },
 ];
+
+export const FOOTER_LIST_SHOP = [
+  { label: 'Jacket', destination: '/', isActive: false },
+  { label: 'Shirt', destination: '/', isActive: false },
+  { label: 'Jens', destination: '/', isActive: false },
+];
+
+export const FOOTER_LIST_CATEGORY = [
+  { label: 'Men', destination: '/', isActive: false },
+  { label: 'Children', destination: '/', isActive: false },
+  { label: 'Woman', destination: '/', isActive: false },
+];
+
+export const FOOTER_LIST_CONTACT = [{ label: 'mangcoding@gmail.com', destination: '/', isActive: false }];
