@@ -6,7 +6,7 @@ import images from '../../assets/images/jacket.jpg';
 import ProductList from '../../components/ProductList/ProductList';
 import styles from './detail.module.css';
 import Breadcrumb from '../../components/Breadcrumb/Breadcrumbs';
-import Layout from '../Layout';
+import Layout from '../../layouts';
 
 // example data
 const productDetailData = {
