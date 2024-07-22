@@ -9,8 +9,7 @@ import styles from './cart.module.css';
 const productDetails: CartItem[] = [
   {
     id: 1,
-    image:
-      'https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQhjpAMGZr_n_ABGlri34mUcwi_mpNlTO1_essdAYk9IrlKhT53CbjMqxh44Lke-HDUO4wLmmCVL8Em31KLUql1Wf3ETUvI_28-kkJXb15eM2eOMBFCUUkT7GZ897B2bIDLBqre-D8&usqp=CAc',
+    image: 'https://shorturl.at/jJC5m',
     title: 'T-Shirt',
     price: 100,
     color: 'red',
@@ -19,9 +18,8 @@ const productDetails: CartItem[] = [
   },
   {
     id: 2,
-    image:
-      'https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQhjpAMGZr_n_ABGlri34mUcwi_mpNlTO1_essdAYk9IrlKhT53CbjMqxh44Lke-HDUO4wLmmCVL8Em31KLUql1Wf3ETUvI_28-kkJXb15eM2eOMBFCUUkT7GZ897B2bIDLBqre-D8&usqp=CAc',
-    title: 'T-Shirt basic',
+    image: 'https://shorturl.at/jJC5m',
+    title: 'T-Shirt',
     price: 150,
     color: 'blue',
     stock: 5,
@@ -34,23 +32,24 @@ const breadcrumbItems = [{ label: 'Home', url: '/' }, { label: 'Cart' }];
 // example data end
 
 const Cart = () => {
+  const bannerContent = (
+    <div className={styles.banner}>
+      <Breadcrumb listItems={breadcrumbItems} />
+      <h2 className={styles.title}>Cart</h2>
+    </div>
+  );
+
   return (
-    <MainLayout>
-      <div>
-        <div className={styles.banner}>
-          <Breadcrumb listItems={breadcrumbItems} />
-          <p className={styles.title}>Cart</p>
-        </div>
-        <div className={styles.container}>
-          <p className={styles.titleCart}>Cart Product</p>
-          <div className={styles.group}>
-            <CartList cartItems={productDetails} />
-            <div className={styles.checkout}>
-              <CartSummaryInfo numberProduct={5} onClickCheckoutButton={() => {}} totalPrice={500} />
-            </div>
+    <MainLayout bannerContent={bannerContent}>
+      <section className={styles.container}>
+        <h2 className={styles.titleCart}>Cart Product</h2>
+        <div className={styles.group}>
+          <CartList cartItems={productDetails} />
+          <div className={styles.checkout}>
+            <CartSummaryInfo numberProduct={5} onClickCheckoutButton={() => {}} totalPrice={500} />
           </div>
         </div>
-      </div>
+      </section>
     </MainLayout>
   );
 };
