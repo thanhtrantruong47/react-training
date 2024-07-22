@@ -8,6 +8,7 @@
   margin-bottom: 5rem; /* 80px / 16 */
 
   /* take 100 % width */
+  width: 100vw;
   position: relative;
   left: 50%;
   right: 50%;
@@ -57,5 +58,9 @@
   .group {
     flex-direction: column;
     margin-bottom: 2rem; /* 32px / 16 */
+  }
+
+  .banner{
+    padding: 3rem 1rem;
   }
 }
