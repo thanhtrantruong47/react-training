@@ -9,5 +9,11 @@ export default {
 type Story = StoryObj<typeof CartItem>;
 
 export const Default: Story = {
-  args: {},
+  args: {
+    color: 'blue',
+    image: 'https://i.ibb.co/dKHpT4V/tall-shirt.png',
+    quantity: 3,
+    stock: 50,
+    title: 'T-Shirt',
+  },
 };

@@ -3,29 +3,34 @@ import styles from './heroCarousel.module.css';
 import Button from '../Button/Button';
 import PrevIcon from '../Icon/PrevIcon';
 import NextIcon from '../Icon/NextIcon';
-
-interface ImagesCarosel {
-  id: number;
-  src: string;
-}
+import { ImagesCarousel } from '../../types/carousel';
 
 interface HeroCarousel {
-  images: ImagesCarosel[];
+  images: ImagesCarousel[];
 }
 
 const HeroCarousel = ({ images }: HeroCarousel) => {
-  const [mainImage, setMainImage] = useState(0); // index of the current main image
-
+  const [mainImage, setMainImage] = useState(0);
   const handleClick = (index: number) => {
     setMainImage(index);
   };
 
+  // If index ===  images.length - 1 when click index = 0
   const handleNext = () => {
-    setMainImage(prevIndex => (prevIndex + 1) % images.length);
+    if (mainImage === images.length - 1) {
+      setMainImage(0);
+    } else {
+      setMainImage(mainImage + 1);
+    }
   };
 
+  // If index ===  0 when click index = images.length - 1
   const handlePrev = () => {
-    setMainImage(prevIndex => (prevIndex - 1 + images.length) % images.length);
+    if (mainImage === 0) {
+      setMainImage(images.length - 1);
+    } else {
+      setMainImage(mainImage - 1);
+    }
   };
 
   return (

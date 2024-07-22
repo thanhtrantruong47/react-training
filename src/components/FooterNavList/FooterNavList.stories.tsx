@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import FooterNavList from './FooterNavList';
+import { FOOTER_LIST_HOME } from '../../constants';
 
 export default {
   component: FooterNavList,
@@ -9,5 +10,8 @@ export default {
 type Story = StoryObj<typeof FooterNavList>;
 
 export const Default: Story = {
-  args: {},
+  args: {
+    title: 'Home',
+    items: FOOTER_LIST_HOME,
+  },
 };
