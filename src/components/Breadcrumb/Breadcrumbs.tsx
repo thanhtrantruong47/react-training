@@ -13,18 +13,22 @@ const Breadcrumb = ({ listItems }: BreadcrumbProps) => {
   return (
     <nav aria-label="breadcrumb">
       <ol className={styles.breadcrumb}>
-        {listItems.map((item, index) => (
-          <li key={item.label} className={styles.breadcrumbItem}>
-            {item.url ? (
-              <Link className={utils.link} to={item.url}>
-                {item.label}
-              </Link>
-            ) : (
-              <span>{item.label}</span>
-            )}
-            {index !== listItems.length - 1 && ' / '}
-          </li>
-        ))}
+        {listItems.map((item, index) => {
+          const isLastItem = index === listItems.length - 1;
+
+          return (
+            <li key={item.label} className={styles.breadcrumbItem}>
+              {item.url ? (
+                <Link className={utils.link} to={item.url}>
+                  {item.label}
+                </Link>
+              ) : (
+                <span>{item.label}</span>
+              )}
+              {!isLastItem && ' / '}
+            </li>
+          );
+        })}
       </ol>
     </nav>
   );
