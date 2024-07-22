@@ -1,3 +1,5 @@
+import styles from './button.module.css';
+
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   content?: string;
   classStyle?: string;
@@ -11,7 +13,10 @@ const Button = ({
   onClick,
   ...res
 }: ButtonProps) => (
-  <button className={classStyle} onClick={onClick} {...res}>
+  <button
+    className={`${styles.button} ${classStyle || ''}`}
+    onClick={onClick}
+    {...res}>
     {IconComponent && <IconComponent />}
     {content}
   </button>
