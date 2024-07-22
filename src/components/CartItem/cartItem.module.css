@@ -1,0 +1,48 @@
+.container {
+  display: grid;
+  background-color: var(--color-bg);
+  padding: 2.5rem;
+  gap: 2.875rem; /* 46px */
+  font-family: Mada;
+}
+
+.title {
+  font-size: var(--font-size-nm);
+  font-weight: var(--font-weight-bold);
+}
+
+.desc {
+  font-size: var(--font-size-md);
+  color: var(--color-text-product);
+}
+
+.image {
+  width: 100%;
+  max-width: 5rem; /* 80px */
+  height: 5rem; /* 80px */
+}
+
+.group {
+  justify-content: space-between;
+}
+
+.option {
+  display: grid;
+  height: 3.875rem; /* 62px */
+}
+
+.quantity {
+  justify-content: flex-end;
+}
+
+.button {
+  color: var(--color-text-primary);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  outline: none;
+}
+
+.button:hover {
+  color: var(--color-badge);
+}
