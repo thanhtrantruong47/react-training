@@ -15,6 +15,7 @@ const HeroCarousel = ({ images }: HeroCarousel) => {
     setMainImage(index);
   };
 
+  // If index ===  images.length - 1 when click index = 0
   const handleNext = () => {
     if (mainImage === images.length - 1) {
       setMainImage(0);
@@ -23,6 +24,7 @@ const HeroCarousel = ({ images }: HeroCarousel) => {
     }
   };
 
+  // If index ===  0 when click index = images.length - 1
   const handlePrev = () => {
     if (mainImage === 0) {
       setMainImage(images.length - 1);
