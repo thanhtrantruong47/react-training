@@ -1,4 +1,4 @@
-import utils from '../../styles/modules/utils.module.css';
+import styles from './button.module.css';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   content?: string;
@@ -7,7 +7,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const Button = ({ content, classStyle, icon: IconComponent, onClick, ...res }: ButtonProps) => (
-  <button className={`${utils.pointer} ${classStyle}`} onClick={onClick} {...res}>
+  <button className={`${styles.button} ${classStyle || ''}`} onClick={onClick} {...res}>
     {IconComponent && <IconComponent />}
     {content}
   </button>
