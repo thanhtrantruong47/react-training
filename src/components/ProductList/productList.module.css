@@ -38,14 +38,14 @@
 }
 
 @media (max-width: 48rem) {
-  .container {
+  .list {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.25rem;
   }
 }
 
 @media (max-width: 30rem) {
-  .container {
+  .list {
     grid-template-columns: 1fr;
     gap: 0.9375rem;
   }
