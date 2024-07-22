@@ -1,0 +1,59 @@
+.banner {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-gradient);
+  height: 21.75rem; /* 348px / 16 */
+  padding: 2.5rem 7.5rem; /* 40px / 16 and 120px / 16 */
+  color: var(--color-text-secondary);
+  gap: 2.5rem; /* 40px / 16 */
+  margin-bottom: 5rem; /* 80px / 16 */
+}
+
+.banner a {
+  color: var(--color-text-secondary);
+}
+
+.title {
+  font-family: Mada;
+  font-size: var(--font-size-xl);
+  color: var(--color-text-secondary);
+  font-weight: var(--font-weight-bold);
+}
+
+.container {
+  width: 100%;
+  margin-bottom: 5rem; /* 80px / 16 */
+  max-width: 75rem; /* 1200px / 16 */
+  margin: 5rem auto; /* 80px / 16 */
+  padding: 0 1.25rem; /* 20px / 16 */
+}
+
+.group {
+  display: flex;
+  width: 100%;
+  gap: 2.5rem; /* 40px / 16 */
+  justify-content: space-between;
+}
+
+.titleCart {
+  font-family: Mada;
+  font-size: var(--font-size-lg);
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: 2.25rem; /* 36px / 16 */
+}
+
+@media (max-width: 1024px) {
+  .group {
+    flex-direction: column;
+    gap: 2rem; /* 32px / 16 */
+  }
+}
+
+@media (max-width: 768px) {
+  .group {
+    gap: 1.5rem; /* 24px / 16 */
+    margin-bottom: 3rem; /* 48px / 16 */
+    justify-content: center;
+  }
+}
