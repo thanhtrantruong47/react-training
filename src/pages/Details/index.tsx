@@ -1,7 +1,7 @@
 import ProductDetail from '../../components/ProductDetail/ProductDetail';
 import { Product } from '../../types/product';
 import smallTShirtImage from '../../assets/images/detail-small.jpg';
-import TShirt from '../../assets/images/small-t-shirt.jpg';
+import tShirt from '../../assets/images/small-t-shirt.jpg';
 import images from '../../assets/images/jacket.jpg';
 import ProductList from '../../components/ProductList/ProductList';
 import styles from './detail.module.css';
@@ -11,7 +11,7 @@ import Layout from '../Layout';
 // example data
 const productDetailData = {
   id: 1,
-  images: [smallTShirtImage, TShirt, smallTShirtImage],
+  images: [smallTShirtImage, tShirt, smallTShirtImage],
   title: 'Smart T-Shirt',
   description:
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget gravida leo, nec iaculis diam. Nam bibendum mi sed sem finibus ullamcorper.',
