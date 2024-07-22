@@ -1,11 +1,5 @@
 const FaceBookIcon = () => (
-  <svg
-    width="32"
-    height="32"
-    viewBox="0 0 32 32"
-    fill="none"
-    stroke="currentColor"
-  >
+  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor">
     <rect x="0.5" y="0.5" width="31" height="31" stroke="currentColor" />
     <g clipPath="url(#clip0_228_77)">
       <path

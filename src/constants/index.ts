@@ -30,6 +30,4 @@ export const FOOTER_LIST_CATEGORY = [
   { label: 'Woman', destination: '/', isActive: false },
 ];
 
-export const FOOTER_LIST_CONTACT = [
-  { label: 'mangcoding@gmail.com', destination: '/', isActive: false },
-];
+export const FOOTER_LIST_CONTACT = [{ label: 'mangcoding@gmail.com', destination: '/', isActive: false }];
