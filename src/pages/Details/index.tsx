@@ -6,7 +6,7 @@ import image2 from '../../assets/images/small-t-shirt.jpg';
 import images from '../../assets/images/jacket.jpg';
 import ProductList from '../../components/ProductList/ProductList';
 import Footer from '../../components/Footer/Footer';
-import styles from './detai.module.css';
+import styles from './detail.module.css';
 
 const productDetailData = {
   id: 1,
@@ -132,10 +132,15 @@ const Products: Product[] = [
 const Details = () => {
   return (
     <>
+      <Header />
       <div className={styles.container}>
-        <Header />
-        <ProductDetail {...productDetailData} />
-        <ProductList products={Products} onClick={() => {}} />
+        <div className={styles.product}>
+          <ProductDetail {...productDetailData} />
+        </div>
+        <div className={styles.list}>
+          <p className={styles.title}>Same Product</p>
+          <ProductList products={Products} onClick={() => {}} />
+        </div>
       </div>
       <Footer />
     </>
