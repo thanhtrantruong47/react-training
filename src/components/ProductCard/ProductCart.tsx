@@ -17,16 +17,7 @@ interface ProductCardProps {
   onChange?: () => void;
 }
 
-const ProductCard = ({
-  id,
-  image,
-  title,
-  price,
-  description,
-  numberRating,
-  rate,
-  onChange,
-}: ProductCardProps) => (
+const ProductCard = ({ id, image, title, price, description, numberRating, rate, onChange }: ProductCardProps) => (
   <Link className={utils.link} to={`/detail/${id}`}>
     <div className={styles.product}>
       <div className={`${styles.imageGroup} ${utils.relative}`}>
@@ -48,11 +39,11 @@ const ProductCard = ({
         <p className={styles.desc}>{description}</p>
         <div className={`${styles.ratingGroup} ${utils.flexCenter}`}>
           <div className={`${styles.numberRating} ${utils.flexCenter}`}>
-            {Array.from({ length: numberRating }).map((_, index) => (
+            {Array.from({ length: rate }).map((_, index) => (
               <StarIcon key={`${title}_${index}`} />
             ))}
           </div>
-          <p className={styles.ratingGroup}>({formatNumberCompact(rate)})</p>
+          <p className={styles.ratingGroup}>({formatNumberCompact(numberRating)})</p>
         </div>
       </div>
     </div>

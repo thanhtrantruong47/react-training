@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 import CartButton from '../Icon/CartButton';
 import { formatNumberCompact } from '../../utils/formatNumberCompact';
 
-interface ProductDetailProps {
+export interface ProductDetailProps {
   images: string[];
   title: string;
   description: string;

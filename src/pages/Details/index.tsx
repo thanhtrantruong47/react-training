@@ -1,27 +1,14 @@
 import ProductDetail from '../../components/ProductDetail/ProductDetail';
 import { Product } from '../../types/product';
-import smallTShirtImage from '../../assets/images/detail-small.jpg';
-import tShirt from '../../assets/images/small-t-shirt.jpg';
 import images from '../../assets/images/jacket.jpg';
 import ProductList from '../../components/ProductList/ProductList';
 import styles from './detail.module.css';
-import Breadcrumb from '../../components/Breadcrumb/Breadcrumbs';
 import MainLayout from '../../layouts/MainLayout';
-
+import { useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import ProductAPIService from '../../services/ProductAPIService';
+import Breadcrumb from '../../components/Breadcrumb/Breadcrumbs';
 // example data
-const productDetailData = {
-  id: 1,
-  images: [smallTShirtImage, tShirt, smallTShirtImage],
-  title: 'Smart T-Shirt',
-  description:
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget gravida leo, nec iaculis diam. Nam bibendum mi sed sem finibus ullamcorper.',
-  price: 40,
-  colors: ['Black', 'Blue', 'Green'],
-  sizes: ['S', 'M', 'L'],
-  stock: 50,
-  rate: 4,
-  numberRating: 55555,
-};
 
 const Products: Product[] = [
   {
@@ -33,7 +20,7 @@ const Products: Product[] = [
     sizes: ['S', 'M', 'L'],
     description: 'Comfortable blue T-shirt',
     stock: 45,
-    rate: 31,
+    rate: 5,
     numberRating: 2,
     category: 'T-Shirt',
   },
@@ -46,7 +33,7 @@ const Products: Product[] = [
     sizes: ['S', 'M', 'L'],
     description: 'High-quality premium T-shirt',
     stock: 83,
-    rate: 99,
+    rate: 5,
     numberRating: 4,
     category: 'T-Shirt',
   },
@@ -59,7 +46,7 @@ const Products: Product[] = [
     sizes: ['S', 'M', 'L'],
     description: 'Casual everyday T-shirt',
     stock: 6,
-    rate: 73,
+    rate: 5,
     numberRating: 3,
     category: 'T-Shirt',
   },
@@ -72,7 +59,7 @@ const Products: Product[] = [
     sizes: ['S', 'M', 'L'],
     description: 'Basic affordable T-shirt',
     stock: 43,
-    rate: 78,
+    rate: 5,
     numberRating: 4,
     category: 'T-Shirt',
   },
@@ -85,7 +72,7 @@ const Products: Product[] = [
     sizes: ['S', 'M', 'L'],
     description: 'Stylish designer T-shirt',
     stock: 87,
-    rate: 37,
+    rate: 5,
     numberRating: 4,
     category: 'T-Shirt',
   },
@@ -98,7 +85,7 @@ const Products: Product[] = [
     sizes: ['S', 'M', 'L'],
     description: 'Classic denim jeans',
     stock: 87,
-    rate: 37,
+    rate: 5,
     numberRating: 4,
     category: 'Jeans',
   },
@@ -111,7 +98,7 @@ const Products: Product[] = [
     sizes: ['S', 'M', 'L'],
     description: 'Sporty performance T-shirt',
     stock: 87,
-    rate: 37,
+    rate: 5,
     numberRating: 4,
     category: 'T-Shirt',
   },
@@ -124,27 +111,59 @@ const Products: Product[] = [
     sizes: ['S', 'M', 'L'],
     description: 'Creative graphic print T-shirt',
     stock: 87,
-    rate: 37,
+    rate: 5,
     numberRating: 4,
     category: 'T-Shirt',
   },
 ];
-
-const breadcrumbItems = [
-  { label: 'Home', url: '/' },
-  { label: 'Shop', url: '/shop' },
-  { label: productDetailData.title },
-];
-
 // example data end
 
 const Details = () => {
+  const { id } = useParams(); // Assuming id is passed as a route parameter
+
+  const [product, setProduct] = useState<Product | null>(null);
+
+  useEffect(() => {
+    // Fetch the product details by ID
+    const fetchData = async () => {
+      const productService = new ProductAPIService();
+      const response = await productService.getById(`${id}`);
+
+      if (response.isSuccess && response.data !== undefined) {
+        setProduct(response.data); // Initially load first page
+        console.log(response.data);
+      } else {
+        console.error('Failed to fetch products:', response.errors);
+      }
+    };
+
+    fetchData();
+  }, [id]);
+
+  const breadcrumbItems = [
+    { label: 'Home', url: '/' },
+    { label: 'Shop', url: '/shop' },
+    { label: product?.title || '' },
+  ];
+
   return (
     <MainLayout>
       <div>
         <Breadcrumb listItems={breadcrumbItems} />
         <div className={styles.product}>
-          <ProductDetail {...productDetailData} />
+          {product && (
+            <ProductDetail
+              colors={product.colors || []}
+              description={product.description || ''}
+              images={product.images || []}
+              numberRating={product.numberRating || 0}
+              price={product.price || 0}
+              rate={product.rate || 0}
+              sizes={product.sizes || []}
+              stock={product.stock || 0}
+              title={product.title || ''}
+            />
+          )}
         </div>
         <div className={styles.list}>
           <p className={styles.title}>Same Product</p>
