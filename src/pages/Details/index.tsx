@@ -1,7 +1,7 @@
 import ProductDetail from '../../components/ProductDetail/ProductDetail';
 import { Product } from '../../types/product';
-import image1 from '../../assets/images/detail-small.jpg';
-import image2 from '../../assets/images/small-t-shirt.jpg';
+import smallTShirtImage from '../../assets/images/detail-small.jpg';
+import TShirt from '../../assets/images/small-t-shirt.jpg';
 import images from '../../assets/images/jacket.jpg';
 import ProductList from '../../components/ProductList/ProductList';
 import styles from './detail.module.css';
@@ -11,7 +11,7 @@ import Layout from '../Layout';
 // example data
 const productDetailData = {
   id: 1,
-  images: [image1, image2, image1],
+  images: [smallTShirtImage, TShirt, smallTShirtImage],
   title: 'Smart T-Shirt',
   description:
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget gravida leo, nec iaculis diam. Nam bibendum mi sed sem finibus ullamcorper.',
@@ -142,15 +142,13 @@ const Details = () => {
   return (
     <Layout>
       <div>
-        <div>
-          <Breadcrumb listItems={breadcrumbItems} />
-          <div className={styles.product}>
-            <ProductDetail {...productDetailData} />
-          </div>
-          <div className={styles.list}>
-            <p className={styles.title}>Same Product</p>
-            <ProductList products={Products} onClick={() => {}} />
-          </div>
+        <Breadcrumb listItems={breadcrumbItems} />
+        <div className={styles.product}>
+          <ProductDetail {...productDetailData} />
+        </div>
+        <div className={styles.list}>
+          <p className={styles.title}>Same Product</p>
+          <ProductList products={Products} onClick={() => {}} />
         </div>
       </div>
     </Layout>
