@@ -16,11 +16,19 @@ const HeroCarousel = ({ images }: HeroCarousel) => {
   };
 
   const handleNext = () => {
-    setMainImage(prevIndex => (prevIndex + 1) % images.length);
+    if (mainImage === images.length - 1) {
+      setMainImage(0);
+    } else {
+      setMainImage(mainImage + 1);
+    }
   };
 
   const handlePrev = () => {
-    setMainImage(prevIndex => (prevIndex - 1 + images.length) % images.length);
+    if (mainImage === 0) {
+      setMainImage(images.length - 1);
+    } else {
+      setMainImage(mainImage - 1);
+    }
   };
 
   return (
