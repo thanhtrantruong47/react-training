@@ -13,7 +13,7 @@ const MainLayout: React.FC<LayoutProps> = ({ children, bannerContent }) => {
   return (
     <>
       <Header />
-      <div className={styles.banner}>{bannerContent}</div>
+      {bannerContent}
       <main className={styles.container}>{children}</main>
       <Footer />
     </>
