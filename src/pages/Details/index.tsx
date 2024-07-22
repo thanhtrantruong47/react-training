@@ -7,7 +7,9 @@ import images from '../../assets/images/jacket.jpg';
 import ProductList from '../../components/ProductList/ProductList';
 import Footer from '../../components/Footer/Footer';
 import styles from './detail.module.css';
+import Breadcrumb from '../../components/Breadcrumb/Breadcrumbs';
 
+// example data
 const productDetailData = {
   id: 1,
   images: [image1, image2, image1],
@@ -129,11 +131,20 @@ const Products: Product[] = [
   },
 ];
 
+const breadcrumbItems = [
+  { label: 'Home', url: '/' },
+  { label: 'Shop', url: '/shop' },
+  { label: productDetailData.title },
+];
+
+// example data end
+
 const Details = () => {
   return (
-    <>
+    <div>
       <Header />
       <div className={styles.container}>
+        <Breadcrumb listItems={breadcrumbItems} />
         <div className={styles.product}>
           <ProductDetail {...productDetailData} />
         </div>
@@ -143,7 +154,7 @@ const Details = () => {
         </div>
       </div>
       <Footer />
-    </>
+    </div>
   );
 };
 
