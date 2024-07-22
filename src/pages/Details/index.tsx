@@ -6,7 +6,7 @@ import images from '../../assets/images/jacket.jpg';
 import ProductList from '../../components/ProductList/ProductList';
 import styles from './detail.module.css';
 import Breadcrumb from '../../components/Breadcrumb/Breadcrumbs';
-import Layout from '../../layouts';
+import MainLayout from '../../layouts/MainLayout';
 
 // example data
 const productDetailData = {
@@ -140,7 +140,7 @@ const breadcrumbItems = [
 
 const Details = () => {
   return (
-    <Layout>
+    <MainLayout>
       <div>
         <Breadcrumb listItems={breadcrumbItems} />
         <div className={styles.product}>
@@ -151,7 +151,7 @@ const Details = () => {
           <ProductList products={Products} onClick={() => {}} />
         </div>
       </div>
-    </Layout>
+    </MainLayout>
   );
 };
 
