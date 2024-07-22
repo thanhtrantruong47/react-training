@@ -1,13 +1,20 @@
-import { LIST_IMAGES_CAROUSEL } from '../../constants';
 import Button from '../Button/Button';
 import HeroCarousel from '../HeroCarousel/HeroCarousel';
 import styles from './heroSection.module.css';
+import banner from '../../assets/images/banner.jpg';
+import bannerMore from '../../assets/images/banner-more.jpg';
+
+const images = [
+  { id: 1, src: banner },
+  { id: 2, src: bannerMore },
+  { id: 3, src: bannerMore },
+];
 
 const HeroSection = () => {
   return (
-    <div className={styles.hero}>
+    <section className={styles.hero}>
       <div className={styles.content}>
-        <p className={styles.title}>Get the Latest Dress Models From Us</p>
+        <h2 className={styles.title}>Get the Latest Dress Models From Us</h2>
         <p className={styles.desc}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget gravida leo, nec iaculis diam. Nam bibendum
           mi sed sem finibus ullamcorper
@@ -16,8 +23,8 @@ const HeroSection = () => {
           <Button classStyle={styles.button} content="Shop now" />
         </div>
       </div>
-      <HeroCarousel images={LIST_IMAGES_CAROUSEL} />
-    </div>
+      <HeroCarousel images={images} />
+    </section>
   );
 };
 
