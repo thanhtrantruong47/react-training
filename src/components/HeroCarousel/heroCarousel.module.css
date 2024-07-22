@@ -5,7 +5,7 @@
 }
 
 .mainImage {
-  max-width: 25rem; /* 400px converted to rem */
+  min-width: 25rem; /* 400px converted to rem */
   min-height: 32.625rem;
   border-radius: 5rem 5rem 5rem 0; /* 80px converted to rem */
   border: 0.625rem solid var(--color-text-secondary); /* 10px converted to rem */
