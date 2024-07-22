@@ -1,7 +1,7 @@
 import Breadcrumb from '../../components/Breadcrumb/Breadcrumbs';
 import CartList from '../../components/CartList/CartList';
 import CartSummaryInfo from '../../components/CartSummaryInfo/CartSummaryInfo';
-import Footer from '../../components/Footer/Footer';
+import MainLayout from '../../layouts/MainLayout';
 import { CartItem } from '../../types/cartItem';
 import styles from './cart.module.css';
 
@@ -35,22 +35,23 @@ const breadcrumbItems = [{ label: 'Home', url: '/' }, { label: 'Cart' }];
 
 const Cart = () => {
   return (
-    <div>
-      <div className={styles.banner}>
-        <Breadcrumb listItems={breadcrumbItems} />
-        <p className={styles.title}>Cart</p>
-      </div>
-      <div className={styles.container}>
-        <p className={styles.titleCart}>Cart Product</p>
-        <div className={styles.group}>
-          <CartList cartItems={productDetails} />
-          <div>
-            <CartSummaryInfo numberProduct={5} onClickCheckoutButton={() => {}} totalPrice={500} />
+    <MainLayout>
+      <div>
+        <div className={styles.banner}>
+          <Breadcrumb listItems={breadcrumbItems} />
+          <p className={styles.title}>Cart</p>
+        </div>
+        <div className={styles.container}>
+          <p className={styles.titleCart}>Cart Product</p>
+          <div className={styles.group}>
+            <CartList cartItems={productDetails} />
+            <div className={styles.checkout}>
+              <CartSummaryInfo numberProduct={5} onClickCheckoutButton={() => {}} totalPrice={500} />
+            </div>
           </div>
         </div>
       </div>
-      <Footer />
-    </div>
+    </MainLayout>
   );
 };
 
