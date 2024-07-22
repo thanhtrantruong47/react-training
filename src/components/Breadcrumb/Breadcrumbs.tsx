@@ -14,7 +14,7 @@ const Breadcrumb = ({ listItems }: BreadcrumbProps) => {
     <nav aria-label="breadcrumb">
       <ol className={styles.breadcrumb}>
         {listItems.map((item, index) => (
-          <li key={index} className={styles.breadcrumbItem}>
+          <li key={item.label} className={styles.breadcrumbItem}>
             {item.url ? (
               <Link className={utils.link} to={item.url}>
                 {item.label}
