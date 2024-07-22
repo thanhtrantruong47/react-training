@@ -3,23 +3,22 @@
   background-color: var(--color-bg);
   padding: 2.5rem;
   gap: 2.875rem; /* 46px */
-  max-width: 48.875rem; /* 782px */
+  font-family: Mada;
 }
 
 .title {
-  font-family: Mada;
   font-size: var(--font-size-nm);
   font-weight: var(--font-weight-bold);
 }
 
 .desc {
-  font-family: Mada;
   font-size: var(--font-size-md);
   color: var(--color-text-product);
 }
 
 .image {
-  width: 5rem; /* 80px */
+  width: 100%;
+  max-width: 5rem; /* 80px */
   height: 5rem; /* 80px */
 }
 
