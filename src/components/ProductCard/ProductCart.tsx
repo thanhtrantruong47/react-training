@@ -39,11 +39,11 @@ const ProductCard = ({ id, image, title, price, description, numberRating, rate,
         <p className={styles.desc}>{description}</p>
         <div className={`${styles.ratingGroup} ${utils.flexCenter}`}>
           <div className={`${styles.numberRating} ${utils.flexCenter}`}>
-            {Array.from({ length: rate }).map((_, index) => (
+            {Array.from({ length: numberRating }).map((_, index) => (
               <StarIcon key={`${title}_${index}`} />
             ))}
           </div>
-          <p className={styles.ratingGroup}>({formatNumberCompact(numberRating)})</p>
+          <p className={styles.ratingGroup}>({formatNumberCompact(rate)})</p>
         </div>
       </div>
     </div>

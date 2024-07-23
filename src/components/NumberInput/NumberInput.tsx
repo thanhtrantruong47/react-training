@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent } from 'react';
 import styles from './numberInput.module.css';
 import PlusIcon from '../Icon/PlusIcon';
 import MinusIcon from '../Icon/MinusIcon';
@@ -6,42 +6,30 @@ import Input from '../Input/Input';
 import Button from '../Button/Button';
 
 interface NumberInputProps {
-  defaultValue: number;
+  value: number; // Current quantity
+  onChange: (value: number) => void; // Callback to handle quantity changes
 }
 
-const NumberInput = ({ defaultValue }: NumberInputProps) => {
-  const [quantity, setQuantity] = useState(defaultValue);
-
+const NumberInput = ({ value, onChange }: NumberInputProps) => {
   const increment = () => {
-    setQuantity(prevValue => prevValue + 1);
+    onChange(value + 1);
   };
 
   const decrement = () => {
-    setQuantity(prevValue => (prevValue > 0 ? prevValue - 1 : 1));
+    onChange(value > 1 ? value - 1 : 1);
   };
 
-  const quantityChange = (event: ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const newValue = parseInt(event.target.value, 10);
-
     if (!isNaN(newValue) && newValue >= 1) {
-      setQuantity(newValue);
+      onChange(newValue);
     }
   };
 
   return (
     <div className={styles.container}>
-      <Button
-        className={styles.button}
-        onClick={decrement}
-        disabled={quantity <= 1 ? true : false}
-        icon={MinusIcon}
-      />
-      <Input
-        className={styles.quantity}
-        type="number"
-        value={quantity}
-        onChange={quantityChange}
-      />
+      <Button className={styles.button} onClick={decrement} disabled={value <= 1} icon={MinusIcon} />
+      <Input className={styles.quantity} type="number" value={value} onChange={handleChange} />
       <Button className={styles.button} onClick={increment} icon={PlusIcon} />
     </div>
   );

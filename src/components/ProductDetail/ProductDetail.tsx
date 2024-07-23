@@ -3,13 +3,13 @@ import styles from './productDetail.module.css';
 import utils from '../../styles/modules/utils.module.css';
 import StarIcon from '../Icon/StarIcon';
 import StockIcon from '../Icon/StockIcon';
-import RadioGroup from '../Radio/Radio';
 import ProductImages from '../ProductImages/ProductImages';
 import NumberInput from '../NumberInput/NumberInput';
 import Button from '../Button/Button';
 import { Link } from 'react-router-dom';
 import CartButton from '../Icon/CartButton';
 import { formatNumberCompact } from '../../utils/formatNumberCompact';
+import RadioGroup from '../Radio/Radio';
 
 export interface ProductDetailProps {
   images: string[];
@@ -35,9 +35,34 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
   numberRating,
 }: ProductDetailProps) => {
   const [selectedSize, setSelectedSize] = useState<string | null>(sizes.length > 0 ? sizes[0] : null);
+  const [colorOfProduct, setColorOfProduct] = useState<string>(colors[0]);
+  const [sizeOfProduct, setSizeOfProduct] = useState<string>(sizes[0]);
+  const [amountOfProduct, setAmountOfProduct] = useState<number>(1);
 
   const handleSizeClick = (size: string) => {
     setSelectedSize(size);
+    setSizeOfProduct(size);
+  };
+
+  const addToCart = () => {
+    const products = JSON.parse(localStorage.getItem('productsInCart') || '[]');
+
+    products.push({
+      image: images[0],
+      stock: stock,
+      title: title,
+      price: price,
+      color: colorOfProduct,
+      size: sizeOfProduct,
+      amount: amountOfProduct,
+    });
+
+    console.log(colorOfProduct);
+    console.log(sizeOfProduct);
+    console.log(amountOfProduct);
+
+    localStorage.setItem('productsInCart', JSON.stringify(products));
+    alert('Successfully added to cart');
   };
 
   return (
@@ -49,18 +74,18 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
           <p className={styles.desc}>{description}</p>
           <div className={styles.rateGroup}>
             <div className={styles.rate}>
-              {Array.from({ length: rate }).map((_, index) => (
+              {Array.from({ length: numberRating }).map((_, index) => (
                 <StarIcon key={`${title}_${index}`} />
               ))}
             </div>
-            <p>({formatNumberCompact(numberRating)})</p>
+            <p>({formatNumberCompact(rate)})</p>
           </div>
         </div>
         <div className={styles.groupOption}>
           <div className={`${utils.flexCenter} ${styles.group}`}>
             <div>
               <p className={styles.option}>Color</p>
-              <RadioGroup options={colors} />
+              <RadioGroup options={colors} onChange={setColorOfProduct} />
             </div>
             <div className={styles.stock}>
               <p>In Stock</p>
@@ -86,12 +111,12 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
         <div>
           <p className={styles.option}>Quantity</p>
           <div className={`${utils.flexCenter} ${styles.group}`}>
-            <NumberInput defaultValue={1} />
+            <NumberInput value={amountOfProduct} onChange={setAmountOfProduct} />
             <p className={styles.price}>${price} USD</p>
           </div>
         </div>
         <div className={`${utils.flexCenter} ${styles.group}`}>
-          <Button content="Add to Cart" classStyle={`${styles.btn} ${styles.add}`} />
+          <Button content="Add to Cart" classStyle={`${styles.btn} ${styles.add} `} onClick={addToCart} />
           <Link to={'/cart'}>
             <Button classStyle={`${styles.btn} ${styles.cart}`} icon={CartButton} />
           </Link>
