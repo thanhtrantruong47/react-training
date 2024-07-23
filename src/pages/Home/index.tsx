@@ -6,6 +6,7 @@ import styles from './home.module.css';
 import TabList from '../../components/TabList/TabList';
 import { useEffect, useState } from 'react';
 import ProductAPIService from '../../services/ProductAPIService';
+import utils from '../../styles/modules/utils.module.css';
 
 const navItems = ['T-Shirt', 'Jacket', 'Shirt', 'Jens'];
 const productsPerPage = 8;
@@ -58,7 +59,7 @@ const Home = () => {
   return (
     <MainLayout bannerContent={<HeroSection />}>
       <section className={styles.container}>
-        <div className={styles.head}>
+        <div className={`${utils.flexCenter} ${styles.head}`}>
           <h3>CHOOSE FROM THE BEST PRODUCTS</h3>
           <h2>Our Best Seller </h2>
           <TabList listNavItems={navItems} onChangeTab={handleTabChange} />

@@ -4,11 +4,13 @@ import styles from './heroSection.module.css';
 import banner from '../../assets/images/banner.jpg';
 import bannerMore from '../../assets/images/banner-more.jpg';
 
+//example data
 const images = [
   { id: 1, src: banner },
   { id: 2, src: bannerMore },
   { id: 3, src: bannerMore },
 ];
+//example data end
 
 const HeroSection = () => {
   return (
