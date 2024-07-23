@@ -6,7 +6,7 @@ import StockIcon from '../Icon/StockIcon';
 import ProductImages from '../ProductImages/ProductImages';
 import NumberInput from '../NumberInput/NumberInput';
 import Button from '../Button/Button';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import CartButton from '../Icon/CartButton';
 import { formatNumberCompact } from '../../utils/formatNumberCompact';
 import RadioGroup from '../Radio/Radio';
@@ -39,6 +39,8 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
   const [sizeOfProduct, setSizeOfProduct] = useState<string>(sizes[0]);
   const [amountOfProduct, setAmountOfProduct] = useState<number>(1);
 
+  const { id } = useParams();
+
   const handleSizeClick = (size: string) => {
     setSelectedSize(size);
     setSizeOfProduct(size);
@@ -54,12 +56,9 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
       price: price,
       color: colorOfProduct,
       size: sizeOfProduct,
-      amount: amountOfProduct,
+      quantity: amountOfProduct,
+      id: `${id} ${title} ${colorOfProduct}`,
     });
-
-    console.log(colorOfProduct);
-    console.log(sizeOfProduct);
-    console.log(amountOfProduct);
 
     localStorage.setItem('productsInCart', JSON.stringify(products));
     alert('Successfully added to cart');
