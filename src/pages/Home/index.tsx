@@ -5,6 +5,9 @@ import images from '../../assets/images/jacket.jpg';
 import { Product } from '../../types/product';
 import styles from './home.module.css';
 import TabList from '../../components/TabList/TabList';
+import utils from '../../styles/modules/utils.module.css';
+
+//example data
 
 const Products: Product[] = [
   {
@@ -113,13 +116,15 @@ const Products: Product[] = [
   },
 ];
 
+//example data end
+
 const navItems = ['T-Shirt', 'Jacket  ', 'Shirt', 'Jens'];
 
 const Home = () => {
   return (
     <MainLayout bannerContent={<HeroSection />}>
       <section className={styles.container}>
-        <div className={styles.head}>
+        <div className={`${utils.flexCenter} ${styles.head}`}>
           <h3>CHOOSE FROM THE BEST PRODUCTS</h3>
           <h2>Our Best Seller </h2>
           <TabList listNavItems={navItems} onChangeTab={() => {}} />
