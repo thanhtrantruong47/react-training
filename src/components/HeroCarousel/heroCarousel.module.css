@@ -42,7 +42,7 @@
   padding: 0;
 }
 
-button {
+.thumbnailList button {
   background: var(--color-text-active);
   cursor: pointer;
   width: 1.5rem; /* 24px converted to rem */
