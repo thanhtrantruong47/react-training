@@ -26,6 +26,7 @@
 .group {
   display: flex;
   justify-content: flex-end;
+  text-decoration: none;
 }
 
 .button {

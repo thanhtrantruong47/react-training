@@ -14,10 +14,12 @@
   font-size: var(--font-size-2xl);
   color: var(--color-text-primary);
   font-weight: var(--font-weight-bold);
+  text-transform: capitalize;
 }
 
 .head h3 {
-  font-family: Mada;
+  font-family: Poppins;
   font-size: var(--font-size-2nm);
   color: var(--color-text-active);
+  text-transform: uppercase;
 }

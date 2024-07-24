@@ -63,8 +63,8 @@ const Home = () => {
     <MainLayout bannerContent={<HeroSection />}>
       <section className={styles.container}>
         <div className={`${utils.flexCenter} ${styles.head}`}>
-          <h3>CHOOSE FROM THE BEST PRODUCTS</h3>
-          <h2>Our Best Seller </h2>
+          <h3>choose from the best products</h3>
+          <h2>our best seller</h2>
           <TabList listNavItems={navItems} onChangeTab={handleTabChange} />
         </div>
         {isLoading ? (

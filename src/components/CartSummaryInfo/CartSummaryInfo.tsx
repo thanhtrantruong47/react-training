@@ -1,6 +1,7 @@
 import Button from '../Button/Button';
 import styles from './cartSummaryInfo.module.css';
 import utils from '../../styles/modules/utils.module.css';
+import { Link } from 'react-router-dom';
 
 interface CartSummaryInfoProps {
   onClickCheckoutButton: () => void;
@@ -15,9 +16,9 @@ const CartSummaryInfo = ({ numberProduct, totalPrice, onClickCheckoutButton }: C
       <label className={styles.desc}>Total</label>
       <p>$ {totalPrice} USD</p>
     </div>
-    <div className={styles.group}>
+    <Link to={'/order'} className={styles.group}>
       <Button classStyle={styles.button} onClick={onClickCheckoutButton} content="Checkout" />
-    </div>
+    </Link>
   </div>
 );
 
