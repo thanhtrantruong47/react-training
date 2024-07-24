@@ -13,10 +13,27 @@ interface CartItemProps {
   color: string;
   quantity: number;
   stock: number;
+  onQuantityChange: (id: string, quantity: number) => void;
+  onChangeDelete: (id: string) => void;
 }
 
-const CartItem = ({ image, title, price, color, quantity, stock }: CartItemProps) => {
+const CartItem = ({
+  id,
+  image,
+  title,
+  price,
+  color,
+  quantity,
+  stock,
+  onQuantityChange,
+  onChangeDelete,
+}: CartItemProps) => {
   const [amountOfProduct, setAmountOfProduct] = useState<number>(quantity);
+
+  const handleQuantityChange = (newQuantity: number) => {
+    setAmountOfProduct(newQuantity);
+    onQuantityChange(id, newQuantity);
+  };
 
   return (
     <div className={styles.container}>
@@ -34,12 +51,13 @@ const CartItem = ({ image, title, price, color, quantity, stock }: CartItemProps
           <p className={styles.title}>{stock}</p>
           <p className={styles.desc}>In Stock</p>
         </div>
-        <Button onClick={() => {}} className={styles.button} icon={DeleteIcon} />
+        <Button onClick={() => onChangeDelete(id)} className={styles.button} icon={DeleteIcon} />
       </div>
       <div className={`${utils.flexCenter} ${styles.quantity}`}>
-        <NumberInput value={amountOfProduct} onChange={setAmountOfProduct} />
+        <NumberInput value={amountOfProduct} onChange={handleQuantityChange} />
       </div>
     </div>
   );
 };
+
 export default CartItem;

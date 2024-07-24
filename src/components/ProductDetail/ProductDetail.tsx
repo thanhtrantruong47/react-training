@@ -61,7 +61,6 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
     });
 
     localStorage.setItem('productsInCart', JSON.stringify(products));
-    alert('Successfully added to cart');
   };
 
   return (

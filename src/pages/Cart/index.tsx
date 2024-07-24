@@ -9,7 +9,7 @@ import styles from './cart.module.css';
 const breadcrumbItems = [{ label: 'Home', url: '/' }, { label: 'Cart' }];
 
 const Cart = () => {
-  const [productsInCart, setProductsInCart] = useState([]);
+  const [productsInCart, setProductsInCart] = useState<CartItemType[]>([]);
   const [mergedCartItems, setMergedCartItems] = useState<CartItemType[]>([]);
 
   useEffect(() => {
@@ -44,6 +44,18 @@ const Cart = () => {
     setMergedCartItems(mergedItems);
   }, [productsInCart]);
 
+  const handleQuantityChange = (id: string, newQuantity: number) => {
+    const updatedItems = mergedCartItems.map(item => (item.id === id ? { ...item, quantity: newQuantity } : item));
+    setMergedCartItems(updatedItems);
+    localStorage.setItem('productsInCart', JSON.stringify(updatedItems));
+  };
+
+  const handleDelete = (id: string) => {
+    const updatedItems = mergedCartItems.filter(item => item.id !== id);
+    setMergedCartItems(updatedItems);
+    localStorage.setItem('productsInCart', JSON.stringify(updatedItems));
+  };
+
   const bannerContent = (
     <div className={styles.banner}>
       <Breadcrumb listItems={breadcrumbItems} />
@@ -66,7 +78,11 @@ const Cart = () => {
         <section className={styles.container}>
           <h2 className={styles.titleCart}>Cart Product</h2>
           <div className={styles.group}>
-            <CartList cartItems={mergedCartItems} />
+            <CartList
+              cartItems={mergedCartItems}
+              onQuantityChange={handleQuantityChange}
+              onChangeDelete={handleDelete}
+            />
             <div className={styles.checkout}>
               <CartSummaryInfo
                 numberProduct={mergedCartItems.length}
