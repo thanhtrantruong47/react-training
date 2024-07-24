@@ -1,12 +1,17 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
 .detail {
   display: flex;
-  margin: 0 auto;
   gap: 1.5625rem; /* 25px */
 }
 
 .info {
   display: flex;
-  width: 100%;
+  width: 50%;
+  max-width: 572px;
   padding: 0.9375rem 0; /* 15px */
   flex-direction: column;
   justify-content: space-between;
@@ -97,6 +102,8 @@
   width: 88%; /* 88px */
   padding: 0.65625rem; /* 10.5px */
   font-family: Poppins;
+  max-height: 3rem;
+  margin-right: 1rem;
 }
 
 .cart {
@@ -130,12 +137,14 @@
 }
 
 @media (max-width: 64rem) {
-  .container {
+  .detail {
     flex-direction: column;
     align-items: center;
   }
 
   .info {
-    gap: 1.5rem; /* 24px */
+    width: 100%;
+    max-width: 100%;
+    gap: 1.5rem;
   }
 }

@@ -15,23 +15,15 @@ const ProductImages = ({ images, title }: ProductImagesProps) => {
   };
 
   return (
-    <div>
-      <img
-        className={styles.detailImage}
-        src={images[activeIndex]}
-        alt={`${title} image ${images[activeIndex]}`}
-      />
+    <div className={styles.wrapper}>
+      <img className={styles.detailImage} src={images[activeIndex]} alt={`${title} image ${images[activeIndex]}`} />
       <ul className={styles.imageGroup}>
         {images.slice(0, 3).map((image, index) => (
           <li
             key={`${image}${index}`}
             className={`${utils.pointer} ${index === activeIndex ? styles.imageActive : ''}`}
             onClick={() => handleImageClick(index)}>
-            <img
-              className={styles.image}
-              src={image}
-              alt={`${title} image ${index + 1}`}
-            />
+            <img className={styles.image} src={image} alt={`${title} image ${index + 1}`} />
           </li>
         ))}
       </ul>

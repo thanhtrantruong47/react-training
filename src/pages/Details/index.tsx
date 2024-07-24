@@ -6,7 +6,6 @@ import MainLayout from '../../layouts/MainLayout';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import ProductAPIService from '../../services/ProductAPIService';
-import Breadcrumb from '../../components/Breadcrumb/Breadcrumbs';
 
 const productsPerPage = 8;
 
@@ -88,17 +87,10 @@ const Details = () => {
     }
   };
 
-  const breadcrumbItems = [
-    { label: 'Home', url: '/' },
-    { label: 'Shop', url: '/shop' },
-    { label: product?.title || '' },
-  ];
-
   return (
     <MainLayout>
       <div>
         <div className={styles.product}>
-          <Breadcrumb listItems={breadcrumbItems} />
           {product && (
             <ProductDetail
               colors={product.colors || []}
