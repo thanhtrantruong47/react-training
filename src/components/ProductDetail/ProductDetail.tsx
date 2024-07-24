@@ -10,6 +10,8 @@ import { Link, useParams } from 'react-router-dom';
 import CartButton from '../Icon/CartButton';
 import { formatNumberCompact } from '../../utils/formatNumberCompact';
 import RadioGroup from '../Radio/Radio';
+import { CartItem as CartItemType } from '../../types/cartItem';
+import { useCart } from '../../hook/CartContext';
 
 export interface ProductDetailProps {
   images: string[];
@@ -39,6 +41,8 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
   const [sizeOfProduct, setSizeOfProduct] = useState<string>(sizes[0]);
   const [amountOfProduct, setAmountOfProduct] = useState<number>(1);
 
+  const { addToCart } = useCart();
+
   const { id } = useParams();
 
   const handleSizeClick = (size: string) => {
@@ -46,21 +50,20 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
     setSizeOfProduct(size);
   };
 
-  const addToCart = () => {
-    const products = JSON.parse(localStorage.getItem('productsInCart') || '[]');
+  const handleAddToCart = () => {
+    const itemId = `${id} ${title} ${colorOfProduct} ${sizeOfProduct}`;
 
-    products.push({
+    const newItem: CartItemType = {
       image: images[0],
       stock: stock,
       title: title,
       price: price,
       color: colorOfProduct,
-      size: sizeOfProduct,
       quantity: amountOfProduct,
-      id: `${id} ${title} ${colorOfProduct}`,
-    });
+      id: itemId,
+    };
 
-    localStorage.setItem('productsInCart', JSON.stringify(products));
+    addToCart(newItem);
   };
 
   return (
@@ -114,7 +117,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
           </div>
         </div>
         <div className={`${utils.flexCenter} ${styles.group}`}>
-          <Button content="Add to Cart" classStyle={`${styles.btn} ${styles.add} `} onClick={addToCart} />
+          <Button content="Add to Cart" classStyle={`${styles.btn} ${styles.add} `} onClick={handleAddToCart} />
           <Link to={'/cart'}>
             <Button classStyle={`${styles.btn} ${styles.cart}`} icon={CartButton} />
           </Link>
