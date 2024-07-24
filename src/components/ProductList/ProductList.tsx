@@ -6,9 +6,10 @@ import styles from './productList.module.css';
 interface ProductListProps {
   products: Product[];
   onClick: () => void;
+  hasMore: boolean; // New prop to indicate if there are more products
 }
 
-const ProductList = ({ products, onClick }: ProductListProps) => (
+const ProductList = ({ products, onClick, hasMore }: ProductListProps) => (
   <div className={styles.container}>
     <div className={styles.list}>
       {products.map(({ id, title, price, description, rate, numberRating, images }) => (
@@ -24,7 +25,7 @@ const ProductList = ({ products, onClick }: ProductListProps) => (
         />
       ))}
     </div>
-    <Button classStyle={styles.btn} content="See More" onClick={onClick} />
+    <Button classStyle={styles.btn} content="See More" onClick={onClick} disabled={!hasMore} />
   </div>
 );
 

@@ -8,6 +8,11 @@
     0 0.234375rem 0.78125rem 0 var(--shadow-lg);
 }
 
+.header {
+  max-width: 75rem;
+  margin: 0 auto;
+}
+
 .group {
   gap: 2.5rem;
   margin-left: auto;

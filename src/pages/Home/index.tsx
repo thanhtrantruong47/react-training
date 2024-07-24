@@ -8,7 +8,7 @@ import { useEffect, useState } from 'react';
 import ProductAPIService from '../../services/ProductAPIService';
 import utils from '../../styles/modules/utils.module.css';
 
-const navItems = ['T-Shirt', 'Jacket', 'Shirt', 'Jens'];
+const navItems = ['T-Shirt', 'Jacket', 'Shirt', 'Jeans'];
 const productsPerPage = 8;
 
 const Home = () => {
@@ -16,6 +16,7 @@ const Home = () => {
   const [tab, setTab] = useState('T-Shirt');
   const [isLoading, setIsLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
+  const [hasMore, setHasMore] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -28,6 +29,7 @@ const Home = () => {
         setIsLoading(false);
         setProducts(response.data.slice(0, productsPerPage)); // Initially load first page
         setCurrentPage(1); // Reset current page
+        setHasMore(response.data.length > productsPerPage); // Check if there are more products
       } else {
         console.error('Failed to fetch products:', response.errors);
         setIsLoading(true);
@@ -51,6 +53,7 @@ const Home = () => {
       const newProducts = response.data.slice(currentPage * productsPerPage, (currentPage + 1) * productsPerPage);
       setProducts([...products, ...newProducts]);
       setCurrentPage(currentPage + 1);
+      setHasMore(response.data.length > (currentPage + 1) * productsPerPage); // Check if there are more products
     } else {
       console.error('Failed to fetch more products:', response.errors);
     }
@@ -68,7 +71,7 @@ const Home = () => {
           <p>Loading...</p>
         ) : (
           <>
-            <ProductList products={products} onClick={handleLoadMore} />
+            <ProductList products={products} onClick={handleLoadMore} hasMore={hasMore} />
           </>
         )}
       </section>

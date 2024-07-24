@@ -14,18 +14,20 @@ const images = [
 
 const HeroSection = () => {
   return (
-    <section className={styles.hero}>
-      <div className={styles.content}>
-        <h2 className={styles.title}>Get the Latest Dress Models From Us</h2>
-        <p className={styles.desc}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget gravida leo, nec iaculis diam. Nam bibendum
-          mi sed sem finibus ullamcorper
-        </p>
-        <div className={styles.buttonContainer}>
-          <Button classStyle={styles.button} content="Shop now" />
+    <section className={styles.container}>
+      <div className={styles.hero}>
+        <div className={styles.content}>
+          <h2 className={styles.title}>Get the Latest Dress Models From Us</h2>
+          <p className={styles.desc}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget gravida leo, nec iaculis diam. Nam bibendum
+            mi sed sem finibus ullamcorper
+          </p>
+          <div className={styles.buttonContainer}>
+            <Button classStyle={styles.button} content="Shop now" />
+          </div>
         </div>
+        <HeroCarousel images={images} />
       </div>
-      <HeroCarousel images={images} />
     </section>
   );
 };

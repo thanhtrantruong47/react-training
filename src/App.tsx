@@ -3,6 +3,7 @@ import Home from './pages/Home';
 import Cart from './pages/Cart';
 import Details from './pages/Details';
 import Order from './pages/Order';
+import NotFound from './pages/NotFound';
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
         <Route path="/cart" element={<Cart />} />
         <Route path="/detail/:id" element={<Details />} />
         <Route path="/order" element={<Order />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );

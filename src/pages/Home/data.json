@@ -2,9 +2,20 @@
   {
     "title": "T-Shirt 1",
     "price": 14,
-    "images": ["https://shorturl.at/jJC5m", "https://ibb.co/PWhRGVr", "https://shorturl.at/jJC5m"],
-    "colors": ["blue", "black"],
-    "sizes": ["S", "M", "L"],
+    "images": [
+      "https://shorturl.at/jJC5m",
+      "https://ibb.co/PWhRGVr",
+      "https://shorturl.at/jJC5m"
+    ],
+    "colors": [
+      "blue",
+      "black"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
     "description": "Description for T-Shirt 1",
     "stock": 45,
     "numberRating": 4,
@@ -15,9 +26,20 @@
   {
     "title": "T-Shirt 2",
     "price": 61,
-    "images": ["https://shorturl.at/jJC5m", "https://ibb.co/PWhRGVr", "https://shorturl.at/jJC5m"],
-    "colors": ["blue", "black"],
-    "sizes": ["S", "M", "L"],
+    "images": [
+      "https://shorturl.at/jJC5m",
+      "https://ibb.co/PWhRGVr",
+      "https://shorturl.at/jJC5m"
+    ],
+    "colors": [
+      "blue",
+      "black"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
     "description": "Description for T-Shirt 2",
     "stock": 83,
     "numberRating": 5,
@@ -28,9 +50,20 @@
   {
     "title": "T-Shirt 3",
     "price": 40,
-    "images": ["https://shorturl.at/jJC5m", "https://ibb.co/PWhRGVr", "https://shorturl.at/jJC5m"],
-    "colors": ["blue", "black"],
-    "sizes": ["S", "M", "L"],
+    "images": [
+      "https://shorturl.at/jJC5m",
+      "https://ibb.co/PWhRGVr",
+      "https://shorturl.at/jJC5m"
+    ],
+    "colors": [
+      "blue",
+      "black"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
     "description": "Description for T-Shirt 3",
     "stock": 6,
     "numberRating": 3,
@@ -41,9 +74,20 @@
   {
     "title": "T-Shirt 4",
     "price": 3,
-    "images": ["https://shorturl.at/jJC5m", "https://ibb.co/PWhRGVr", "https://shorturl.at/jJC5m"],
-    "colors": ["blue", "black"],
-    "sizes": ["S", "M", "L"],
+    "images": [
+      "https://shorturl.at/jJC5m",
+      "https://ibb.co/PWhRGVr",
+      "https://shorturl.at/jJC5m"
+    ],
+    "colors": [
+      "blue",
+      "black"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
     "description": "Description for T-Shirt 4",
     "stock": 43,
     "numberRating": 4,
@@ -54,9 +98,20 @@
   {
     "title": "T-Shirt 5",
     "price": 63,
-    "images": ["https://shorturl.at/jJC5m", "https://ibb.co/PWhRGVr", "https://shorturl.at/jJC5m"],
-    "colors": ["blue", "black"],
-    "sizes": ["S", "M", "L"],
+    "images": [
+      "https://shorturl.at/jJC5m",
+      "https://ibb.co/PWhRGVr",
+      "https://shorturl.at/jJC5m"
+    ],
+    "colors": [
+      "blue",
+      "black"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
     "description": "Description for T-Shirt 5",
     "stock": 87,
     "numberRating": 4,
@@ -67,9 +122,20 @@
   {
     "title": "T-Shirt 6",
     "price": 72,
-    "images": ["https://shorturl.at/jJC5m", "https://ibb.co/PWhRGVr", "https://shorturl.at/jJC5m"],
-    "colors": ["blue", "black"],
-    "sizes": ["S", "M", "L"],
+    "images": [
+      "https://shorturl.at/jJC5m",
+      "https://ibb.co/PWhRGVr",
+      "https://shorturl.at/jJC5m"
+    ],
+    "colors": [
+      "blue",
+      "black"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
     "description": "Description for T-Shirt 6",
     "stock": 81,
     "numberRating": 4,
@@ -80,9 +146,20 @@
   {
     "title": "T-Shirt 7",
     "price": 84,
-    "images": ["https://shorturl.at/jJC5m", "https://ibb.co/PWhRGVr", "https://shorturl.at/jJC5m"],
-    "colors": ["blue", "black"],
-    "sizes": ["S", "M", "L"],
+    "images": [
+      "https://shorturl.at/jJC5m",
+      "https://ibb.co/PWhRGVr",
+      "https://shorturl.at/jJC5m"
+    ],
+    "colors": [
+      "blue",
+      "black"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
     "description": "Description for T-Shirt 7",
     "stock": 36,
     "numberRating": 3,
@@ -93,9 +170,20 @@
   {
     "title": "T-Shirt 8",
     "price": 92,
-    "images": ["https://shorturl.at/jJC5m", "https://ibb.co/PWhRGVr", "https://shorturl.at/jJC5m"],
-    "colors": ["blue", "black"],
-    "sizes": ["S", "M", "L"],
+    "images": [
+      "https://shorturl.at/jJC5m",
+      "https://ibb.co/PWhRGVr",
+      "https://shorturl.at/jJC5m"
+    ],
+    "colors": [
+      "blue",
+      "black"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
     "description": "Description for T-Shirt 8",
     "stock": 40,
     "numberRating": 3,
@@ -106,9 +194,20 @@
   {
     "title": "T-Shirt 9",
     "price": 60,
-    "images": ["https://shorturl.at/jJC5m", "https://ibb.co/PWhRGVr", "https://shorturl.at/jJC5m"],
-    "colors": ["blue", "black"],
-    "sizes": ["S", "M", "L"],
+    "images": [
+      "https://shorturl.at/jJC5m",
+      "https://ibb.co/PWhRGVr",
+      "https://shorturl.at/jJC5m"
+    ],
+    "colors": [
+      "blue",
+      "black"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
     "description": "Description for T-Shirt 9",
     "stock": 30,
     "numberRating": 4,
@@ -119,9 +218,20 @@
   {
     "title": "T-Shirt 10",
     "price": 50,
-    "images": ["https://shorturl.at/jJC5m", "https://ibb.co/PWhRGVr", "https://shorturl.at/jJC5m"],
-    "colors": ["blue", "black"],
-    "sizes": ["S", "M", "L"],
+    "images": [
+      "https://shorturl.at/jJC5m",
+      "https://ibb.co/PWhRGVr",
+      "https://shorturl.at/jJC5m"
+    ],
+    "colors": [
+      "blue",
+      "black"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
     "description": "Description for T-Shirt 10",
     "stock": 25,
     "numberRating": 4,
@@ -132,9 +242,20 @@
   {
     "title": "T-Shirt 11",
     "price": 45,
-    "images": ["https://shorturl.at/jJC5m", "https://ibb.co/PWhRGVr", "https://shorturl.at/jJC5m"],
-    "colors": ["blue", "black"],
-    "sizes": ["S", "M", "L"],
+    "images": [
+      "https://shorturl.at/jJC5m",
+      "https://ibb.co/PWhRGVr",
+      "https://shorturl.at/jJC5m"
+    ],
+    "colors": [
+      "blue",
+      "black"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
     "description": "Description for T-Shirt 11",
     "stock": 20,
     "numberRating": 3,
@@ -145,9 +266,20 @@
   {
     "title": "T-Shirt 12",
     "price": 55,
-    "images": ["https://shorturl.at/jJC5m", "https://ibb.co/PWhRGVr", "https://shorturl.at/jJC5m"],
-    "colors": ["blue", "black"],
-    "sizes": ["S", "M", "L"],
+    "images": [
+      "https://shorturl.at/jJC5m",
+      "https://ibb.co/PWhRGVr",
+      "https://shorturl.at/jJC5m"
+    ],
+    "colors": [
+      "blue",
+      "black"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
     "description": "Description for T-Shirt 12",
     "stock": 15,
     "numberRating": 4,
@@ -158,9 +290,20 @@
   {
     "title": "T-Shirt 13",
     "price": 65,
-    "images": ["https://shorturl.at/jJC5m", "https://ibb.co/PWhRGVr", "https://shorturl.at/jJC5m"],
-    "colors": ["blue", "black"],
-    "sizes": ["S", "M", "L"],
+    "images": [
+      "https://shorturl.at/jJC5m",
+      "https://ibb.co/PWhRGVr",
+      "https://shorturl.at/jJC5m"
+    ],
+    "colors": [
+      "blue",
+      "black"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
     "description": "Description for T-Shirt 13",
     "stock": 18,
     "numberRating": 4,
@@ -171,9 +314,20 @@
   {
     "title": "T-Shirt 14",
     "price": 70,
-    "images": ["https://shorturl.at/jJC5m", "https://ibb.co/PWhRGVr", "https://shorturl.at/jJC5m"],
-    "colors": ["blue", "black"],
-    "sizes": ["S", "M", "L"],
+    "images": [
+      "https://shorturl.at/jJC5m",
+      "https://ibb.co/PWhRGVr",
+      "https://shorturl.at/jJC5m"
+    ],
+    "colors": [
+      "blue",
+      "black"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
     "description": "Description for T-Shirt 14",
     "stock": 22,
     "numberRating": 5,
@@ -184,9 +338,20 @@
   {
     "title": "T-Shirt 15",
     "price": 80,
-    "images": ["https://shorturl.at/jJC5m", "https://ibb.co/PWhRGVr", "https://shorturl.at/jJC5m"],
-    "colors": ["blue", "black"],
-    "sizes": ["S", "M", "L"],
+    "images": [
+      "https://shorturl.at/jJC5m",
+      "https://ibb.co/PWhRGVr",
+      "https://shorturl.at/jJC5m"
+    ],
+    "colors": [
+      "blue",
+      "black"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
     "description": "Description for T-Shirt 15",
     "stock": 28,
     "numberRating": 5,
@@ -195,11 +360,142 @@
     "id": "15"
   },
   {
+    "title": "T-Shirt 4",
+    "price": 3,
+    "images": [
+      "https://shorturl.at/jJC5m",
+      "https://ibb.co/PWhRGVr",
+      "https://shorturl.at/jJC5m"
+    ],
+    "colors": [
+      "blue",
+      "black"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
+    "description": "Description for T-Shirt 4",
+    "stock": 43,
+    "numberRating": 4,
+    "rate": 4,
+    "category": "T-Shirt",
+    "id": "16"
+  },
+  {
+    "title": "T-Shirt 5",
+    "price": 63,
+    "images": [
+      "https://shorturl.at/jJC5m",
+      "https://ibb.co/PWhRGVr",
+      "https://shorturl.at/jJC5m"
+    ],
+    "colors": [
+      "blue",
+      "black"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
+    "description": "Description for T-Shirt 5",
+    "stock": 87,
+    "numberRating": 4,
+    "rate": 4,
+    "category": "T-Shirt",
+    "id": "17"
+  },
+  {
+    "title": "T-Shirt 6",
+    "price": 72,
+    "images": [
+      "https://shorturl.at/jJC5m",
+      "https://ibb.co/PWhRGVr",
+      "https://shorturl.at/jJC5m"
+    ],
+    "colors": [
+      "blue",
+      "black"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
+    "description": "Description for T-Shirt 6",
+    "stock": 81,
+    "numberRating": 4,
+    "rate": 4,
+    "category": "T-Shirt",
+    "id": "18"
+  },
+  {
+    "title": "T-Shirt 6",
+    "price": 72,
+    "images": [
+      "https://shorturl.at/jJC5m",
+      "https://ibb.co/PWhRGVr",
+      "https://shorturl.at/jJC5m"
+    ],
+    "colors": [
+      "blue",
+      "black"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
+    "description": "Description for T-Shirt 6",
+    "stock": 81,
+    "numberRating": 4,
+    "rate": 4,
+    "category": "T-Shirt",
+    "id": "19"
+  },
+  {
+    "title": "T-Shirt 6",
+    "price": 72,
+    "images": [
+      "https://shorturl.at/jJC5m",
+      "https://ibb.co/PWhRGVr",
+      "https://shorturl.at/jJC5m"
+    ],
+    "colors": [
+      "blue",
+      "black"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
+    "description": "Description for T-Shirt 6",
+    "stock": 81,
+    "numberRating": 4,
+    "rate": 4,
+    "category": "T-Shirt",
+    "id": "20"
+  },
+  {
     "title": "Jacket 1",
     "price": 120,
-    "images": ["https://shorturl.at/jJC5m", "https://ibb.co/PWhRGVr", "https://shorturl.at/jJC5m"],
-    "colors": ["blue", "black"],
-    "sizes": ["S", "M", "L"],
+    "images": [
+      "https://shorturl.at/jJC5m",
+      "https://ibb.co/PWhRGVr",
+      "https://shorturl.at/jJC5m"
+    ],
+    "colors": [
+      "blue",
+      "black"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
     "description": "Description for Jacket 1",
     "stock": 50,
     "numberRating": 4,
@@ -210,9 +506,20 @@
   {
     "title": "Jacket 2",
     "price": 110,
-    "images": ["https://shorturl.at/jJC5m", "https://ibb.co/PWhRGVr", "https://shorturl.at/jJC5m"],
-    "colors": ["blue", "black"],
-    "sizes": ["S", "M", "L"],
+    "images": [
+      "https://shorturl.at/jJC5m",
+      "https://ibb.co/PWhRGVr",
+      "https://shorturl.at/jJC5m"
+    ],
+    "colors": [
+      "blue",
+      "black"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
     "description": "Description for Jacket 2",
     "stock": 55,
     "numberRating": 4,
@@ -223,9 +530,20 @@
   {
     "title": "Jacket 3",
     "price": 130,
-    "images": ["https://shorturl.at/jJC5m", "https://ibb.co/PWhRGVr", "https://shorturl.at/jJC5m"],
-    "colors": ["blue", "black"],
-    "sizes": ["S", "M", "L"],
+    "images": [
+      "https://shorturl.at/jJC5m",
+      "https://ibb.co/PWhRGVr",
+      "https://shorturl.at/jJC5m"
+    ],
+    "colors": [
+      "blue",
+      "black"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
     "description": "Description for Jacket 3",
     "stock": 45,
     "numberRating": 4,
@@ -236,9 +554,20 @@
   {
     "title": "Jacket 4",
     "price": 115,
-    "images": ["https://shorturl.at/jJC5m", "https://ibb.co/PWhRGVr", "https://shorturl.at/jJC5m"],
-    "colors": ["blue", "black"],
-    "sizes": ["S", "M", "L"],
+    "images": [
+      "https://shorturl.at/jJC5m",
+      "https://ibb.co/PWhRGVr",
+      "https://shorturl.at/jJC5m"
+    ],
+    "colors": [
+      "blue",
+      "black"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
     "description": "Description for Jacket 4",
     "stock": 60,
     "numberRating": 4,
@@ -249,9 +578,20 @@
   {
     "title": "Jacket 5",
     "price": 125,
-    "images": ["https://shorturl.at/jJC5m", "https://ibb.co/PWhRGVr", "https://shorturl.at/jJC5m"],
-    "colors": ["blue", "black"],
-    "sizes": ["S", "M", "L"],
+    "images": [
+      "https://shorturl.at/jJC5m",
+      "https://ibb.co/PWhRGVr",
+      "https://shorturl.at/jJC5m"
+    ],
+    "colors": [
+      "blue",
+      "black"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
     "description": "Description for Jacket 5",
     "stock": 40,
     "numberRating": 3,
@@ -262,9 +602,20 @@
   {
     "title": "Jacket 6",
     "price": 105,
-    "images": ["https://shorturl.at/jJC5m", "https://ibb.co/PWhRGVr", "https://shorturl.at/jJC5m"],
-    "colors": ["blue", "black"],
-    "sizes": ["S", "M", "L"],
+    "images": [
+      "https://shorturl.at/jJC5m",
+      "https://ibb.co/PWhRGVr",
+      "https://shorturl.at/jJC5m"
+    ],
+    "colors": [
+      "blue",
+      "black"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
     "description": "Description for Jacket 6",
     "stock": 70,
     "numberRating": 4,
@@ -275,9 +626,20 @@
   {
     "title": "Jacket 7",
     "price": 135,
-    "images": ["https://shorturl.at/jJC5m", "https://ibb.co/PWhRGVr", "https://shorturl.at/jJC5m"],
-    "colors": ["blue", "black"],
-    "sizes": ["S", "M", "L"],
+    "images": [
+      "https://shorturl.at/jJC5m",
+      "https://ibb.co/PWhRGVr",
+      "https://shorturl.at/jJC5m"
+    ],
+    "colors": [
+      "blue",
+      "black"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
     "description": "Description for Jacket 7",
     "stock": 35,
     "numberRating": 4,
@@ -288,9 +650,20 @@
   {
     "title": "Jacket 8",
     "price": 140,
-    "images": ["https://shorturl.at/jJC5m", "https://ibb.co/PWhRGVr", "https://shorturl.at/jJC5m"],
-    "colors": ["blue", "black"],
-    "sizes": ["S", "M", "L"],
+    "images": [
+      "https://shorturl.at/jJC5m",
+      "https://ibb.co/PWhRGVr",
+      "https://shorturl.at/jJC5m"
+    ],
+    "colors": [
+      "blue",
+      "black"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
     "description": "Description for Jacket 8",
     "stock": 30,
     "numberRating": 3,
@@ -301,9 +674,20 @@
   {
     "title": "Jacket 9",
     "price": 150,
-    "images": ["https://shorturl.at/jJC5m", "https://ibb.co/PWhRGVr", "https://shorturl.at/jJC5m"],
-    "colors": ["blue", "black"],
-    "sizes": ["S", "M", "L"],
+    "images": [
+      "https://shorturl.at/jJC5m",
+      "https://ibb.co/PWhRGVr",
+      "https://shorturl.at/jJC5m"
+    ],
+    "colors": [
+      "blue",
+      "black"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
     "description": "Description for Jacket 9",
     "stock": 25,
     "numberRating": 3,
@@ -314,9 +698,20 @@
   {
     "title": "Jacket 10",
     "price": 160,
-    "images": ["https://shorturl.at/jJC5m", "https://ibb.co/PWhRGVr", "https://shorturl.at/jJC5m"],
-    "colors": ["blue", "black"],
-    "sizes": ["S", "M", "L"],
+    "images": [
+      "https://shorturl.at/jJC5m",
+      "https://ibb.co/PWhRGVr",
+      "https://shorturl.at/jJC5m"
+    ],
+    "colors": [
+      "blue",
+      "black"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
     "description": "Description for Jacket 10",
     "stock": 20,
     "numberRating": 3,
@@ -327,9 +722,20 @@
   {
     "title": "Jacket 11",
     "price": 170,
-    "images": ["https://shorturl.at/jJC5m", "https://ibb.co/PWhRGVr", "https://shorturl.at/jJC5m"],
-    "colors": ["blue", "black"],
-    "sizes": ["S", "M", "L"],
+    "images": [
+      "https://shorturl.at/jJC5m",
+      "https://ibb.co/PWhRGVr",
+      "https://shorturl.at/jJC5m"
+    ],
+    "colors": [
+      "blue",
+      "black"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
     "description": "Description for Jacket 11",
     "stock": 15,
     "numberRating": 4,
@@ -340,9 +746,20 @@
   {
     "title": "Jacket 12",
     "price": 180,
-    "images": ["https://shorturl.at/jJC5m", "https://ibb.co/PWhRGVr", "https://shorturl.at/jJC5m"],
-    "colors": ["blue", "black"],
-    "sizes": ["S", "M", "L"],
+    "images": [
+      "https://shorturl.at/jJC5m",
+      "https://ibb.co/PWhRGVr",
+      "https://shorturl.at/jJC5m"
+    ],
+    "colors": [
+      "blue",
+      "black"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
     "description": "Description for Jacket 12",
     "stock": 18,
     "numberRating": 5,
@@ -353,9 +770,20 @@
   {
     "title": "Jacket 13",
     "price": 190,
-    "images": ["https://shorturl.at/jJC5m", "https://ibb.co/PWhRGVr", "https://shorturl.at/jJC5m"],
-    "colors": ["blue", "black"],
-    "sizes": ["S", "M", "L"],
+    "images": [
+      "https://shorturl.at/jJC5m",
+      "https://ibb.co/PWhRGVr",
+      "https://shorturl.at/jJC5m"
+    ],
+    "colors": [
+      "blue",
+      "black"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
     "description": "Description for Jacket 13",
     "stock": 22,
     "numberRating": 5,
@@ -366,9 +794,20 @@
   {
     "title": "Jacket 14",
     "price": 200,
-    "images": ["https://shorturl.at/jJC5m", "https://ibb.co/PWhRGVr", "https://shorturl.at/jJC5m"],
-    "colors": ["blue", "black"],
-    "sizes": ["S", "M", "L"],
+    "images": [
+      "https://shorturl.at/jJC5m",
+      "https://ibb.co/PWhRGVr",
+      "https://shorturl.at/jJC5m"
+    ],
+    "colors": [
+      "blue",
+      "black"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
     "description": "Description for Jacket 14",
     "stock": 28,
     "numberRating": 4,
@@ -379,9 +818,20 @@
   {
     "title": "Jacket 15",
     "price": 210,
-    "images": ["https://shorturl.at/jJC5m", "https://ibb.co/PWhRGVr", "https://shorturl.at/jJC5m"],
-    "colors": ["blue", "black"],
-    "sizes": ["S", "M", "L"],
+    "images": [
+      "https://shorturl.at/jJC5m",
+      "https://ibb.co/PWhRGVr",
+      "https://shorturl.at/jJC5m"
+    ],
+    "colors": [
+      "blue",
+      "black"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
     "description": "Description for Jacket 15",
     "stock": 32,
     "numberRating": 4,
@@ -390,198 +840,363 @@
     "id": "30"
   },
   {
-    "title": "Jens 1",
+    "title": "Jeans 1",
     "price": 80,
-    "images": ["https://shorturl.at/jJC5m", "https://ibb.co/PWhRGVr", "https://shorturl.at/jJC5m"],
-    "colors": ["blue", "black"],
-    "sizes": ["S", "M", "L"],
-    "description": "Description for Jens 1",
+    "images": [
+      "https://shorturl.at/jJC5m",
+      "https://ibb.co/PWhRGVr",
+      "https://shorturl.at/jJC5m"
+    ],
+    "colors": [
+      "blue",
+      "black"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
+    "description": "Description for Jeans 1",
     "stock": 50,
     "numberRating": 3,
     "rate": 4,
-    "category": "Jens",
+    "category": "Jeans",
     "id": "31"
   },
   {
-    "title": "Jens 2",
+    "title": "Jeans 2",
     "price": 90,
-    "images": ["https://shorturl.at/jJC5m", "https://ibb.co/PWhRGVr", "https://shorturl.at/jJC5m"],
-    "colors": ["blue", "black"],
-    "sizes": ["S", "M", "L"],
-    "description": "Description for Jens 2",
+    "images": [
+      "https://shorturl.at/jJC5m",
+      "https://ibb.co/PWhRGVr",
+      "https://shorturl.at/jJC5m"
+    ],
+    "colors": [
+      "blue",
+      "black"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
+    "description": "Description for Jeans 2",
     "stock": 55,
     "numberRating": 4,
     "rate": 4,
-    "category": "Jens",
+    "category": "Jeans",
     "id": "32"
   },
   {
-    "title": "Jens 3",
+    "title": "Jeans 3",
     "price": 100,
-    "images": ["https://shorturl.at/jJC5m", "https://ibb.co/PWhRGVr", "https://shorturl.at/jJC5m"],
-    "colors": ["blue", "black"],
-    "sizes": ["S", "M", "L"],
-    "description": "Description for Jens 3",
+    "images": [
+      "https://shorturl.at/jJC5m",
+      "https://ibb.co/PWhRGVr",
+      "https://shorturl.at/jJC5m"
+    ],
+    "colors": [
+      "blue",
+      "black"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
+    "description": "Description for Jeans 3",
     "stock": 45,
     "numberRating": 4,
     "rate": 4,
-    "category": "Jens",
+    "category": "Jeans",
     "id": "33"
   },
   {
-    "title": "Jens 4",
+    "title": "Jeans 4",
     "price": 110,
-    "images": ["https://shorturl.at/jJC5m", "https://ibb.co/PWhRGVr", "https://shorturl.at/jJC5m"],
-    "colors": ["blue", "black"],
-    "sizes": ["S", "M", "L"],
-    "description": "Description for Jens 4",
+    "images": [
+      "https://shorturl.at/jJC5m",
+      "https://ibb.co/PWhRGVr",
+      "https://shorturl.at/jJC5m"
+    ],
+    "colors": [
+      "blue",
+      "black"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
+    "description": "Description for Jeans 4",
     "stock": 60,
     "numberRating": 5,
     "rate": 4,
-    "category": "Jens",
+    "category": "Jeans",
     "id": "34"
   },
   {
-    "title": "Jens 5",
+    "title": "Jeans 5",
     "price": 120,
-    "images": ["https://shorturl.at/jJC5m", "https://ibb.co/PWhRGVr", "https://shorturl.at/jJC5m"],
-    "colors": ["blue", "black"],
-    "sizes": ["S", "M", "L"],
-    "description": "Description for Jens 5",
+    "images": [
+      "https://shorturl.at/jJC5m",
+      "https://ibb.co/PWhRGVr",
+      "https://shorturl.at/jJC5m"
+    ],
+    "colors": [
+      "blue",
+      "black"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
+    "description": "Description for Jeans 5",
     "stock": 40,
     "numberRating": 5,
     "rate": 4,
-    "category": "Jens",
+    "category": "Jeans",
     "id": "35"
   },
   {
-    "title": "Jens 6",
+    "title": "Jeans 6",
     "price": 130,
-    "images": ["https://shorturl.at/jJC5m", "https://ibb.co/PWhRGVr", "https://shorturl.at/jJC5m"],
-    "colors": ["blue", "black"],
-    "sizes": ["S", "M", "L"],
-    "description": "Description for Jens 6",
+    "images": [
+      "https://shorturl.at/jJC5m",
+      "https://ibb.co/PWhRGVr",
+      "https://shorturl.at/jJC5m"
+    ],
+    "colors": [
+      "blue",
+      "black"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
+    "description": "Description for Jeans 6",
     "stock": 70,
     "numberRating": 4,
     "rate": 4,
-    "category": "Jens",
+    "category": "Jeans",
     "id": "36"
   },
   {
-    "title": "Jens 7",
+    "title": "Jeans 7",
     "price": 140,
-    "images": ["https://shorturl.at/jJC5m", "https://ibb.co/PWhRGVr", "https://shorturl.at/jJC5m"],
-    "colors": ["blue", "black"],
-    "sizes": ["S", "M", "L"],
-    "description": "Description for Jens 7",
+    "images": [
+      "https://shorturl.at/jJC5m",
+      "https://ibb.co/PWhRGVr",
+      "https://shorturl.at/jJC5m"
+    ],
+    "colors": [
+      "blue",
+      "black"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
+    "description": "Description for Jeans 7",
     "stock": 35,
     "numberRating": 4,
     "rate": 4,
-    "category": "Jens",
+    "category": "Jeans",
     "id": "37"
   },
   {
-    "title": "Jens 8",
+    "title": "Jeans 8",
     "price": 150,
-    "images": ["https://shorturl.at/jJC5m", "https://ibb.co/PWhRGVr", "https://shorturl.at/jJC5m"],
-    "colors": ["blue", "black"],
-    "sizes": ["S", "M", "L"],
-    "description": "Description for Jens 8",
+    "images": [
+      "https://shorturl.at/jJC5m",
+      "https://ibb.co/PWhRGVr",
+      "https://shorturl.at/jJC5m"
+    ],
+    "colors": [
+      "blue",
+      "black"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
+    "description": "Description for Jeans 8",
     "stock": 30,
     "numberRating": 3,
     "rate": 4,
-    "category": "Jens",
+    "category": "Jeans",
     "id": "38"
   },
   {
-    "title": "Jens 9",
+    "title": "Jeans 9",
     "price": 160,
-    "images": ["https://shorturl.at/jJC5m", "https://ibb.co/PWhRGVr", "https://shorturl.at/jJC5m"],
-    "colors": ["blue", "black"],
-    "sizes": ["S", "M", "L"],
-    "description": "Description for Jens 9",
+    "images": [
+      "https://shorturl.at/jJC5m",
+      "https://ibb.co/PWhRGVr",
+      "https://shorturl.at/jJC5m"
+    ],
+    "colors": [
+      "blue",
+      "black"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
+    "description": "Description for Jeans 9",
     "stock": 25,
     "numberRating": 3,
     "rate": 4,
-    "category": "Jens",
+    "category": "Jeans",
     "id": "39"
   },
   {
-    "title": "Jens 10",
+    "title": "Jeans 10",
     "price": 170,
-    "images": ["https://shorturl.at/jJC5m", "https://ibb.co/PWhRGVr", "https://shorturl.at/jJC5m"],
-    "colors": ["blue", "black"],
-    "sizes": ["S", "M", "L"],
-    "description": "Description for Jens 10",
+    "images": [
+      "https://shorturl.at/jJC5m",
+      "https://ibb.co/PWhRGVr",
+      "https://shorturl.at/jJC5m"
+    ],
+    "colors": [
+      "blue",
+      "black"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
+    "description": "Description for Jeans 10",
     "stock": 20,
     "numberRating": 3,
     "rate": 4,
-    "category": "Jens",
+    "category": "Jeans",
     "id": "40"
   },
   {
-    "title": "Jens 11",
+    "title": "Jeans 11",
     "price": 180,
-    "images": ["https://shorturl.at/jJC5m", "https://ibb.co/PWhRGVr", "https://shorturl.at/jJC5m"],
-    "colors": ["blue", "black"],
-    "sizes": ["S", "M", "L"],
-    "description": "Description for Jens 11",
+    "images": [
+      "https://shorturl.at/jJC5m",
+      "https://ibb.co/PWhRGVr",
+      "https://shorturl.at/jJC5m"
+    ],
+    "colors": [
+      "blue",
+      "black"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
+    "description": "Description for Jeans 11",
     "stock": 15,
     "numberRating": 4,
     "rate": 4,
-    "category": "Jens",
+    "category": "Jeans",
     "id": "41"
   },
   {
-    "title": "Jens 12",
+    "title": "Jeans 12",
     "price": 190,
-    "images": ["https://shorturl.at/jJC5m", "https://ibb.co/PWhRGVr", "https://shorturl.at/jJC5m"],
-    "colors": ["blue", "black"],
-    "sizes": ["S", "M", "L"],
-    "description": "Description for Jens 12",
+    "images": [
+      "https://shorturl.at/jJC5m",
+      "https://ibb.co/PWhRGVr",
+      "https://shorturl.at/jJC5m"
+    ],
+    "colors": [
+      "blue",
+      "black"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
+    "description": "Description for Jeans 12",
     "stock": 18,
     "numberRating": 5,
     "rate": 4,
-    "category": "Jens",
+    "category": "Jeans",
     "id": "42"
   },
   {
-    "title": "Jens 13",
+    "title": "Jeans 13",
     "price": 200,
-    "images": ["https://shorturl.at/jJC5m", "https://ibb.co/PWhRGVr", "https://shorturl.at/jJC5m"],
-    "colors": ["blue", "black"],
-    "sizes": ["S", "M", "L"],
-    "description": "Description for Jens 13",
+    "images": [
+      "https://shorturl.at/jJC5m",
+      "https://ibb.co/PWhRGVr",
+      "https://shorturl.at/jJC5m"
+    ],
+    "colors": [
+      "blue",
+      "black"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
+    "description": "Description for Jeans 13",
     "stock": 22,
     "numberRating": 5,
     "rate": 4,
-    "category": "Jens",
+    "category": "Jeans",
     "id": "43"
   },
   {
-    "title": "Jens 14",
+    "title": "Jeans 14",
     "price": 210,
-    "images": ["https://shorturl.at/jJC5m", "https://ibb.co/PWhRGVr", "https://shorturl.at/jJC5m"],
-    "colors": ["blue", "black"],
-    "sizes": ["S", "M", "L"],
-    "description": "Description for Jens 14",
+    "images": [
+      "https://shorturl.at/jJC5m",
+      "https://ibb.co/PWhRGVr",
+      "https://shorturl.at/jJC5m"
+    ],
+    "colors": [
+      "blue",
+      "black"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
+    "description": "Description for Jeans 14",
     "stock": 28,
     "numberRating": 4,
     "rate": 4,
-    "category": "Jens",
+    "category": "Jeans",
     "id": "44"
   },
   {
-    "title": "Jens 15",
+    "title": "Jeans 15",
     "price": 220,
-    "images": ["https://shorturl.at/jJC5m", "https://ibb.co/PWhRGVr", "https://shorturl.at/jJC5m"],
-    "colors": ["blue", "black"],
-    "sizes": ["S", "M", "L"],
-    "description": "Description for Jens 15",
+    "images": [
+      "https://shorturl.at/jJC5m",
+      "https://ibb.co/PWhRGVr",
+      "https://shorturl.at/jJC5m"
+    ],
+    "colors": [
+      "blue",
+      "black"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
+    "description": "Description for Jeans 15",
     "stock": 32,
     "numberRating": 4,
     "rate": 4,
-    "category": "Jens",
+    "category": "Jeans",
     "id": "45"
   }
 ]

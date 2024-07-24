@@ -10,22 +10,19 @@ import styles from './header.module.css';
 import utils from '../../styles/modules/utils.module.css';
 
 const Header = () => (
-  <header className={`${styles.container}  ${utils.flexCenter}`}>
-    <Logo />
-    <div className={`${styles.group}  ${utils.flexCenter}`}>
-      <NavBar items={NAV_BAR_ITEMS} />
-      <div className={styles.groupIcon}>
-        <CartIcon />
-        <LikeIcon />
-        <LoginIcon />
-      </div>
-      <div className={styles.groupInput}>
-        <Input
-          type="text"
-          onChange={() => {}}
-          placeholder="Search"
-          endIcon={<SearchIcon />}
-        />
+  <header className={styles.container}>
+    <div className={`${styles.header}  ${utils.flexCenter}`}>
+      <Logo />
+      <div className={`${styles.group}  ${utils.flexCenter}`}>
+        <NavBar items={NAV_BAR_ITEMS} />
+        <div className={styles.groupIcon}>
+          <CartIcon />
+          <LikeIcon />
+          <LoginIcon />
+        </div>
+        <div className={styles.groupInput}>
+          <Input type="text" onChange={() => {}} placeholder="Search" endIcon={<SearchIcon />} />
+        </div>
       </div>
     </div>
   </header>

@@ -17,6 +17,7 @@ const Details = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
+  const [hasMore, setHasMore] = useState(true);
 
   /**
    * Fetches the product details by ID.
@@ -55,6 +56,7 @@ const Details = () => {
 
       if (response.isSuccess && response.data !== undefined) {
         setIsLoading(false); // Stop loading
+        setHasMore(response.data.length > productsPerPage);
         setProducts(response.data.slice(0, productsPerPage)); // Initially load first page of products
       } else {
         console.error('Failed to fetch products:', response.errors);
@@ -80,6 +82,7 @@ const Details = () => {
       const newProducts = response.data.slice(currentPage * productsPerPage, (currentPage + 1) * productsPerPage);
       setProducts([...products, ...newProducts]); // Append new products to existing list
       setCurrentPage(currentPage + 1); // Increment current page
+      setHasMore(response.data.length > (currentPage + 1) * productsPerPage); // Check if there are more products
     } else {
       console.error('Failed to fetch more products:', response.errors);
     }
@@ -116,7 +119,7 @@ const Details = () => {
             <p>Loading...</p>
           ) : (
             <>
-              <ProductList products={products} onClick={handleLoadMore} />
+              <ProductList products={products} onClick={handleLoadMore} hasMore={hasMore} />
             </>
           )}
         </div>
