@@ -3,17 +3,46 @@ import Breadcrumb from '../../components/Breadcrumb/Breadcrumbs';
 import CartList from '../../components/CartList/CartList';
 import CartSummaryInfo from '../../components/CartSummaryInfo/CartSummaryInfo';
 import MainLayout from '../../layouts/MainLayout';
+import { CartItem as CartItemType } from '../../types/cartItem';
 import styles from './cart.module.css';
 
 const breadcrumbItems = [{ label: 'Home', url: '/' }, { label: 'Cart' }];
 
 const Cart = () => {
   const [productsInCart, setProductsInCart] = useState([]);
+  const [mergedCartItems, setMergedCartItems] = useState<CartItemType[]>([]);
 
   useEffect(() => {
     const items = JSON.parse(localStorage.getItem('productsInCart') || '[]');
     setProductsInCart(items);
   }, []);
+
+  useEffect(() => {
+    const items = JSON.parse(localStorage.getItem('productsInCart') || '[]') as CartItemType[];
+
+    const mergeCartItems = (items: CartItemType[]) => {
+      const mergedItemsMap = new Map<string, CartItemType>();
+
+      items.forEach(item => {
+        if (mergedItemsMap.has(item.id)) {
+          const existingItem = mergedItemsMap.get(item.id)!;
+          mergedItemsMap.set(item.id, {
+            ...existingItem,
+            quantity: existingItem.quantity + item.quantity,
+          });
+        } else {
+          mergedItemsMap.set(item.id, { ...item });
+        }
+      });
+
+      const mergedItems: CartItemType[] = Array.from(mergedItemsMap.values());
+      localStorage.setItem('productsInCart', JSON.stringify(mergedItems));
+      return mergedItems;
+    };
+
+    const mergedItems = mergeCartItems(items);
+    setMergedCartItems(mergedItems);
+  }, [productsInCart]);
 
   const bannerContent = (
     <div className={styles.banner}>
@@ -22,26 +51,28 @@ const Cart = () => {
     </div>
   );
 
-  const totalPrice = (productsInCart: { price: number; quantity: number }[]) => {
-    return productsInCart.reduce((total, product) => {
+  const totalPrice = (mergedCartItems: { price: number; quantity: number }[]) => {
+    return mergedCartItems.reduce((total, product) => {
       return total + product.price * product.quantity;
     }, 0);
   };
 
-  const total = totalPrice(productsInCart);
-  const numberProduct = productsInCart.length;
-
+  const total = totalPrice(mergedCartItems);
   const checkout = () => {};
 
   return (
     <MainLayout bannerContent={bannerContent}>
-      {productsInCart.length > 0 ? (
+      {mergedCartItems.length > 0 ? (
         <section className={styles.container}>
           <h2 className={styles.titleCart}>Cart Product</h2>
           <div className={styles.group}>
-            <CartList cartItems={productsInCart} />
+            <CartList cartItems={mergedCartItems} />
             <div className={styles.checkout}>
-              <CartSummaryInfo numberProduct={numberProduct} onClickCheckoutButton={checkout} totalPrice={total} />
+              <CartSummaryInfo
+                numberProduct={mergedCartItems.length}
+                onClickCheckoutButton={checkout}
+                totalPrice={total}
+              />
             </div>
           </div>
         </section>
