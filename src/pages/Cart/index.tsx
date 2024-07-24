@@ -70,7 +70,9 @@ const Cart = () => {
   };
 
   const total = totalPrice(mergedCartItems);
-  const checkout = () => {};
+  const checkout = () => {
+    localStorage.clear();
+  };
 
   return (
     <MainLayout bannerContent={bannerContent}>

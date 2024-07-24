@@ -9,5 +9,5 @@ export default {
 type Story = StoryObj<typeof NumberInput>;
 
 export const Default: Story = {
-  args: { defaultValue: 1 },
+  args: { value: 1 },
 };

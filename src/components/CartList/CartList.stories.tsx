@@ -11,7 +11,7 @@ type Story = StoryObj<typeof CartList>;
 
 const productDetails: CartItem[] = [
   {
-    id: 1,
+    id: '1',
     image:
       'https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQhjpAMGZr_n_ABGlri34mUcwi_mpNlTO1_essdAYk9IrlKhT53CbjMqxh44Lke-HDUO4wLmmCVL8Em31KLUql1Wf3ETUvI_28-kkJXb15eM2eOMBFCUUkT7GZ897B2bIDLBqre-D8&usqp=CAc',
     title: 'T-Shirt',
@@ -21,7 +21,7 @@ const productDetails: CartItem[] = [
     quantity: 5,
   },
   {
-    id: 2,
+    id: '2',
     image:
       'https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQhjpAMGZr_n_ABGlri34mUcwi_mpNlTO1_essdAYk9IrlKhT53CbjMqxh44Lke-HDUO4wLmmCVL8Em31KLUql1Wf3ETUvI_28-kkJXb15eM2eOMBFCUUkT7GZ897B2bIDLBqre-D8&usqp=CAc',
     title: 'T-Shirt basic',
