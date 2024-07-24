@@ -17,7 +17,7 @@ const TabList = ({ listNavItems, onChangeTab }: TabListProps) => {
   };
 
   return (
-    <div className={`${utils.flexCenter} ${styles.tabList}`}>
+    <div className={`${utils.flexCenter} ${utils.container} ${styles.tabList}`}>
       {listNavItems.map((item, index) => (
         <TabItem key={item} label={item} isActive={index === activeTab} onChange={() => handleTabChange(index, item)} />
       ))}

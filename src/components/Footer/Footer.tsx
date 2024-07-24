@@ -7,11 +7,12 @@ import InstagramIcon from '../Icon/InstagramIcon';
 import TwitterIcon from '../Icon/TwitterIcon';
 import InIcon from '../Icon/InIcon';
 import FaceBookIcon from '../Icon/FaceBookIcon';
+import utils from '../../styles/modules/utils.module.css';
 
 const Footer = () => {
   return (
-    <footer className={styles.container}>
-      <div className={styles.footer}>
+    <footer className={styles.fluidContainer}>
+      <div className={`${utils.container} ${styles.footer}`}>
         <div className={styles.groupLogo}>
           <Link to={'/'}>
             <svg height="34" width="160">

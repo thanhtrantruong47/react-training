@@ -1,5 +1,6 @@
-.container {
-  margin: 3.125rem 0 5rem 0;
+.section {
+  margin-top: 3.125rem;
+  margin-bottom: 5rem;
 }
 
 .head {

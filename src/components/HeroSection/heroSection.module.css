@@ -1,4 +1,4 @@
-.container {
+.fluidContainer {
   background: var(--color-gradient);
 }
 
@@ -7,7 +7,6 @@
   justify-content: space-between;
   padding: 4.9375rem 0 5.5625rem;
   gap: 1.875rem; /* 30px en px / 16 = 1.875rem */
-  max-width: 75rem;
   margin: 0 auto;
 }
 

@@ -4,6 +4,7 @@ import CartSummaryInfo from '../../components/CartSummaryInfo/CartSummaryInfo';
 import { useCart } from '../../hook/CartContext';
 import MainLayout from '../../layouts/MainLayout';
 import styles from './cart.module.css';
+import utils from '../../styles/modules/utils.module.css';
 
 const breadcrumbItems = [{ label: 'Home', url: '/' }, { label: 'Cart' }];
 
@@ -19,9 +20,11 @@ const Cart = () => {
   };
 
   const bannerContent = (
-    <div className={styles.banner}>
-      <Breadcrumb listItems={breadcrumbItems} />
-      <h2 className={styles.title}>Cart</h2>
+    <div className={styles.fluidContainer}>
+      <div className={`${utils.container} ${styles.banner}`}>
+        <Breadcrumb listItems={breadcrumbItems} />
+        <h2 className={styles.title}>Cart</h2>
+      </div>
     </div>
   );
 
@@ -39,7 +42,7 @@ const Cart = () => {
   return (
     <MainLayout bannerContent={bannerContent}>
       {productsInCart.length > 0 ? (
-        <section className={styles.container}>
+        <section className={`${utils.container} ${styles.cart}`}>
           <h2 className={styles.titleCart}>Cart Product</h2>
           <div className={styles.group}>
             <CartList

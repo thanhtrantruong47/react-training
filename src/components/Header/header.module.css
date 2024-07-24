@@ -1,16 +1,12 @@
-.container {
-  gap: 0.8125rem;
-  justify-content: space-around;
-  height: 5rem; /* 80px / 16 */
-  padding: 1.0625rem 7.5rem; /* 17px / 16 */
+.fluidContainer {
   box-shadow:
     0 0.15625rem 0.3125rem 0 var(--shadow-lg),
     0 0.234375rem 0.78125rem 0 var(--shadow-lg);
 }
 
 .header {
-  max-width: 75rem;
-  margin: 0 auto;
+  gap: 0.8125rem;
+  padding: 17px 0 15px;
 }
 
 .badge {

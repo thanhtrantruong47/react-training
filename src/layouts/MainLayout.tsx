@@ -2,7 +2,6 @@
 import React from 'react';
 import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
-import styles from './mainLayout.module.css';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -14,7 +13,7 @@ const MainLayout: React.FC<LayoutProps> = ({ children, bannerContent }) => {
     <>
       <Header />
       {bannerContent}
-      <main className={styles.container}>{children}</main>
+      <main>{children}</main>
       <Footer />
     </>
   );

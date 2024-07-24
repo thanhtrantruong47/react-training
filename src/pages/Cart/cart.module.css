@@ -1,9 +1,12 @@
+.fluidContainer{
+  width: 100%;
+  background: var(--color-gradient);
+}
+
 .banner {
   display: flex;
   flex-direction: column;
-  background: var(--color-gradient);
   height: 21.75rem; /* 348px / 16 */
-  padding: 2.5rem 7.5rem; /* 40px / 16 and 120px / 16 */
   color: var(--color-text-secondary);
 }
 
@@ -37,8 +40,9 @@
   margin-bottom: 2.25rem; /* 36px / 16 */
 }
 
-.container {
-  margin: 5rem 0; /* 80px / 16 */
+.cart {
+  margin-top: 5rem ; /* 80px / 16 */
+  margin-bottom: 5rem ;
 }
 
 @media (max-width: 1024px) {

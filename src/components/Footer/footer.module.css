@@ -1,15 +1,14 @@
-.container {
+.fluidContainer {
   background-color: #393e46;
 }
 
 .footer {
   display: flex;
   justify-content: space-between;
-  padding: 1.25rem;
   color: var(--color-text-secondary);
-  max-width: 75rem;
   margin: 0 auto;
-  padding: 5rem 0;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 }
 
 .groupLogo {
@@ -45,7 +44,8 @@
   .footer {
     flex-direction: column;
     gap: 1.25rem; /* 20px in rem */
-    padding: 2rem 1rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
   }
 
   .groupLogo {

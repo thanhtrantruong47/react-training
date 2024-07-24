@@ -97,8 +97,8 @@ const Details = () => {
   return (
     <MainLayout>
       <div>
-        <Breadcrumb listItems={breadcrumbItems} />
         <div className={styles.product}>
+          <Breadcrumb listItems={breadcrumbItems} />
           {product && (
             <ProductDetail
               colors={product.colors || []}

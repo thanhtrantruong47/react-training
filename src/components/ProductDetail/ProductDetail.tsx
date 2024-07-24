@@ -67,7 +67,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
   };
 
   return (
-    <div className={styles.container}>
+    <div className={`${utils.container} ${styles.detail}`}>
       <ProductImages images={images} title={title} />
       <div className={styles.info}>
         <div>
