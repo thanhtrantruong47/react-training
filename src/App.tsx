@@ -4,17 +4,23 @@ import Cart from './pages/Cart';
 import Details from './pages/Details';
 import Order from './pages/Order';
 import NotFound from './pages/NotFound';
+import { CartProvider } from './hook/CartContext';
+import { ToastProvider } from './hook/ToastContext';
 
 const App = () => {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/detail/:id" element={<Details />} />
-        <Route path="/order" element={<Order />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      <CartProvider>
+        <ToastProvider>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/detail/:id" element={<Details />} />
+            <Route path="/order" element={<Order />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </ToastProvider>
+      </CartProvider>
     </BrowserRouter>
   );
 };

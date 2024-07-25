@@ -13,6 +13,7 @@ import RadioGroup from '../Radio/Radio';
 import { CartItem as CartItemType } from '../../types/cartItem';
 import { useCart } from '../../hook/CartContext';
 import Breadcrumb from '../Breadcrumb/Breadcrumbs';
+import { useToast } from '../../hook/ToastContext';
 
 export interface ProductDetailProps {
   images: string[];
@@ -43,6 +44,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
   const [amountOfProduct, setAmountOfProduct] = useState<number>(1);
 
   const { addToCart } = useCart();
+  const { addToast } = useToast(); // Get addToast function
 
   const { id } = useParams();
 
@@ -65,6 +67,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
     };
 
     addToCart(newItem);
+    addToast('Item added to cart!', true); // Show success toast
   };
 
   const breadcrumbItems = [{ label: 'Home', url: '/' }, { label: 'Shop', url: '/shop' }, { label: title }];

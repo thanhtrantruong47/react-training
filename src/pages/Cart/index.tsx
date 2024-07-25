@@ -8,11 +8,13 @@ import styles from './cart.module.css';
 import utils from '../../styles/modules/utils.module.css';
 import Loading from '../../components/Loading';
 import { Link } from 'react-router-dom';
+import { useToast } from '../../hook/ToastContext';
 
 const breadcrumbItems = [{ label: 'Home', url: '/' }, { label: 'Cart' }];
 
 const Cart = () => {
   const { productsInCart, updateQuantity, removeFromCart, clearCart } = useCart();
+  const { addToast } = useToast(); // Get addToast function
   const [delayedProductsInCart, setDelayedProductsInCart] = useState<typeof productsInCart>([]);
   const [isLoading, setIsLoading] = useState(true);
   const isDisable = true;
@@ -32,6 +34,7 @@ const Cart = () => {
 
   const handleDelete = (id: string) => {
     removeFromCart(id);
+    addToast('Delete item in cart', true);
   };
 
   const bannerContent = (
