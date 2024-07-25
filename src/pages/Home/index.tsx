@@ -58,6 +58,7 @@ const Home = () => {
       console.error('Failed to fetch more products:', response.errors);
     }
   };
+
   return (
     <MainLayout bannerContent={<HeroSection />}>
       <section className={styles.container}>
