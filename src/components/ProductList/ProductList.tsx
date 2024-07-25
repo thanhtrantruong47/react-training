@@ -2,14 +2,16 @@ import { Product } from '../../types/product';
 import Button from '../Button/Button';
 import ProductCard from '../ProductCard/ProductCart';
 import styles from './productList.module.css';
+import utils from '../../styles/modules/utils.module.css';
 
 interface ProductListProps {
   products: Product[];
   onClick: () => void;
+  hasMore: boolean; // New prop to indicate if there are more products
 }
 
-const ProductList = ({ products, onClick }: ProductListProps) => (
-  <div className={styles.container}>
+const ProductList = ({ products, onClick, hasMore }: ProductListProps) => (
+  <div className={`${utils.container} ${styles.wrapper}`}>
     <div className={styles.list}>
       {products.map(({ id, title, price, description, rate, numberRating, images }) => (
         <ProductCard
@@ -24,7 +26,7 @@ const ProductList = ({ products, onClick }: ProductListProps) => (
         />
       ))}
     </div>
-    <Button classStyle={styles.btn} content="See More" onClick={onClick} />
+    <Button classStyle={styles.btn} content="See More" onClick={onClick} disabled={!hasMore} />
   </div>
 );
 
