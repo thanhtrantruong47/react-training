@@ -7,6 +7,7 @@ import TabList from '../../components/TabList/TabList';
 import { useEffect, useState } from 'react';
 import ProductAPIService from '../../services/ProductAPIService';
 import utils from '../../styles/modules/utils.module.css';
+import Loading from '../../components/Loading';
 
 const navItems = ['T-Shirt', 'Jacket', 'Shirt', 'Jeans'];
 const productsPerPage = 8;
@@ -68,7 +69,7 @@ const Home = () => {
           <TabList listNavItems={navItems} onChangeTab={handleTabChange} />
         </div>
         {isLoading ? (
-          <p>Loading...</p>
+          <Loading classStyle={utils.loading} />
         ) : (
           <>
             <ProductList products={products} onClick={handleLoadMore} hasMore={hasMore} />

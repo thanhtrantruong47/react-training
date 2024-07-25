@@ -6,6 +6,8 @@ import MainLayout from '../../layouts/MainLayout';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import ProductAPIService from '../../services/ProductAPIService';
+import Loading from '../../components/Loading';
+import utils from '../../styles/modules/utils.module.css';
 
 const productsPerPage = 8;
 
@@ -27,12 +29,15 @@ const Details = () => {
     const fetchData = async () => {
       const productService = new ProductAPIService();
       const response = await productService.getById(`${id}`);
+      setIsLoading(true);
 
       if (response.isSuccess && response.data !== undefined) {
         setProduct(response.data); // Set the fetched product details
         console.log(response.data);
+        setIsLoading(false);
       } else {
         console.error('Failed to fetch product details:', response.errors);
+        setIsLoading(true);
       }
     };
 
@@ -91,28 +96,31 @@ const Details = () => {
     <MainLayout>
       <div>
         <div className={styles.product}>
-          {product && (
-            <ProductDetail
-              colors={product.colors || []}
-              description={product.description || ''}
-              images={product.images || []}
-              numberRating={product.numberRating || 0}
-              price={product.price || 0}
-              rate={product.rate || 0}
-              sizes={product.sizes || []}
-              stock={product.stock || 0}
-              title={product.title || ''}
-            />
+          {isLoading ? (
+            <Loading classStyle={utils.loading} />
+          ) : (
+            product && (
+              <ProductDetail
+                colors={product.colors || []}
+                description={product.description || ''}
+                images={product.images || []}
+                numberRating={product.numberRating || 0}
+                price={product.price || 0}
+                rate={product.rate || 0}
+                sizes={product.sizes || []}
+                stock={product.stock || 0}
+                title={product.title || ''}
+              />
+            )
           )}
         </div>
+
         <div className={styles.list}>
           <p className={styles.title}>Same Product</p>
           {isLoading ? (
-            <p>Loading...</p>
+            <Loading classStyle={utils.loading} />
           ) : (
-            <>
-              <ProductList products={products} onClick={handleLoadMore} hasMore={hasMore} />
-            </>
+            <ProductList products={products} onClick={handleLoadMore} hasMore={hasMore} />
           )}
         </div>
       </div>

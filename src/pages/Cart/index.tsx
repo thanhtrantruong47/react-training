@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import Breadcrumb from '../../components/Breadcrumb/Breadcrumbs';
 import CartList from '../../components/CartList/CartList';
 import CartSummaryInfo from '../../components/CartSummaryInfo/CartSummaryInfo';
@@ -5,11 +6,25 @@ import { useCart } from '../../hook/CartContext';
 import MainLayout from '../../layouts/MainLayout';
 import styles from './cart.module.css';
 import utils from '../../styles/modules/utils.module.css';
+import Loading from '../../components/Loading';
+import { Link } from 'react-router-dom';
 
 const breadcrumbItems = [{ label: 'Home', url: '/' }, { label: 'Cart' }];
 
 const Cart = () => {
   const { productsInCart, updateQuantity, removeFromCart } = useCart();
+  const [delayedProductsInCart, setDelayedProductsInCart] = useState<typeof productsInCart>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const isDisable = true;
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setDelayedProductsInCart(productsInCart);
+      setIsLoading(false);
+    }, 500);
+
+    return () => clearTimeout(timer); // Clear timeout if component unmounts
+  }, [productsInCart]);
 
   const handleQuantityChange = (id: string, newQuantity: number) => {
     updateQuantity(id, newQuantity);
@@ -34,25 +49,27 @@ const Cart = () => {
     }, 0);
   };
 
-  const total = totalPrice(productsInCart);
+  const total = totalPrice(delayedProductsInCart);
   const checkout = () => {
     localStorage.clear();
   };
 
   return (
     <MainLayout bannerContent={bannerContent}>
-      {productsInCart.length > 0 ? (
+      {isLoading ? (
+        <Loading classStyle={utils.loading} />
+      ) : delayedProductsInCart.length > 0 ? (
         <section className={`${utils.container} ${styles.cart}`}>
           <h2 className={styles.titleCart}>Cart Product</h2>
           <div className={styles.group}>
             <CartList
-              cartItems={productsInCart}
+              cartItems={delayedProductsInCart}
               onQuantityChange={handleQuantityChange}
               onChangeDelete={handleDelete}
             />
             <div className={styles.checkout}>
               <CartSummaryInfo
-                numberProduct={productsInCart.length}
+                numberProduct={delayedProductsInCart.length}
                 onClickCheckoutButton={checkout}
                 totalPrice={total}
               />
@@ -60,7 +77,21 @@ const Cart = () => {
           </div>
         </section>
       ) : (
-        <p className={styles.container}>Your cart is empty</p>
+        <div className={utils.container}>
+          <div className={`${styles.emptyGroup} ${styles.cart}`}>
+            <div className={styles.empty}>
+              No product in the cart. <Link to={'/'}>shopping</Link> to add item
+            </div>
+            <div className={styles.checkout}>
+              <CartSummaryInfo
+                numberProduct={delayedProductsInCart.length}
+                onClickCheckoutButton={checkout}
+                totalPrice={total}
+                isDisable={isDisable}
+              />
+            </div>
+          </div>
+        </div>
       )}
     </MainLayout>
   );

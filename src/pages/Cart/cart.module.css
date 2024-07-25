@@ -1,4 +1,4 @@
-.fluidContainer{
+.fluidContainer {
   width: 100%;
   background: var(--color-gradient);
 }
@@ -41,8 +41,23 @@
 }
 
 .cart {
-  margin-top: 5rem ; /* 80px / 16 */
-  margin-bottom: 5rem ;
+  margin-top: 5rem; /* 80px / 16 */
+  margin-bottom: 5rem;
+}
+
+.emptyGroup {
+  display: flex;
+  gap: 1rem;
+  font-family: Poppins;
+  justify-content: space-between;
+}
+
+.empty {
+  background-color: var(--color-bg);
+  width: 100%;
+  padding: 2.625rem 1.5rem 2.25rem 1.5rem; /* 42px, 24px, 36px, 24px */
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-lg);
 }
 
 @media (max-width: 1024px) {
@@ -53,5 +68,13 @@
   .group {
     flex-direction: column;
     margin-bottom: 2rem; /* 32px / 16 */
+  }
+
+  .emptyGroup {
+    flex-direction: column;
+  }
+
+  .checkout {
+    min-width: auto;
   }
 }

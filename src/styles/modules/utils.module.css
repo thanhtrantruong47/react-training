@@ -23,6 +23,10 @@
   margin: 0 auto;
 }
 
+.loading {
+  min-height: 53rem;
+}
+
 @media (max-width: 1024px) {
   .container {
     padding: 0 80px;
