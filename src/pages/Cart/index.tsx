@@ -12,7 +12,7 @@ import { Link } from 'react-router-dom';
 const breadcrumbItems = [{ label: 'Home', url: '/' }, { label: 'Cart' }];
 
 const Cart = () => {
-  const { productsInCart, updateQuantity, removeFromCart } = useCart();
+  const { productsInCart, updateQuantity, removeFromCart, clearCart } = useCart();
   const [delayedProductsInCart, setDelayedProductsInCart] = useState<typeof productsInCart>([]);
   const [isLoading, setIsLoading] = useState(true);
   const isDisable = true;
@@ -50,8 +50,9 @@ const Cart = () => {
   };
 
   const total = totalPrice(delayedProductsInCart);
+
   const checkout = () => {
-    localStorage.clear();
+    clearCart();
   };
 
   return (
