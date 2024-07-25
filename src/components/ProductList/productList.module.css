@@ -1,4 +1,4 @@
-.container {
+.wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -26,6 +26,10 @@
   box-shadow:
     0 0.15625rem 0.3125rem 0 var(--shadow-lg),
     /* 2.5px */ 0 0.234375rem 0.78125rem 0 var(--shadow-lg); /* 3.75px */
+}
+
+.btn:disabled {
+  display: none;
 }
 
 @media (max-width: 75rem) {

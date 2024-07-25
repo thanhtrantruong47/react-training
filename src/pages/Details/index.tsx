@@ -148,7 +148,7 @@ const Details = () => {
         </div>
         <div className={styles.list}>
           <p className={styles.title}>Same Product</p>
-          <ProductList products={Products} onClick={() => {}} />
+          <ProductList products={Products} onClick={() => {}} hasMore />
         </div>
       </div>
     </MainLayout>
