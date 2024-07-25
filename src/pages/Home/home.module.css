@@ -16,6 +16,7 @@
   color: var(--color-text-primary);
   font-weight: var(--font-weight-bold);
   text-transform: capitalize;
+  text-align: center;
 }
 
 .head h3 {
@@ -23,4 +24,5 @@
   font-size: var(--font-size-2nm);
   color: var(--color-text-active);
   text-transform: uppercase;
+  text-align: center;
 }

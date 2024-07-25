@@ -74,6 +74,10 @@
     flex-direction: column;
   }
 
+  .empty {
+    height: 15.31rem;
+  }
+
   .checkout {
     min-width: auto;
   }
