@@ -26,8 +26,12 @@ const Header = () => {
                 <CartIcon />
                 <span className={styles.badgeNumber}>{productsInCart.length}</span>
               </Link>
-              <LikeIcon />
-              <LoginIcon />
+              <Link to={'/'}>
+                <LikeIcon />
+              </Link>
+              <Link to={'/'}>
+                <LoginIcon />
+              </Link>
             </div>
             <div className={styles.groupInput}>
               <Input type="text" onChange={() => {}} placeholder="Search" endIcon={<SearchIcon />} />

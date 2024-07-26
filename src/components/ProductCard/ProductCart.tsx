@@ -6,6 +6,7 @@ import BookMarkIcon from '../Icon/BookMarkIcon';
 import LikedIcon from '../Icon/LikedIcon';
 import { Link } from 'react-router-dom';
 import unAvailableImage from '../../assets/images/no-image.jpg';
+import Button from '../Button/Button';
 
 interface ProductCardProps {
   id: number;
@@ -29,12 +30,8 @@ const ProductCard = ({ id, image, title, price, description, numberRating, rate,
           alt={title}
         />
         <div className={styles.bookMark}>
-          <button aria-label="toggle bookmark" onChange={onChange}>
-            <BookMarkIcon />
-          </button>
-          <button aria-label="toggle liked" onChange={onChange}>
-            <LikedIcon />
-          </button>
+          <Button className={utils.pointer} aria-label="mark product" icon={BookMarkIcon} onChange={onChange} />
+          <Button className={utils.pointer} aria-label="like product" icon={LikedIcon} onChange={onChange} />
         </div>
       </div>
       <div className={styles.group}>
