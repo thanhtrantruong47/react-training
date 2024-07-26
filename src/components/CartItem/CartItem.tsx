@@ -4,6 +4,7 @@ import NumberInput from '../NumberInput/NumberInput';
 import DeleteIcon from '../Icon/DeleteIcon';
 import Button from '../Button/Button';
 import { useState } from 'react';
+import unAvailableImage from '../../assets/images/no-image.jpg';
 
 interface CartItemProps {
   id: string;
@@ -38,7 +39,7 @@ const CartItem = ({
   return (
     <div className={styles.container}>
       <div className={`${utils.flexCenter} ${styles.group}`}>
-        <img className={styles.image} src={image} alt={image} />
+        <img className={styles.image} src={image} alt={image} onError={e => (e.currentTarget.src = unAvailableImage)} />
         <div className={styles.option}>
           <p className={styles.title}>{title}</p>
           <p className={styles.desc}>Color: {color.charAt(0).toUpperCase() + color.slice(1)}</p>

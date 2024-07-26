@@ -5,6 +5,7 @@ import { formatNumberCompact } from '../../utils/formatNumberCompact';
 import BookMarkIcon from '../Icon/BookMarkIcon';
 import LikedIcon from '../Icon/LikedIcon';
 import { Link } from 'react-router-dom';
+import unAvailableImage from '../../assets/images/no-image.jpg';
 
 interface ProductCardProps {
   id: number;
@@ -21,7 +22,12 @@ const ProductCard = ({ id, image, title, price, description, numberRating, rate,
   <Link className={utils.link} to={`/detail/${id}`}>
     <div className={styles.product}>
       <div className={`${styles.imageGroup} ${utils.relative}`}>
-        <img className={styles.productImage} src={image} alt={title} />
+        <img
+          className={styles.productImage}
+          src={image}
+          onError={e => (e.currentTarget.src = unAvailableImage)}
+          alt={title}
+        />
         <div className={styles.bookMark}>
           <button aria-label="toggle bookmark" onChange={onChange}>
             <BookMarkIcon />
