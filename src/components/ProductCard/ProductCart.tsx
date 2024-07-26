@@ -24,8 +24,8 @@ const ProductCard = ({ id, image, title, price, description, numberRating, rate,
       <div className={`${styles.imageGroup} ${utils.relative}`}>
         <img className={styles.productImage} src={image} alt={title} />
         <div className={styles.bookMark}>
-          <Button className={utils.pointer} aria-label="toggle bookmark" icon={BookMarkIcon} onChange={onChange} />
-          <Button className={utils.pointer} aria-label="toggle bookmark" icon={LikedIcon} onChange={onChange} />
+          <Button className={utils.pointer} aria-label="mark product" icon={BookMarkIcon} onChange={onChange} />
+          <Button className={utils.pointer} aria-label="like product" icon={LikedIcon} onChange={onChange} />
         </div>
       </div>
       <div className={styles.group}>
