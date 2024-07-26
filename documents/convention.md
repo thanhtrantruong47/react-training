@@ -40,7 +40,6 @@
 
 ## 8. Storybook
 
-- Use Storybook decorators to provide context and wrappers globally.
 - Write stories for all reusable components.
 
 ## 9. Number Formatting
