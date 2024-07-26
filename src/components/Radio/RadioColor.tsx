@@ -3,7 +3,7 @@ import styles from './radio.module.css';
 interface RadioColorProps {
   color: string;
   isChecked: boolean;
-  onChange: () => void;
+  onChange: (color: string) => void; // Update type to match usage
 }
 
 const RadioColor = ({ color, isChecked, onChange }: RadioColorProps) => {
@@ -12,6 +12,11 @@ const RadioColor = ({ color, isChecked, onChange }: RadioColorProps) => {
     backgroundColor: !isChecked ? color : 'white',
     border: isChecked ? 'var(--border-sm) solid var(--color-text-product)' : 'none',
   } as React.CSSProperties;
+
+  // Pass color to onChange when clicked
+  const handleChange = () => {
+    onChange(color);
+  };
 
   return (
     <>
@@ -22,7 +27,7 @@ const RadioColor = ({ color, isChecked, onChange }: RadioColorProps) => {
         id={color}
         className={styles.colorRadio}
         checked={isChecked}
-        onChange={onChange}
+        onChange={handleChange}
       />
       <label htmlFor={color} className={styles.colorOption} aria-label={`Select ${color}`}>
         <div className={`${styles.colorCircle}`} style={circleStyle} />

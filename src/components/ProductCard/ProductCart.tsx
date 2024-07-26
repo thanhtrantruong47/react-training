@@ -17,16 +17,7 @@ interface ProductCardProps {
   onChange?: () => void;
 }
 
-const ProductCard = ({
-  id,
-  image,
-  title,
-  price,
-  description,
-  numberRating,
-  rate,
-  onChange,
-}: ProductCardProps) => (
+const ProductCard = ({ id, image, title, price, description, numberRating, rate, onChange }: ProductCardProps) => (
   <Link className={utils.link} to={`/detail/${id}`}>
     <div className={styles.product}>
       <div className={`${styles.imageGroup} ${utils.relative}`}>

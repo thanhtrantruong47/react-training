@@ -6,7 +6,7 @@ export default {
   title: 'Components/TabList',
 } as Meta;
 
-const navItems = ['T-Shirt', 'Jacket  ', 'Shirt', 'Jens'];
+const navItems = ['T-Shirt', 'Jacket  ', 'Shirt', 'Jeans'];
 
 type Story = StoryObj<typeof TabList>;
 

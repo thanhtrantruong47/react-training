@@ -1,0 +1,10 @@
+.title {
+  font-size: var(--font-size-xl);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  height: 100vh;
+  text-align: center;
+}

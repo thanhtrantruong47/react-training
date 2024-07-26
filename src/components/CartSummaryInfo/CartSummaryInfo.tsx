@@ -1,14 +1,16 @@
 import Button from '../Button/Button';
 import styles from './cartSummaryInfo.module.css';
 import utils from '../../styles/modules/utils.module.css';
+import { Link } from 'react-router-dom';
 
 interface CartSummaryInfoProps {
   onClickCheckoutButton: () => void;
   numberProduct: number;
   totalPrice: number;
+  isDisable?: boolean;
 }
 
-const CartSummaryInfo = ({ numberProduct, totalPrice, onClickCheckoutButton }: CartSummaryInfoProps) => (
+const CartSummaryInfo = ({ numberProduct, totalPrice, onClickCheckoutButton, isDisable }: CartSummaryInfoProps) => (
   <div className={styles.container}>
     <p className={styles.product}>{numberProduct} Product</p>
     <div className={`${utils.flexCenter} ${styles.total}`}>
@@ -16,7 +18,9 @@ const CartSummaryInfo = ({ numberProduct, totalPrice, onClickCheckoutButton }: C
       <p>$ {totalPrice} USD</p>
     </div>
     <div className={styles.group}>
-      <Button classStyle={styles.button} onClick={onClickCheckoutButton} content="Checkout" />
+      <Link to={'/order'}>
+        <Button classStyle={styles.button} onClick={onClickCheckoutButton} content="Checkout" disabled={isDisable} />
+      </Link>
     </div>
   </div>
 );

@@ -4,9 +4,10 @@ import MainLayout from '../../layouts/MainLayout';
 import { Product } from '../../types/product';
 import styles from './home.module.css';
 import TabList from '../../components/TabList/TabList';
-import utils from '../../styles/modules/utils.module.css';
 import { useEffect, useState } from 'react';
 import ProductAPIService from '../../services/ProductAPIService';
+import utils from '../../styles/modules/utils.module.css';
+import Loading from '../../components/Loading';
 
 const navItems = ['T-Shirt', 'Jacket', 'Shirt', 'Jeans'];
 const productsPerPage = 8;
@@ -27,9 +28,9 @@ const Home = () => {
 
       if (response.isSuccess && response.data !== undefined) {
         setIsLoading(false);
-        setProducts(response.data.slice(0, productsPerPage));
+        setProducts(response.data.slice(0, productsPerPage)); // Initially load first page
         setCurrentPage(1); // Reset current page
-        setHasMore(response.data.length > productsPerPage);
+        setHasMore(response.data.length > productsPerPage); // Check if there are more products
       } else {
         console.error('Failed to fetch products:', response.errors);
         setIsLoading(true);
@@ -41,7 +42,7 @@ const Home = () => {
 
   const handleTabChange = (item: string) => {
     setTab(item);
-    setCurrentPage(1);
+    setCurrentPage(1); // Reset page when tab changes
     console.log('Selected tab:', item);
   };
 
@@ -53,7 +54,7 @@ const Home = () => {
       const newProducts = response.data.slice(currentPage * productsPerPage, (currentPage + 1) * productsPerPage);
       setProducts([...products, ...newProducts]);
       setCurrentPage(currentPage + 1);
-      setHasMore(response.data.length > (currentPage + 1) * productsPerPage);
+      setHasMore(response.data.length > (currentPage + 1) * productsPerPage); // Check if there are more products
     } else {
       console.error('Failed to fetch more products:', response.errors);
     }
@@ -61,21 +62,19 @@ const Home = () => {
 
   return (
     <MainLayout bannerContent={<HeroSection />}>
-      <section className={styles.container}>
+      <section className={`${utils.container} ${styles.section}`}>
         <div className={`${utils.flexCenter} ${styles.head}`}>
-          <h3>CHOOSE FROM THE BEST PRODUCTS</h3>
-          <h2>Our Best Seller </h2>
+          <h3>choose from the best products</h3>
+          <h2>our best seller</h2>
           <TabList listNavItems={navItems} onChangeTab={handleTabChange} />
         </div>
-        <>
-          {isLoading ? (
-            <p>Loading...</p>
-          ) : (
-            <>
-              <ProductList products={products} onClick={handleLoadMore} hasMore={hasMore} />
-            </>
-          )}
-        </>
+        {isLoading ? (
+          <Loading classStyle={utils.loading} />
+        ) : (
+          <>
+            <ProductList products={products} onClick={handleLoadMore} hasMore={hasMore} />
+          </>
+        )}
       </section>
     </MainLayout>
   );

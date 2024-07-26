@@ -7,35 +7,38 @@ import InstagramIcon from '../Icon/InstagramIcon';
 import TwitterIcon from '../Icon/TwitterIcon';
 import InIcon from '../Icon/InIcon';
 import FaceBookIcon from '../Icon/FaceBookIcon';
+import utils from '../../styles/modules/utils.module.css';
 
 const Footer = () => {
   return (
-    <footer className={styles.container}>
-      <div className={styles.groupLogo}>
-        <Link to={'/'}>
-          <svg height="34" width="160">
-            <image width="35" height="34" href={companyLogo} />
-            <text className={styles.logo} x="44" y="50%" dominantBaseline="middle">
-              mangcoding Store
-            </text>
-          </svg>
-        </Link>
-        <p className={styles.desc}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mollis, justo nec porttitor auctor, erat sapien
-          faucibus lectus, vel tempor dolor augue et lectus.{' '}
-        </p>
-      </div>
-      <div className={styles.group}>
-        <FooterNavList title="Home" items={FOOTER_LIST_HOME} />
-        <FooterNavList title="Shop" items={FOOTER_LIST_SHOP} />
-        <FooterNavList title="Category" items={FOOTER_LIST_CATEGORY} />
-        <div>
-          <FooterNavList title="Contact" items={FOOTER_LIST_CONTACT} />
-          <div className={styles.groupIcon}>
-            <FaceBookIcon />
-            <TwitterIcon />
-            <InIcon />
-            <InstagramIcon />
+    <footer className={styles.fluidContainer}>
+      <div className={`${utils.container} ${styles.footer}`}>
+        <div className={styles.groupLogo}>
+          <Link to={'/'}>
+            <svg height="34" width="160">
+              <image width="35" height="34" href={companyLogo} />
+              <text className={styles.logo} x="44" y="50%" dominantBaseline="middle">
+                mangcoding Store
+              </text>
+            </svg>
+          </Link>
+          <p className={styles.desc}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mollis, justo nec porttitor auctor, erat sapien
+            faucibus lectus, vel tempor dolor augue et lectus.{' '}
+          </p>
+        </div>
+        <div className={styles.group}>
+          <FooterNavList title="Home" items={FOOTER_LIST_HOME} />
+          <FooterNavList title="Shop" items={FOOTER_LIST_SHOP} />
+          <FooterNavList title="Category" items={FOOTER_LIST_CATEGORY} />
+          <div>
+            <FooterNavList title="Contact" items={FOOTER_LIST_CONTACT} />
+            <div className={styles.groupIcon}>
+              <FaceBookIcon />
+              <TwitterIcon />
+              <InIcon />
+              <InstagramIcon />
+            </div>
           </div>
         </div>
       </div>

@@ -8,27 +8,34 @@ import Logo from '../Logo/Logo';
 import NavBar from '../NavBar/NavBar';
 import styles from './header.module.css';
 import utils from '../../styles/modules/utils.module.css';
+import { Link } from 'react-router-dom';
+import { useCart } from '../../hook/CartContext';
 
-const Header = () => (
-  <header className={`${styles.container}  ${utils.flexCenter}`}>
-    <Logo />
-    <div className={`${styles.group}  ${utils.flexCenter}`}>
-      <NavBar items={NAV_BAR_ITEMS} />
-      <div className={styles.groupIcon}>
-        <CartIcon />
-        <LikeIcon />
-        <LoginIcon />
-      </div>
-      <div className={styles.groupInput}>
-        <Input
-          type="text"
-          onChange={() => {}}
-          placeholder="Search"
-          endIcon={<SearchIcon />}
-        />
-      </div>
-    </div>
-  </header>
-);
+const Header = () => {
+  const { productsInCart } = useCart();
 
+  return (
+    <header className={styles.fluidContainer}>
+      <div className={`${utils.container}`}>
+        <div className={`${styles.header}  ${utils.flexCenter}`}>
+          <Logo />
+          <div className={`${styles.group}  ${utils.flexCenter}`}>
+            <NavBar items={NAV_BAR_ITEMS} />
+            <div className={styles.groupIcon}>
+              <Link to={'/cart'} className={styles.badge}>
+                <CartIcon />
+                <span className={styles.badgeNumber}>{productsInCart.length}</span>
+              </Link>
+              <LikeIcon />
+              <LoginIcon />
+            </div>
+            <div className={styles.groupInput}>
+              <Input type="text" onChange={() => {}} placeholder="Search" endIcon={<SearchIcon />} />
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+  );
+};
 export default Header;

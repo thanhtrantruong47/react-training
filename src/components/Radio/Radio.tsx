@@ -4,23 +4,25 @@ import RadioColor from './RadioColor';
 
 interface ListOptionsProps {
   options: string[];
+  onChange: (color: string) => void; // Updated type
 }
 
-const RadioGroup = ({ options }: ListOptionsProps) => {
+const RadioGroup = ({ options, onChange }: ListOptionsProps) => {
   const [selectedColor, setSelectedColor] = useState<string>(options[0]);
 
-  const handleRadioChange = (index: number) => {
-    setSelectedColor(options[index]);
+  const handleRadioChange = (color: string) => {
+    setSelectedColor(color);
+    onChange(color);
   };
 
   return (
     <div className={styles.listColor}>
-      {options.map((option, index) => (
+      {options.map(option => (
         <RadioColor
           key={option}
           color={option}
           isChecked={option === selectedColor}
-          onChange={() => handleRadioChange(index)}
+          onChange={handleRadioChange} // Pass handleRadioChange to RadioColor
         />
       ))}
     </div>

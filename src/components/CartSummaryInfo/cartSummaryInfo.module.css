@@ -4,6 +4,7 @@
   padding: 2.625rem 1.5rem 2.25rem 1.5rem; /* 42px, 24px, 36px, 24px */
   font-size: var(--font-size-md);
   font-family: Mada;
+  height: 15.31rem;
 }
 
 .product {
@@ -26,6 +27,7 @@
 .group {
   display: flex;
   justify-content: flex-end;
+  text-decoration: none;
 }
 
 .button {

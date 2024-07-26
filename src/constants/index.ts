@@ -21,7 +21,7 @@ export const FOOTER_LIST_HOME = [
 export const FOOTER_LIST_SHOP = [
   { label: 'Jacket', destination: '/', isActive: false },
   { label: 'Shirt', destination: '/', isActive: false },
-  { label: 'Jens', destination: '/', isActive: false },
+  { label: 'Jeans', destination: '/', isActive: false },
 ];
 
 export const FOOTER_LIST_CATEGORY = [
