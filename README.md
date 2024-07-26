@@ -68,6 +68,14 @@ This project provides a practice environment for working with React, focusing on
 
 - **Documentation:** [docs](https://docs.google.com/document/d/1X8t1EMzqnoxgFbV3dnooMd5fjeA-AnhaMauhFNY9Nto/edit)
 
+## Deploy
+
+- Vercel: [link](https://react-training-woad.vercel.app/)
+
+## Storybook
+
+- Storybook: [link](https://6684faab2d0c99a3e93bf145-zajprlwprg.chromatic.com/)
+
 ## Getting Started
 
 ### Prerequisites
@@ -97,3 +105,11 @@ This project provides a practice environment for working with React, focusing on
    ```
 
 4. Open your browser at [http://localhost:5173/](http://localhost:5173/)
+
+5. Start storybook
+
+   ```bash
+   pnpm storybook
+   ```
+
+6. Open your browser at [http://localhost:6006/](http://localhost:6006/)
