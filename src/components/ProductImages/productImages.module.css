@@ -8,7 +8,7 @@
   aspect-ratio: 1.47 / 1;
   min-height: 25rem; /* 400px */
   object-fit: contain;
-  background-color: var(--color-text-product);
+  background-color: var(--color-bg);
 }
 
 .imageGroup {
@@ -27,7 +27,7 @@
   box-sizing: border-box;
   object-fit: contain;
   aspect-ratio: 1 / 1;
-  background-color: var(--color-text-product);
+  background-color: var(--color-bg);
 }
 
 .imageActive {

@@ -59,7 +59,7 @@
   width: 16.5625rem;
   height: 100%;
   object-fit: contain;
-  background-color: var(--color-text-product);
+  background-color: var(--color-bg);
 }
 
 .group {
