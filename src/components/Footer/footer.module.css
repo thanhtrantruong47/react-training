@@ -40,6 +40,10 @@
   gap: 1rem;
 }
 
+.groupIcon a {
+  color: var(--color-text-secondary);
+}
+
 @media (max-width: 64rem) {
   .footer {
     flex-direction: column;

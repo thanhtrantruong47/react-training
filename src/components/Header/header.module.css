@@ -40,6 +40,10 @@
   gap: 1.5rem;
 }
 
+.groupIcon a {
+  color: var(--color-text-primary);
+}
+
 @media (max-width: 1024px) {
   .container {
     padding: 1.0625rem 1rem;
