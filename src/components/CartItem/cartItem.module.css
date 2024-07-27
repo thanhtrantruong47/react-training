@@ -9,6 +9,10 @@
 .title {
   font-size: var(--font-size-nm);
   font-weight: var(--font-weight-bold);
+  overflow: hidden;
+  white-space: nowrap;
+  transition: all 0.3s ease-in-out;
+  max-width: 8.875rem;
 }
 
 .desc {
@@ -24,6 +28,16 @@
 
 .group {
   justify-content: space-between;
+}
+
+.groupImage {
+  gap: 2.5rem;
+  margin-right: 1rem;
+}
+
+.info {
+  justify-content: space-between;
+  flex-basis: 50%;
 }
 
 .option {
@@ -45,4 +59,30 @@
 
 .button:hover {
   color: var(--color-badge);
+}
+
+@media (max-width: 1200px) {
+  .group {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  .groupImage .title {
+    overflow: hidden;
+    max-width: none;
+    max-height: 3rem;
+    white-space: normal;
+  }
+
+  .info {
+   width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .info {
+    justify-content: space-between;
+    gap: 1rem;
+  }
 }
