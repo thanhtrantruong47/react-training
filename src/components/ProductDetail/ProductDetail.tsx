@@ -54,7 +54,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
   };
 
   const handleAddToCart = () => {
-    const itemId = `${id} ${title} ${colorOfProduct} ${sizeOfProduct}`;
+    const itemId = `${id} ${title} ${colorOfProduct}`;
 
     const newItem: CartItemType = {
       image: images[0],
@@ -64,6 +64,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
       color: colorOfProduct,
       quantity: amountOfProduct,
       id: itemId,
+      size: sizeOfProduct,
     };
 
     addToCart(newItem);
