@@ -47,7 +47,7 @@ const CartItem = ({
             onError={e => (e.currentTarget.src = unAvailableImage)}
           />
           <div className={styles.option}>
-            <p className={`${styles.title} ${styles.mainTitle}`}>{title}</p>
+            <p className={`${styles.mainTitle}`}>{title}</p>
             <p className={styles.desc}>Color: {color.charAt(0).toUpperCase() + color.slice(1)}</p>
           </div>
         </div>

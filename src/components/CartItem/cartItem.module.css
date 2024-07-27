@@ -6,7 +6,8 @@
   font-family: Mada;
 }
 
-.title {
+.title,
+.mainTitle {
   font-size: var(--font-size-nm);
   font-weight: var(--font-weight-bold);
   overflow: hidden;
@@ -68,15 +69,21 @@
     align-items: start;
   }
 
-  .groupImage .title {
+  .groupImage {
+    width: 100%;
+  }
+
+  .mainTitle {
     overflow: hidden;
     max-width: none;
     max-height: 3rem;
     white-space: normal;
+    overflow: hidden; /* Hide any overflow by default */
+    max-width: 100%;
   }
 
   .info {
-   width: 100%;
+    width: 100%;
   }
 }
 
