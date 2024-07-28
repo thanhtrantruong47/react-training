@@ -9,7 +9,7 @@ import utils from '../../styles/modules/utils.module.css';
 import Loading from '../../components/Loading';
 import { Link } from 'react-router-dom';
 import { useToast } from '../../hook/ToastContext';
-import { BREADCRUMB_ITEMS_CART } from '../../constants';
+import { BREADCRUMB_ITEMS_CART, MESSAGE_SUCCESS } from '../../constants';
 
 const Cart = () => {
   const { productsInCart, updateQuantity, removeFromCart, clearCart } = useCart();
@@ -33,7 +33,7 @@ const Cart = () => {
 
   const handleDelete = (id: string) => {
     removeFromCart(id);
-    addToast('Delete item in cart', true);
+    addToast(MESSAGE_SUCCESS.DELETE_CART, true);
   };
 
   const bannerContent = (

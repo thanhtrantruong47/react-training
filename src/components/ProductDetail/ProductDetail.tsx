@@ -14,7 +14,7 @@ import { CartItem as CartItemType } from '../../types/cartItem';
 import { useCart } from '../../hook/CartContext';
 import Breadcrumb from '../Breadcrumb/Breadcrumbs';
 import { useToast } from '../../hook/ToastContext';
-import { BREADCRUMB_ITEMS_DETAIl } from '../../constants';
+import { BREADCRUMB_ITEMS_DETAIl, MESSAGE_SUCCESS } from '../../constants';
 
 export interface ProductDetailProps {
   images: string[];
@@ -69,7 +69,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
     };
 
     addToCart(newItem);
-    addToast('Item added to cart!', true); // Show success toast
+    addToast(MESSAGE_SUCCESS.ADD_TO_CART, true); // Show success toast
   };
 
   const breadcrumbItems = [...BREADCRUMB_ITEMS_DETAIl, { label: title }];
