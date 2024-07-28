@@ -8,7 +8,7 @@ import NumberInput from '../NumberInput/NumberInput';
 import Button from '../Button/Button';
 import { Link, useParams } from 'react-router-dom';
 import CartButton from '../Icon/CartButton';
-import { formatNumberCompact } from '../../utils/formatNumberCompact';
+import { Number } from '../../utils/number';
 import RadioGroup from '../Radio/Radio';
 import { CartItem as CartItemType } from '../../types/cartItem';
 import { useCart } from '../../hook/CartContext';
@@ -89,7 +89,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
                   <StarIcon key={`${title}_${index}`} />
                 ))}
               </div>
-              <p>({formatNumberCompact(rate)})</p>
+              <p>({Number(rate)})</p>
             </div>
           </div>
           <div className={styles.groupOption}>

@@ -1,7 +1,7 @@
 import utils from '../../styles/modules/utils.module.css';
 import StarIcon from '../Icon/StarIcon';
 import styles from './productCart.module.css';
-import { formatNumberCompact } from '../../utils/formatNumberCompact';
+import { Number } from '../../utils/number';
 import BookMarkIcon from '../Icon/BookMarkIcon';
 import LikedIcon from '../Icon/LikedIcon';
 import { Link } from 'react-router-dom';
@@ -46,7 +46,7 @@ const ProductCard = ({ id, image, title, price, description, numberRating, rate,
               <StarIcon key={`${title}_${index}`} />
             ))}
           </div>
-          <p className={styles.ratingGroup}>({formatNumberCompact(rate)})</p>
+          <p className={styles.ratingGroup}>({Number(rate)})</p>
         </div>
       </div>
     </div>
