@@ -9,8 +9,7 @@ import utils from '../../styles/modules/utils.module.css';
 import Loading from '../../components/Loading';
 import { Link } from 'react-router-dom';
 import { useToast } from '../../hook/ToastContext';
-
-const breadcrumbItems = [{ label: 'Home', url: '/' }, { label: 'Cart' }];
+import { BREADCRUMB_ITEMS_CART } from '../../constants';
 
 const Cart = () => {
   const { productsInCart, updateQuantity, removeFromCart, clearCart } = useCart();
@@ -40,7 +39,7 @@ const Cart = () => {
   const bannerContent = (
     <div className={styles.fluidContainer}>
       <div className={`${utils.container} ${styles.banner}`}>
-        <Breadcrumb listItems={breadcrumbItems} />
+        <Breadcrumb listItems={BREADCRUMB_ITEMS_CART} />
         <h2 className={styles.title}>Cart</h2>
       </div>
     </div>

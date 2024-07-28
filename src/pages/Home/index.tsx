@@ -9,8 +9,8 @@ import ProductAPIService from '../../services/ProductAPIService';
 import utils from '../../styles/modules/utils.module.css';
 import Loading from '../../components/Loading';
 import { Products } from '../../mock/products'; // Import mock data
+import { TAB_LIST } from '../../constants';
 
-const navItems = ['T-Shirt', 'Jacket', 'Shirt', 'Jeans'];
 const productsPerPage = 8;
 
 const Home = () => {
@@ -98,7 +98,7 @@ const Home = () => {
         <div className={`${utils.flexCenter} ${styles.head}`}>
           <h3>Choose from the best products</h3>
           <h2>Our Best Seller</h2>
-          <TabList listNavItems={navItems} onChangeTab={handleTabChange} />
+          <TabList listNavItems={TAB_LIST} onChangeTab={handleTabChange} />
         </div>
         {isLoading ? (
           <Loading classStyle={utils.loading} />

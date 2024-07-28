@@ -1,17 +1,8 @@
 import Button from '../Button/Button';
 import HeroCarousel from '../HeroCarousel/HeroCarousel';
 import styles from './heroSection.module.css';
-import banner from '../../assets/images/banner.jpg';
-import bannerMore from '../../assets/images/banner-more.jpg';
 import utils from '../../styles/modules/utils.module.css';
-
-//example data
-const images = [
-  { id: 1, src: banner },
-  { id: 2, src: bannerMore },
-  { id: 3, src: bannerMore },
-];
-//example data end
+import { BANNER_IMAGES } from '../../constants';
 
 const HeroSection = () => {
   return (
@@ -28,7 +19,7 @@ const HeroSection = () => {
               <Button classStyle={styles.button} content="Shop now" />
             </div>
           </div>
-          <HeroCarousel images={images} />
+          <HeroCarousel images={BANNER_IMAGES} />
         </div>
       </div>
     </section>
