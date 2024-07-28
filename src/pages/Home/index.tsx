@@ -6,7 +6,7 @@ import styles from './home.module.css';
 import TabList from '../../components/TabList/TabList';
 import { useEffect, useState } from 'react';
 import ProductAPIService from '../../services/ProductAPIService';
-import utils from '../../styles/modules/utils.module.css';
+import stylesUtils from '../../styles/modules/stylesUtils.module.css';
 import Loading from '../../components/Loading';
 import { Products } from '../../mock/products'; // Import mock data
 import { TAB_LIST } from '../../constants';
@@ -94,14 +94,14 @@ const Home = () => {
 
   return (
     <MainLayout bannerContent={<HeroSection />}>
-      <section className={`${utils.container} ${styles.section}`}>
-        <div className={`${utils.flexCenter} ${styles.head}`}>
+      <section className={`${stylesUtils.container} ${styles.section}`}>
+        <div className={`${stylesUtils.flexCenter} ${styles.head}`}>
           <h3>Choose from the best products</h3>
           <h2>Our Best Seller</h2>
           <TabList listNavItems={TAB_LIST} onChangeTab={handleTabChange} />
         </div>
         {isLoading ? (
-          <Loading classStyle={utils.loading} />
+          <Loading classStyle={stylesUtils.loading} />
         ) : (
           <>
             {products.length === 0 ? (

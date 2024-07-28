@@ -1,6 +1,6 @@
 import Button from '../Button/Button';
 import styles from './cartSummaryInfo.module.css';
-import utils from '../../styles/modules/utils.module.css';
+import stylesUtils from '../../styles/modules/stylesUtils.module.css';
 import { Link } from 'react-router-dom';
 
 interface CartSummaryInfoProps {
@@ -13,7 +13,7 @@ interface CartSummaryInfoProps {
 const CartSummaryInfo = ({ numberProduct, totalPrice, onClickCheckoutButton, isDisable }: CartSummaryInfoProps) => (
   <div className={styles.container}>
     <p className={styles.product}>{numberProduct} Product</p>
-    <div className={`${utils.flexCenter} ${styles.total}`}>
+    <div className={`${stylesUtils.flexCenter} ${styles.total}`}>
       <label className={styles.desc}>Total</label>
       <p>$ {totalPrice} USD</p>
     </div>

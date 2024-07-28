@@ -1,13 +1,13 @@
 import Button from '../Button/Button';
 import HeroCarousel from '../HeroCarousel/HeroCarousel';
 import styles from './heroSection.module.css';
-import utils from '../../styles/modules/utils.module.css';
+import stylesUtils from '../../styles/modules/stylesUtils.module.css';
 import { BANNER_IMAGES } from '../../constants';
 
 const HeroSection = () => {
   return (
     <section className={styles.fluidContainer}>
-      <div className={`${utils.container}`}>
+      <div className={`${stylesUtils.container}`}>
         <div className={`${styles.hero}`}>
           <div className={styles.content}>
             <h2 className={styles.title}>Get the Latest Dress Models From Us</h2>

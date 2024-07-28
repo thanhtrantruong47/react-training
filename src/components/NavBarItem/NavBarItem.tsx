@@ -1,6 +1,6 @@
 // NavBarItem.tsx
 import { Link } from 'react-router-dom';
-import utilStyles from '../../styles/modules/utils.module.css';
+import stylesUtilstyles from '../../styles/modules/stylesUtils.module.css';
 import styles from './navBarItem.module.css';
 
 interface NavBarItemProps {
@@ -11,7 +11,7 @@ interface NavBarItemProps {
 
 const NavBarItem = ({ label, destination, isActive }: NavBarItemProps) => (
   <li className={`${styles.navBarItem} ${isActive ? styles.active : ''}`}>
-    <Link className={`${utilStyles.link} ${isActive ? styles.activeLink : ''}`} to={destination}>
+    <Link className={`${stylesUtilstyles.link} ${isActive ? styles.activeLink : ''}`} to={destination}>
       {label}
     </Link>
   </li>

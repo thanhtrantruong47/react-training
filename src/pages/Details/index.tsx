@@ -7,7 +7,7 @@ import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import ProductAPIService from '../../services/ProductAPIService';
 import Loading from '../../components/Loading';
-import utils from '../../styles/modules/utils.module.css';
+import stylesUtils from '../../styles/modules/stylesUtils.module.css';
 import { Products } from '../../mock/products'; // Import mock data
 
 const productsPerPage = 8;
@@ -138,7 +138,7 @@ const Details = () => {
       <div>
         <div className={styles.product}>
           {isLoading ? (
-            <Loading classStyle={utils.loading} />
+            <Loading classStyle={stylesUtils.loading} />
           ) : (
             product && (
               <ProductDetail
@@ -159,7 +159,7 @@ const Details = () => {
         <div className={styles.list}>
           <p className={styles.title}>Same Product</p>
           {isLoading ? (
-            <Loading classStyle={utils.loading} />
+            <Loading classStyle={stylesUtils.loading} />
           ) : (
             <ProductList products={products} onClick={handleLoadMore} hasMore={hasMore} />
           )}
