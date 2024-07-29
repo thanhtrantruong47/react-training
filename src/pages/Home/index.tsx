@@ -8,7 +8,7 @@ import { useEffect, useState } from 'react';
 import ProductAPIService from '../../services/ProductAPIService';
 import utils from '../../styles/modules/utils.module.css';
 import Loading from '../../components/Loading';
-import { Products as mockProducts } from '../../mock/products';
+import { products as mockProducts } from '../../mock/products';
 
 const navItems = ['T-Shirt', 'Jacket', 'Shirt', 'Jeans'];
 const productsPerPage = 8;

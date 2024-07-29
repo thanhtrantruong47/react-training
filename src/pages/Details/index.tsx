@@ -8,7 +8,7 @@ import { useEffect, useState } from 'react';
 import ProductAPIService from '../../services/ProductAPIService';
 import Loading from '../../components/Loading';
 import utils from '../../styles/modules/utils.module.css';
-import { Products as mockProducts } from '../../mock/products'; // Import mock data
+import { products as mockProducts } from '../../mock/products'; // Import mock data
 
 const productsPerPage = 8;
 
