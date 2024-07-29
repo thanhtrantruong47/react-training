@@ -5,7 +5,7 @@ import MainLayout from '../../layouts/MainLayout';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Loading from '../../components/Loading';
-import { default as stylesUtils } from '../../styles/modules/utils.module.css';
+import { default as styleUtils } from '../../styles/modules/utils.module.css';
 import { products as mockProducts } from '../../mock/products'; // Import mock data
 import { ProductAPIService } from '../../services/ProductAPIService';
 import Product from '../../components/Product/Product';
@@ -98,7 +98,7 @@ const ProductDetail = () => {
       <div>
         <div className={styles.product}>
           {isLoading ? (
-            <Loading classStyle={stylesUtils.loading} />
+            <Loading classStyle={styleUtils.loading} />
           ) : (
             product && (
               <Product
@@ -118,7 +118,7 @@ const ProductDetail = () => {
         <div className={styles.list}>
           <p className={styles.title}>Same Product</p>
           {isLoading ? (
-            <Loading classStyle={stylesUtils.loading} />
+            <Loading classStyle={styleUtils.loading} />
           ) : (
             <ProductList products={products} onClick={handleLoadMore} hasMore={hasMore} />
           )}

@@ -1,4 +1,4 @@
-import { default as stylesUtils } from '../../styles/modules/utils.module.css';
+import { default as styleUtils } from '../../styles/modules/utils.module.css';
 import StarIcon from '../Icon/StarIcon';
 import styles from './productCart.module.css';
 import { compactNumber } from '../../utils/compactNumber';
@@ -20,9 +20,9 @@ interface ProductCardProps {
 }
 
 const ProductCard = ({ id, image, title, price, description, numberRating, rate, onChange }: ProductCardProps) => (
-  <Link className={stylesUtils.link} to={`/products/${id}`}>
+  <Link className={styleUtils.link} to={`/products/${id}`}>
     <div className={styles.product}>
-      <div className={`${styles.imageGroup} ${stylesUtils.relative}`}>
+      <div className={`${styles.imageGroup} ${styleUtils.relative}`}>
         <img
           className={styles.productImage}
           src={image}
@@ -30,18 +30,18 @@ const ProductCard = ({ id, image, title, price, description, numberRating, rate,
           alt={title}
         />
         <div className={styles.bookMark}>
-          <Button className={stylesUtils.pointer} aria-label="mark product" icon={BookMarkIcon} onChange={onChange} />
-          <Button className={stylesUtils.pointer} aria-label="like product" icon={LikedIcon} onChange={onChange} />
+          <Button className={styleUtils.pointer} aria-label="mark product" icon={BookMarkIcon} onChange={onChange} />
+          <Button className={styleUtils.pointer} aria-label="like product" icon={LikedIcon} onChange={onChange} />
         </div>
       </div>
       <div className={styles.group}>
-        <div className={`${styles.nameGroup} ${stylesUtils.flexCenter}`}>
+        <div className={`${styles.nameGroup} ${styleUtils.flexCenter}`}>
           <p>{title}</p>
           <span>{price}$</span>
         </div>
         <p className={styles.desc}>{description}</p>
-        <div className={`${styles.ratingGroup} ${stylesUtils.flexCenter}`}>
-          <div className={`${styles.numberRating} ${stylesUtils.flexCenter}`}>
+        <div className={`${styles.ratingGroup} ${styleUtils.flexCenter}`}>
+          <div className={`${styles.numberRating} ${styleUtils.flexCenter}`}>
             {Array.from({ length: numberRating }).map((_, index) => (
               <StarIcon key={`${title}_${index}`} />
             ))}
