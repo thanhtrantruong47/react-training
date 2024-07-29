@@ -5,10 +5,10 @@ import styles from './detail.module.css';
 import MainLayout from '../../layouts/MainLayout';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import ProductAPIService from '../../services/ProductAPIService';
 import Loading from '../../components/Loading';
 import utils from '../../styles/modules/utils.module.css';
 import { products as mockProducts } from '../../mock/products'; // Import mock data
+import { ProductAPIService } from '../../services/ProductAPIService';
 
 const productsPerPage = 8;
 
@@ -24,8 +24,7 @@ const Details = () => {
   const [hasMore, setHasMore] = useState(true);
 
   const fetchProductById = async (productId: string) => {
-    const productService = new ProductAPIService();
-    const response = await productService.getById(productId);
+    const response = await ProductAPIService.getById(productId);
 
     if (response.isSuccess && response.data !== undefined) {
       return response.data;
@@ -37,8 +36,7 @@ const Details = () => {
 
   const fetchProductsByCategory = async (category: string, page: number) => {
     if (!useMockData) {
-      const productService = new ProductAPIService();
-      const response = await productService.getList({ category });
+      const response = await ProductAPIService.getList({ category });
 
       if (response.isSuccess && response.data !== undefined) {
         return {

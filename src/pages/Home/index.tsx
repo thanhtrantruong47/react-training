@@ -5,7 +5,7 @@ import { Product } from '../../types/product';
 import styles from './home.module.css';
 import TabList from '../../components/TabList/TabList';
 import { useEffect, useState } from 'react';
-import ProductAPIService from '../../services/ProductAPIService';
+import { ProductAPIService } from '../../services/ProductAPIService';
 import utils from '../../styles/modules/utils.module.css';
 import Loading from '../../components/Loading';
 import { products as mockProducts } from '../../mock/products';
@@ -24,8 +24,7 @@ const Home = () => {
 
   const fetchProducts = async (category: string, page: number) => {
     if (!useMockData) {
-      const productService = new ProductAPIService();
-      const response = await productService.getList({ category });
+      const response = await ProductAPIService.getList({ category });
 
       if (response.isSuccess && response.data !== undefined) {
         return {
