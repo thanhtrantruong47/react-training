@@ -13,5 +13,5 @@ export default {
 type Story = StoryObj<typeof ProductImages>;
 
 export const Default: Story = {
-  args: { images: images, title: 'T-shirt' },
+  args: { productImages: images, title: 'T-shirt' },
 };

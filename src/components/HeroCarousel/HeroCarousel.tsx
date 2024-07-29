@@ -7,10 +7,10 @@ import { ImagesCarousel } from '../../types/carousel';
 import unAvailableImage from '../../assets/images/no-image.jpg';
 
 interface HeroCarousel {
-  images: ImagesCarousel[];
+  imagesCarousel: ImagesCarousel[];
 }
 
-const HeroCarousel = ({ images }: HeroCarousel) => {
+const HeroCarousel = ({ imagesCarousel }: HeroCarousel) => {
   const [mainImage, setMainImage] = useState(0);
   const handleClick = (index: number) => {
     setMainImage(index);
@@ -18,7 +18,7 @@ const HeroCarousel = ({ images }: HeroCarousel) => {
 
   // If index ===  images.length - 1 when click index = 0
   const handleNext = () => {
-    if (mainImage === images.length - 1) {
+    if (mainImage === imagesCarousel.length - 1) {
       setMainImage(0);
     } else {
       setMainImage(mainImage + 1);
@@ -28,7 +28,7 @@ const HeroCarousel = ({ images }: HeroCarousel) => {
   // If index ===  0 when click index = images.length - 1
   const handlePrev = () => {
     if (mainImage === 0) {
-      setMainImage(images.length - 1);
+      setMainImage(imagesCarousel.length - 1);
     } else {
       setMainImage(mainImage - 1);
     }
@@ -39,7 +39,7 @@ const HeroCarousel = ({ images }: HeroCarousel) => {
       <div>
         <img
           className={styles.mainImage}
-          src={images[mainImage].src}
+          src={imagesCarousel[mainImage].src}
           alt={`Image ${mainImage}`}
           onError={e => (e.currentTarget.src = unAvailableImage)}
         />
@@ -47,10 +47,10 @@ const HeroCarousel = ({ images }: HeroCarousel) => {
       <div className={styles.thumbnailList}>
         <Button icon={PrevIcon} className={styles.buttonLeft} onClick={handlePrev} />
         <div className={styles.thumbnail}>
-          {images.map((image, index) => (
+          {imagesCarousel.map((imageCarousel, index) => (
             <img
-              key={image.id}
-              src={image.src}
+              key={imageCarousel.id}
+              src={imageCarousel.src}
               alt={`Thumbnail ${index}`}
               className={index === mainImage ? styles.active : ''}
               onClick={() => handleClick(index)}

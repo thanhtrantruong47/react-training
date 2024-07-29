@@ -28,11 +28,11 @@ const Footer = () => {
           </p>
         </div>
         <div className={styles.group}>
-          <FooterNavList title="Home" items={FOOTER_LIST_HOME} />
-          <FooterNavList title="Shop" items={FOOTER_LIST_SHOP} />
-          <FooterNavList title="Category" items={FOOTER_LIST_CATEGORY} />
+          <FooterNavList title="Home" listItemFooter={FOOTER_LIST_HOME} />
+          <FooterNavList title="Shop" listItemFooter={FOOTER_LIST_SHOP} />
+          <FooterNavList title="Category" listItemFooter={FOOTER_LIST_CATEGORY} />
           <div>
-            <FooterNavList title="Contact" items={FOOTER_LIST_CONTACT} />
+            <FooterNavList title="Contact" listItemFooter={FOOTER_LIST_CONTACT} />
             <div className={styles.groupIcon}>
               <Link to={'/'}>
                 <FaceBookIcon />

@@ -48,7 +48,7 @@ export const BREADCRUMB_ITEMS_DETAIl = [
   { label: 'Shop', url: '/shop' },
 ];
 
-export const TAB_LIST = ['T-Shirt', 'Jacket', 'Shirt', 'Jeans'];
+export const BEST_SELLER_CATEGORY = ['T-Shirt', 'Jacket', 'Shirt', 'Jeans'];
 
 export enum MESSAGE_SUCCESS {
   ADD_TO_CART = 'Item added to cart!',

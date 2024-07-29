@@ -20,7 +20,7 @@ const Header = () => {
         <div className={`${styles.header}  ${styleUtils.flexCenter}`}>
           <Logo />
           <div className={`${styles.group}  ${styleUtils.flexCenter}`}>
-            <NavBar items={NAV_BAR_ITEMS} />
+            <NavBar listItemNavBar={NAV_BAR_ITEMS} />
             <div className={styles.groupIcon}>
               <Link to={'/cart'} className={styles.badge}>
                 <CartIcon />

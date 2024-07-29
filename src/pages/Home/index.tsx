@@ -6,7 +6,7 @@ import styles from './home.module.css';
 import TabList from '../../components/TabList/TabList';
 import { useEffect, useState } from 'react';
 import { default as styleUtils } from '../../styles/modules/utils.module.css';
-import { TAB_LIST } from '../../constants';
+import { BEST_SELLER_CATEGORY } from '../../constants';
 import { ProductAPIService } from '../../services/ProductAPIService';
 import Loading from '../../components/Loading';
 import { products as mockProducts } from '../../mock/products';
@@ -78,7 +78,7 @@ const Home = () => {
         <div className={`${styleUtils.flexCenter} ${styles.head}`}>
           <h3>Choose from the best products</h3>
           <h2>Our Best Seller</h2>
-          <TabList listNavItems={TAB_LIST} onChangeTab={handleTabChange} />
+          <TabList listNavItems={BEST_SELLER_CATEGORY} onChangeTab={handleTabChange} />
         </div>
         {isLoading ? (
           <Loading classStyle={styleUtils.loading} />

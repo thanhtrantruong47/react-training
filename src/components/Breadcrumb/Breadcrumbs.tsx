@@ -3,18 +3,18 @@ import { default as styleUtils } from '../../styles/modules/utils.module.css';
 import styles from './breadcrumbs.module.css';
 
 interface BreadcrumbProps {
-  listItems: {
+  listItemsBreadcrumb: {
     label: string;
     url?: string;
   }[];
 }
 
-const Breadcrumb = ({ listItems }: BreadcrumbProps) => {
+const Breadcrumb = ({ listItemsBreadcrumb }: BreadcrumbProps) => {
   return (
     <nav aria-label="breadcrumb">
       <ol className={styles.breadcrumb}>
-        {listItems.map((item, index) => {
-          const isLastItem = index === listItems.length - 1;
+        {listItemsBreadcrumb.map((item, index) => {
+          const isLastItem = index === Breadcrumb.length - 1;
 
           return (
             <li key={item.label} className={styles.breadcrumbItem}>

@@ -12,6 +12,6 @@ type Story = StoryObj<typeof FooterNavList>;
 export const Default: Story = {
   args: {
     title: 'Home',
-    items: FOOTER_LIST_HOME,
+    listItemFooter: FOOTER_LIST_HOME,
   },
 };

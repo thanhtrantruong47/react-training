@@ -5,17 +5,17 @@ import NavBarItem from '../NavBarItem/NavBarItem';
 import styles from './navBar.module.css';
 
 interface NavBarProps {
-  items: NavItem[];
+  listItemNavBar: NavItem[];
 }
 
-const NavBar = ({ items }: NavBarProps) => {
+const NavBar = ({ listItemNavBar }: NavBarProps) => {
   const location = useLocation();
   const currentPath = location.pathname;
 
   return (
     <nav>
       <ul className={styles.navbar}>
-        {items.map(({ destination, label }) => (
+        {listItemNavBar.map(({ destination, label }) => (
           <NavBarItem key={label} label={label} destination={destination} isActive={currentPath === destination} />
         ))}
       </ul>
