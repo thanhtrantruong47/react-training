@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import styles from './productDetail.module.css';
-import stylesUtils from '../../styles/modules/stylesUtils.module.css';
+import styles from './product.module.css';
+import { default as utils } from '../../styles/modules/utils.module.css';
 import StarIcon from '../Icon/StarIcon';
 import StockIcon from '../Icon/StockIcon';
 import ProductImages from '../ProductImages/ProductImages';
@@ -8,7 +8,7 @@ import NumberInput from '../NumberInput/NumberInput';
 import Button from '../Button/Button';
 import { Link, useParams } from 'react-router-dom';
 import CartButton from '../Icon/CartButton';
-import { Number } from '../../utils/number';
+import { number } from '../../utils/number';
 import RadioGroup from '../Radio/Radio';
 import { CartItem as CartItemType } from '../../types/cartItem';
 import { useCart } from '../../hook/CartContext';
@@ -16,7 +16,7 @@ import Breadcrumb from '../Breadcrumb/Breadcrumbs';
 import { useToast } from '../../hook/ToastContext';
 import { BREADCRUMB_ITEMS_DETAIl, MESSAGE_SUCCESS } from '../../constants';
 
-export interface ProductDetailProps {
+export interface ProductProps {
   images: string[];
   title: string;
   description: string;
@@ -28,7 +28,7 @@ export interface ProductDetailProps {
   numberRating: number;
 }
 
-const ProductDetail: React.FC<ProductDetailProps> = ({
+const Product: React.FC<ProductProps> = ({
   images,
   title,
   description,
@@ -38,7 +38,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
   stock,
   rate,
   numberRating,
-}: ProductDetailProps) => {
+}: ProductProps) => {
   const [selectedSize, setSelectedSize] = useState<string | null>(sizes.length > 0 ? sizes[0] : null);
   const [colorOfProduct, setColorOfProduct] = useState<string>(colors[0]);
   const [sizeOfProduct, setSizeOfProduct] = useState<string>(sizes[0]);
@@ -75,7 +75,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
   const breadcrumbItems = [...BREADCRUMB_ITEMS_DETAIl, { label: title }];
 
   return (
-    <div className={`${stylesUtils.container} ${styles.wrapper}`}>
+    <div className={`${utils.container} ${styles.wrapper}`}>
       <Breadcrumb listItems={breadcrumbItems} />
       <div className={styles.detail}>
         <ProductImages images={images} title={title} />
@@ -89,18 +89,18 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
                   <StarIcon key={`${title}_${index}`} />
                 ))}
               </div>
-              <p>({Number(rate)})</p>
+              <p>({number(rate)})</p>
             </div>
           </div>
           <div className={styles.groupOption}>
-            <div className={`${stylesUtils.flexCenter} ${styles.group}`}>
+            <div className={`${utils.flexCenter} ${styles.group}`}>
               <div>
                 <p className={styles.option}>Color</p>
                 <RadioGroup options={colors} onChange={setColorOfProduct} />
               </div>
               <div className={styles.stock}>
                 <p>In Stock</p>
-                <span className={stylesUtils.flexCenter}>
+                <span className={utils.flexCenter}>
                   ({stock}) <StockIcon />
                 </span>
               </div>
@@ -111,7 +111,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
                 {sizes.map(size => (
                   <span
                     key={size}
-                    className={`${stylesUtils.pointer} ${styles.size} ${selectedSize === size ? styles.selected : ''}`}
+                    className={`${utils.pointer} ${styles.size} ${selectedSize === size ? styles.selected : ''}`}
                     onClick={() => handleSizeClick(size)}>
                     {size}
                   </span>
@@ -121,12 +121,12 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
           </div>
           <div>
             <p className={styles.option}>Quantity</p>
-            <div className={`${stylesUtils.flexCenter} ${styles.group}`}>
+            <div className={`${utils.flexCenter} ${styles.group}`}>
               <NumberInput value={amountOfProduct} onChange={setAmountOfProduct} />
               <p className={styles.price}>${price} USD</p>
             </div>
           </div>
-          <div className={`${stylesUtils.flexCenter} ${styles.group}`}>
+          <div className={`${utils.flexCenter} ${styles.group}`}>
             <Button content="Add to Cart" classStyle={`${styles.btn} ${styles.add} `} onClick={handleAddToCart} />
             <Link to={'/cart'}>
               <Button classStyle={`${styles.btn} ${styles.cart}`} icon={CartButton} />
@@ -138,4 +138,4 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
   );
 };
 
-export default ProductDetail;
+export default Product;

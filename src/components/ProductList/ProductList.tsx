@@ -2,7 +2,7 @@ import { Product } from '../../types/product';
 import Button from '../Button/Button';
 import ProductCard from '../ProductCard/ProductCart';
 import styles from './productList.module.css';
-import stylesUtils from '../../styles/modules/stylesUtils.module.css';
+import { default as utils } from '../../styles/modules/utils.module.css';
 
 interface ProductListProps {
   products: Product[];
@@ -11,7 +11,7 @@ interface ProductListProps {
 }
 
 const ProductList = ({ products, onClick, hasMore }: ProductListProps) => (
-  <div className={`${stylesUtils.container} ${styles.wrapper}`}>
+  <div className={`${utils.container} ${styles.wrapper}`}>
     <div className={styles.list}>
       {products.map(({ id, title, price, description, rate, numberRating, images }) => (
         <ProductCard

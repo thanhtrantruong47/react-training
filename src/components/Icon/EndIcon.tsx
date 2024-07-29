@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import stylesUtils from '../../styles/modules/stylesUtils.module.css';
+import { default as utils } from '../../styles/modules/utils.module.css';
 import styles from './icon.module.css';
 
 interface IconProps {
@@ -9,7 +9,7 @@ interface IconProps {
 
 const EndIcon = ({ children, onChange }: IconProps) => {
   return (
-    <div className={`${stylesUtils.pointer} ${styles.endIcon}`} onChange={onChange}>
+    <div className={`${utils.pointer} ${styles.endIcon}`} onChange={onChange}>
       {children}
     </div>
   );

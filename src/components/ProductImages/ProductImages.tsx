@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import styles from './productImages.module.css';
-import stylesUtils from '../../styles/modules/stylesUtils.module.css';
+import { default as utils } from '../../styles/modules/utils.module.css';
 import unAvailableImage from '../../assets/images/no-image.jpg';
 
 interface ProductImagesProps {
@@ -30,7 +30,7 @@ const ProductImages = ({ images, title }: ProductImagesProps) => {
         {images.slice(0, 3).map((image, index) => (
           <li
             key={`${image}${index}`}
-            className={`${stylesUtils.pointer} ${index === activeIndex ? styles.imageActive : ''}`}
+            className={`${utils.pointer} ${index === activeIndex ? styles.imageActive : ''}`}
             onClick={() => handleImageClick(index)}>
             <img
               className={styles.image}

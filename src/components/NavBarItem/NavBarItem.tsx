@@ -1,6 +1,5 @@
-// NavBarItem.tsx
 import { Link } from 'react-router-dom';
-import stylesUtilstyles from '../../styles/modules/stylesUtils.module.css';
+import { default as utils } from '../../styles/modules/utils.module.css'; // Correct way to alias CSS module
 import styles from './navBarItem.module.css';
 
 interface NavBarItemProps {
@@ -11,7 +10,7 @@ interface NavBarItemProps {
 
 const NavBarItem = ({ label, destination, isActive }: NavBarItemProps) => (
   <li className={`${styles.navBarItem} ${isActive ? styles.active : ''}`}>
-    <Link className={`${stylesUtilstyles.link} ${isActive ? styles.activeLink : ''}`} to={destination}>
+    <Link className={`${utils.link} ${isActive ? styles.activeLink : ''}`} to={destination}>
       {label}
     </Link>
   </li>
