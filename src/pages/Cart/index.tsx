@@ -39,7 +39,7 @@ const Cart = () => {
   const bannerContent = (
     <div className={styles.fluidContainer}>
       <div className={`${styleUtils.container} ${styles.banner}`}>
-        <Breadcrumb listItemsBreadcrumb={BREADCRUMB_ITEMS_CART} />
+        <Breadcrumb items={BREADCRUMB_ITEMS_CART} />
         <h2 className={styles.title}>Cart</h2>
       </div>
     </div>

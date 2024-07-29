@@ -78,7 +78,7 @@ const Home = () => {
         <div className={`${styleUtils.flexCenter} ${styles.head}`}>
           <h3>Choose from the best products</h3>
           <h2>Our Best Seller</h2>
-          <TabList listNavItems={BEST_SELLER_CATEGORY} onChangeTab={handleTabChange} />
+          <TabList items={BEST_SELLER_CATEGORY} onChangeTab={handleTabChange} />
         </div>
         {isLoading ? (
           <Loading classStyle={styleUtils.loading} />

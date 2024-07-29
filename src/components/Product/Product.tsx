@@ -76,7 +76,7 @@ const Product: React.FC<ProductProps> = ({
 
   return (
     <div className={`${styleUtils.container} ${styles.wrapper}`}>
-      <Breadcrumb listItemsBreadcrumb={breadcrumbItems} />
+      <Breadcrumb items={breadcrumbItems} />
       <div className={styles.detail}>
         <ProductImages productImages={images} title={title} />
         <div className={styles.info}>

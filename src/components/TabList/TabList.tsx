@@ -4,11 +4,11 @@ import styles from './tabList.module.css';
 import TabItem from '../TabItem/TabItem';
 
 interface TabListProps {
-  listNavItems: string[];
+  items: string[];
   onChangeTab: (item: string) => void;
 }
 
-const TabList = ({ listNavItems, onChangeTab }: TabListProps) => {
+const TabList = ({ items, onChangeTab }: TabListProps) => {
   const [activeTab, setActiveTab] = useState<number>(0);
 
   const handleTabChange = (index: number, item: string) => {
@@ -18,7 +18,7 @@ const TabList = ({ listNavItems, onChangeTab }: TabListProps) => {
 
   return (
     <div className={`${styleUtils.flexCenter} ${styles.tabList}`}>
-      {listNavItems.map((item, index) => (
+      {items.map((item, index) => (
         <TabItem key={item} label={item} isActive={index === activeTab} onChange={() => handleTabChange(index, item)} />
       ))}
     </div>

@@ -10,5 +10,5 @@ export default {
 type Story = StoryObj<typeof TabList>;
 
 export const Default: Story = {
-  args: { listNavItems: BEST_SELLER_CATEGORY },
+  args: { items: BEST_SELLER_CATEGORY },
 };
