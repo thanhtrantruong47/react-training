@@ -7,7 +7,7 @@ import Input from '../Input/Input';
 import Logo from '../Logo/Logo';
 import NavBar from '../NavBar/NavBar';
 import styles from './header.module.css';
-import utils from '../../styles/modules/utils.module.css';
+import { default as styleUtils } from '../../styles/modules/utils.module.css';
 import { Link } from 'react-router-dom';
 import { useCart } from '../../hook/CartContext';
 
@@ -16,10 +16,10 @@ const Header = () => {
 
   return (
     <header className={styles.fluidContainer}>
-      <div className={`${utils.container}`}>
-        <div className={`${styles.header}  ${utils.flexCenter}`}>
+      <div className={`${styleUtils.container}`}>
+        <div className={`${styles.header}  ${styleUtils.flexCenter}`}>
           <Logo />
-          <div className={`${styles.group}  ${utils.flexCenter}`}>
+          <div className={`${styles.group}  ${styleUtils.flexCenter}`}>
             <NavBar items={NAV_BAR_ITEMS} />
             <div className={styles.groupIcon}>
               <Link to={'/cart'} className={styles.badge}>

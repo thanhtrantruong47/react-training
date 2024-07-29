@@ -1,24 +1,24 @@
-import ProductDetail from '../../components/ProductDetail/ProductDetail';
-import { Product } from '../../types/product';
+import { Product as ProductType } from '../../types/product';
 import ProductList from '../../components/ProductList/ProductList';
-import styles from './detail.module.css';
+import styles from './productDetail.module.css';
 import MainLayout from '../../layouts/MainLayout';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Loading from '../../components/Loading';
-import utils from '../../styles/modules/utils.module.css';
+import { default as styleUtils } from '../../styles/modules/utils.module.css';
 import { products as mockProducts } from '../../mock/products'; // Import mock data
 import { ProductAPIService } from '../../services/ProductAPIService';
+import Product from '../../components/Product/Product';
 
 const productsPerPage = 8;
 
 const useMockData = import.meta.env.USE_MOCK_FOR_API_FAIL;
 
-const Details = () => {
+const ProductDetail = () => {
   const { id } = useParams(); // Assuming id is passed as a route parameter
 
-  const [product, setProduct] = useState<Product | null>(null);
-  const [products, setProducts] = useState<Product[]>([]);
+  const [product, setProduct] = useState<ProductType | null>(null);
+  const [products, setProducts] = useState<ProductType[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
@@ -98,10 +98,10 @@ const Details = () => {
       <div>
         <div className={styles.product}>
           {isLoading ? (
-            <Loading classStyle={utils.loading} />
+            <Loading classStyle={styleUtils.loading} />
           ) : (
             product && (
-              <ProductDetail
+              <Product
                 colors={product.colors || []}
                 description={product.description || ''}
                 images={product.images || []}
@@ -118,7 +118,7 @@ const Details = () => {
         <div className={styles.list}>
           <p className={styles.title}>Same Product</p>
           {isLoading ? (
-            <Loading classStyle={utils.loading} />
+            <Loading classStyle={styleUtils.loading} />
           ) : (
             <ProductList products={products} onClick={handleLoadMore} hasMore={hasMore} />
           )}
@@ -128,4 +128,4 @@ const Details = () => {
   );
 };
 
-export default Details;
+export default ProductDetail;

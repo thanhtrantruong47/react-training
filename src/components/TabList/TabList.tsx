@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import utils from '../../styles/modules/utils.module.css';
+import { default as styleUtils } from '../../styles/modules/utils.module.css';
 import styles from './tabList.module.css';
 import TabItem from '../TabItem/TabItem';
 
@@ -17,7 +17,7 @@ const TabList = ({ listNavItems, onChangeTab }: TabListProps) => {
   };
 
   return (
-    <div className={`${utils.flexCenter} ${styles.tabList}`}>
+    <div className={`${styleUtils.flexCenter} ${styles.tabList}`}>
       {listNavItems.map((item, index) => (
         <TabItem key={item} label={item} isActive={index === activeTab} onChange={() => handleTabChange(index, item)} />
       ))}

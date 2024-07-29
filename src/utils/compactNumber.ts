@@ -7,7 +7,7 @@
  * @param number The number to format.
  * @returns A string representing the formatted number.
  */
-export const formatNumberCompact = (number: number): string => {
+export const compactNumber = (number: number): string => {
   if (number >= 1000000) {
     return `${(number / 1000000).toFixed(1)}m`;
   }

@@ -1,5 +1,8 @@
 import { NavItem } from '../types/navBar';
 
+import bannerImages from '../assets/images/banner.jpg';
+import bannerMoreImages from '../assets/images/banner-more.jpg';
+
 // constants.ts
 export const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 export const PRODUCTS = 'products';
@@ -31,3 +34,23 @@ export const FOOTER_LIST_CATEGORY = [
 ];
 
 export const FOOTER_LIST_CONTACT = [{ label: 'mangcoding@gmail.com', destination: '/', isActive: false }];
+
+export const BANNER_IMAGES = [
+  { id: 1, src: bannerImages },
+  { id: 2, src: bannerMoreImages },
+  { id: 3, src: bannerMoreImages },
+];
+
+export const BREADCRUMB_ITEMS_CART = [{ label: 'Home', url: '/' }, { label: 'Cart' }];
+
+export const BREADCRUMB_ITEMS_DETAIl = [
+  { label: 'Home', url: '/' },
+  { label: 'Shop', url: '/shop' },
+];
+
+export const TAB_LIST = ['T-Shirt', 'Jacket', 'Shirt', 'Jeans'];
+
+export enum MESSAGE_SUCCESS {
+  ADD_TO_CART = 'Item added to cart!',
+  DELETE_CART = 'Delete item in cart',
+}
