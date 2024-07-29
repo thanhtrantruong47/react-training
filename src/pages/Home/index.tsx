@@ -5,13 +5,15 @@ import { Product } from '../../types/product';
 import styles from './home.module.css';
 import TabList from '../../components/TabList/TabList';
 import { useEffect, useState } from 'react';
-import ProductAPIService from '../../services/ProductAPIService';
 import stylesUtils from '../../styles/modules/stylesUtils.module.css';
-import Loading from '../../components/Loading';
-import { Products } from '../../mock/products'; // Import mock data
 import { TAB_LIST } from '../../constants';
+import { ProductAPIService } from '../../services/ProductAPIService';
+import Loading from '../../components/Loading';
+import { products as mockProducts } from '../../mock/products';
 
 const productsPerPage = 8;
+
+const useMockData = import.meta.env.USE_MOCK_FOR_API_FAIL;
 
 const Home = () => {
   const [products, setProducts] = useState<Product[]>([]);
@@ -20,34 +22,34 @@ const Home = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [hasMore, setHasMore] = useState(false);
 
-  // Fetch products based on the selected tab
+  const fetchProducts = async (category: string, page: number) => {
+    if (!useMockData) {
+      const response = await ProductAPIService.getList({ category });
+
+      if (response.isSuccess && response.data !== undefined) {
+        return {
+          data: response.data.slice(page * productsPerPage, (page + 1) * productsPerPage),
+          total: response.data.length,
+        };
+      } else {
+        const filteredProducts = mockProducts.filter(product => product.category === category);
+        return {
+          data: filteredProducts.slice(page * productsPerPage, (page + 1) * productsPerPage),
+          total: filteredProducts.length,
+        };
+      }
+    }
+  };
+
   useEffect(() => {
     const fetchData = async () => {
       setIsLoading(true);
 
-      try {
-        const productService = new ProductAPIService();
-        const response = await productService.getList({ category: tab });
-
-        if (response.isSuccess && response.data !== undefined) {
-          const newProducts = response.data.slice(0, productsPerPage);
-          setProducts(newProducts);
-          setCurrentPage(1);
-          setHasMore(response.data.length > productsPerPage);
-        } else {
-          console.error('Failed to fetch products:', response.errors);
-          // Filter mock data by category
-          const filteredProducts = Products.filter(product => product.category === tab);
-          setProducts(filteredProducts.slice(0, productsPerPage));
-          setHasMore(filteredProducts.length > productsPerPage);
-        }
-      } catch (error) {
-        console.error('Error fetching products:', error);
-        // Filter mock data by category
-        const filteredProducts = Products.filter(product => product.category === tab);
-        setProducts(filteredProducts.slice(0, productsPerPage));
-        setHasMore(filteredProducts.length > productsPerPage);
-      }
+      const result = await fetchProducts(tab, 0);
+      if (!result) return;
+      setProducts(result.data);
+      setCurrentPage(1);
+      setHasMore(result.total > productsPerPage);
 
       setIsLoading(false);
     };
@@ -55,41 +57,19 @@ const Home = () => {
     fetchData();
   }, [tab]);
 
-  // Handle tab change to load new products
   const handleTabChange = (item: string) => {
     setTab(item);
     setCurrentPage(1); // Reset page when tab changes
   };
 
-  // Load more products when button is clicked
   const handleLoadMore = async () => {
     if (!hasMore) return; // If no more products to load
 
-    try {
-      const productService = new ProductAPIService();
-      const response = await productService.getList({ category: tab });
-
-      if (response.isSuccess && response.data !== undefined) {
-        const newProducts = response.data.slice(currentPage * productsPerPage, (currentPage + 1) * productsPerPage);
-        setProducts([...products, ...newProducts]);
-        setCurrentPage(currentPage + 1);
-        setHasMore(response.data.length > (currentPage + 1) * productsPerPage);
-      } else {
-        console.error('Failed to fetch more products:', response.errors);
-        const filteredProducts = Products.filter(product => product.category === tab);
-        const newProducts = filteredProducts.slice(currentPage * productsPerPage, (currentPage + 1) * productsPerPage);
-        setProducts([...products, ...newProducts]);
-        setCurrentPage(currentPage + 1);
-        setHasMore(filteredProducts.length > (currentPage + 1) * productsPerPage);
-      }
-    } catch (error) {
-      console.error('Error fetching more products:', error);
-      const filteredProducts = Products.filter(product => product.category === tab);
-      const newProducts = filteredProducts.slice(currentPage * productsPerPage, (currentPage + 1) * productsPerPage);
-      setProducts([...products, ...newProducts]);
-      setCurrentPage(currentPage + 1);
-      setHasMore(filteredProducts.length > (currentPage + 1) * productsPerPage);
-    }
+    const result = await fetchProducts(tab, currentPage);
+    if (!result) return;
+    setProducts([...products, ...result.data]);
+    setCurrentPage(currentPage + 1);
+    setHasMore(result.total > (currentPage + 1) * productsPerPage);
   };
 
   return (
