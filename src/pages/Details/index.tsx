@@ -12,6 +12,8 @@ import { Products } from '../../mock/products'; // Import mock data
 
 const productsPerPage = 8;
 
+const useMockData = import.meta.env.USE_MOCK_FOR_API_FAIL;
+
 const Details = () => {
   const { id } = useParams(); // Assuming id is passed as a route parameter
 
@@ -20,7 +22,6 @@ const Details = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
-  const [isMockData, setIsMockData] = useState(false);
 
   const fetchProductById = async (productId: string) => {
     const productService = new ProductAPIService();
@@ -30,13 +31,12 @@ const Details = () => {
       return response.data;
     } else {
       const mockProduct = Products.find(product => product.id.toString() === productId) || null;
-      setIsMockData(true);
       return mockProduct;
     }
   };
 
   const fetchProductsByCategory = async (category: string, page: number) => {
-    if (!isMockData) {
+    if (!useMockData) {
       const productService = new ProductAPIService();
       const response = await productService.getList({ category });
 
@@ -45,8 +45,6 @@ const Details = () => {
           data: response.data.slice(page * productsPerPage, (page + 1) * productsPerPage),
           total: response.data.length,
         };
-      } else {
-        setIsMockData(true);
       }
     }
 

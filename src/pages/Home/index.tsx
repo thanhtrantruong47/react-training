@@ -13,16 +13,17 @@ import { Products } from '../../mock/products'; // Import mock data
 const navItems = ['T-Shirt', 'Jacket', 'Shirt', 'Jeans'];
 const productsPerPage = 8;
 
+const useMockData = import.meta.env.USE_MOCK_FOR_API_FAIL;
+
 const Home = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [tab, setTab] = useState('T-Shirt');
   const [isLoading, setIsLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [hasMore, setHasMore] = useState(false);
-  const [isMockData, setIsMockData] = useState(false);
 
   const fetchProducts = async (category: string, page: number) => {
-    if (!isMockData) {
+    if (!useMockData) {
       const productService = new ProductAPIService();
       const response = await productService.getList({ category });
 
@@ -32,15 +33,13 @@ const Home = () => {
           total: response.data.length,
         };
       } else {
-        setIsMockData(true);
+        const filteredProducts = Products.filter(product => product.category === category);
+        return {
+          data: filteredProducts.slice(page * productsPerPage, (page + 1) * productsPerPage),
+          total: filteredProducts.length,
+        };
       }
     }
-
-    const filteredProducts = Products.filter(product => product.category === category);
-    return {
-      data: filteredProducts.slice(page * productsPerPage, (page + 1) * productsPerPage),
-      total: filteredProducts.length,
-    };
   };
 
   useEffect(() => {
@@ -48,6 +47,7 @@ const Home = () => {
       setIsLoading(true);
 
       const result = await fetchProducts(tab, 0);
+      if (!result) return;
       setProducts(result.data);
       setCurrentPage(1);
       setHasMore(result.total > productsPerPage);
@@ -67,6 +67,7 @@ const Home = () => {
     if (!hasMore) return; // If no more products to load
 
     const result = await fetchProducts(tab, currentPage);
+    if (!result) return;
     setProducts([...products, ...result.data]);
     setCurrentPage(currentPage + 1);
     setHasMore(result.total > (currentPage + 1) * productsPerPage);
