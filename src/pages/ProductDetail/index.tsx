@@ -1,11 +1,11 @@
 import { Product as ProductType } from '../../types/product';
 import ProductList from '../../components/ProductList/ProductList';
-import styles from './productDetails.module.css';
+import styles from './productDetail.module.css';
 import MainLayout from '../../layouts/MainLayout';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Loading from '../../components/Loading';
-import { default as utils } from '../../styles/modules/utils.module.css';
+import { default as stylesUtils } from '../../styles/modules/utils.module.css';
 import { products as mockProducts } from '../../mock/products'; // Import mock data
 import { ProductAPIService } from '../../services/ProductAPIService';
 import Product from '../../components/Product/Product';
@@ -14,7 +14,7 @@ const productsPerPage = 8;
 
 const useMockData = import.meta.env.USE_MOCK_FOR_API_FAIL;
 
-const ProductDetails = () => {
+const ProductDetail = () => {
   const { id } = useParams(); // Assuming id is passed as a route parameter
 
   const [product, setProduct] = useState<ProductType | null>(null);
@@ -98,7 +98,7 @@ const ProductDetails = () => {
       <div>
         <div className={styles.product}>
           {isLoading ? (
-            <Loading classStyle={utils.loading} />
+            <Loading classStyle={stylesUtils.loading} />
           ) : (
             product && (
               <Product
@@ -118,7 +118,7 @@ const ProductDetails = () => {
         <div className={styles.list}>
           <p className={styles.title}>Same Product</p>
           {isLoading ? (
-            <Loading classStyle={utils.loading} />
+            <Loading classStyle={stylesUtils.loading} />
           ) : (
             <ProductList products={products} onClick={handleLoadMore} hasMore={hasMore} />
           )}
@@ -128,4 +128,4 @@ const ProductDetails = () => {
   );
 };
 
-export default ProductDetails;
+export default ProductDetail;

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { default as utils } from '../../styles/modules/utils.module.css';
+import { default as stylesUtils } from '../../styles/modules/utils.module.css';
 import styles from './breadcrumbs.module.css';
 
 interface BreadcrumbProps {
@@ -19,7 +19,7 @@ const Breadcrumb = ({ listItems }: BreadcrumbProps) => {
           return (
             <li key={item.label} className={styles.breadcrumbItem}>
               {item.url ? (
-                <Link className={utils.link} to={item.url}>
+                <Link className={stylesUtils.link} to={item.url}>
                   {item.label}
                 </Link>
               ) : (

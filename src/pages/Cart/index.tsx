@@ -5,7 +5,7 @@ import CartSummaryInfo from '../../components/CartSummaryInfo/CartSummaryInfo';
 import { useCart } from '../../hook/CartContext';
 import MainLayout from '../../layouts/MainLayout';
 import styles from './cart.module.css';
-import { default as utils } from '../../styles/modules/utils.module.css';
+import { default as stylesUtils } from '../../styles/modules/utils.module.css';
 import Loading from '../../components/Loading';
 import { Link } from 'react-router-dom';
 import { useToast } from '../../hook/ToastContext';
@@ -38,7 +38,7 @@ const Cart = () => {
 
   const bannerContent = (
     <div className={styles.fluidContainer}>
-      <div className={`${utils.container} ${styles.banner}`}>
+      <div className={`${stylesUtils.container} ${styles.banner}`}>
         <Breadcrumb listItems={BREADCRUMB_ITEMS_CART} />
         <h2 className={styles.title}>Cart</h2>
       </div>
@@ -60,9 +60,9 @@ const Cart = () => {
   return (
     <MainLayout bannerContent={bannerContent}>
       {isLoading ? (
-        <Loading classStyle={utils.loading} />
+        <Loading classStyle={stylesUtils.loading} />
       ) : delayedProductsInCart.length > 0 ? (
-        <section className={`${utils.container} ${styles.cart}`}>
+        <section className={`${stylesUtils.container} ${styles.cart}`}>
           <h2 className={styles.titleCart}>Cart Product</h2>
           <div className={styles.group}>
             <CartList
@@ -80,7 +80,7 @@ const Cart = () => {
           </div>
         </section>
       ) : (
-        <div className={utils.container}>
+        <div className={stylesUtils.container}>
           <div className={`${styles.emptyGroup} ${styles.cart}`}>
             <div className={styles.empty}>
               No product in the cart. <Link to={'/'}>shopping</Link> to add item

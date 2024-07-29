@@ -1,5 +1,5 @@
 import styles from './cartItem.module.css';
-import { default as utils } from '../../styles/modules/utils.module.css';
+import { default as stylesUtils } from '../../styles/modules/utils.module.css';
 import NumberInput from '../NumberInput/NumberInput';
 import DeleteIcon from '../Icon/DeleteIcon';
 import Button from '../Button/Button';
@@ -38,8 +38,8 @@ const CartItem = ({
 
   return (
     <div className={styles.container}>
-      <div className={`${utils.flexCenter} ${styles.group}`}>
-        <div className={`${utils.flexCenter} ${styles.groupImage}`}>
+      <div className={`${stylesUtils.flexCenter} ${styles.group}`}>
+        <div className={`${stylesUtils.flexCenter} ${styles.groupImage}`}>
           <img
             className={styles.image}
             src={image}
@@ -51,7 +51,7 @@ const CartItem = ({
             <p className={styles.desc}>Color: {color.charAt(0).toUpperCase() + color.slice(1)}</p>
           </div>
         </div>
-        <div className={`${utils.flexCenter} ${styles.info}`}>
+        <div className={`${stylesUtils.flexCenter} ${styles.info}`}>
           <div className={styles.option}>
             <p className={styles.title}>${price} USD</p>
             <p className={styles.desc}>Price</p>
@@ -63,7 +63,7 @@ const CartItem = ({
           <Button onClick={() => onChangeDelete(id)} className={styles.button} icon={DeleteIcon} />
         </div>
       </div>
-      <div className={`${utils.flexCenter} ${styles.quantity}`}>
+      <div className={`${stylesUtils.flexCenter} ${styles.quantity}`}>
         <NumberInput value={amountOfProduct} onChange={handleQuantityChange} />
       </div>
     </div>

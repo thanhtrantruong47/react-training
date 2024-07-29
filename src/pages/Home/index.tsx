@@ -5,7 +5,7 @@ import { Product } from '../../types/product';
 import styles from './home.module.css';
 import TabList from '../../components/TabList/TabList';
 import { useEffect, useState } from 'react';
-import { default as utils } from '../../styles/modules/utils.module.css';
+import { default as stylesUtils } from '../../styles/modules/utils.module.css';
 import { TAB_LIST } from '../../constants';
 import { ProductAPIService } from '../../services/ProductAPIService';
 import Loading from '../../components/Loading';
@@ -74,14 +74,14 @@ const Home = () => {
 
   return (
     <MainLayout bannerContent={<HeroSection />}>
-      <section className={`${utils.container} ${styles.section}`}>
-        <div className={`${utils.flexCenter} ${styles.head}`}>
+      <section className={`${stylesUtils.container} ${styles.section}`}>
+        <div className={`${stylesUtils.flexCenter} ${styles.head}`}>
           <h3>Choose from the best products</h3>
           <h2>Our Best Seller</h2>
           <TabList listNavItems={TAB_LIST} onChangeTab={handleTabChange} />
         </div>
         {isLoading ? (
-          <Loading classStyle={utils.loading} />
+          <Loading classStyle={stylesUtils.loading} />
         ) : (
           <>
             {products.length === 0 ? (

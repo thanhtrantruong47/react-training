@@ -5,7 +5,7 @@ import Order from './pages/Order';
 import NotFound from './pages/NotFound';
 import { CartProvider } from './hook/CartContext';
 import { ToastProvider } from './hook/ToastContext';
-import ProductDetails from './pages/ProductDetails';
+import ProductDetail from './pages/ProductDetail';
 
 const App = () => {
   return (
@@ -15,7 +15,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/cart" element={<Cart />} />
-            <Route path="/products/:id" element={<ProductDetails />} />
+            <Route path="/products/:id" element={<ProductDetail />} />
             <Route path="/order" element={<Order />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
