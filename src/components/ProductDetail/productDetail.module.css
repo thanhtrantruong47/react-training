@@ -22,14 +22,20 @@
   font-size: 2rem; /* 32px */
   font-weight: var(--font-weight-bold);
   margin-bottom: 1.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: all 0.3s ease-in-out;
 }
 
 .desc {
   font-family: Poppins;
   color: var(--color-text-product);
-  font-size: 1.25rem; /* 20px */
+  font-size: var(--font-size-md);
   margin-bottom: 1rem;
   line-height: 1.6875; /* 27px */
+  overflow: hidden;
+  height: 5.625rem;
 }
 
 .option {

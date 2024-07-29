@@ -5,11 +5,14 @@ import styles from './detail.module.css';
 import MainLayout from '../../layouts/MainLayout';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import ProductAPIService from '../../services/ProductAPIService';
 import Loading from '../../components/Loading';
 import utils from '../../styles/modules/utils.module.css';
+import { products as mockProducts } from '../../mock/products'; // Import mock data
+import { ProductAPIService } from '../../services/ProductAPIService';
 
 const productsPerPage = 8;
+
+const useMockData = import.meta.env.USE_MOCK_FOR_API_FAIL;
 
 const Details = () => {
   const { id } = useParams(); // Assuming id is passed as a route parameter
@@ -20,76 +23,74 @@ const Details = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
 
-  /**
-   * Fetches the product details by ID.
-   * Updates the product state with the fetched product.
-   * This effect runs whenever the `id` state changes.
-   */
-  useEffect(() => {
-    const fetchData = async () => {
-      const productService = new ProductAPIService();
-      const response = await productService.getById(`${id}`);
-      setIsLoading(true);
-
-      if (response.isSuccess && response.data !== undefined) {
-        setProduct(response.data); // Set the fetched product details
-        console.log(response.data);
-        setIsLoading(false);
-      } else {
-        console.error('Failed to fetch product details:', response.errors);
-        setIsLoading(true);
-      }
-    };
-
-    fetchData();
-  }, [id]); // Dependency array with 'id' to refetch data when ID changes
-
-  /**
-   * Fetches products from the server based on the category of the current product.
-   * Updates the products list and loading state.
-   * This effect runs whenever the `product` state changes.
-   */
-  useEffect(() => {
-    if (!product) return;
-
-    const fetchData = async () => {
-      setIsLoading(true); // Start loading
-
-      const productService = new ProductAPIService();
-      const response = await productService.getList({ category: product.category || '' });
-
-      if (response.isSuccess && response.data !== undefined) {
-        setIsLoading(false); // Stop loading
-        setHasMore(response.data.length > productsPerPage);
-        setProducts(response.data.slice(0, productsPerPage)); // Initially load first page of products
-      } else {
-        console.error('Failed to fetch products:', response.errors);
-        setIsLoading(false); // Stop loading if fetch fails
-      }
-    };
-
-    fetchData();
-  }, [product]); // Dependency array with 'product' to refetch data when product changes
-
-  /**
-   * Handles the load more event to fetch additional products.
-   * Appends the new products to the existing product list and increments the current page.
-   */
-  const handleLoadMore = async () => {
-    if (!product) return;
-
-    const productService = new ProductAPIService();
-    const response = await productService.getList({ category: product.category || '' });
+  const fetchProductById = async (productId: string) => {
+    const response = await ProductAPIService.getById(productId);
 
     if (response.isSuccess && response.data !== undefined) {
-      // Calculate new products to add based on current page
-      const newProducts = response.data.slice(currentPage * productsPerPage, (currentPage + 1) * productsPerPage);
-      setProducts([...products, ...newProducts]); // Append new products to existing list
-      setCurrentPage(currentPage + 1); // Increment current page
-      setHasMore(response.data.length > (currentPage + 1) * productsPerPage); // Check if there are more products
+      return response.data;
     } else {
-      console.error('Failed to fetch more products:', response.errors);
+      const mockProduct = mockProducts.find(product => product.id.toString() === productId) || null;
+      return mockProduct;
     }
+  };
+
+  const fetchProductsByCategory = async (category: string, page: number) => {
+    if (!useMockData) {
+      const response = await ProductAPIService.getList({ category });
+
+      if (response.isSuccess && response.data !== undefined) {
+        return {
+          data: response.data.slice(page * productsPerPage, (page + 1) * productsPerPage),
+          total: response.data.length,
+        };
+      }
+    }
+    const filteredProducts = mockProducts.filter(product => product.category === category);
+    return {
+      data: filteredProducts.slice(page * productsPerPage, (page + 1) * productsPerPage),
+      total: filteredProducts.length,
+    };
+  };
+
+  useEffect(() => {
+    const fetchProductData = async () => {
+      setIsLoading(true);
+
+      const fetchedProduct = await fetchProductById(id || '');
+      setProduct(fetchedProduct);
+
+      setIsLoading(false);
+    };
+
+    if (id) {
+      fetchProductData();
+    }
+  }, [id]);
+
+  useEffect(() => {
+    const fetchProductsData = async () => {
+      if (!product) return;
+
+      setIsLoading(true);
+
+      const result = await fetchProductsByCategory(product.category || '', 0);
+      setProducts(result.data);
+      setCurrentPage(1);
+      setHasMore(result.total > productsPerPage);
+
+      setIsLoading(false);
+    };
+
+    fetchProductsData();
+  }, [product]);
+
+  const handleLoadMore = async () => {
+    if (!hasMore || !product) return;
+
+    const result = await fetchProductsByCategory(product.category || '', currentPage);
+    setProducts([...products, ...result.data]);
+    setCurrentPage(currentPage + 1);
+    setHasMore(result.total > (currentPage + 1) * productsPerPage);
   };
 
   return (
@@ -114,7 +115,6 @@ const Details = () => {
             )
           )}
         </div>
-
         <div className={styles.list}>
           <p className={styles.title}>Same Product</p>
           {isLoading ? (

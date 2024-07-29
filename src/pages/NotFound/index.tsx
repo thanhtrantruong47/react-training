@@ -1,6 +1,13 @@
+import MainLayout from '../../layouts/MainLayout';
 import utils from '../../styles/modules/utils.module.css';
 import styles from './notFound.module.css';
 
-const NotFound = () => <h1 className={`${utils.container} ${styles.title}`}>Page is under development</h1>;
+const NotFound = () => {
+  return (
+    <MainLayout>
+      <h2 className={`${utils.container} ${styles.title}`}>Page is under development</h2>;
+    </MainLayout>
+  );
+};
 
 export default NotFound;

@@ -26,3 +26,8 @@
   text-transform: uppercase;
   text-align: center;
 }
+
+.noProducts {
+  font-family: Poppins;
+  font-size: var(--font-size-2nm);
+}

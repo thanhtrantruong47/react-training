@@ -4,6 +4,7 @@ import Button from '../Button/Button';
 import PrevIcon from '../Icon/PrevIcon';
 import NextIcon from '../Icon/NextIcon';
 import { ImagesCarousel } from '../../types/carousel';
+import unAvailableImage from '../../assets/images/no-image.jpg';
 
 interface HeroCarousel {
   images: ImagesCarousel[];
@@ -36,7 +37,12 @@ const HeroCarousel = ({ images }: HeroCarousel) => {
   return (
     <div className={styles.heroCarousel}>
       <div>
-        <img className={styles.mainImage} src={images[mainImage].src} alt={`Image ${mainImage}`} />
+        <img
+          className={styles.mainImage}
+          src={images[mainImage].src}
+          alt={`Image ${mainImage}`}
+          onError={e => (e.currentTarget.src = unAvailableImage)}
+        />
       </div>
       <div className={styles.thumbnailList}>
         <Button icon={PrevIcon} className={styles.buttonLeft} onClick={handlePrev} />
@@ -48,6 +54,7 @@ const HeroCarousel = ({ images }: HeroCarousel) => {
               alt={`Thumbnail ${index}`}
               className={index === mainImage ? styles.active : ''}
               onClick={() => handleClick(index)}
+              onError={e => (e.currentTarget.src = unAvailableImage)}
             />
           ))}
         </div>

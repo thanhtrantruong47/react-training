@@ -4,6 +4,7 @@ import NumberInput from '../NumberInput/NumberInput';
 import DeleteIcon from '../Icon/DeleteIcon';
 import Button from '../Button/Button';
 import { useState } from 'react';
+import unAvailableImage from '../../assets/images/no-image.jpg';
 
 interface CartItemProps {
   id: string;
@@ -38,20 +39,29 @@ const CartItem = ({
   return (
     <div className={styles.container}>
       <div className={`${utils.flexCenter} ${styles.group}`}>
-        <img className={styles.image} src={image} alt={image} />
-        <div className={styles.option}>
-          <p className={styles.title}>{title}</p>
-          <p className={styles.desc}>Color: {color.charAt(0).toUpperCase() + color.slice(1)}</p>
+        <div className={`${utils.flexCenter} ${styles.groupImage}`}>
+          <img
+            className={styles.image}
+            src={image}
+            alt={image}
+            onError={e => (e.currentTarget.src = unAvailableImage)}
+          />
+          <div className={styles.option}>
+            <p className={`${styles.mainTitle}`}>{title}</p>
+            <p className={styles.desc}>Color: {color.charAt(0).toUpperCase() + color.slice(1)}</p>
+          </div>
         </div>
-        <div className={styles.option}>
-          <p className={styles.title}>${price} USD</p>
-          <p className={styles.desc}>Price</p>
+        <div className={`${utils.flexCenter} ${styles.info}`}>
+          <div className={styles.option}>
+            <p className={styles.title}>${price} USD</p>
+            <p className={styles.desc}>Price</p>
+          </div>
+          <div className={styles.option}>
+            <p className={styles.title}>{stock}</p>
+            <p className={styles.desc}>In Stock</p>
+          </div>
+          <Button onClick={() => onChangeDelete(id)} className={styles.button} icon={DeleteIcon} />
         </div>
-        <div className={styles.option}>
-          <p className={styles.title}>{stock}</p>
-          <p className={styles.desc}>In Stock</p>
-        </div>
-        <Button onClick={() => onChangeDelete(id)} className={styles.button} icon={DeleteIcon} />
       </div>
       <div className={`${utils.flexCenter} ${styles.quantity}`}>
         <NumberInput value={amountOfProduct} onChange={handleQuantityChange} />

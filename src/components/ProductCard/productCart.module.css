@@ -58,6 +58,8 @@
 .productImage {
   width: 16.5625rem;
   height: 100%;
+  object-fit: contain;
+  background-color: var(--color-bg);
 }
 
 .group {
@@ -69,6 +71,10 @@
   font-weight: var(--font-weight-bold);
   justify-content: space-between;
   margin-bottom: 0.3125rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: all 0.3s ease-in-out;
 }
 
 .nameGroup > span {
@@ -78,6 +84,10 @@
 .desc {
   color: var(--color-text-product);
   margin-bottom: 0.8125rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: all 0.3s ease-in-out;
 }
 
 .ratingGroup {
