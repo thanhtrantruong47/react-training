@@ -8,7 +8,7 @@ import { useEffect, useState } from 'react';
 import ProductAPIService from '../../services/ProductAPIService';
 import Loading from '../../components/Loading';
 import utils from '../../styles/modules/utils.module.css';
-import { Products } from '../../mock/products'; // Import mock data
+import { Products as mockProducts } from '../../mock/products'; // Import mock data
 
 const productsPerPage = 8;
 
@@ -30,7 +30,7 @@ const Details = () => {
     if (response.isSuccess && response.data !== undefined) {
       return response.data;
     } else {
-      const mockProduct = Products.find(product => product.id.toString() === productId) || null;
+      const mockProduct = mockProducts.find(product => product.id.toString() === productId) || null;
       return mockProduct;
     }
   };
@@ -47,8 +47,7 @@ const Details = () => {
         };
       }
     }
-
-    const filteredProducts = Products.filter(product => product.category === category);
+    const filteredProducts = mockProducts.filter(product => product.category === category);
     return {
       data: filteredProducts.slice(page * productsPerPage, (page + 1) * productsPerPage),
       total: filteredProducts.length,

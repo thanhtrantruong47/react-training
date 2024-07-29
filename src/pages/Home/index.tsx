@@ -8,7 +8,7 @@ import { useEffect, useState } from 'react';
 import ProductAPIService from '../../services/ProductAPIService';
 import utils from '../../styles/modules/utils.module.css';
 import Loading from '../../components/Loading';
-import { Products } from '../../mock/products'; // Import mock data
+import { Products as mockProducts } from '../../mock/products';
 
 const navItems = ['T-Shirt', 'Jacket', 'Shirt', 'Jeans'];
 const productsPerPage = 8;
@@ -33,7 +33,7 @@ const Home = () => {
           total: response.data.length,
         };
       } else {
-        const filteredProducts = Products.filter(product => product.category === category);
+        const filteredProducts = mockProducts.filter(product => product.category === category);
         return {
           data: filteredProducts.slice(page * productsPerPage, (page + 1) * productsPerPage),
           total: filteredProducts.length,
