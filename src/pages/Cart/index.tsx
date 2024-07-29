@@ -53,10 +53,6 @@ const Cart = () => {
 
   const total = totalPrice(delayedProductsInCart);
 
-  const checkout = () => {
-    clearCart();
-  };
-
   return (
     <MainLayout bannerContent={bannerContent}>
       {isLoading ? (
@@ -73,7 +69,7 @@ const Cart = () => {
             <div className={styles.checkout}>
               <CartSummaryInfo
                 numberProduct={delayedProductsInCart.length}
-                onClickCheckoutButton={checkout}
+                onClickCheckoutButton={clearCart}
                 totalPrice={total}
               />
             </div>
@@ -88,7 +84,7 @@ const Cart = () => {
             <div className={styles.checkout}>
               <CartSummaryInfo
                 numberProduct={delayedProductsInCart.length}
-                onClickCheckoutButton={checkout}
+                onClickCheckoutButton={clearCart}
                 totalPrice={total}
                 isDisable={isDisable}
               />
