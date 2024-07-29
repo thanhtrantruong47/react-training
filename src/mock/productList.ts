@@ -1,7 +1,7 @@
 import mainImages from '../assets/images/detail-small.jpg';
 import { Product } from '../types/product';
 
-export const productList: Product[] = [
+export const PRODUCT_LIST: Product[] = [
   {
     id: 1,
     title: 'Blue T-Shirt',

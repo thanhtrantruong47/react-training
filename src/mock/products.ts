@@ -1,6 +1,6 @@
 import { Product } from '../types/product';
 
-export const products: Product[] = [
+export const PRODUCTS_MOCK: Product[] = [
   {
     title: 'T-Shirt ',
     price: 14,

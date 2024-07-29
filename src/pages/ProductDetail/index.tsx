@@ -6,7 +6,7 @@ import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Loading from '../../components/Loading';
 import { default as styleUtils } from '../../styles/modules/utils.module.css';
-import { products as mockProducts } from '../../mock/products'; // Import mock data
+import { PRODUCTS_MOCK as mockProducts } from '../../mock/products'; // Import mock data
 import { ProductAPIService } from '../../services/ProductAPIService';
 import Product from '../../components/Product/Product';
 

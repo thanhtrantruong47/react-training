@@ -19,7 +19,7 @@ const HeroSection = () => {
               <Button classStyle={styles.button} content="Shop now" />
             </div>
           </div>
-          <HeroCarousel images={BANNER_IMAGES} />
+          <HeroCarousel imagesCarousel={BANNER_IMAGES} />
         </div>
       </div>
     </section>

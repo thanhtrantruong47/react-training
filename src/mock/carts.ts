@@ -1,6 +1,6 @@
 import { CartItem } from '../types/cartItem';
 
-export const cartList: CartItem[] = [
+export const CART_LIST: CartItem[] = [
   {
     id: '1',
     image:

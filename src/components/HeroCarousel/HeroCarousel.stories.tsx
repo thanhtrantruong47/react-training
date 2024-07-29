@@ -10,5 +10,5 @@ export default {
 type Story = StoryObj<typeof HeroCarousel>;
 
 export const Default: Story = {
-  args: { images: BANNER_IMAGES },
+  args: { imagesCarousel: BANNER_IMAGES },
 };

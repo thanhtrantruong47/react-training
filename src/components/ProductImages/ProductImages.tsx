@@ -4,11 +4,11 @@ import { default as styleUtils } from '../../styles/modules/utils.module.css';
 import unAvailableImage from '../../assets/images/no-image.jpg';
 
 interface ProductImagesProps {
-  images: string[];
+  productImages: string[];
   title: string;
 }
 
-const ProductImages = ({ images, title }: ProductImagesProps) => {
+const ProductImages = ({ productImages, title }: ProductImagesProps) => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const handleImageClick = (index: number) => {
@@ -20,14 +20,14 @@ const ProductImages = ({ images, title }: ProductImagesProps) => {
       <div className={styles.containerImage}>
         <img
           className={styles.detailImage}
-          src={images[activeIndex]}
+          src={productImages[activeIndex]}
           onError={e => (e.currentTarget.src = unAvailableImage)}
-          alt={`${title} image ${images[activeIndex]}`}
+          alt={`${title} image ${productImages[activeIndex]}`}
         />
       </div>
 
       <ul className={styles.imageGroup}>
-        {images.slice(0, 3).map((image, index) => (
+        {productImages.slice(0, 3).map((image, index) => (
           <li
             key={`${image}${index}`}
             className={`${styleUtils.pointer} ${index === activeIndex ? styles.imageActive : ''}`}

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import ProductList from './ProductList';
-import { productList } from '../../mock/productList';
+import { PRODUCT_LIST } from '../../mock/productList';
 
 export default {
   component: ProductList,
@@ -10,5 +10,5 @@ export default {
 type Story = StoryObj<typeof ProductList>;
 
 export const Default: Story = {
-  args: { products: productList },
+  args: { products: PRODUCT_LIST },
 };

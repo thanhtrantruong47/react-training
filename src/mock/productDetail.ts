@@ -2,7 +2,7 @@ import mainImages from '../assets/images/detail-small.jpg';
 import secondaryImages from '../assets/images/small-t-shirt.jpg';
 import { Product } from '../types/product';
 
-export const productDetails: Product = {
+export const PRODUCT_DETAIL: Product = {
   id: 1,
   images: [mainImages, secondaryImages, secondaryImages],
   title: 'Smart T-Shirt',
