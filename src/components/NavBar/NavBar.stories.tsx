@@ -10,5 +10,5 @@ export default {
 type Story = StoryObj<typeof NavBar>;
 
 export const Default: Story = {
-  args: { items: NAV_BAR_ITEMS },
+  args: { listItemNavBar: NAV_BAR_ITEMS },
 };
