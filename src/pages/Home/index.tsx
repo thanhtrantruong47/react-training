@@ -9,7 +9,7 @@ import { default as styleUtils } from '../../styles/modules/utils.module.css';
 import { BEST_SELLER_CATEGORY } from '../../constants';
 import { ProductAPIService } from '../../services/ProductAPIService';
 import Loading from '../../components/Loading';
-import { products as mockProducts } from '../../mock/products';
+import { PRODUCTS_MOCK as mockProducts } from '../../mock/products';
 
 const productsPerPage = 8;
 

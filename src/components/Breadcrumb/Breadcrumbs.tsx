@@ -14,7 +14,7 @@ const Breadcrumb = ({ listItemsBreadcrumb }: BreadcrumbProps) => {
     <nav aria-label="breadcrumb">
       <ol className={styles.breadcrumb}>
         {listItemsBreadcrumb.map((item, index) => {
-          const isLastItem = index === Breadcrumb.length - 1;
+          const isLastItem = index === listItemsBreadcrumb.length - 1;
 
           return (
             <li key={item.label} className={styles.breadcrumbItem}>
