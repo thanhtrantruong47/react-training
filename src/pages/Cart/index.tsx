@@ -7,7 +7,7 @@ import MainLayout from '../../layouts/MainLayout';
 import styles from './cart.module.css';
 import { default as styleUtils } from '../../styles/modules/utils.module.css';
 import Loading from '../../components/Loading';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useToast } from '../../hook/ToastContext';
 import { BREADCRUMB_ITEMS_CART, MESSAGE_SUCCESS } from '../../constants';
 import { ProductAPIService } from '../../services/ProductAPIService';
@@ -18,6 +18,8 @@ const Cart = () => {
   const [delayedProductsInCart, setDelayedProductsInCart] = useState<typeof productsInCart>([]);
   const [isLoading, setIsLoading] = useState(true);
   const isDisable = true;
+  const [isCheckout, setIsCheckout] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -58,20 +60,21 @@ const Cart = () => {
     const productsInCart = JSON.parse(localStorage.getItem('productsInCart') || '[]');
 
     for (const product of productsInCart) {
-      const { productId, quantity } = product;
+      const { productId, quantity, stock } = product;
+      const newStock = stock - quantity;
 
-      const response = await ProductAPIService.getById(productId);
-      if (response.isSuccess && response.data !== undefined) {
-        const newStock = response.data.stock - quantity;
-        const stockUpdate = { stock: newStock };
+      const stockUpdate = { stock: newStock };
 
-        await ProductAPIService.update(productId, stockUpdate);
+      const response = await ProductAPIService.update(productId, stockUpdate);
+
+      if (response.isSuccess) {
+        clearCart();
+        navigate('/order');
       } else {
-        console.error(`Failed to fetch product ${productId}`);
+        addToast('Unable to order now please try again later', false);
+        setIsCheckout(true);
       }
     }
-
-    clearCart();
   };
 
   return (
@@ -92,6 +95,7 @@ const Cart = () => {
                 numberProduct={delayedProductsInCart.length}
                 onClickCheckoutButton={checkout}
                 totalPrice={total}
+                isDisable={isCheckout}
               />
             </div>
           </div>
