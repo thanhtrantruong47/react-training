@@ -5,14 +5,12 @@ import styles from './mainLayout.module.css';
 
 interface LayoutProps {
   children: React.ReactNode;
-  bannerContent?: React.ReactNode; // Define bannerContent as a prop
 }
 
-const MainLayout = ({ children, bannerContent }: LayoutProps) => {
+const MainLayout = ({ children }: LayoutProps) => {
   return (
     <>
       <Header />
-      {bannerContent}
       <main className={styles.main}>{children}</main>
       <Footer />
     </>

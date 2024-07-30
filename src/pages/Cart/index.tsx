@@ -39,15 +39,6 @@ const Cart = () => {
     addToast(MESSAGE_SUCCESS.DELETE_CART, true);
   };
 
-  const bannerContent = (
-    <div className={styles.fluidContainer}>
-      <div className={`${styleUtils.container} ${styles.banner}`}>
-        <Breadcrumb items={BREADCRUMB_ITEMS_CART} />
-        <h2 className={styles.title}>Cart</h2>
-      </div>
-    </div>
-  );
-
   const totalPrice = (productsInCart: { price: number; quantity: number }[]) => {
     return productsInCart.reduce((total, product) => {
       return total + product.price * product.quantity;
@@ -78,7 +69,13 @@ const Cart = () => {
   };
 
   return (
-    <MainLayout bannerContent={bannerContent}>
+    <MainLayout>
+      <div className={styles.fluidContainer}>
+        <div className={`${styleUtils.container} ${styles.banner}`}>
+          <Breadcrumb items={BREADCRUMB_ITEMS_CART} />
+          <h2 className={styles.title}>Cart</h2>
+        </div>
+      </div>
       {isLoading ? (
         <Loading classStyle={styleUtils.loading} />
       ) : delayedProductsInCart.length > 0 ? (

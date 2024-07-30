@@ -18,7 +18,8 @@ const Home = () => {
   };
 
   return (
-    <MainLayout bannerContent={<HeroSection />}>
+    <MainLayout>
+      <HeroSection />
       <section className={`${styleUtils.container} ${styles.section}`}>
         <div className={`${styleUtils.flexCenter} ${styles.head}`}>
           <h3>Choose from the best products</h3>
