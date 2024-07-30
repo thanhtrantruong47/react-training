@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, ReactNode } from 'react';
+import { createContext, useContext, useState, ReactNode } from 'react';
 import Toast from '../components/Toast';
 
 interface ToastContextType {
@@ -13,7 +13,11 @@ interface ToastItem {
 
 const ToastContext = createContext<ToastContextType | undefined>(undefined);
 
-export const ToastProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+interface ToastProviderProps {
+  children: ReactNode;
+}
+
+export const ToastProvider = ({ children }: ToastProviderProps) => {
   const [toasts, setToasts] = useState<ToastItem[]>([]);
   const [nextId, setNextId] = useState(0);
 
@@ -21,9 +25,14 @@ export const ToastProvider: React.FC<{ children: ReactNode }> = ({ children }) =
     const id = nextId;
     setNextId(prevId => prevId + 1); // Increment ID for the next toast
     setToasts(prevToasts => [...prevToasts, { message, isSuccess, id }]);
-    setTimeout(() => {
+
+    // Automatically remove toast after 3 seconds
+    const timeoutId = setTimeout(() => {
       setToasts(prevToasts => prevToasts.filter(toast => toast.id !== id));
-    }, 1000); // Duration of toast
+    }, 3000);
+
+    // Cleanup timeout if component unmounts
+    return () => clearTimeout(timeoutId);
   };
 
   return (

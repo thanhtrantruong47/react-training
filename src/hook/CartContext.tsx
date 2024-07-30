@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, useContext, useEffect, useState, ReactNode } from 'react';
 import { CartItem as CartItemType } from '../types/cartItem';
 
 interface CartContextType {
@@ -6,13 +6,19 @@ interface CartContextType {
   addToCart: (item: CartItemType) => void;
   updateQuantity: (id: string, newQuantity: number) => void;
   removeFromCart: (id: string) => void;
-  clearCart: () => void; // Add clearCart to the context type
+  clearCart: () => void;
+  isRemoving: string | null; // Track which item is being removed
 }
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
-export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+interface CartProviderProps {
+  children: ReactNode;
+}
+
+export const CartProvider = ({ children }: CartProviderProps) => {
   const [productsInCart, setProductsInCart] = useState<CartItemType[]>([]);
+  const [isRemoving, setIsRemoving] = useState<string | null>(null);
 
   useEffect(() => {
     const items = JSON.parse(localStorage.getItem('productsInCart') || '[]');
@@ -43,19 +49,29 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
     localStorage.setItem('productsInCart', JSON.stringify(updatedItems));
   };
 
-  const removeFromCart = (id: string) => {
-    const updatedItems = productsInCart.filter(item => item.id !== id);
-    setProductsInCart(updatedItems);
-    localStorage.setItem('productsInCart', JSON.stringify(updatedItems));
+  const removeFromCart = async (id: string) => {
+    setIsRemoving(id);
+    try {
+      // Simulate async operation
+      await new Promise(resolve => setTimeout(resolve, 500)); // Simulate network delay
+
+      const updatedItems = productsInCart.filter(item => item.id !== id);
+      setProductsInCart(updatedItems);
+      localStorage.setItem('productsInCart', JSON.stringify(updatedItems));
+    } catch (error) {
+      console.error('Failed to remove item from cart:', error);
+    } finally {
+      setIsRemoving(null);
+    }
   };
 
   const clearCart = () => {
     setProductsInCart([]);
-    localStorage.removeItem('productsInCart'); // Clear the localStorage item
+    localStorage.removeItem('productsInCart');
   };
 
   return (
-    <CartContext.Provider value={{ productsInCart, addToCart, updateQuantity, removeFromCart, clearCart }}>
+    <CartContext.Provider value={{ productsInCart, addToCart, updateQuantity, removeFromCart, clearCart, isRemoving }}>
       {children}
     </CartContext.Provider>
   );

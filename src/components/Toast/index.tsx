@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import styles from './toast.module.css';
 
 interface ToastProps {
@@ -8,7 +8,7 @@ interface ToastProps {
   duration?: number; // Duration in milliseconds
 }
 
-const Toast: React.FC<ToastProps> = ({ message, isSuccess, classStyle = '', duration = 3000 }) => {
+const Toast = ({ message, isSuccess, classStyle = '', duration = 3000 }: ToastProps) => {
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
