@@ -19,9 +19,9 @@ const fetchProductById = async (productId: string) => {
 
   if (response.isSuccess && response.data !== undefined && !useMockData) {
     return response.data;
-  } else {
-    return mockProducts.find(product => product.id.toString() === productId) || null;
   }
+
+  return mockProducts.find(product => product.id.toString() === productId) || null;
 };
 
 export const useProductById = (id: string): UseProductByIdResult => {
