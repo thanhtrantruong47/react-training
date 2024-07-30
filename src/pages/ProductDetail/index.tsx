@@ -11,8 +11,6 @@ import { ProductAPIService } from '../../services/ProductAPIService';
 import Product from '../../components/Product/Product';
 import { useProducts } from '../../hook/useProducts'; // Import the custom hook
 
-const useMockData = import.meta.env.USE_MOCK_FOR_API_FAIL;
-
 const ProductDetail = () => {
   const { id } = useParams<{ id: string }>();
 
@@ -22,24 +20,26 @@ const ProductDetail = () => {
   // Use the useProducts hook for related products
   const { products, isLoading: isRelatedProductsLoading, hasMore, loadMore } = useProducts(product?.category || '');
 
+  const fetchProductById = async (productId: string) => {
+    const response = await ProductAPIService.getById(productId);
+
+    if (response.isSuccess && response.data !== undefined) {
+      return response.data;
+    } else {
+      const mockProduct = mockProducts.find(product => product.id.toString() === productId) || null;
+      return mockProduct;
+    }
+  };
+
   // Fetch product details by ID
   useEffect(() => {
     const fetchProductData = async () => {
       setIsLoading(true);
 
-      try {
-        const response = !useMockData
-          ? await ProductAPIService.getById(id || '')
-          : { data: mockProducts.find(product => product.id.toString() === id) };
+      const fetchedProduct = await fetchProductById(id || '');
+      setProduct(fetchedProduct);
 
-        if (response.data) {
-          setProduct(response.data);
-        }
-      } catch (error) {
-        console.error('Failed to fetch product:', error);
-      } finally {
-        setIsLoading(false);
-      }
+      setIsLoading(false);
     };
 
     if (id) {
