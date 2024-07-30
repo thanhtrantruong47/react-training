@@ -10,6 +10,7 @@ import Loading from '../../components/Loading';
 import { Link } from 'react-router-dom';
 import { useToast } from '../../hook/ToastContext';
 import { BREADCRUMB_ITEMS_CART, MESSAGE_SUCCESS } from '../../constants';
+import { ProductAPIService } from '../../services/ProductAPIService';
 
 const Cart = () => {
   const { productsInCart, updateQuantity, removeFromCart, clearCart } = useCart();
@@ -53,6 +54,26 @@ const Cart = () => {
 
   const total = totalPrice(delayedProductsInCart);
 
+  const checkout = async () => {
+    const productsInCart = JSON.parse(localStorage.getItem('productsInCart') || '[]');
+
+    for (const product of productsInCart) {
+      const { productId, quantity } = product;
+
+      const response = await ProductAPIService.getById(productId);
+      if (response.isSuccess && response.data !== undefined) {
+        const newStock = response.data.stock - quantity;
+        const stockUpdate = { stock: newStock };
+
+        await ProductAPIService.update(productId, stockUpdate);
+      } else {
+        console.error(`Failed to fetch product ${productId}`);
+      }
+    }
+
+    clearCart();
+  };
+
   return (
     <MainLayout bannerContent={bannerContent}>
       {isLoading ? (
@@ -69,7 +90,7 @@ const Cart = () => {
             <div className={styles.checkout}>
               <CartSummaryInfo
                 numberProduct={delayedProductsInCart.length}
-                onClickCheckoutButton={clearCart}
+                onClickCheckoutButton={checkout}
                 totalPrice={total}
               />
             </div>
@@ -84,7 +105,7 @@ const Cart = () => {
             <div className={styles.checkout}>
               <CartSummaryInfo
                 numberProduct={delayedProductsInCart.length}
-                onClickCheckoutButton={clearCart}
+                onClickCheckoutButton={checkout}
                 totalPrice={total}
                 isDisable={isDisable}
               />

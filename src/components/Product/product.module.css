@@ -142,6 +142,10 @@
   color: var(--color-text-secondary);
 }
 
+.soldOut {
+  color: var(--color-badge);
+}
+
 @media (max-width: 64rem) {
   .detail {
     flex-direction: column;

@@ -68,7 +68,7 @@ const CartItem = ({
         </div>
       </div>
       <div className={`${styleUtils.flexCenter} ${styles.quantity}`}>
-        <NumberInput value={amountOfProduct} onChange={handleQuantityChange} />
+        <NumberInput value={amountOfProduct} onChange={handleQuantityChange} max={stock} />
       </div>
     </div>
   );
