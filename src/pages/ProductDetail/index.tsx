@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import ProductList from '../../components/ProductList/ProductList';
 import styles from './productDetail.module.css';
@@ -15,15 +14,6 @@ const ProductDetail = () => {
   // Use the useProducts hook for related products
   const { product, isLoading: isProductLoading } = useProductById(id || '');
   const { products, isLoading: isRelatedProductsLoading, isHasMore, onLoadMore } = useProducts(product?.category || '');
-
-  // Reset related products when product category changes
-  useEffect(() => {
-    if (product?.category) {
-      onLoadMore(); // Trigger load more if category is available
-    }
-  }, [product?.category, onLoadMore]);
-
-  // Determine the loading state for the entire page
 
   return (
     <MainLayout>
