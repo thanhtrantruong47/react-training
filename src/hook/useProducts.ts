@@ -4,13 +4,14 @@ import { ProductAPIService } from '../services/ProductAPIService';
 import { PRODUCTS_MOCK as mockProducts } from '../mock/products';
 
 const productsPerPage = 8;
-const useMockData = import.meta.env.USE_MOCK_FOR_API_FAIL === 'true';
+
+const useMockData = import.meta.env.USE_MOCK_FOR_API_FAIL;
 
 interface UseProductsResult {
   products: Product[];
   isLoading: boolean;
-  hasMore: boolean;
-  loadMore: () => void;
+  isHasMore: boolean;
+  onLoadMore: () => void;
 }
 
 const fetchProducts = async (category: string, page: number) => {
@@ -18,29 +19,29 @@ const fetchProducts = async (category: string, page: number) => {
     return { data: [], total: 0 };
   }
 
-  if (!useMockData) {
-    const response = await ProductAPIService.getList({ category });
+  // Fetch data from API if mock data is not used
+  const response = await ProductAPIService.getList({ category });
 
-    if (response.isSuccess && response.data !== undefined) {
-      return {
-        data: response.data.slice(page * productsPerPage, (page + 1) * productsPerPage),
-        total: response.data.length,
-      };
-    }
+  if (response.isSuccess && response.data !== undefined && !useMockData) {
+    return {
+      data: response.data.slice(page * productsPerPage, (page + 1) * productsPerPage),
+      total: response.data.length,
+    };
+  } else {
+    const filteredProducts = mockProducts.filter(product => product.category === category);
+
+    return {
+      data: filteredProducts.slice(page * productsPerPage, (page + 1) * productsPerPage),
+      total: filteredProducts.length,
+    };
   }
-
-  const filteredProducts = mockProducts.filter(product => product.category === category);
-  return {
-    data: filteredProducts.slice(page * productsPerPage, (page + 1) * productsPerPage),
-    total: filteredProducts.length,
-  };
 };
 
 export const useProducts = (category: string): UseProductsResult => {
   const [products, setProducts] = useState<Product[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const [hasMore, setHasMore] = useState(true);
+  const [isHasMore, setIsHasMore] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -49,22 +50,27 @@ export const useProducts = (category: string): UseProductsResult => {
       setProducts([]); // Clear current products
 
       const result = await fetchProducts(category, 0);
+
+      if (!result) return;
+
       setProducts(result.data);
-      setHasMore(result.total > productsPerPage); // Determine if more data exists
+      setIsHasMore(result.total > productsPerPage); // Determine if more data exists
       setIsLoading(false);
     };
 
     fetchData();
   }, [category]);
 
-  const loadMore = async () => {
-    if (!hasMore) return;
+  const onLoadMore = async () => {
+    if (!isHasMore) return;
 
     const result = await fetchProducts(category, currentPage);
+    if (!result) return;
+
     setProducts(prevProducts => [...prevProducts, ...result.data]);
     setCurrentPage(prevPage => prevPage + 1);
-    setHasMore(result.total > (currentPage + 1) * productsPerPage); // Check if there are more products
+    setIsHasMore(result.total > (currentPage + 1) * productsPerPage); // Check if there are more products
   };
 
-  return { products, isLoading, hasMore, loadMore };
+  return { products, isLoading, isHasMore, onLoadMore };
 };

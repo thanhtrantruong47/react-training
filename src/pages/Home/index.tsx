@@ -11,7 +11,7 @@ import Loading from '../../components/Loading';
 
 const Home = () => {
   const [tab, setTab] = useState('T-Shirt');
-  const { products, isLoading, hasMore, loadMore } = useProducts(tab);
+  const { products, isLoading, onLoadMore, isHasMore } = useProducts(tab);
 
   const handleTabChange = (item: string) => {
     setTab(item);
@@ -32,7 +32,7 @@ const Home = () => {
             {products.length === 0 ? (
               <p className={styles.noProducts}>No products available in this category.</p>
             ) : (
-              <ProductList products={products} onClick={loadMore} hasMore={hasMore} />
+              <ProductList products={products} onClick={onLoadMore} hasMore={isHasMore} />
             )}
           </>
         )}
