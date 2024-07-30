@@ -34,6 +34,7 @@
 .groupImage {
   gap: 2.5rem;
   margin-right: 1rem;
+  width: 50%;
 }
 
 .info {

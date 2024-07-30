@@ -36,6 +36,10 @@ const CartItem = ({
     onQuantityChange(id, newQuantity);
   };
 
+  const handleClick = () => {
+    onChangeDelete(id);
+  };
+
   return (
     <div className={styles.container}>
       <div className={`${styleUtils.flexCenter} ${styles.group}`}>
@@ -60,7 +64,7 @@ const CartItem = ({
             <p className={styles.title}>{stock}</p>
             <p className={styles.desc}>In Stock</p>
           </div>
-          <Button onClick={() => onChangeDelete(id)} className={styles.button} icon={DeleteIcon} />
+          <Button onClick={handleClick} className={styles.button} icon={DeleteIcon} />
         </div>
       </div>
       <div className={`${styleUtils.flexCenter} ${styles.quantity}`}>
