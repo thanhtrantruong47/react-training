@@ -48,6 +48,7 @@ const Cart = () => {
   const total = totalPrice(delayedProductsInCart);
 
   const checkout = async () => {
+    setIsLoading(true);
     const productsInCart = JSON.parse(localStorage.getItem('productsInCart') || '[]');
 
     for (const product of productsInCart) {
@@ -61,11 +62,13 @@ const Cart = () => {
       if (response.isSuccess) {
         clearCart();
         navigate('/order');
+        setIsLoading(false);
       } else {
         addToast('Unable to order now please try again later', false);
         setIsCheckout(true);
       }
     }
+    setIsLoading(false);
   };
 
   return (
@@ -77,7 +80,7 @@ const Cart = () => {
         </div>
       </div>
       {isLoading ? (
-        <Loading classStyle={styleUtils.loading} />
+        <Loading classStyle={`${styleUtils.loading} ${styles.loading}`} />
       ) : delayedProductsInCart.length > 0 ? (
         <section className={`${styleUtils.container} ${styles.cart}`}>
           <h2 className={styles.titleCart}>Cart Product</h2>
