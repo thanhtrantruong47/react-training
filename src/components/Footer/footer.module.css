@@ -1,12 +1,12 @@
 .fluidContainer {
   background-color: #393e46;
+  margin-top: auto;
 }
 
 .footer {
   display: flex;
   justify-content: space-between;
   color: var(--color-text-secondary);
-  margin: 0 auto;
   padding-top: 5rem;
   padding-bottom: 5rem;
 }

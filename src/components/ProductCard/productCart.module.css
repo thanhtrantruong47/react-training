@@ -71,6 +71,10 @@
   font-weight: var(--font-weight-bold);
   justify-content: space-between;
   margin-bottom: 0.3125rem;
+}
+
+.name {
+  max-width: 80%;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
