@@ -49,20 +49,12 @@ export const CartProvider = ({ children }: CartProviderProps) => {
     localStorage.setItem('productsInCart', JSON.stringify(updatedItems));
   };
 
-  const removeFromCart = async (id: string) => {
+  const removeFromCart = (id: string) => {
     setIsRemoving(id);
-    try {
-      // Simulate async operation
-      await new Promise(resolve => setTimeout(resolve, 500)); // Simulate network delay
-
-      const updatedItems = productsInCart.filter(item => item.id !== id);
-      setProductsInCart(updatedItems);
-      localStorage.setItem('productsInCart', JSON.stringify(updatedItems));
-    } catch (error) {
-      console.error('Failed to remove item from cart:', error);
-    } finally {
-      setIsRemoving(null);
-    }
+    const updatedItems = productsInCart.filter(item => item.id !== id);
+    setProductsInCart(updatedItems);
+    localStorage.setItem('productsInCart', JSON.stringify(updatedItems));
+    setIsRemoving(null);
   };
 
   const clearCart = () => {
