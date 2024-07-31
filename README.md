@@ -97,25 +97,27 @@ This project provides a practice environment for working with React, focusing on
    ```bash
    pnpm install
    ```
+3. Get endpoint here [link](https://drive.google.com/file/d/1tfLaysfbxfOONfYOL3YYHueK1jIO2s-W/view?usp=sharing)
 
-3. Create enpoint 
+4. User fill value endpoint
 
    ```bash
-   echo "VITE_API_BASE_URL = https://6684bd0356e7503d1ae0ff6f.mockapi.io/" > .env
+   cp .env.example .env
    ```
+   -  Paste all the content you got in step 3 here
 
-4. Start the development server:
+5. Start the development server:
 
    ```bash
    pnpm run dev
    ```
 
-5. Open your browser at [http://localhost:5173/](http://localhost:5173/)
+7. Open your browser at [http://localhost:5173/](http://localhost:5173/)
 
-6. Start storybook
+8. Start storybook
 
    ```bash
    pnpm storybook
    ```
 
-7. Open your browser at [http://localhost:6006/](http://localhost:6006/)
+9. Open your browser at [http://localhost:6006/](http://localhost:6006/)
