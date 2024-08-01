@@ -10,6 +10,7 @@ export const CART_LIST: CartItem[] = [
     color: 'red',
     stock: 10,
     quantity: 5,
+    productId: '20',
   },
   {
     id: '2',
@@ -20,5 +21,6 @@ export const CART_LIST: CartItem[] = [
     color: 'blue',
     stock: 5,
     quantity: 6,
+    productId: '30',
   },
 ];
