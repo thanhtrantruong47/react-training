@@ -55,6 +55,8 @@ const Product: React.FC<ProductProps> = ({
   };
 
   const handleAddToCart = () => {
+    if (!id) return;
+
     const itemId = `${id} ${title} ${colorOfProduct}`;
 
     const newItem: CartItemType = {
