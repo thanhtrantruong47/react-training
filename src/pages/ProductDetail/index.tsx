@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom';
 import ProductList from '../../components/ProductList/ProductList';
 import styles from './productDetail.module.css';
 import MainLayout from '../../layouts/MainLayout';
-import Loading from '../../components/Loading';
+import Loading from '../../components/Loading/Loading';
 import { default as styleUtils } from '../../styles/modules/utils.module.css';
 import Product from '../../components/Product/Product';
 import { useProducts } from '../../hook/useProducts'; // Import the custom hook

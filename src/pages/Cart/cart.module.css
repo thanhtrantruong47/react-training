@@ -60,6 +60,10 @@
   line-height: var(--line-height-lg);
 }
 
+.loading {
+  height: 40rem;
+}
+
 @media (max-width: 1024px) {
   .container {
     margin: 3rem 0; /* 48px / 16 */

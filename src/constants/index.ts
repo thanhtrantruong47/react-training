@@ -2,6 +2,7 @@ import { NavItem } from '../types/navBar';
 
 import bannerImages from '../assets/images/banner.jpg';
 import bannerMoreImages from '../assets/images/banner-more.jpg';
+import bannerClassicImages from '../assets/images/banner-classic.jpg';
 
 // constants.ts
 export const BASE_URL = import.meta.env.VITE_API_BASE_URL;
@@ -33,12 +34,14 @@ export const FOOTER_LIST_CATEGORY = [
   { label: 'Woman', destination: '/', isActive: false },
 ];
 
-export const FOOTER_LIST_CONTACT = [{ label: 'mangcoding@gmail.com', destination: '/', isActive: false }];
+export const FOOTER_LIST_CONTACT = [
+  { label: 'mangcoding@gmail.com', destination: 'mailto:yourname@gmail.com', isActive: false },
+];
 
 export const BANNER_IMAGES = [
   { id: 1, src: bannerImages },
   { id: 2, src: bannerMoreImages },
-  { id: 3, src: bannerMoreImages },
+  { id: 3, src: bannerClassicImages },
 ];
 
 export const BREADCRUMB_ITEMS_CART = [{ label: 'Home', url: '/' }, { label: 'Cart' }];

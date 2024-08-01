@@ -124,14 +124,16 @@ class ApiService<T> {
    * @param {T} data - The updated item data.
    * @returns {Promise<ApiResponse<T>>} A promise that resolves to a Response object containing the updated item.
    */
-  async update(id: string, data: T): Promise<ApiResponse<T>> {
+  async update(id: string, data: Partial<T>, key?: string): Promise<ApiResponse<T>> {
     try {
+      // Construct request body with or without the key
+      const requestBody = key ? { [key]: data } : data;
+
       const response = await fetch(`${this.resourceUrl}/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
+        body: JSON.stringify(requestBody),
       });
-      const updatedItem = await response.json();
 
       if (!response.ok) {
         const errorMessage = `Failed to update item with id: ${id}`;
@@ -139,6 +141,7 @@ class ApiService<T> {
         return { isSuccess: false, errors: [new Error(errorMessage)] };
       }
 
+      const updatedItem = await response.json();
       return { data: updatedItem, isSuccess: true };
     } catch (error) {
       const errorMessage = `Failed to update item with id: ${id}`;

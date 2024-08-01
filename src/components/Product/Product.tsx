@@ -55,6 +55,8 @@ const Product: React.FC<ProductProps> = ({
   };
 
   const handleAddToCart = () => {
+    if (!id) return;
+
     const itemId = `${id} ${title} ${colorOfProduct}`;
 
     const newItem: CartItemType = {
@@ -66,6 +68,7 @@ const Product: React.FC<ProductProps> = ({
       quantity: amountOfProduct,
       id: itemId,
       size: sizeOfProduct,
+      productId: id,
     };
 
     addToCart(newItem);
@@ -98,11 +101,18 @@ const Product: React.FC<ProductProps> = ({
                 <p className={styles.option}>Color</p>
                 <RadioGroup options={colors} onChange={setColorOfProduct} />
               </div>
+
               <div className={styles.stock}>
-                <p>In Stock</p>
-                <span className={styleUtils.flexCenter}>
-                  ({stock}) <StockIcon />
-                </span>
+                {stock > 0 ? (
+                  <>
+                    <p>In Stock</p>
+                    <span className={styleUtils.flexCenter}>
+                      ({stock}) <StockIcon />
+                    </span>
+                  </>
+                ) : (
+                  <p className={styles.soldOut}>Sold Out</p>
+                )}
               </div>
             </div>
             <div>
@@ -122,12 +132,17 @@ const Product: React.FC<ProductProps> = ({
           <div>
             <p className={styles.option}>Quantity</p>
             <div className={`${styleUtils.flexCenter} ${styles.group}`}>
-              <NumberInput value={amountOfProduct} onChange={setAmountOfProduct} />
+              <NumberInput value={amountOfProduct} onChange={setAmountOfProduct} maxValue={stock} />
               <p className={styles.price}>${price} USD</p>
             </div>
           </div>
           <div className={`${styleUtils.flexCenter} ${styles.group}`}>
-            <Button content="Add to Cart" classStyle={`${styles.btn} ${styles.add} `} onClick={handleAddToCart} />
+            <Button
+              content="Add to Cart"
+              classStyle={`${styles.btn} ${styles.add} `}
+              onClick={handleAddToCart}
+              disabled={stock === 0}
+            />
             <Link to={'/cart'}>
               <Button classStyle={`${styles.btn} ${styles.cart}`} icon={CartButton} />
             </Link>

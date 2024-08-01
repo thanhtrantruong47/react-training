@@ -6,10 +6,11 @@ import { useCart } from '../../hook/CartContext';
 import MainLayout from '../../layouts/MainLayout';
 import styles from './cart.module.css';
 import { default as styleUtils } from '../../styles/modules/utils.module.css';
-import Loading from '../../components/Loading';
-import { Link } from 'react-router-dom';
+import Loading from '../../components/Loading/Loading';
+import { Link, useNavigate } from 'react-router-dom';
 import { useToast } from '../../hook/ToastContext';
 import { BREADCRUMB_ITEMS_CART, MESSAGE_SUCCESS } from '../../constants';
+import { ProductAPIService } from '../../services/ProductAPIService';
 
 const Cart = () => {
   const { productsInCart, updateQuantity, removeFromCart, clearCart } = useCart();
@@ -17,7 +18,10 @@ const Cart = () => {
   const [delayedProductsInCart, setDelayedProductsInCart] = useState<typeof productsInCart>([]);
   const [isLoading, setIsLoading] = useState(true);
   const isDisable = true;
+  const [isCheckout, setIsCheckout] = useState(false);
+  const navigate = useNavigate();
 
+  // Simulate the api call process
   useEffect(() => {
     const timer = setTimeout(() => {
       setDelayedProductsInCart(productsInCart);
@@ -36,15 +40,6 @@ const Cart = () => {
     addToast(MESSAGE_SUCCESS.DELETE_CART, true);
   };
 
-  const bannerContent = (
-    <div className={styles.fluidContainer}>
-      <div className={`${styleUtils.container} ${styles.banner}`}>
-        <Breadcrumb items={BREADCRUMB_ITEMS_CART} />
-        <h2 className={styles.title}>Cart</h2>
-      </div>
-    </div>
-  );
-
   const totalPrice = (productsInCart: { price: number; quantity: number }[]) => {
     return productsInCart.reduce((total, product) => {
       return total + product.price * product.quantity;
@@ -53,10 +48,40 @@ const Cart = () => {
 
   const total = totalPrice(delayedProductsInCart);
 
+  const checkout = async () => {
+    setIsLoading(true);
+    const productsInCart = JSON.parse(localStorage.getItem('productsInCart') || '[]');
+
+    for (const product of productsInCart) {
+      const { productId, quantity, stock } = product;
+      const newStock = stock - quantity;
+
+      const stockUpdate = { stock: newStock };
+
+      const response = await ProductAPIService.update(productId, stockUpdate);
+
+      if (response.isSuccess) {
+        clearCart();
+        navigate('/order');
+        setIsLoading(false);
+      } else {
+        addToast('Unable to order now please try again later', false);
+        setIsCheckout(true);
+      }
+    }
+    setIsLoading(false);
+  };
+
   return (
-    <MainLayout bannerContent={bannerContent}>
+    <MainLayout>
+      <div className={styles.fluidContainer}>
+        <div className={`${styleUtils.container} ${styles.banner}`}>
+          <Breadcrumb items={BREADCRUMB_ITEMS_CART} />
+          <h2 className={styles.title}>Cart</h2>
+        </div>
+      </div>
       {isLoading ? (
-        <Loading classStyle={styleUtils.loading} />
+        <Loading classStyle={`${styleUtils.loading} ${styles.loading}`} />
       ) : delayedProductsInCart.length > 0 ? (
         <section className={`${styleUtils.container} ${styles.cart}`}>
           <h2 className={styles.titleCart}>Cart Product</h2>
@@ -69,8 +94,9 @@ const Cart = () => {
             <div className={styles.checkout}>
               <CartSummaryInfo
                 numberProduct={delayedProductsInCart.length}
-                onClickCheckoutButton={clearCart}
+                onClickCheckoutButton={checkout}
                 totalPrice={total}
+                isDisable={isCheckout}
               />
             </div>
           </div>
@@ -84,7 +110,7 @@ const Cart = () => {
             <div className={styles.checkout}>
               <CartSummaryInfo
                 numberProduct={delayedProductsInCart.length}
-                onClickCheckoutButton={clearCart}
+                onClickCheckoutButton={checkout}
                 totalPrice={total}
                 isDisable={isDisable}
               />

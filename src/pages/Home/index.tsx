@@ -7,7 +7,7 @@ import { useState } from 'react';
 import { default as styleUtils } from '../../styles/modules/utils.module.css';
 import { BEST_SELLER_CATEGORY } from '../../constants';
 import { useProducts } from '../../hook/useProducts';
-import Loading from '../../components/Loading';
+import Loading from '../../components/Loading/Loading';
 
 const Home = () => {
   const [tab, setTab] = useState('T-Shirt');
@@ -18,7 +18,8 @@ const Home = () => {
   };
 
   return (
-    <MainLayout bannerContent={<HeroSection />}>
+    <MainLayout>
+      <HeroSection />
       <section className={`${styleUtils.container} ${styles.section}`}>
         <div className={`${styleUtils.flexCenter} ${styles.head}`}>
           <h3>Choose from the best products</h3>
