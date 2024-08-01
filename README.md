@@ -95,8 +95,10 @@ This project provides a practice environment for working with React, focusing on
 2. Install dependencies:
 
    ```bash
+   git checkout feature/practice-two
    pnpm install
    ```
+
 3. Get endpoint here [link](https://drive.google.com/file/d/1tfLaysfbxfOONfYOL3YYHueK1jIO2s-W/view?usp=sharing)
 
 4. User fill value endpoint
@@ -104,7 +106,8 @@ This project provides a practice environment for working with React, focusing on
    ```bash
    cp .env.example .env
    ```
-   -  Paste all the content you got in step 3 here
+
+   - Paste all the content you got in step 3 here
 
 5. Start the development server:
 
@@ -112,12 +115,12 @@ This project provides a practice environment for working with React, focusing on
    pnpm run dev
    ```
 
-7. Open your browser at [http://localhost:5173/](http://localhost:5173/)
+6. Open your browser at [http://localhost:5173/](http://localhost:5173/)
 
-8. Start storybook
+7. Start storybook
 
    ```bash
    pnpm storybook
    ```
 
-9. Open your browser at [http://localhost:6006/](http://localhost:6006/)
+8. Open your browser at [http://localhost:6006/](http://localhost:6006/)
