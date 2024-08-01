@@ -7,5 +7,5 @@ export interface CartItem {
   stock: number;
   quantity: number;
   size?: string;
-  productId?: string;
+  productId: string;
 }
