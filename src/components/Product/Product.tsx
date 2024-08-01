@@ -132,7 +132,7 @@ const Product: React.FC<ProductProps> = ({
           <div>
             <p className={styles.option}>Quantity</p>
             <div className={`${styleUtils.flexCenter} ${styles.group}`}>
-              <NumberInput value={amountOfProduct} onChange={setAmountOfProduct} max={stock} />
+              <NumberInput value={amountOfProduct} onChange={setAmountOfProduct} maxValue={stock} />
               <p className={styles.price}>${price} USD</p>
             </div>
           </div>
