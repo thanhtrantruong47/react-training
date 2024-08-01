@@ -5,7 +5,7 @@ import DeleteIcon from '../Icon/DeleteIcon';
 import Button from '../Button/Button';
 import { useState } from 'react';
 import unAvailableImage from '../../assets/images/no-image.jpg';
-import Loading from '../Loading';
+import Loading from '../Loading/Loading';
 
 interface CartItemProps {
   id: string;

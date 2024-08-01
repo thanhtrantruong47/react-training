@@ -1,4 +1,4 @@
-import styles from './index.module.css';
+import styles from './loading.module.css';
 
 const Loading = ({ classStyle = '' }: { classStyle?: string }) => {
   return (

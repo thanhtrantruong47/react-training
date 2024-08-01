@@ -7,7 +7,7 @@ import { useState } from 'react';
 import { default as styleUtils } from '../../styles/modules/utils.module.css';
 import { BEST_SELLER_CATEGORY } from '../../constants';
 import { useProducts } from '../../hook/useProducts';
-import Loading from '../../components/Loading';
+import Loading from '../../components/Loading/Loading';
 
 const Home = () => {
   const [tab, setTab] = useState('T-Shirt');

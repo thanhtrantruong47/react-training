@@ -6,7 +6,7 @@ import { useCart } from '../../hook/CartContext';
 import MainLayout from '../../layouts/MainLayout';
 import styles from './cart.module.css';
 import { default as styleUtils } from '../../styles/modules/utils.module.css';
-import Loading from '../../components/Loading';
+import Loading from '../../components/Loading/Loading';
 import { Link, useNavigate } from 'react-router-dom';
 import { useToast } from '../../hook/ToastContext';
 import { BREADCRUMB_ITEMS_CART, MESSAGE_SUCCESS } from '../../constants';
@@ -21,6 +21,7 @@ const Cart = () => {
   const [isCheckout, setIsCheckout] = useState(false);
   const navigate = useNavigate();
 
+  // Simulate the api call process
   useEffect(() => {
     const timer = setTimeout(() => {
       setDelayedProductsInCart(productsInCart);
