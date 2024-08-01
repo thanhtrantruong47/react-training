@@ -14,9 +14,15 @@ const FooterNavList = ({ listItemFooter, title }: FooterNavListProps) => {
       <ul className={styles.item}>
         {listItemFooter.map(({ label, destination }) => (
           <li key={label}>
-            <Link className={styles.link} to={destination}>
-              {label}
-            </Link>
+            {destination.startsWith('mailto:') ? (
+              <Link className={styles.link} to={destination}>
+                {label}
+              </Link>
+            ) : (
+              <Link className={styles.link} to={destination}>
+                {label}
+              </Link>
+            )}
           </li>
         ))}
       </ul>

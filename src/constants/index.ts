@@ -34,7 +34,9 @@ export const FOOTER_LIST_CATEGORY = [
   { label: 'Woman', destination: '/', isActive: false },
 ];
 
-export const FOOTER_LIST_CONTACT = [{ label: 'mangcoding@gmail.com', destination: '/', isActive: false }];
+export const FOOTER_LIST_CONTACT = [
+  { label: 'mangcoding@gmail.com', destination: 'mailto:yourname@gmail.com', isActive: false },
+];
 
 export const BANNER_IMAGES = [
   { id: 1, src: bannerImages },

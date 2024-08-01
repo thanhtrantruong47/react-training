@@ -7,7 +7,7 @@ interface CartContextType {
   updateQuantity: (id: string, newQuantity: number) => void;
   removeFromCart: (id: string) => void;
   clearCart: () => void;
-  isRemoving: string | null; // Track which item is being removed
+  isRemoving?: string | null; // Track which item is being removed
 }
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
