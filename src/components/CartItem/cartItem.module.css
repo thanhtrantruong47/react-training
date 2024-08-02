@@ -11,9 +11,10 @@
   font-size: var(--font-size-nm);
   font-weight: var(--font-weight-bold);
   overflow: hidden;
-  white-space: nowrap;
   transition: all 0.3s ease-in-out;
-  max-width: 8.875rem;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  max-width: max-content;
 }
 
 .desc {
@@ -44,7 +45,7 @@
 
 .option {
   display: grid;
-  height: 3.875rem; /* 62px */
+  gap: 0.5rem;
 }
 
 .quantity {
