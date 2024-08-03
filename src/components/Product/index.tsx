@@ -11,9 +11,9 @@ import CartButton from '../Icon/CartButton';
 import { compactNumber } from '../../utils/compactNumber';
 import RadioGroup from '../Radio';
 import { CartItem as CartItemType } from '../../types/cartItem';
-import { useCart } from '../../hooks/CartContext';
+import { useCart } from '../../contexts/CartContext';
 import Breadcrumb from '../Breadcrumb';
-import { useToast } from '../../hooks/ToastContext';
+import { useToast } from '../../contexts/ToastContext';
 import { BREADCRUMB_ITEMS_DETAIl, MESSAGE_SUCCESS } from '../../constants';
 
 export interface ProductProps {

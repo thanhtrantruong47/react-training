@@ -3,8 +3,8 @@ import Home from './pages/Home';
 import Cart from './pages/Cart';
 import Order from './pages/Order';
 import NotFound from './pages/NotFound';
-import { CartProvider } from './hooks/CartContext';
-import { ToastProvider } from './hooks/ToastContext';
+import { CartProvider } from './contexts/CartContext';
+import { ToastProvider } from './contexts/ToastContext';
 import ProductDetail from './pages/ProductDetail';
 
 const App = () => {

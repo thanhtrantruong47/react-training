@@ -9,7 +9,7 @@ import NavBar from '../NavBar';
 import styles from './header.module.css';
 import { default as styleUtils } from '../../styles/modules/utils.module.css';
 import { Link } from 'react-router-dom';
-import { useCart } from '../../hooks/CartContext';
+import { useCart } from '../../contexts/CartContext';
 
 const Header = () => {
   const { productsInCart } = useCart();

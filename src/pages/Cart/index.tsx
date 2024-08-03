@@ -2,13 +2,13 @@ import { useEffect, useState } from 'react';
 import Breadcrumb from '../../components/Breadcrumb';
 import CartList from '../../components/CartList';
 import CartSummaryInfo from '../../components/CartSummaryInfo';
-import { useCart } from '../../hooks/CartContext';
+import { useCart } from '../../contexts/CartContext';
 import MainLayout from '../../layouts';
 import styles from './cart.module.css';
 import { default as styleUtils } from '../../styles/modules/utils.module.css';
 import Loading from '../../components/Loading';
 import { Link, useNavigate } from 'react-router-dom';
-import { useToast } from '../../hooks/ToastContext';
+import { useToast } from '../../contexts/ToastContext';
 import { BREADCRUMB_ITEMS_CART, MESSAGE_SUCCESS } from '../../constants';
 import { ProductAPIService } from '../../services/ProductAPIService';
 
