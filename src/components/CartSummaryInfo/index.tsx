@@ -1,4 +1,4 @@
-import Button from '../Button/Button';
+import Button from '../Button';
 import styles from './cartSummaryInfo.module.css';
 import { default as styleUtils } from '../../styles/modules/utils.module.css';
 

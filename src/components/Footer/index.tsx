@@ -1,4 +1,4 @@
-import FooterNavList from '../FooterNavList/FooterNavList';
+import FooterNavList from '../FooterNavList';
 import styles from './footer.module.css';
 import companyLogo from '../../assets/images/logo.svg';
 import { Link } from 'react-router-dom';

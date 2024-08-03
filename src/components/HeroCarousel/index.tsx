@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import styles from './heroCarousel.module.css';
-import Button from '../Button/Button';
+import Button from '../Button';
 import PrevIcon from '../Icon/PrevIcon';
 import NextIcon from '../Icon/NextIcon';
 import { ImagesCarousel } from '../../types/carousel';

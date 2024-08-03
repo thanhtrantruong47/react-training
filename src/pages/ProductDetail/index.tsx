@@ -1,19 +1,19 @@
 import { useParams } from 'react-router-dom';
-import ProductList from '../../components/ProductList/ProductList';
+import ProductList from '../../components/ProductList';
 import styles from './productDetail.module.css';
-import MainLayout from '../../layouts/MainLayout';
-import Loading from '../../components/Loading/Loading';
+import MainLayout from '../../layouts';
+import Loading from '../../components/Loading';
 import { default as styleUtils } from '../../styles/modules/utils.module.css';
-import Product from '../../components/Product/Product';
-import { useProducts } from '../../hook/useProducts'; // Import the custom hook
-import { useProductById } from '../../hook/useProductById';
+import Product from '../../components/Product';
+import { useProducts } from '../../hooks/useProducts'; // Import the custom hook
+import { useProductById } from '../../hooks/useProductById';
 
 const ProductDetail = () => {
   const { id } = useParams<{ id: string }>();
 
   // Use the useProducts hook for related products
   const { product, isLoading: isProductLoading } = useProductById(id || '');
-  const { products, isLoading: isRelatedProductsLoading, isHasMore, onLoadMore } = useProducts(product?.category || '');
+  const { products, isLoading: isRelatedProductsLoading, hasMore, onLoadMore } = useProducts(product?.category || '');
 
   return (
     <MainLayout>
@@ -42,7 +42,7 @@ const ProductDetail = () => {
           {isRelatedProductsLoading && products.length === 0 ? (
             <Loading classStyle={styleUtils.loading} />
           ) : (
-            <ProductList products={products} onClick={onLoadMore} hasMore={isHasMore} />
+            <ProductList products={products} onClick={onLoadMore} hasMore={hasMore} />
           )}
         </div>
       </div>

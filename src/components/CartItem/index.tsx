@@ -1,11 +1,11 @@
 import styles from './cartItem.module.css';
 import { default as styleUtils } from '../../styles/modules/utils.module.css';
-import NumberInput from '../NumberInput/NumberInput';
+import NumberInput from '../NumberInput';
 import DeleteIcon from '../Icon/DeleteIcon';
-import Button from '../Button/Button';
+import Button from '../Button';
 import { useState } from 'react';
 import unAvailableImage from '../../assets/images/no-image.jpg';
-import Loading from '../Loading/Loading';
+import Loading from '../Loading';
 
 interface CartItemProps {
   id: string;
@@ -16,20 +16,10 @@ interface CartItemProps {
   quantity: number;
   stock: number;
   onQuantityChange: (id: string, quantity: number) => void;
-  onChangeDelete: (id: string) => void;
+  onDelete: (id: string) => void;
 }
 
-const CartItem = ({
-  id,
-  image,
-  title,
-  price,
-  color,
-  quantity,
-  stock,
-  onQuantityChange,
-  onChangeDelete,
-}: CartItemProps) => {
+const CartItem = ({ id, image, title, price, color, quantity, stock, onQuantityChange, onDelete }: CartItemProps) => {
   const [amountOfProduct, setAmountOfProduct] = useState<number>(quantity);
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
@@ -40,7 +30,7 @@ const CartItem = ({
 
   const handleClick = () => {
     setIsLoading(true);
-    onChangeDelete(id);
+    onDelete(id);
 
     setTimeout(() => {
       setIsLoading(false);

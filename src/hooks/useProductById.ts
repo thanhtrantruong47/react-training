@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Product as ProductType } from '../types/product';
 import { ProductAPIService } from '../services/ProductAPIService';
-import { PRODUCTS_MOCK as mockProducts } from '../mock/products';
+import { PRODUCTS_MOCK as mockProducts } from '../mocks/products';
 
 const useMockData = import.meta.env.USE_MOCK_FOR_API_FAIL === 'true';
 

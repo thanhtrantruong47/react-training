@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import NavBar from './NavBar';
+import NavBar from '.';
 import { NAV_BAR_ITEMS } from '../../constants';
 
 export default {

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import ProductList from './ProductList';
-import { PRODUCT_LIST } from '../../mock/productList';
+import ProductList from '.';
+import { PRODUCT_LIST } from '../../mocks/productList';
 
 export default {
   component: ProductList,

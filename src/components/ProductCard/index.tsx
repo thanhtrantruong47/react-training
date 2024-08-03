@@ -6,7 +6,7 @@ import BookMarkIcon from '../Icon/BookMarkIcon';
 import LikedIcon from '../Icon/LikedIcon';
 import { Link } from 'react-router-dom';
 import unAvailableImage from '../../assets/images/no-image.jpg';
-import Button from '../Button/Button';
+import Button from '../Button';
 
 interface ProductCardProps {
   id: number;

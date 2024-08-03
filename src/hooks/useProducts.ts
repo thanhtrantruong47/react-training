@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Product } from '../types/product';
 import { ProductAPIService } from '../services/ProductAPIService';
-import { PRODUCTS_MOCK as mockProducts } from '../mock/products';
+import { PRODUCTS_MOCK as mockProducts } from '../mocks/products';
 
 const productsPerPage = 8;
 
@@ -10,7 +10,7 @@ const useMockData = import.meta.env.USE_MOCK_FOR_API_FAIL;
 interface UseProductsResult {
   products: Product[];
   isLoading: boolean;
-  isHasMore: boolean;
+  hasMore: boolean;
   onLoadMore: () => void;
 }
 
@@ -41,7 +41,7 @@ export const useProducts = (category: string): UseProductsResult => {
   const [products, setProducts] = useState<Product[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const [isHasMore, setIsHasMore] = useState(true);
+  const [hasMore, sethasMore] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -54,7 +54,7 @@ export const useProducts = (category: string): UseProductsResult => {
       if (!result) return;
 
       setProducts(result.data);
-      setIsHasMore(result.total > productsPerPage); // Determine if more data exists
+      sethasMore(result.total > productsPerPage); // Determine if more data exists
       setIsLoading(false);
     };
 
@@ -62,15 +62,15 @@ export const useProducts = (category: string): UseProductsResult => {
   }, [category]);
 
   const onLoadMore = async () => {
-    if (!isHasMore) return;
+    if (!hasMore) return;
 
     const result = await fetchProducts(category, currentPage);
     if (!result) return;
 
     setProducts(prevProducts => [...prevProducts, ...result.data]);
     setCurrentPage(prevPage => prevPage + 1);
-    setIsHasMore(result.total > (currentPage + 1) * productsPerPage); // Check if there are more products
+    sethasMore(result.total > (currentPage + 1) * productsPerPage); // Check if there are more products
   };
 
-  return { products, isLoading, isHasMore, onLoadMore };
+  return { products, isLoading, hasMore, onLoadMore };
 };

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import ProductCart from './ProductCart';
+import ProductCart from '.';
 import productImage from '../../assets/images/delete.svg';
 
 export default {

@@ -3,17 +3,17 @@ import styles from './product.module.css';
 import { default as styleUtils } from '../../styles/modules/utils.module.css';
 import StarIcon from '../Icon/StarIcon';
 import StockIcon from '../Icon/StockIcon';
-import ProductImages from '../ProductImages/ProductImages';
-import NumberInput from '../NumberInput/NumberInput';
-import Button from '../Button/Button';
+import ProductImages from '../ProductImages';
+import NumberInput from '../NumberInput';
+import Button from '../Button';
 import { Link, useParams } from 'react-router-dom';
 import CartButton from '../Icon/CartButton';
 import { compactNumber } from '../../utils/compactNumber';
-import RadioGroup from '../Radio/Radio';
+import RadioGroup from '../Radio';
 import { CartItem as CartItemType } from '../../types/cartItem';
-import { useCart } from '../../hook/CartContext';
-import Breadcrumb from '../Breadcrumb/Breadcrumbs';
-import { useToast } from '../../hook/ToastContext';
+import { useCart } from '../../hooks/CartContext';
+import Breadcrumb from '../Breadcrumb';
+import { useToast } from '../../hooks/ToastContext';
 import { BREADCRUMB_ITEMS_DETAIl, MESSAGE_SUCCESS } from '../../constants';
 
 export interface ProductProps {

@@ -3,13 +3,13 @@ import { CartIcon } from '../Icon/CartIcon';
 import { LikeIcon } from '../Icon/LikeIcon';
 import { LoginIcon } from '../Icon/LoginIcon';
 import { SearchIcon } from '../Icon/SearchIcon';
-import Input from '../Input/Input';
-import Logo from '../Logo/Logo';
-import NavBar from '../NavBar/NavBar';
+import Input from '../Input';
+import Logo from '../Logo';
+import NavBar from '../NavBar';
 import styles from './header.module.css';
 import { default as styleUtils } from '../../styles/modules/utils.module.css';
 import { Link } from 'react-router-dom';
-import { useCart } from '../../hook/CartContext';
+import { useCart } from '../../hooks/CartContext';
 
 const Header = () => {
   const { productsInCart } = useCart();

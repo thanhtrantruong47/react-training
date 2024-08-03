@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import CartItem from './CartItem';
+import CartItem from '.';
 
 export default {
   component: CartItem,

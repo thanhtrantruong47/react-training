@@ -1,17 +1,17 @@
-import HeroSection from '../../components/HeroSection/HeroSection';
-import ProductList from '../../components/ProductList/ProductList';
-import MainLayout from '../../layouts/MainLayout';
+import HeroSection from '../../components/HeroSection';
+import ProductList from '../../components/ProductList';
+import MainLayout from '../../layouts';
 import styles from './home.module.css';
-import TabList from '../../components/TabList/TabList';
+import TabList from '../../components/TabList';
 import { useState } from 'react';
 import { default as styleUtils } from '../../styles/modules/utils.module.css';
 import { BEST_SELLER_CATEGORY } from '../../constants';
-import { useProducts } from '../../hook/useProducts';
-import Loading from '../../components/Loading/Loading';
+import { useProducts } from '../../hooks/useProducts';
+import Loading from '../../components/Loading';
 
 const Home = () => {
   const [tab, setTab] = useState('T-Shirt');
-  const { products, isLoading, onLoadMore, isHasMore } = useProducts(tab);
+  const { products, isLoading, onLoadMore, hasMore } = useProducts(tab);
 
   const handleTabChange = (item: string) => {
     setTab(item);
@@ -33,7 +33,7 @@ const Home = () => {
             {products.length === 0 ? (
               <p className={styles.noProducts}>No products available in this category.</p>
             ) : (
-              <ProductList products={products} onClick={onLoadMore} hasMore={isHasMore} />
+              <ProductList products={products} onClick={onLoadMore} hasMore={hasMore} />
             )}
           </>
         )}

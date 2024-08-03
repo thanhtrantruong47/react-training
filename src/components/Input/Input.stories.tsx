@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import Input from './Input';
+import Input from '.';
 import { SearchIcon } from '../Icon/SearchIcon';
 import { fn } from '@storybook/test';
 

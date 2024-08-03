@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react';
-import Breadcrumb from '../../components/Breadcrumb/Breadcrumbs';
-import CartList from '../../components/CartList/CartList';
-import CartSummaryInfo from '../../components/CartSummaryInfo/CartSummaryInfo';
-import { useCart } from '../../hook/CartContext';
-import MainLayout from '../../layouts/MainLayout';
+import Breadcrumb from '../../components/Breadcrumb';
+import CartList from '../../components/CartList';
+import CartSummaryInfo from '../../components/CartSummaryInfo';
+import { useCart } from '../../hooks/CartContext';
+import MainLayout from '../../layouts';
 import styles from './cart.module.css';
 import { default as styleUtils } from '../../styles/modules/utils.module.css';
-import Loading from '../../components/Loading/Loading';
+import Loading from '../../components/Loading';
 import { Link, useNavigate } from 'react-router-dom';
-import { useToast } from '../../hook/ToastContext';
+import { useToast } from '../../hooks/ToastContext';
 import { BREADCRUMB_ITEMS_CART, MESSAGE_SUCCESS } from '../../constants';
 import { ProductAPIService } from '../../services/ProductAPIService';
 
@@ -89,7 +89,7 @@ const Cart = () => {
             <CartList
               cartItems={delayedProductsInCart}
               onQuantityChange={handleQuantityChange}
-              onChangeDelete={handleDelete}
+              onDelete={handleDelete}
             />
             <div className={styles.checkout}>
               <CartSummaryInfo

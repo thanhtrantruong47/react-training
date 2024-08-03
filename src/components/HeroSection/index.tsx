@@ -1,5 +1,5 @@
-import Button from '../Button/Button';
-import HeroCarousel from '../HeroCarousel/HeroCarousel';
+import Button from '../Button';
+import HeroCarousel from '../HeroCarousel';
 import styles from './heroSection.module.css';
 import { default as styleUtils } from '../../styles/modules/utils.module.css';
 import { BANNER_IMAGES } from '../../constants';
