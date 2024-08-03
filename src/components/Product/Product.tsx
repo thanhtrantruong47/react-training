@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import styles from './product.module.css';
 import { default as styleUtils } from '../../styles/modules/utils.module.css';
-import StarIcon from '../Icon/StarIcon';
 import StockIcon from '../Icon/StockIcon';
 import ProductImages from '../ProductImages/ProductImages';
 import NumberInput from '../NumberInput/NumberInput';
@@ -15,6 +14,7 @@ import { useCart } from '../../hook/CartContext';
 import Breadcrumb from '../Breadcrumb/Breadcrumbs';
 import { useToast } from '../../hook/ToastContext';
 import { BREADCRUMB_ITEMS_DETAIl, MESSAGE_SUCCESS } from '../../constants';
+import Rating from '../Rating/Rating';
 
 export interface ProductProps {
   images: string[];
@@ -88,9 +88,7 @@ const Product: React.FC<ProductProps> = ({
             <p className={styles.desc}>{description}</p>
             <div className={styles.rateGroup}>
               <div className={styles.rate}>
-                {Array.from({ length: numberRating }).map((_, index) => (
-                  <StarIcon key={`${title}_${index}`} />
-                ))}
+                <Rating numberRating={numberRating} />
               </div>
               <p>({compactNumber(rate)})</p>
             </div>

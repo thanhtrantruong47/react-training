@@ -1,9 +1,15 @@
+import StarIcon from '../Icon/StarIcon';
+
 interface RatingProps {
-  rate: number;
+  numberRating: number;
 }
 
-const Rating = (_: RatingProps) => {
-  return <></>;
-};
+const Rating = ({ numberRating }: RatingProps) => (
+  <>
+    {Array.from({ length: numberRating }).map((_, index) => (
+      <StarIcon key={index} />
+    ))}
+  </>
+);
 
 export default Rating;

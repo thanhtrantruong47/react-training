@@ -1,5 +1,4 @@
 import { default as styleUtils } from '../../styles/modules/utils.module.css';
-import StarIcon from '../Icon/StarIcon';
 import styles from './productCart.module.css';
 import { compactNumber } from '../../utils/compactNumber';
 import BookMarkIcon from '../Icon/BookMarkIcon';
@@ -7,6 +6,7 @@ import LikedIcon from '../Icon/LikedIcon';
 import { Link } from 'react-router-dom';
 import unAvailableImage from '../../assets/images/no-image.jpg';
 import Button from '../Button/Button';
+import Rating from '../Rating/Rating';
 
 interface ProductCardProps {
   id: number;
@@ -42,9 +42,7 @@ const ProductCard = ({ id, image, title, price, description, numberRating, rate,
         <p className={styles.desc}>{description}</p>
         <div className={`${styles.ratingGroup} ${styleUtils.flexCenter}`}>
           <div className={`${styles.numberRating} ${styleUtils.flexCenter}`}>
-            {Array.from({ length: numberRating }).map((_, index) => (
-              <StarIcon key={`${title}_${index}`} />
-            ))}
+            <Rating numberRating={numberRating} />
           </div>
           <p className={styles.ratingGroup}>({compactNumber(rate)})</p>
         </div>
