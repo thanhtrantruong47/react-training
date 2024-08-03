@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { default as styleUtils } from '../../styles/modules/utils.module.css';
 import styles from './tabList.module.css';
 import TabItem from '../TabItem/TabItem';
@@ -9,17 +9,16 @@ interface TabListProps {
 }
 
 const TabList = ({ items, onChangeTab }: TabListProps) => {
-  const [activeTab, setActiveTab] = useState<number>(0);
+  const location = useLocation();
 
-  const handleTabChange = (index: number, item: string) => {
-    setActiveTab(index);
-    onChangeTab(item);
-  };
+  // Parse the query string
+  const queryParams = new URLSearchParams(location.search);
+  const category = queryParams.get('category') || 'T-Shirt';
 
   return (
     <div className={`${styleUtils.flexCenter} ${styles.tabList}`}>
-      {items.map((item, index) => (
-        <TabItem key={item} label={item} isActive={index === activeTab} onChange={() => handleTabChange(index, item)} />
+      {items.map(item => (
+        <TabItem key={item} label={item} isActive={item === category} onChange={onChangeTab} />
       ))}
     </div>
   );
