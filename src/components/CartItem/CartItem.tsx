@@ -1,11 +1,11 @@
 import styles from './cartItem.module.css';
 import { default as styleUtils } from '../../styles/modules/utils.module.css';
-import NumberInput from '../NumberInput/NumberInput';
-import DeleteIcon from '../Icon/DeleteIcon';
-import Button from '../Button/Button';
+import NumberInput from 'components/NumberInput/NumberInput';
+import DeleteIcon from 'components/Icon/DeleteIcon';
+import Button from 'components/Button/Button';
 import { useState } from 'react';
 import unAvailableImage from '../../assets/images/no-image.jpg';
-import Loading from '../Loading/Loading';
+import Loading from 'components/Loading/Loading';
 
 interface CartItemProps {
   id: string;

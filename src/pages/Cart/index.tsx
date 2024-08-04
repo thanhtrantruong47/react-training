@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
-import Breadcrumb from '../../components/Breadcrumb/Breadcrumbs';
-import CartList from '../../components/CartList/CartList';
-import CartSummaryInfo from '../../components/CartSummaryInfo/CartSummaryInfo';
+import Breadcrumb from 'components/Breadcrumb/Breadcrumbs';
+import CartList from 'components/CartList/CartList';
+import CartSummaryInfo from 'components/CartSummaryInfo/CartSummaryInfo';
 import { useCart } from '../../hook/CartContext';
 import MainLayout from '../../layouts/MainLayout';
 import styles from './cart.module.css';
 import { default as styleUtils } from '../../styles/modules/utils.module.css';
-import Loading from '../../components/Loading/Loading';
+import Loading from 'components/Loading/Loading';
 import { Link, useNavigate } from 'react-router-dom';
 import { useToast } from '../../hook/ToastContext';
 import { BREADCRUMB_ITEMS_CART, MESSAGE_SUCCESS } from '../../constants';

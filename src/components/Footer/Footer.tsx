@@ -1,12 +1,12 @@
-import FooterNavList from '../FooterNavList/FooterNavList';
+import FooterNavList from 'components/FooterNavList/FooterNavList';
 import styles from './footer.module.css';
 import companyLogo from '../../assets/images/logo.svg';
 import { Link } from 'react-router-dom';
 import { FOOTER_LIST_CATEGORY, FOOTER_LIST_CONTACT, FOOTER_LIST_HOME, FOOTER_LIST_SHOP } from '../../constants';
-import InstagramIcon from '../Icon/InstagramIcon';
-import TwitterIcon from '../Icon/TwitterIcon';
-import InIcon from '../Icon/InIcon';
-import FaceBookIcon from '../Icon/FaceBookIcon';
+import InstagramIcon from 'components//Icon/InstagramIcon';
+import TwitterIcon from 'components/Icon/TwitterIcon';
+import InIcon from 'components/Icon/InIcon';
+import FaceBookIcon from 'components/Icon/FaceBookIcon';
 import { default as styleUtils } from '../../styles/modules/utils.module.css';
 
 const Footer = () => {

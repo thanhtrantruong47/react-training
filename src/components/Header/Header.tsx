@@ -1,11 +1,11 @@
 import { NAV_BAR_ITEMS } from '../../constants';
-import { CartIcon } from '../Icon/CartIcon';
-import { LikeIcon } from '../Icon/LikeIcon';
-import { LoginIcon } from '../Icon/LoginIcon';
-import { SearchIcon } from '../Icon/SearchIcon';
-import Input from '../Input/Input';
-import Logo from '../Logo/Logo';
-import NavBar from '../NavBar/NavBar';
+import { CartIcon } from 'components/Icon/CartIcon';
+import { LikeIcon } from 'components/Icon/LikeIcon';
+import { LoginIcon } from 'components/Icon/LoginIcon';
+import { SearchIcon } from 'components/Icon/SearchIcon';
+import Input from 'components/Input/Input';
+import Logo from 'components/Logo/Logo';
+import NavBar from 'components/NavBar/NavBar';
 import styles from './header.module.css';
 import { default as styleUtils } from '../../styles/modules/utils.module.css';
 import { Link } from 'react-router-dom';

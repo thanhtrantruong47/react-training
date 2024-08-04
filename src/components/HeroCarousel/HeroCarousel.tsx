@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import styles from './heroCarousel.module.css';
-import Button from '../Button/Button';
-import PrevIcon from '../Icon/PrevIcon';
-import NextIcon from '../Icon/NextIcon';
+import Button from 'components/Button/Button';
+import PrevIcon from 'components/Icon/PrevIcon';
+import NextIcon from 'components/Icon/NextIcon';
 import { ImagesCarousel } from '../../types/carousel';
 import unAvailableImage from '../../assets/images/no-image.jpg';
 

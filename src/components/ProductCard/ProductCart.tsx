@@ -1,12 +1,12 @@
 import { default as styleUtils } from '../../styles/modules/utils.module.css';
-import StarIcon from '../Icon/StarIcon';
+import StarIcon from 'components/Icon/StarIcon';
 import styles from './productCart.module.css';
 import { compactNumber } from '../../utils/compactNumber';
-import BookMarkIcon from '../Icon/BookMarkIcon';
-import LikedIcon from '../Icon/LikedIcon';
+import BookMarkIcon from 'components/Icon/BookMarkIcon';
+import LikedIcon from 'components//Icon/LikedIcon';
 import { Link } from 'react-router-dom';
 import unAvailableImage from '../../assets/images/no-image.jpg';
-import Button from '../Button/Button';
+import Button from 'components/Button/Button';
 
 interface ProductCardProps {
   id: number;

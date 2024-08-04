@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { default as styleUtils } from '../../styles/modules/utils.module.css';
 import styles from './tabList.module.css';
-import TabItem from '../TabItem/TabItem';
+import TabItem from 'components/TabItem/TabItem';
 
 interface TabListProps {
   items: string[];
