@@ -11,6 +11,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useToast } from '../../hook/ToastContext';
 import { BREADCRUMB_ITEMS_CART, MESSAGE_SUCCESS } from '../../constants';
 import { ProductAPIService } from '../../services/ProductAPIService';
+import Overlay from '../../components/Overlay';
 
 const Cart = () => {
   const { productsInCart, updateQuantity, removeFromCart, clearCart } = useCart();
@@ -20,6 +21,7 @@ const Cart = () => {
   const isDisable = true;
   const [isCheckout, setIsCheckout] = useState(false);
   const navigate = useNavigate();
+  const [showOverlay, setShowOverlay] = useState(false); // State for overlay
 
   // Simulate the api call process
   useEffect(() => {
@@ -36,8 +38,13 @@ const Cart = () => {
   };
 
   const handleDelete = (id: string) => {
-    removeFromCart(id);
-    addToast(MESSAGE_SUCCESS.DELETE_CART, true);
+    setShowOverlay(true);
+
+    setTimeout(() => {
+      setShowOverlay(false);
+      removeFromCart(id);
+      addToast(MESSAGE_SUCCESS.DELETE_CART, true);
+    }, 2000);
   };
 
   const totalPrice = (productsInCart: { price: number; quantity: number }[]) => {
@@ -118,6 +125,7 @@ const Cart = () => {
           </div>
         </div>
       )}
+      <Overlay isShow={showOverlay} />
     </MainLayout>
   );
 };
