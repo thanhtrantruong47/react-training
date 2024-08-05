@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { default as styleUtils } from '../../styles/modules/utils.module.css';
+import { default as styleUtils } from 'styles/modules/utils.module.css';
 import styles from './breadcrumbs.module.css';
 
 interface BreadcrumbProps {

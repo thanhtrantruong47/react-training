@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import HeroCarousel from './HeroCarousel';
-import { BANNER_IMAGES } from '../../constants';
+import { BANNER_IMAGES } from 'constants';
 
 export default {
   component: HeroCarousel,

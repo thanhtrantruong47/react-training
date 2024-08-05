@@ -1,4 +1,4 @@
-export const SearchIcon = () => (
+const SearchIcon = () => (
   <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
     <circle cx="7.875" cy="7.875" r="5.0625" stroke="currentColor" strokeWidth="1.125" />
     <rect
@@ -12,3 +12,5 @@ export const SearchIcon = () => (
     />
   </svg>
 );
+
+export default SearchIcon;

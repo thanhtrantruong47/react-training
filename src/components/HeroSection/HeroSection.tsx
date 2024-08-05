@@ -1,8 +1,7 @@
-import Button from '../Button/Button';
-import HeroCarousel from '../HeroCarousel/HeroCarousel';
+import { Button, HeroCarousel } from 'components';
 import styles from './heroSection.module.css';
-import { default as styleUtils } from '../../styles/modules/utils.module.css';
-import { BANNER_IMAGES } from '../../constants';
+import { default as styleUtils } from 'styles/modules/utils.module.css';
+import { BANNER_IMAGES } from 'constants';
 
 const HeroSection = () => {
   return (

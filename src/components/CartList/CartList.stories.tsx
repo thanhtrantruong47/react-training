@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import CartList from './CartList';
-import { CART_LIST } from '../../mock/carts';
+import { CART_LIST } from 'mock/carts';
 
 export default {
   component: CartList,

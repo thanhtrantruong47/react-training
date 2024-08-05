@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { default as styleUtils } from '../../styles/modules/utils.module.css'; // Correct way to alias CSS module
+import { default as styleUtils } from 'styles/modules/utils.module.css'; // Correct way to alias CSS module
 import styles from './navBarItem.module.css';
 
 interface NavBarItemProps {
