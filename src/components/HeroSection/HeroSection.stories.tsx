@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import HeroSection from './HeroSection';
+import { HeroSection } from '@/components';
 
 export default {
   component: HeroSection,
-  title: 'Components/HeroSection',
+  title: '@/components/HeroSection',
 } as Meta;
 
 type Story = StoryObj<typeof HeroSection>;

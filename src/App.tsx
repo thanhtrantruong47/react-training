@@ -1,11 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Home from './pages/Home';
-import Cart from './pages/Cart';
-import Order from './pages/Order';
-import NotFound from './pages/NotFound';
-import { CartProvider } from './hook/CartContext';
-import { ToastProvider } from './hook/ToastContext';
-import ProductDetail from './pages/ProductDetail';
+import { Home, Cart, Order, NotFound, ProductDetail } from '@/pages';
+import { CartProvider, ToastProvider } from '@/contexts';
 
 const App = () => {
   return (

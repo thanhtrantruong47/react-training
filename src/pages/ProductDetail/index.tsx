@@ -1,12 +1,10 @@
 import { useParams } from 'react-router-dom';
-import ProductList from '../../components/ProductList/ProductList';
 import styles from './productDetail.module.css';
-import MainLayout from '../../layouts/MainLayout';
-import Loading from '../../components/Loading/Loading';
-import { default as styleUtils } from '../../styles/modules/utils.module.css';
-import Product from '../../components/Product/Product';
-import { useProducts } from '../../hook/useProducts'; // Import the custom hook
-import { useProductById } from '../../hook/useProductById';
+import MainLayout from '@/layouts';
+import { default as styleUtils } from '@/styles/modules/utils.module.css';
+import { useProducts } from '@/hooks/'; // Import the custom hook
+import { useProductById } from '@/hooks/useProductById';
+import { Product, Loading, ProductList } from '@/components';
 
 const ProductDetail = () => {
   const { id } = useParams<{ id: string }>();
@@ -15,7 +13,7 @@ const ProductDetail = () => {
   const { product, isLoading: isProductLoading, status } = useProductById(id || '');
 
   // Use the useProducts hook for related products
-  const { products, isLoading: isRelatedProductsLoading, isHasMore, onLoadMore } = useProducts(product?.category || '');
+  const { products, isLoading: isRelatedProductsLoading, hasMore, onLoadMore } = useProducts(product?.category || '');
 
   // Determine loading state
   const isLoading = isProductLoading && status === undefined;
@@ -50,7 +48,7 @@ const ProductDetail = () => {
                   ) : (
                     <>
                       <p className={styles.title}>Same Product</p>
-                      <ProductList products={products} onClick={onLoadMore} hasMore={isHasMore} />
+                      <ProductList products={products} onClick={onLoadMore} hasMore={hasMore} />
                     </>
                   )}
                 </div>

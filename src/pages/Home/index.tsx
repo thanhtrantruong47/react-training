@@ -1,13 +1,10 @@
 import { useLocation, useNavigate } from 'react-router-dom';
-import HeroSection from '../../components/HeroSection/HeroSection';
-import ProductList from '../../components/ProductList/ProductList';
-import MainLayout from '../../layouts/MainLayout';
+import { HeroSection, ProductList, TabList, Loading } from '@/components';
+import MainLayout from '@/layouts';
+import { default as styleUtils } from '@/styles/modules/utils.module.css';
+import { BEST_SELLER_CATEGORY } from '@/constants';
+import { useProducts } from '@/hooks/useProducts';
 import styles from './home.module.css';
-import TabList from '../../components/TabList/TabList';
-import { default as styleUtils } from '../../styles/modules/utils.module.css';
-import { BEST_SELLER_CATEGORY } from '../../constants';
-import { useProducts } from '../../hook/useProducts';
-import Loading from '../../components/Loading/Loading';
 
 const Home = () => {
   const location = useLocation();
@@ -16,7 +13,7 @@ const Home = () => {
   const queryParams = new URLSearchParams(location.search);
   const category = queryParams.get('category') || 'T-Shirt';
 
-  const { products, isLoading, onLoadMore, isHasMore } = useProducts(category);
+  const { products, isLoading, onLoadMore, hasMore } = useProducts(category);
 
   const handleTabChange = (item: string) => {
     navigate(`?category=${item}`);
@@ -38,7 +35,7 @@ const Home = () => {
             {products.length === 0 ? (
               <p className={styles.noProducts}>No products available in this category.</p>
             ) : (
-              <ProductList products={products} onClick={onLoadMore} hasMore={isHasMore} />
+              <ProductList products={products} onClick={onLoadMore} hasMore={hasMore} />
             )}
           </>
         )}

@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import NavBarItem from './NavBarItem';
+import { NavBarItem } from '@/components';
 
 export default {
   component: NavBarItem,
-  title: 'Components/NavBarItem',
+  title: '@/components/NavBarItem',
 } as Meta;
 
 type Story = StoryObj<typeof NavBarItem>;
