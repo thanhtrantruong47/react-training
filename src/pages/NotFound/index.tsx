@@ -1,4 +1,4 @@
-import MainLayout from '@/layouts/MainLayout';
+import MainLayout from '@/layouts';
 import { default as styleUtils } from '@/styles/modules/utils.module.css';
 import styles from './notFound.module.css';
 

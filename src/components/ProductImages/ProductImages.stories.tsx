@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import ProductImages from './ProductImages';
+import ProductImages from '../ProductImages';
 import image1 from '@/assets/images/detail-small.jpg';
 import image2 from '@/assets/images/small-t-shirt.jpg';
 

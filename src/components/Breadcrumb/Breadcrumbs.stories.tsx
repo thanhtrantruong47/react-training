@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Breadcrumb } from '@/components';
-import { BREADCRUMBS } from '@/mock/breadcrumbs';
+import { BREADCRUMBS } from '@/mocks/breadcrumbs';
 
 export default {
   component: Breadcrumb,

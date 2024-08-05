@@ -1,6 +1,6 @@
 // MainLayout.tsx
-import Header from '@/components/Header/Header';
-import Footer from '@/components/Footer/Footer';
+import { Header } from '@/components';
+import { Footer } from '@/components';
 import styles from './mainLayout.module.css';
 
 interface LayoutProps {

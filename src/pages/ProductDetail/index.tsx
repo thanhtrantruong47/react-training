@@ -1,9 +1,9 @@
 import { useParams } from 'react-router-dom';
 import styles from './productDetail.module.css';
-import MainLayout from '@/layouts/MainLayout';
+import MainLayout from '@/layouts';
 import { default as styleUtils } from '@/styles/modules/utils.module.css';
-import { useProducts } from '@/hook/useProducts'; // Import the custom hook
-import { useProductById } from '@/hook/useProductById';
+import { useProducts } from '@/hooks/'; // Import the custom hook
+import { useProductById } from '@/hooks/useProductById';
 import { Product, Loading, ProductList } from '@/components';
 
 const ProductDetail = () => {
@@ -11,7 +11,7 @@ const ProductDetail = () => {
 
   // Use the useProducts hook for related products
   const { product, isLoading: isProductLoading } = useProductById(id || '');
-  const { products, isLoading: isRelatedProductsLoading, isHasMore, onLoadMore } = useProducts(product?.category || '');
+  const { products, isLoading: isRelatedProductsLoading, hasMore, onLoadMore } = useProducts(product?.category || '');
 
   return (
     <MainLayout>
@@ -40,7 +40,7 @@ const ProductDetail = () => {
           {isRelatedProductsLoading && products.length === 0 ? (
             <Loading classStyle={styleUtils.loading} />
           ) : (
-            <ProductList products={products} onClick={onLoadMore} hasMore={isHasMore} />
+            <ProductList products={products} onClick={onLoadMore} hasMore={hasMore} />
           )}
         </div>
       </div>

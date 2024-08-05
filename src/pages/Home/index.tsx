@@ -1,14 +1,14 @@
-import MainLayout from '@/layouts/MainLayout';
+import MainLayout from '@/layouts';
 import styles from './home.module.css';
 import { useState } from 'react';
 import { default as styleUtils } from '@/styles/modules/utils.module.css';
-import { useProducts } from '@/hook/useProducts';
+import { useProducts } from '@/hooks';
 import { HeroSection, ProductList, TabList, Loading } from '@/components';
 import { BEST_SELLER_CATEGORY } from '@/constants';
 
 const Home = () => {
   const [tab, setTab] = useState('T-Shirt');
-  const { products, isLoading, onLoadMore, isHasMore } = useProducts(tab);
+  const { products, isLoading, onLoadMore, hasMore } = useProducts(tab);
 
   const handleTabChange = (item: string) => {
     setTab(item);
@@ -30,7 +30,7 @@ const Home = () => {
             {products.length === 0 ? (
               <p className={styles.noProducts}>No products available in this category.</p>
             ) : (
-              <ProductList products={products} onClick={onLoadMore} hasMore={isHasMore} />
+              <ProductList products={products} onClick={onLoadMore} hasMore={hasMore} />
             )}
           </>
         )}

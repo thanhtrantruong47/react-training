@@ -5,10 +5,10 @@ import styles from './cartList.module.css';
 interface CartListProps {
   cartItems: CartItemType[];
   onQuantityChange: (id: string, quantity: number) => void;
-  onChangeDelete: (id: string) => void;
+  onDelete: (id: string) => void;
 }
 
-const CartList = ({ cartItems, onQuantityChange, onChangeDelete }: CartListProps) => {
+const CartList = ({ cartItems, onQuantityChange, onDelete }: CartListProps) => {
   return (
     <div className={styles.container}>
       {cartItems.map(({ id, image, title, price, color, quantity, stock }) => (
@@ -22,7 +22,7 @@ const CartList = ({ cartItems, onQuantityChange, onChangeDelete }: CartListProps
           stock={stock}
           title={title}
           onQuantityChange={onQuantityChange}
-          onChangeDelete={onChangeDelete}
+          onDelete={onDelete}
         />
       ))}
     </div>

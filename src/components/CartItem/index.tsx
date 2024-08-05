@@ -13,20 +13,10 @@ interface CartItemProps {
   quantity: number;
   stock: number;
   onQuantityChange: (id: string, quantity: number) => void;
-  onChangeDelete: (id: string) => void;
+  onDelete: (id: string) => void;
 }
 
-const CartItem = ({
-  id,
-  image,
-  title,
-  price,
-  color,
-  quantity,
-  stock,
-  onQuantityChange,
-  onChangeDelete,
-}: CartItemProps) => {
+const CartItem = ({ id, image, title, price, color, quantity, stock, onQuantityChange, onDelete }: CartItemProps) => {
   const [amountOfProduct, setAmountOfProduct] = useState<number>(quantity);
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
@@ -37,7 +27,7 @@ const CartItem = ({
 
   const handleClick = () => {
     setIsLoading(true);
-    onChangeDelete(id);
+    onDelete(id);
 
     setTimeout(() => {
       setIsLoading(false);

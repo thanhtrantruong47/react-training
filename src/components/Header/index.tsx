@@ -3,7 +3,7 @@ import { CartIcon, LikeIcon, LoginIcon, SearchIcon, Input, Logo, NavBar } from '
 import styles from './header.module.css';
 import { default as styleUtils } from '@/styles/modules/utils.module.css';
 import { Link } from 'react-router-dom';
-import { useCart } from '@/hook/CartContext';
+import { useCart } from '@/contexts';
 
 const Header = () => {
   const { productsInCart } = useCart();
