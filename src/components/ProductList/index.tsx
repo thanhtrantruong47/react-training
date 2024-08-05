@@ -1,8 +1,7 @@
-import { Product } from '../../types/product';
-import Button from '../Button';
-import ProductCard from '../ProductCard';
+import { Product } from '@/types/product';
 import styles from './productList.module.css';
-import { default as styleUtils } from '../../styles/modules/utils.module.css';
+import { default as styleUtils } from '@/styles/modules/utils.module.css';
+import { Button, ProductCard } from '@/components';
 
 interface ProductListProps {
   products: Product[];

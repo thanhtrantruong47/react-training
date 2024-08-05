@@ -1,12 +1,10 @@
 import { useParams } from 'react-router-dom';
-import ProductList from '../../components/ProductList';
 import styles from './productDetail.module.css';
-import MainLayout from '../../layouts';
-import Loading from '../../components/Loading';
-import { default as styleUtils } from '../../styles/modules/utils.module.css';
-import Product from '../../components/Product';
-import { useProducts } from '../../hooks/useProducts'; // Import the custom hook
-import { useProductById } from '../../hooks/useProductById';
+import MainLayout from '@/layouts';
+import { default as styleUtils } from '@/styles/modules/utils.module.css';
+import { useProducts } from '@/hooks/useProducts'; // Import the custom hook
+import { useProductById } from '@/hooks/useProductById';
+import { Product, Loading, ProductList } from '@/components';
 
 const ProductDetail = () => {
   const { id } = useParams<{ id: string }>();

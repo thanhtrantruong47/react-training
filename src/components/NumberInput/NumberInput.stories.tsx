@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import NumberInput from '.';
+import { NumberInput } from '@/components';
 
 export default {
   component: NumberInput,
-  title: 'Components/NumberInput',
+  title: '@/components/NumberInput',
 } as Meta;
 
 type Story = StoryObj<typeof NumberInput>;

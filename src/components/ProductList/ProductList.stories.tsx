@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import ProductList from '.';
-import { PRODUCT_LIST } from '../../mocks/productList';
+import { ProductList } from '@/components';
+import { PRODUCT_LIST } from '@/mocks/productList';
 
 export default {
   component: ProductList,
-  title: 'Components/ProductList',
+  title: '@/components/ProductList',
 } as Meta;
 
 type Story = StoryObj<typeof ProductList>;

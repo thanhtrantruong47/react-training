@@ -1,13 +1,10 @@
-import HeroSection from '../../components/HeroSection';
-import ProductList from '../../components/ProductList';
-import MainLayout from '../../layouts';
+import MainLayout from '@/layouts';
 import styles from './home.module.css';
-import TabList from '../../components/TabList';
 import { useState } from 'react';
-import { default as styleUtils } from '../../styles/modules/utils.module.css';
-import { BEST_SELLER_CATEGORY } from '../../constants';
-import { useProducts } from '../../hooks/useProducts';
-import Loading from '../../components/Loading';
+import { default as styleUtils } from '@/styles/modules/utils.module.css';
+import { useProducts } from '@/hooks/useProducts';
+import { HeroSection, ProductList, TabList, Loading } from '@/components';
+import { BEST_SELLER_CATEGORY } from '@/constants';
 
 const Home = () => {
   const [tab, setTab] = useState('T-Shirt');

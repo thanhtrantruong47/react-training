@@ -1,4 +1,4 @@
-export const LoginIcon = () => (
+const LoginIcon = () => (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
     <circle cx="12" cy="7" r="2.5" stroke="currentColor" />
     <path
@@ -7,3 +7,5 @@ export const LoginIcon = () => (
     />
   </svg>
 );
+
+export default LoginIcon;
