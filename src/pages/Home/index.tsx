@@ -2,7 +2,7 @@ import MainLayout from '@/layouts';
 import styles from './home.module.css';
 import { useState } from 'react';
 import { default as styleUtils } from '@/styles/modules/utils.module.css';
-import { useProducts } from '@/hooks/useProducts';
+import { useProducts } from '@/hooks';
 import { HeroSection, ProductList, TabList, Loading } from '@/components';
 import { BEST_SELLER_CATEGORY } from '@/constants';
 

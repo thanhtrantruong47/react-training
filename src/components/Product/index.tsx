@@ -4,8 +4,7 @@ import { default as styleUtils } from '@/styles/modules/utils.module.css';
 import { Link, useParams } from 'react-router-dom';
 import { compactNumber } from '@/utils/compactNumber';
 import { CartItem as CartItemType } from '@/types/cartItem';
-import { useCart } from '@/contexts/CartContext';
-import { useToast } from '@/contexts/ToastContext';
+import { useCart, useToast } from '@/contexts';
 import { BREADCRUMB_ITEMS_DETAIl, MESSAGE_SUCCESS } from '@/constants';
 
 import {

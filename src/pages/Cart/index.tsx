@@ -1,10 +1,9 @@
 import { useEffect, useState } from 'react';
-import { useCart } from '@/contexts/CartContext';
+import { useCart, useToast } from '@/contexts';
 import MainLayout from '@/layouts';
 import styles from './cart.module.css';
 import { default as styleUtils } from '@/styles/modules/utils.module.css';
 import { Link, useNavigate } from 'react-router-dom';
-import { useToast } from '@/contexts/ToastContext';
 import { BREADCRUMB_ITEMS_CART, MESSAGE_SUCCESS } from '@/constants';
 import { ProductAPIService } from '@/services/ProductAPIService';
 import { Breadcrumb, CartList, CartSummaryInfo, Loading } from '@/components';
