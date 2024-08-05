@@ -1,5 +1,5 @@
-import { CartItem as CartItemType } from '../../types/cartItem';
-import CartItem from '../CartItem/CartItem';
+import { CartItem as CartItemType } from '@/types/cartItem';
+import { CartItem } from '@/components';
 import styles from './cartList.module.css';
 
 interface CartListProps {

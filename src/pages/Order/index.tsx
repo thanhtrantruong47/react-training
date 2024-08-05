@@ -1,8 +1,7 @@
 import { Link } from 'react-router-dom';
-import Button from '../../components/Button/Button';
-import CheckedIcon from '../../components/Icon/CheckedIcon';
 import styles from './order.module.css';
-import MainLayout from '../../layouts/MainLayout';
+import { Button, CheckedIcon } from '@/components';
+import MainLayout from '@/layouts/MainLayout';
 
 const Order = () => {
   return (

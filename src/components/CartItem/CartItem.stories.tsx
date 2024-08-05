@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import CartItem from './CartItem';
+import { CartItem } from '@/components';
 
 export default {
   component: CartItem,
-  title: 'Components/CartItem',
+  title: '@/components/CartItem',
 } as Meta;
 
 type Story = StoryObj<typeof CartItem>;

@@ -1,13 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import ProductCart from './ProductCart';
-import productImage from '../../assets/images/delete.svg';
+import { ProductCard } from '@/components';
+import productImage from '@/assets/images/delete.svg';
 
 export default {
-  component: ProductCart,
-  title: 'Components/ProductCart',
+  component: ProductCard,
+  title: '@/components/ProductCart',
 } as Meta;
 
-type Story = StoryObj<typeof ProductCart>;
+type Story = StoryObj<typeof ProductCard>;
 
 export const Default: Story = {
   args: {

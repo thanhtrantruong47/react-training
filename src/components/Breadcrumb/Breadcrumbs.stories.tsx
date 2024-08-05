@@ -1,13 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import Breadcrumbs from './Breadcrumbs';
-import { BREADCRUMBS } from '../../mock/breadcrumbs';
+import { Breadcrumb } from '@/components';
+import { BREADCRUMBS } from '@/mock/breadcrumbs';
 
 export default {
-  component: Breadcrumbs,
-  title: 'Components/Breadcrumbs',
+  component: Breadcrumb,
+  title: '@/components/Breadcrumbs',
 } as Meta;
 
-type Story = StoryObj<typeof Breadcrumbs>;
+type Story = StoryObj<typeof Breadcrumb>;
 
 export const Default: Story = {
   args: { items: BREADCRUMBS },

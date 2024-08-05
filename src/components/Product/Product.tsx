@@ -1,20 +1,23 @@
 import { useState } from 'react';
 import styles from './product.module.css';
-import { default as styleUtils } from '../../styles/modules/utils.module.css';
-import StarIcon from '../Icon/StarIcon';
-import StockIcon from '../Icon/StockIcon';
-import ProductImages from '../ProductImages/ProductImages';
-import NumberInput from '../NumberInput/NumberInput';
-import Button from '../Button/Button';
+import { default as styleUtils } from '@/styles/modules/utils.module.css';
 import { Link, useParams } from 'react-router-dom';
-import CartButton from '../Icon/CartButton';
-import { compactNumber } from '../../utils/compactNumber';
-import RadioGroup from '../Radio/Radio';
-import { CartItem as CartItemType } from '../../types/cartItem';
-import { useCart } from '../../hook/CartContext';
-import Breadcrumb from '../Breadcrumb/Breadcrumbs';
-import { useToast } from '../../hook/ToastContext';
-import { BREADCRUMB_ITEMS_DETAIl, MESSAGE_SUCCESS } from '../../constants';
+import { compactNumber } from '@/utils/compactNumber';
+import { CartItem as CartItemType } from '@/types/cartItem';
+import { useCart } from '@/hook/CartContext';
+import { useToast } from '@/hook/ToastContext';
+import { BREADCRUMB_ITEMS_DETAIl, MESSAGE_SUCCESS } from '@/constants';
+
+import {
+  StarIcon,
+  StockIcon,
+  CartButton,
+  Button,
+  NumberInput,
+  ProductImages,
+  Breadcrumb,
+  RadioGroup,
+} from '@/components';
 
 export interface ProductProps {
   images: string[];
