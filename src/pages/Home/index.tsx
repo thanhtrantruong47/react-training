@@ -3,7 +3,7 @@ import { HeroSection, ProductList, TabList, Loading } from '@/components';
 import MainLayout from '@/layouts';
 import { default as styleUtils } from '@/styles/modules/utils.module.css';
 import { BEST_SELLER_CATEGORY } from '@/constants';
-import { useProducts } from '@/hooks/useProducts';
+import { useProducts } from '@/hooks';
 import styles from './home.module.css';
 
 const Home = () => {
