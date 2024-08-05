@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import TabList from './TabList';
+import { TabList } from '@/components';
 import { BEST_SELLER_CATEGORY } from '@/constants';
 
 export default {

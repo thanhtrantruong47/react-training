@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import Logo from './Logo';
+import { Logo } from '@/components';
 
 export default {
   component: Logo,
