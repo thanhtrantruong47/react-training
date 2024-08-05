@@ -6,7 +6,7 @@ import { compactNumber } from 'utils/compactNumber';
 import { CartItem as CartItemType } from 'types/cartItem';
 import { useCart } from 'hook/CartContext';
 import { useToast } from 'hook/ToastContext';
-import { BREADCRUMB_ITEMS_DETAIl, MESSAGE_SUCCESS } from 'constants';
+import { BREADCRUMB_ITEMS_DETAIl, MESSAGE_SUCCESS } from '../../constants';
 
 import {
   StarIcon,

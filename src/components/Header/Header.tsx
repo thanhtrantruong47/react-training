@@ -1,4 +1,4 @@
-import { NAV_BAR_ITEMS } from 'constants';
+import { NAV_BAR_ITEMS } from '../../constants';
 import { CartIcon, LikeIcon, LoginIcon, SearchIcon, Input, Logo, NavBar } from 'components';
 import styles from './header.module.css';
 import { default as styleUtils } from 'styles/modules/utils.module.css';
