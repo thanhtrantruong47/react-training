@@ -1,4 +1,4 @@
-import { BASE_URL } from '../../constants';
+import { BASE_URL } from '../constants';
 import { ApiResponse } from 'types/apiResponse ';
 
 class ApiService<T> {
