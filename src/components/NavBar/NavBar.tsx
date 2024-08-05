@@ -1,6 +1,6 @@
 // NavBar.tsx
 import { useLocation } from 'react-router-dom';
-import { NavItem } from 'types/navBar';
+import { NavItem } from '@/types/navBar';
 import { NavBarItem } from '@/components';
 import styles from './navBar.module.css';
 

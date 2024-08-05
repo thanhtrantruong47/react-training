@@ -3,7 +3,7 @@ import styles from './product.module.css';
 import { default as styleUtils } from '@/styles/modules/utils.module.css';
 import { Link, useParams } from 'react-router-dom';
 import { compactNumber } from '@/utils/compactNumber';
-import { CartItem as CartItemType } from 'types/cartItem';
+import { CartItem as CartItemType } from '@/types/cartItem';
 import { useCart } from '@/hook/CartContext';
 import { useToast } from '@/hook/ToastContext';
 import { BREADCRUMB_ITEMS_DETAIl, MESSAGE_SUCCESS } from '@/constants';

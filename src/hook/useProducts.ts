@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import { Product } from '../types/product';
-import { ProductAPIService } from '../services/ProductAPIService';
-import { PRODUCTS_MOCK as mockProducts } from '../mock/products';
+import { Product } from '@/types/product';
+import { ProductAPIService } from '@/services/ProductAPIService';
+import { PRODUCTS_MOCK as mockProducts } from '@/mock/products';
 
 const productsPerPage = 8;
 

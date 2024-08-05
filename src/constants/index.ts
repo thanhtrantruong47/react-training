@@ -1,4 +1,4 @@
-import { NavItem } from '../types/navBar';
+import { NavItem } from '@/types/navBar';
 
 import bannerImages from '@/assets/images/banner.jpg';
 import bannerMoreImages from '@/assets/images/banner-more.jpg';

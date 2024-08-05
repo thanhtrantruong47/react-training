@@ -1,6 +1,6 @@
 import mainImages from '@/assets/images/detail-small.jpg';
 import secondaryImages from '@/assets/images/small-t-shirt.jpg';
-import { Product } from '../types/product';
+import { Product } from '@/types/product';
 
 export const PRODUCT_DETAIL: Product = {
   id: 1,

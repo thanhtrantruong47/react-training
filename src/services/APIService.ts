@@ -1,5 +1,5 @@
-import { BASE_URL } from '../constants';
-import { ApiResponse } from 'types/apiResponse ';
+import { BASE_URL } from '@/constants';
+import { ApiResponse } from '@/types/apiResponse ';
 
 class ApiService<T> {
   resourceUrl: string;

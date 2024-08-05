@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import styles from './footerNavList.module.css';
-import { NavItem } from 'types/navBar';
+import { NavItem } from '@/types/navBar';
 
 interface FooterNavListProps {
   listItemFooter: NavItem[];
