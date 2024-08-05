@@ -1,4 +1,4 @@
-import mainImages from '../assets/images/detail-small.jpg';
+import mainImages from '@/assets/images/detail-small.jpg';
 import { Product } from '../types/product';
 
 export const PRODUCT_LIST: Product[] = [

@@ -1,9 +1,9 @@
 import styles from './footer.module.css';
-import companyLogo from 'assets/images/logo.svg';
+import companyLogo from '@/assets/images/logo.svg';
 import { Link } from 'react-router-dom';
-import { FOOTER_LIST_CATEGORY, FOOTER_LIST_CONTACT, FOOTER_LIST_HOME, FOOTER_LIST_SHOP } from '../../constants';
-import { InstagramIcon, TwitterIcon, InIcon, FaceBookIcon, FooterNavList } from 'components';
-import { default as styleUtils } from 'styles/modules/utils.module.css';
+import { FOOTER_LIST_CATEGORY, FOOTER_LIST_CONTACT, FOOTER_LIST_HOME, FOOTER_LIST_SHOP } from '@/constants';
+import { InstagramIcon, TwitterIcon, InIcon, FaceBookIcon, FooterNavList } from '@/components';
+import { default as styleUtils } from '@/styles/modules/utils.module.css';
 
 const Footer = () => {
   return (

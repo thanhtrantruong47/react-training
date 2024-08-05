@@ -1,8 +1,8 @@
 import styles from './cartItem.module.css';
-import { default as styleUtils } from 'styles/modules/utils.module.css';
-import { NumberInput, DeleteIcon, Button, Loading } from 'components';
+import { default as styleUtils } from '@/styles/modules/utils.module.css';
+import { NumberInput, DeleteIcon, Button, Loading } from '@/components';
 import { useState } from 'react';
-import unAvailableImage from 'assets/images/no-image.jpg';
+import unAvailableImage from '@/assets/images/no-image.jpg';
 
 interface CartItemProps {
   id: string;

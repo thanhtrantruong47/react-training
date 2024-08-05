@@ -1,7 +1,7 @@
 import { InputHTMLAttributes, ReactNode } from 'react';
 import styles from './input.module.css';
-import { default as styleUtils } from 'styles/modules/utils.module.css';
-import { EndIcon } from 'components';
+import { default as styleUtils } from '@/styles/modules/utils.module.css';
+import { EndIcon } from '@/components';
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   endIcon?: ReactNode;

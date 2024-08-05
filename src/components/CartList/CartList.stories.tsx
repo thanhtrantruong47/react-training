@@ -4,7 +4,7 @@ import { CART_LIST } from 'mock/carts';
 
 export default {
   component: CartList,
-  title: 'Components/CartList',
+  title: '@/components/CartList',
 } as Meta;
 
 type Story = StoryObj<typeof CartList>;

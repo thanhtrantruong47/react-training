@@ -3,7 +3,7 @@ import CartSummaryInfo from './CartSummaryInfo';
 
 export default {
   component: CartSummaryInfo,
-  title: 'Components/CartSummaryInfo',
+  title: '@/components/CartSummaryInfo',
 } as Meta;
 
 type Story = StoryObj<typeof CartSummaryInfo>;

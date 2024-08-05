@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import styles from './productImages.module.css';
-import { default as styleUtils } from 'styles/modules/utils.module.css';
-import unAvailableImage from 'assets/images/no-image.jpg';
+import { default as styleUtils } from '@/styles/modules/utils.module.css';
+import unAvailableImage from '@/assets/images/no-image.jpg';
 
 interface ProductImagesProps {
   productImages: string[];

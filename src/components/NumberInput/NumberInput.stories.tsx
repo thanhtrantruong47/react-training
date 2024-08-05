@@ -3,7 +3,7 @@ import NumberInput from './NumberInput';
 
 export default {
   component: NumberInput,
-  title: 'Components/NumberInput',
+  title: '@/components/NumberInput',
 } as Meta;
 
 type Story = StoryObj<typeof NumberInput>;

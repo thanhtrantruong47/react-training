@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import Input from './Input';
-import { SearchIcon } from 'components';
+import { SearchIcon } from '@/components';
 import { fn } from '@storybook/test';
 
 export default {
   component: Input,
-  title: 'Components/Input',
+  title: '@/components/Input',
 } as Meta;
 
 type Story = StoryObj<typeof Input>;

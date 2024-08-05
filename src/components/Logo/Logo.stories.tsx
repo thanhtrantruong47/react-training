@@ -3,7 +3,7 @@ import Logo from './Logo';
 
 export default {
   component: Logo,
-  title: 'Components/Logo',
+  title: '@/components/Logo',
 } as Meta;
 
 type Story = StoryObj<typeof Logo>;

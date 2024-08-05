@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import NavBar from './NavBar';
-import { NAV_BAR_ITEMS } from '../../constants';
+import { NAV_BAR_ITEMS } from '@/constants';
 
 export default {
   component: NavBar,
-  title: 'Components/NavBar',
+  title: '@/components/NavBar',
 } as Meta;
 
 type Story = StoryObj<typeof NavBar>;

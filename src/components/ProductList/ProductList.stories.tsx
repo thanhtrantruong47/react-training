@@ -4,7 +4,7 @@ import { PRODUCT_LIST } from 'mock/productList';
 
 export default {
   component: ProductList,
-  title: 'Components/ProductList',
+  title: '@/components/ProductList',
 } as Meta;
 
 type Story = StoryObj<typeof ProductList>;

@@ -3,7 +3,7 @@ import HeroSection from './HeroSection';
 
 export default {
   component: HeroSection,
-  title: 'Components/HeroSection',
+  title: '@/components/HeroSection',
 } as Meta;
 
 type Story = StoryObj<typeof HeroSection>;

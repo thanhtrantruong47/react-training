@@ -1,9 +1,9 @@
-import { default as styleUtils } from 'styles/modules/utils.module.css';
+import { default as styleUtils } from '@/styles/modules/utils.module.css';
 import styles from './productCart.module.css';
-import { compactNumber } from 'utils/compactNumber';
+import { compactNumber } from '@/utils/compactNumber';
 import { Link } from 'react-router-dom';
-import unAvailableImage from 'assets/images/no-image.jpg';
-import { Button, StarIcon, BookMarkIcon, LikedIcon } from 'components';
+import unAvailableImage from '@/assets/images/no-image.jpg';
+import { Button, StarIcon, BookMarkIcon, LikedIcon } from '@/components';
 
 interface ProductCardProps {
   id: number;

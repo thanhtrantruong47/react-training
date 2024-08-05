@@ -4,7 +4,7 @@ import { BREADCRUMBS } from 'mock/breadcrumbs';
 
 export default {
   component: Breadcrumbs,
-  title: 'Components/Breadcrumbs',
+  title: '@/components/Breadcrumbs',
 } as Meta;
 
 type Story = StoryObj<typeof Breadcrumbs>;

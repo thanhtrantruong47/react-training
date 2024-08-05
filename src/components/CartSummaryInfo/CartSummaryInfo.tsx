@@ -1,6 +1,6 @@
-import { Button } from 'components';
+import { Button } from '@/components';
 import styles from './cartSummaryInfo.module.css';
-import { default as styleUtils } from 'styles/modules/utils.module.css';
+import { default as styleUtils } from '@/styles/modules/utils.module.css';
 
 interface CartSummaryInfoProps {
   onClickCheckoutButton: () => void;

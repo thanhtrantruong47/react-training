@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import styles from './radio.module.css';
-import { RadioColor } from 'components';
+import { RadioColor } from '@/components';
 
 interface ListOptionsProps {
   options: string[];

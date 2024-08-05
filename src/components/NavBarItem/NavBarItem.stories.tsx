@@ -3,7 +3,7 @@ import NavBarItem from './NavBarItem';
 
 export default {
   component: NavBarItem,
-  title: 'Components/NavBarItem',
+  title: '@/components/NavBarItem',
 } as Meta;
 
 type Story = StoryObj<typeof NavBarItem>;

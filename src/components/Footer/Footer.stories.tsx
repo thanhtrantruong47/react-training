@@ -3,7 +3,7 @@ import Footer from './Footer';
 
 export default {
   component: Footer,
-  title: 'Components/Footer',
+  title: '@/components/Footer',
 } as Meta;
 
 type Story = StoryObj<typeof Footer>;

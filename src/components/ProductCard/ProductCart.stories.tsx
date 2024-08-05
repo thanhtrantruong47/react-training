@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ProductCard } from 'components';
-import productImage from 'assets/images/delete.svg';
+import { ProductCard } from '@/components';
+import productImage from '@/assets/images/delete.svg';
 
 export default {
   component: ProductCard,
-  title: 'Components/ProductCart',
+  title: '@/components/ProductCart',
 } as Meta;
 
 type Story = StoryObj<typeof ProductCard>;

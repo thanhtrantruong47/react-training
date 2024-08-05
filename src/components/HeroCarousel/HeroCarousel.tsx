@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import styles from './heroCarousel.module.css';
-import { PrevIcon, NextIcon, Button } from 'components';
+import { PrevIcon, NextIcon, Button } from '@/components';
 import { ImagesCarousel } from 'types/carousel';
-import unAvailableImage from 'assets/images/no-image.jpg';
+import unAvailableImage from '@/assets/images/no-image.jpg';
 
 interface HeroCarousel {
   imagesCarousel: ImagesCarousel[];

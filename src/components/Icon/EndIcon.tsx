@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { default as styleUtils } from 'styles/modules/utils.module.css';
+import { default as styleUtils } from '@/styles/modules/utils.module.css';
 import styles from './icon.module.css';
 
 interface IconProps {

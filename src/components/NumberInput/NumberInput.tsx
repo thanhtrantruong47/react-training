@@ -1,6 +1,6 @@
 import { ChangeEvent } from 'react';
 import styles from './numberInput.module.css';
-import { PlusIcon, MinusIcon, Input, Button } from 'components';
+import { PlusIcon, MinusIcon, Input, Button } from '@/components';
 
 interface NumberInputProps {
   value: number; // Current quantity
