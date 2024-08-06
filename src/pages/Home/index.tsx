@@ -1,4 +1,3 @@
-import React from 'react';
 import MainLayout from '@/layouts';
 import styles from './home.module.css';
 import { default as styleUtils } from '@/styles/modules/utils.module.css';
@@ -7,7 +6,7 @@ import { HeroSection, ProductList, TabList, Loading } from '@/components';
 import { BEST_SELLER_CATEGORY } from '@/constants';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-const Home: React.FC = () => {
+const Home = () => {
   const location = useLocation();
   const navigate = useNavigate();
 

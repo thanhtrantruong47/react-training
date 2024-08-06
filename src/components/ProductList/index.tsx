@@ -1,4 +1,3 @@
-import React from 'react';
 import { Product } from '@/types/product';
 import styles from './productList.module.css';
 import { default as styleUtils } from '@/styles/modules/utils.module.css';
@@ -11,7 +10,7 @@ interface ProductListProps {
   isLoadingSeeMore: boolean;
 }
 
-const ProductList: React.FC<ProductListProps> = ({ products, onClick, hasMore, isLoadingSeeMore }) => (
+const ProductList = ({ products, onClick, hasMore, isLoadingSeeMore }: ProductListProps) => (
   <div className={`${styleUtils.container} ${styles.wrapper}`}>
     <div className={styles.list}>
       {products.map(({ id, title, price, description, rate, numberRating, images }) => (
