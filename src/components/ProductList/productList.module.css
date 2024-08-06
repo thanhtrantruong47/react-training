@@ -32,6 +32,10 @@
   display: none;
 }
 
+.loading {
+  margin-top: 2.5rem;
+}
+
 @media (max-width: 75rem) {
   .list {
     grid-template-columns: repeat(3, 1fr);

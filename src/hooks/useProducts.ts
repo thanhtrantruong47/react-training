@@ -14,6 +14,7 @@ interface UseProductsResult {
   hasMore: boolean;
   onLoadMore: () => void;
   status?: number; // Optional status code
+  isLoadingSeeMore: boolean;
 }
 
 const fetchProducts = async (category: string, page: number, useMockData: boolean) => {
@@ -53,22 +54,21 @@ const fetchProducts = async (category: string, page: number, useMockData: boolea
 export const useProducts = (category: string): UseProductsResult => {
   const [products, setProducts] = useState<Product[]>([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(0); // Initialize page to 0
   const [hasMore, setHasMore] = useState(true);
   const [status, setStatus] = useState<number>();
+  const [isLoadingSeeMore, setIsLoadingSeeMore] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
       setIsLoading(true);
-      setCurrentPage(1); // Reset page
-      setProducts([]); // Clear current products
-
       const result = await fetchProducts(category, 0, useMockData);
       if (!result) return;
 
       setProducts(result.data);
       setHasMore(result.total > productsPerPage); // Determine if more data exists
       setStatus(result.status);
+      setCurrentPage(1); // Set page to 1 after initial fetch
       setIsLoading(false);
     };
 
@@ -76,8 +76,9 @@ export const useProducts = (category: string): UseProductsResult => {
   }, [category]);
 
   const onLoadMore = async () => {
-    if (!hasMore) return;
+    if (!hasMore || isLoadingSeeMore) return; // Prevent loading if already loading or no more products
 
+    setIsLoadingSeeMore(true);
     const result = await fetchProducts(category, currentPage, useMockData);
     if (!result) return;
 
@@ -85,7 +86,8 @@ export const useProducts = (category: string): UseProductsResult => {
     setCurrentPage(prevPage => prevPage + 1);
     setHasMore(result.total > (currentPage + 1) * productsPerPage); // Check if there are more products
     setStatus(result.status);
+    setIsLoadingSeeMore(false);
   };
 
-  return { products, isLoading, hasMore, onLoadMore, status };
+  return { products, isLoading, hasMore, onLoadMore, status, isLoadingSeeMore };
 };

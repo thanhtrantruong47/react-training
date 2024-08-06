@@ -1,3 +1,4 @@
+import React from 'react';
 import MainLayout from '@/layouts';
 import styles from './home.module.css';
 import { default as styleUtils } from '@/styles/modules/utils.module.css';
@@ -6,14 +7,14 @@ import { HeroSection, ProductList, TabList, Loading } from '@/components';
 import { BEST_SELLER_CATEGORY } from '@/constants';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-const Home = () => {
+const Home: React.FC = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
   const queryParams = new URLSearchParams(location.search);
   const category = queryParams.get('category') || 'T-Shirt';
 
-  const { products, isLoading, onLoadMore, hasMore } = useProducts(category);
+  const { products, isLoading, onLoadMore, hasMore, isLoadingSeeMore } = useProducts(category);
 
   const handleTabChange = (item: string) => {
     navigate(`?category=${item}`);
@@ -35,7 +36,12 @@ const Home = () => {
             {products.length === 0 ? (
               <p className={styles.noProducts}>No products available in this category.</p>
             ) : (
-              <ProductList products={products} onClick={onLoadMore} hasMore={hasMore} />
+              <ProductList
+                products={products}
+                onClick={onLoadMore}
+                hasMore={hasMore}
+                isLoadingSeeMore={isLoadingSeeMore}
+              />
             )}
           </>
         )}
