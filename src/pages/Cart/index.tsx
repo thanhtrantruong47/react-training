@@ -32,6 +32,7 @@ const Cart = () => {
     updateQuantity(id, newQuantity);
   };
 
+  // set time out replaces the process of calling api delete and if present the api will delete it
   const handleDelete = (id: string) => {
     setShowOverlay(true);
     setTimeout(() => {
