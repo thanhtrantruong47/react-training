@@ -1,9 +1,16 @@
+import { StarIcon } from '@/components';
+
 interface RatingProps {
-  rate: number;
+  numberRating: number;
+  title: string;
 }
 
-const Rating = (_: RatingProps) => {
-  return <></>;
-};
+const Rating = ({ numberRating, title }: RatingProps) => (
+  <>
+    {Array.from({ length: numberRating }).map((_, index) => (
+      <StarIcon key={`${title}_${index}`} />
+    ))}
+  </>
+);
 
 export default Rating;
