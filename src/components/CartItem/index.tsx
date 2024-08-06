@@ -1,8 +1,8 @@
 import styles from './cartItem.module.css';
-import { default as styleUtils } from '../../styles/modules/utils.module.css';
+import { default as styleUtils } from '@/styles/modules/utils.module.css';
 import { Button, DeleteIcon, NumberInput } from '@/components';
 import { useState } from 'react';
-import unAvailableImage from '../../assets/images/no-image.jpg';
+import unAvailableImage from '@/assets/images/no-image.jpg';
 
 interface CartItemProps {
   id: string;
@@ -13,7 +13,7 @@ interface CartItemProps {
   quantity: number;
   stock: number;
   onQuantityChange: (id: string, quantity: number) => void;
-  onDelete: (id: string) => void; // Change prop name to onDelete
+  onDelete: (id: string) => void;
 }
 
 const CartItem = ({ id, image, title, price, color, quantity, stock, onQuantityChange, onDelete }: CartItemProps) => {

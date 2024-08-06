@@ -10,13 +10,13 @@ import { Breadcrumb, CartList, CartSummaryInfo, Loading, Overlay } from '@/compo
 
 const Cart = () => {
   const { productsInCart, updateQuantity, removeFromCart, clearCart } = useCart();
-  const { addToast } = useToast(); // Get addToast function
+  const { addToast } = useToast();
   const [delayedProductsInCart, setDelayedProductsInCart] = useState<typeof productsInCart>([]);
   const [isLoading, setIsLoading] = useState(true);
   const isDisable = true;
   const [isCheckout, setIsCheckout] = useState(false);
   const navigate = useNavigate();
-  const [showOverlay, setShowOverlay] = useState(false); // State for overlay
+  const [showOverlay, setShowOverlay] = useState(false);
 
   // Simulate the api call process
   useEffect(() => {
