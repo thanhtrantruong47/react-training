@@ -33,7 +33,7 @@ const ProductCard = ({ id, image, title, price, description, numberRating, rate,
       </div>
       <div className={styles.group}>
         <div className={`${styles.nameGroup} ${styleUtils.flexCenter}`}>
-          <p className={styles.name}>{title}</p>
+          <h4 className={styles.name}>{title}</h4>
           <span>{price}$</span>
         </div>
         <p className={styles.desc}>{description}</p>

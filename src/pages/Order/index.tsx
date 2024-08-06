@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
 import styles from './order.module.css';
-import { Button, CheckedIcon } from '@/components';
+import { CheckedIcon } from '@/components';
 import MainLayout from '@/layouts';
+import { default as styleUtils } from '@/styles/modules/utils.module.css';
 
 const Order = () => {
   return (
@@ -9,9 +10,9 @@ const Order = () => {
       <div className={styles.order}>
         <CheckedIcon />
         <h2 className={styles.title}>Order Successful</h2>
-        <p>Thank you so much order</p>
-        <Link to={'/'}>
-          <Button classStyle={styles.btn} content="Home Page" />
+        <h3>Thank you so much order</h3>
+        <Link to={'/'} className={`${styles.link} ${styleUtils.link}`}>
+          Home Page
         </Link>
       </div>
     </MainLayout>
