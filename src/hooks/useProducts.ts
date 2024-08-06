@@ -2,10 +2,11 @@ import { useState, useEffect } from 'react';
 import { Product } from '@/types/product';
 import { ProductAPIService } from '@/services/ProductAPIService';
 import { PRODUCTS_MOCK as mockProducts } from '@/mocks/products';
+import { STATUS } from '@/constants';
 
 const productsPerPage = 8;
 
-const useMockData = import.meta.env.USE_MOCK_FOR_API_FAIL === 'true';
+const useMockData = import.meta.env.USE_MOCK_FOR_API_FAIL;
 
 interface UseProductsResult {
   products: Product[];
@@ -17,7 +18,7 @@ interface UseProductsResult {
 
 const fetchProducts = async (category: string, page: number, useMockData: boolean) => {
   if (!category) {
-    return { data: [], total: 0, status: 0 };
+    return { data: [], total: 0, status: STATUS.NOT_FOUND };
   }
 
   if (useMockData) {
