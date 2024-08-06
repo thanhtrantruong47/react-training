@@ -44,3 +44,4 @@ export { default as TwitterIcon } from '@/components/Icon/TwitterIcon';
 export { default as InIcon } from '@/components/Icon/InIcon';
 export { default as RadioGroup } from '@/components/Radio';
 export { default as CartSummaryInfo } from '@/components/CartSummaryInfo';
+export { default as Overlay } from '@/components/Overlay';

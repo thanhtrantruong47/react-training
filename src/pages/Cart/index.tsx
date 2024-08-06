@@ -6,16 +6,17 @@ import { default as styleUtils } from '@/styles/modules/utils.module.css';
 import { Link, useNavigate } from 'react-router-dom';
 import { BREADCRUMB_ITEMS_CART, MESSAGE_SUCCESS } from '@/constants';
 import { ProductAPIService } from '@/services/ProductAPIService';
-import { Breadcrumb, CartList, CartSummaryInfo, Loading } from '@/components';
+import { Breadcrumb, CartList, CartSummaryInfo, Loading, Overlay } from '@/components';
 
 const Cart = () => {
   const { productsInCart, updateQuantity, removeFromCart, clearCart } = useCart();
-  const { addToast } = useToast(); // Get addToast function
+  const { addToast } = useToast();
   const [delayedProductsInCart, setDelayedProductsInCart] = useState<typeof productsInCart>([]);
   const [isLoading, setIsLoading] = useState(true);
   const isDisable = true;
   const [isCheckout, setIsCheckout] = useState(false);
   const navigate = useNavigate();
+  const [showOverlay, setShowOverlay] = useState(false);
 
   // Simulate the api call process
   useEffect(() => {
@@ -31,9 +32,14 @@ const Cart = () => {
     updateQuantity(id, newQuantity);
   };
 
+  // set time out replaces the process of calling api delete and if present the api will delete it
   const handleDelete = (id: string) => {
-    removeFromCart(id);
-    addToast(MESSAGE_SUCCESS.DELETE_CART, true);
+    setShowOverlay(true);
+    setTimeout(() => {
+      setShowOverlay(false);
+      removeFromCart(id);
+      addToast(MESSAGE_SUCCESS.DELETE_CART, true);
+    }, 2000);
   };
 
   const totalPrice = (productsInCart: { price: number; quantity: number }[]) => {
@@ -114,6 +120,7 @@ const Cart = () => {
           </div>
         </div>
       )}
+      <Overlay isShow={showOverlay} />
     </MainLayout>
   );
 };
