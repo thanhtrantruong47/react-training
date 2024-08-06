@@ -16,7 +16,7 @@ const ProductDetail = () => {
   // Use the useProducts hook for related products
   const { products, hasMore, onLoadMore } = useProducts(product?.category || '');
 
-  const isNotFound = status === STATUS.NOT_FOUND || !products;
+  const isNotFound = status === STATUS.NOT_FOUND || !product;
 
   return (
     <MainLayout>
@@ -29,29 +29,21 @@ const ProductDetail = () => {
       ) : (
         <div>
           <div className={styles.product}>
-            {product ? (
-              <>
-                <Product
-                  colors={product.colors || []}
-                  description={product.description || ''}
-                  images={product.images || []}
-                  numberRating={product.numberRating || 0}
-                  price={product.price || 0}
-                  rate={product.rate || 0}
-                  sizes={product.sizes || []}
-                  stock={product.stock || 0}
-                  title={product.title || ''}
-                />
-                <div className={styles.list}>
-                  <p className={styles.title}>Same Product</p>
-                  <ProductList products={products} onClick={onLoadMore} hasMore={hasMore} />
-                </div>
-              </>
-            ) : (
-              <div className={styleUtils.container}>
-                <p className={styles.error}>Product not available</p>
-              </div>
-            )}
+            <Product
+              colors={product.colors || []}
+              description={product.description || ''}
+              images={product.images || []}
+              numberRating={product.numberRating || 0}
+              price={product.price || 0}
+              rate={product.rate || 0}
+              sizes={product.sizes || []}
+              stock={product.stock || 0}
+              title={product.title || ''}
+            />
+            <div className={styles.list}>
+              <p className={styles.title}>Same Product</p>
+              <ProductList products={products} onClick={onLoadMore} hasMore={hasMore} />
+            </div>
           </div>
         </div>
       )}
