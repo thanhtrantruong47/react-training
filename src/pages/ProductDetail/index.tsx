@@ -14,7 +14,7 @@ const ProductDetail = () => {
   const { product, isLoading: isProductLoading, status } = useProductById(id || '');
 
   // Use the useProducts hook for related products
-  const { products, hasMore, onLoadMore } = useProducts(product?.category || '');
+  const { products, hasMore, onLoadMore, isLoadingSeeMore } = useProducts(product?.category || '');
 
   const isNotFound = status === STATUS.NOT_FOUND || !product;
 
@@ -42,7 +42,12 @@ const ProductDetail = () => {
             />
             <div className={styles.list}>
               <p className={styles.title}>Same Product</p>
-              <ProductList products={products} onClick={onLoadMore} hasMore={hasMore} />
+              <ProductList
+                products={products}
+                onClick={onLoadMore}
+                hasMore={hasMore}
+                isLoadingSeeMore={isLoadingSeeMore}
+              />
             </div>
           </div>
         </div>

@@ -16,6 +16,7 @@ import {
   Breadcrumb,
   RadioGroup,
   Rating,
+  Loading,
 } from '@/components';
 
 export interface ProductProps {
@@ -45,6 +46,7 @@ const Product: React.FC<ProductProps> = ({
   const [colorOfProduct, setColorOfProduct] = useState<string>(colors[0]);
   const [sizeOfProduct, setSizeOfProduct] = useState<string>(sizes[0]);
   const [amountOfProduct, setAmountOfProduct] = useState<number>(1);
+  const [isLoading, setIsLoading] = useState(false);
 
   const { addToCart } = useCart();
   const { addToast } = useToast(); // Get addToast function
@@ -57,6 +59,7 @@ const Product: React.FC<ProductProps> = ({
   };
 
   const handleAddToCart = () => {
+    setIsLoading(true);
     if (!id) return;
 
     const itemId = `${id} ${title} ${colorOfProduct}`;
@@ -74,7 +77,9 @@ const Product: React.FC<ProductProps> = ({
     };
 
     addToCart(newItem);
-    addToast(MESSAGE_SUCCESS.ADD_TO_CART, true); // Show success toast
+    setTimeout(() => {
+      setIsLoading(false), addToast(MESSAGE_SUCCESS.ADD_TO_CART, true);
+    }, 500);
   };
 
   const breadcrumbItems = [...BREADCRUMB_ITEMS_DETAIl, { label: title }];
@@ -137,12 +142,18 @@ const Product: React.FC<ProductProps> = ({
             </div>
           </div>
           <div className={`${styleUtils.flexCenter} ${styles.group}`}>
-            <Button
-              content="Add to Cart"
-              classStyle={`${styles.btn} ${styles.add} `}
-              onClick={handleAddToCart}
-              disabled={stock === 0}
-            />
+            {isLoading ? (
+              <div className={styles.loading}>
+                <Loading />
+              </div>
+            ) : (
+              <Button
+                content="Add to Cart"
+                classStyle={`${styles.btn} ${styles.add} `}
+                onClick={handleAddToCart}
+                disabled={stock === 0}
+              />
+            )}
             <Link to={'/cart'}>
               <Button classStyle={`${styles.btn} ${styles.cart}`} icon={CartButton} />
             </Link>

@@ -146,6 +146,10 @@
   color: var(--color-badge);
 }
 
+.loading {
+  margin: 0 auto;
+}
+
 @media (max-width: 64rem) {
   .detail {
     flex-direction: column;
