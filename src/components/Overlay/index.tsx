@@ -1,4 +1,4 @@
-import Loading from '../Loading/Loading';
+import { Loading } from '@/components';
 import styles from './overlay.module.css';
 
 interface OverlayProps {

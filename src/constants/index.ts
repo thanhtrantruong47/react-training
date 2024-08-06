@@ -1,8 +1,8 @@
-import { NavItem } from '../types/navBar';
+import { NavItem } from '@/types/navBar';
 
-import bannerImages from '../assets/images/banner.jpg';
-import bannerMoreImages from '../assets/images/banner-more.jpg';
-import bannerClassicImages from '../assets/images/banner-classic.jpg';
+import bannerImages from '@/assets/images/banner.jpg';
+import bannerMoreImages from '@/assets/images/banner-more.jpg';
+import bannerClassicImages from '@/assets/images/banner-classic.jpg';
 
 // constants.ts
 export const BASE_URL = import.meta.env.VITE_API_BASE_URL;

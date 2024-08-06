@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import TabList from './TabList';
-import { BEST_SELLER_CATEGORY } from '../../constants';
+import { TabList } from '@/components';
+import { BEST_SELLER_CATEGORY } from '@/constants';
 
 export default {
   component: TabList,
-  title: 'Components/TabList',
+  title: '@/components/TabList',
 } as Meta;
 
 type Story = StoryObj<typeof TabList>;
