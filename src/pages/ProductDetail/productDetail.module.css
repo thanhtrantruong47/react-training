@@ -11,5 +11,14 @@
   font-weight: var(--font-weight-bold);
   font-size: var(--font-size-xl);
   text-align: center;
+  margin-top: 6.375rem;
   margin-bottom: 2.5rem; /* 40px / 16 */
+}
+
+.error {
+  margin: 3rem 0;
+}
+
+.loading {
+  height: 40rem;
 }
