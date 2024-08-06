@@ -22,6 +22,7 @@ const fetchProducts = async (category: string, page: number, useMockData: boolea
 
   if (useMockData) {
     const filteredProducts = mockProducts.filter(product => product.category === category);
+
     return {
       data: filteredProducts.slice(page * productsPerPage, (page + 1) * productsPerPage),
       total: filteredProducts.length,
@@ -43,6 +44,7 @@ const fetchProducts = async (category: string, page: number, useMockData: boolea
     return { data: [], total: 0, status: response.status };
   } catch (error) {
     console.error('Failed to fetch products:', error);
+
     return { data: [], total: 0, status: 500 }; // Assuming a 500 status code for errors
   }
 };
