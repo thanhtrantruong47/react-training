@@ -5,12 +5,7 @@ interface RatingProps {
   title: string;
 }
 
-const Rating = ({ numberRating, title }: RatingProps) => (
-  <>
-    {Array.from({ length: numberRating }).map((_, index) => (
-      <StarIcon key={`${title}_${index}`} />
-    ))}
-  </>
-);
+const Rating = ({ numberRating, title }: RatingProps) =>
+  Array.from({ length: numberRating }).map((_, index) => <StarIcon key={`${title}_${index}`} />);
 
 export default Rating;
