@@ -57,7 +57,7 @@ class ApiService<T> {
         return { isSuccess: false, errors: [new Error(errorMessage)] };
       }
 
-      return { data, isSuccess: true };
+      return { data, isSuccess: true, status: response.status };
     } catch (error) {
       const errorMessage = `Failed to fetch data with parameters: ${JSON.stringify(params)}`;
       console.error(errorMessage, error);

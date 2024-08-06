@@ -2,9 +2,10 @@ import { useParams } from 'react-router-dom';
 import styles from './productDetail.module.css';
 import MainLayout from '@/layouts';
 import { default as styleUtils } from '@/styles/modules/utils.module.css';
-import { useProducts } from '@/hooks/'; // Import the custom hook
+import { useProducts } from '@/hooks/';
 import { useProductById } from '@/hooks/useProductById';
 import { Product, Loading, ProductList } from '@/components';
+import { STATUS } from '@/constants';
 
 const ProductDetail = () => {
   const { id } = useParams<{ id: string }>();
@@ -13,16 +14,21 @@ const ProductDetail = () => {
   const { product, isLoading: isProductLoading, status } = useProductById(id || '');
 
   // Use the useProducts hook for related products
-  const { products, isLoading: isRelatedProductsLoading, hasMore, onLoadMore } = useProducts(product?.category || '');
+  const {
+    products,
+    isLoading: isRelatedProductsLoading,
+    hasMore,
+    onLoadMore,
+    status: statusProducts,
+  } = useProducts(product?.category || '');
 
-  // Determine loading state
-  const isLoading = isProductLoading && status === undefined;
+  const isNotFound = status === STATUS.NOT_FOUND || statusProducts === STATUS.NOT_FOUND;
 
   return (
     <MainLayout>
-      {isLoading ? (
+      {isProductLoading ? (
         <Loading classStyle={`${styleUtils.loading} ${styles.loading}`} />
-      ) : status === 404 ? (
+      ) : isNotFound ? (
         <div className={styleUtils.container}>
           <p className={styles.error}>Product not found</p>
         </div>

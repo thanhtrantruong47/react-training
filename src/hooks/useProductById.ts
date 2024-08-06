@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Product as ProductType } from '@/types/product';
 import { ProductAPIService } from '@/services/ProductAPIService';
 import { PRODUCTS_MOCK as mockProducts } from '@/mocks/products';
+import { STATUS } from '@/constants';
 
 const useMockData = import.meta.env.USE_MOCK_FOR_API_FAIL === 'true';
 
@@ -13,11 +14,12 @@ interface UseProductByIdResult {
 
 const fetchProductById = async (productId: string, useMockData: boolean) => {
   if (!productId) {
-    return { data: null, status: 0 };
+    return { data: null, status: STATUS.NOT_FOUND };
   }
 
   if (useMockData) {
     const mockProduct = mockProducts.find(product => product.id.toString() === productId) || null;
+
     return { data: mockProduct, status: 200 }; // Assuming mock data is always successful
   }
 
@@ -26,9 +28,11 @@ const fetchProductById = async (productId: string, useMockData: boolean) => {
     if (response.isSuccess && response.data !== undefined) {
       return { data: response.data, status: response.status };
     }
+
     return { data: null, status: response.status };
   } catch (error) {
     console.error('Failed to fetch product:', error);
+
     return { data: null, status: 500 }; // Assuming a 500 status code for errors
   }
 };
@@ -36,7 +40,7 @@ const fetchProductById = async (productId: string, useMockData: boolean) => {
 export const useProductById = (id: string): UseProductByIdResult => {
   const [product, setProduct] = useState<ProductType | null>(null);
   const [isLoading, setIsLoading] = useState(false);
-  const [status, setStatus] = useState<number | undefined>(undefined);
+  const [status, setStatus] = useState<number>();
 
   useEffect(() => {
     const fetchProductData = async () => {

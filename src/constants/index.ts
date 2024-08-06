@@ -57,3 +57,7 @@ export enum MESSAGE_SUCCESS {
   ADD_TO_CART = 'Item added to cart!',
   DELETE_CART = 'Delete item in cart',
 }
+
+export enum STATUS {
+  NOT_FOUND = 404,
+}
