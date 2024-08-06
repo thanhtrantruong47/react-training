@@ -154,8 +154,8 @@ const Product: React.FC<ProductProps> = ({
                 disabled={stock === 0}
               />
             )}
-            <Link to={'/cart'}>
-              <Button classStyle={`${styles.btn} ${styles.cart}`} icon={CartButton} />
+            <Link to={'/cart'} className={`${styles.btn} ${styles.cart}`}>
+              <CartButton />
             </Link>
           </div>
         </div>
