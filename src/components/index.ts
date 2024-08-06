@@ -8,7 +8,6 @@ export { default as TabItem } from '@/components/TabItem';
 export { default as TabList } from '@/components/TabList';
 export { default as Input } from '@/components/Input';
 export { default as Header } from '@/components/Header';
-export { default as Typography } from '@/components/Typography';
 export { default as HeroCarousel } from '@/components/HeroCarousel';
 export { default as HeroSection } from '@/components/HeroSection';
 export { default as Rating } from '@/components/Rating';
