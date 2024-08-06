@@ -24,7 +24,7 @@ class ApiService<T> {
         return { isSuccess: false, errors: [new Error(errorMessage)] };
       }
 
-      return { data, isSuccess: true };
+      return { data, isSuccess: true, status: response.status };
     } catch (error) {
       const errorMessage = `Failed to fetch data for id: ${id}`;
       console.error(errorMessage, error);

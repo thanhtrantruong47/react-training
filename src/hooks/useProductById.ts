@@ -8,31 +8,42 @@ const useMockData = import.meta.env.USE_MOCK_FOR_API_FAIL === 'true';
 interface UseProductByIdResult {
   product: ProductType | null;
   isLoading: boolean;
+  status?: number; // Optional status code
 }
 
-const fetchProductById = async (productId: string) => {
+const fetchProductById = async (productId: string, useMockData: boolean) => {
   if (!productId) {
-    return null;
+    return { data: null, status: 0 };
   }
 
-  const response = await ProductAPIService.getById(productId);
-
-  if (response.isSuccess && response.data !== undefined && !useMockData) {
-    return response.data;
+  if (useMockData) {
+    const mockProduct = mockProducts.find(product => product.id.toString() === productId) || null;
+    return { data: mockProduct, status: 200 }; // Assuming mock data is always successful
   }
 
-  return mockProducts.find(product => product.id.toString() === productId) || null;
+  try {
+    const response = await ProductAPIService.getById(productId);
+    if (response.isSuccess && response.data !== undefined) {
+      return { data: response.data, status: response.status };
+    }
+    return { data: null, status: response.status };
+  } catch (error) {
+    console.error('Failed to fetch product:', error);
+    return { data: null, status: 500 }; // Assuming a 500 status code for errors
+  }
 };
 
 export const useProductById = (id: string): UseProductByIdResult => {
   const [product, setProduct] = useState<ProductType | null>(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [status, setStatus] = useState<number | undefined>(undefined);
 
   useEffect(() => {
     const fetchProductData = async () => {
       setIsLoading(true);
-      const fetchedProduct = await fetchProductById(id);
-      setProduct(fetchedProduct);
+      const { data, status } = await fetchProductById(id, useMockData);
+      setProduct(data);
+      setStatus(status);
       setIsLoading(false);
     };
 
@@ -41,5 +52,5 @@ export const useProductById = (id: string): UseProductByIdResult => {
     }
   }, [id]);
 
-  return { product, isLoading };
+  return { product, isLoading, status };
 };
